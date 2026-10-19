@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BookCard",
+  "type": "object",
+  "required": ["book_id", "title", "author", "one_line_thesis", "core_questions", "key_concepts", "assumptions", "limitations", "best_for", "not_for", "chapter_coverage", "lenses", "confidence", "status"],
+  "properties": {
+    "book_id": {"type": "string"},
+    "title": {"type": "string"},
+    "author": {"type": "string"},
+    "one_line_thesis": {"type": "string", "minLength": 20},
+    "core_questions": {"type": "array", "items": {"type": "string"}},
+    "key_concepts": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "best_for": {"type": "array", "items": {"type": "string"}},
+    "not_for": {"type": "array", "items": {"type": "string"}},
+    "chapter_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chapter", "summary", "citation"],
+        "properties": {
+          "chapter": {"type": "string"},
+          "summary": {"type": "string"},
+          "citation": {"$ref": "framework-card.schema.json#/$defs/evidence"}
+        }
+      }
+    },
+    "lenses": {"type": "array", "items": {"type": "string", "enum": ["economics", "politics", "law", "general"]}},
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+    "status": {"type": "string", "enum": ["draft", "verified", "heuristic"]}
+  }
+}

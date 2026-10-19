@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>BookCompiler · 书库智能体</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">BC</span>
+      <div>
+        <h1>BookCompiler</h1>
+        <p>把书编译成可引用的判断框架</p>
+      </div>
+    </div>
+    <div class="top-meta">
+      <span class="pill" id="version">v0.3</span>
+      <span class="mono db-path" id="db-path">loading…</span>
+      <span class="health" id="health" title="local server"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" aria-label="主导航">
+    <button class="tab active" data-tab="overview">总览</button>
+    <button class="tab" data-tab="library">书库</button>
+    <button class="tab" data-tab="analyze">分析</button>
+    <button class="tab" data-tab="models">模型</button>
+    <button class="tab" data-tab="memory">记忆</button>
+    <button class="tab" data-tab="evolution">自进化</button>
+    <button class="tab" data-tab="entities">实体</button>
+    <button class="tab" data-tab="claims">命题</button>
+    <button class="tab" data-tab="inspect">溯源</button>
+  </nav>
+
+  <main>
+    <section class="tab-panel active" id="tab-overview">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">LOCAL KNOWLEDGE COMPILER</p>
+          <h2>她读过哪些书，<br><em>为什么这样回答。</em></h2>
+          <p class="lede">不是把整本书塞进上下文，而是把书里的论证条件、失败边界和原文证据编译成可调用的判断框架。每一次分析都能回到具体章节和原文。</p>
+        </div>
+        <div class="hero-note">
+          <p class="note-title">三条边界</p>
+          <ol>
+            <li>不自动下载书。导入本地文件，或由你明确批准。</li>
+            <li>GUI 不冒充大模型。深度编译与分析补丁仍由 agent 写入。</li>
+            <li>没有原文引用的结论，验证器会拒绝。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="stats" id="stats"></div>
+
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>学科覆盖</h3><span class="hint">按书目标签统计</span></div>
+          <div id="discipline-bars" class="bars"></div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h3>分析视角</h3><span class="hint">按框架 lens 统计</span></div>
+          <div id="lens-bars" class="bars"></div>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>Hindsight 长期记忆</h3>
+          <span class="hint" id="hindsight-hint">检查中…</span>
+        </div>
+        <div id="hindsight-status" class="list empty">检查中…</div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>最近分析</h3>
+          <button class="ghost" id="refresh-overview">刷新</button>
+        </div>
+        <div id="recent-analyses" class="list"></div>
+      </section>
+    </section>
+
+    <section class="tab-panel" id="tab-library">
+      <div class="section-head">
+        <div><p class="eyebrow">LIBRARY</p><h2>书库</h2><p class="sub">看清每本书的状态、学科、框架数量，以及它是否真的被编译过。</p></div>
+        <button class="primary" id="open-ingest">导入本地书</button>
+      </div>
+
+      <form class="card ingest-card hidden" id="ingest-card">
+        <div class="card-head"><h3>导入本地文件</h3><button type="button" class="ghost" id="close-ingest">收起</button></div>
+        <p class="hint">支持 .txt / .md / .pdf / .epub。不会联网下载。重复导入同一路径时：内容未变则保留已编译成果；内容变了则自动作废旧编译并标记为 ingested。</p>
+        <div class="form-grid">
+          <label>文件路径<input name="path" placeholder="D:\fanshu\book.txt" required></label>
+          <label>书名<input name="title" placeholder="留空则用文件名"></label>
+          <label>作者<input name="author" placeholder="Unknown"></label>
+          <label>学科标签<input name="disciplines" placeholder="economics, politics, law"></label>
+        </div>
+        <div class="actions"><button class="primary" type="submit">开始导入</button><span class="form-status" id="ingest-status"></span></div>
+      </form>
+
+      <div class="toolbar">
+        <input id="book-search" type="search" placeholder="搜索书名、作者、学科…">
+        <select id="book-status-filter">
+          <option value="">全部状态</option>
+          <option value="compiled">compiled</option>
+          <option value="ingested">ingested</option>
+        </select>
+        <button class="ghost" id="refresh-books">刷新</button>
+      </div>
+      <div id="book-table" class="table-wrap"></div>
+    </section>
+
+    <section class="tab-panel" id="tab-analyze">
+      <div class="section-head">
+        <div><p class="eyebrow">ANALYZE</p><h2>用读过的书分析一件事</h2><p class="sub">三种选书模式。指定书或方向时，agent 必须先给出选择卡并获得你的同意。</p></div>
+      </div>
+
+      <div class="grid two analyze-grid">
+        <form class="card" id="analyze-form">
+          <div class="form-grid">
+            <label>模式
+              <select name="mode" id="mode-select">
+                <option value="auto">auto · 自动匹配</option>
+                <option value="direction">direction · 指定领域/方向</option>
+                <option value="books">books · 指定书/框架</option>
+              </select>
+            </label>
+            <label>方向（direction 模式）<input name="direction" placeholder="例如：地方债务与银行风险"></label>
+          </div>
+          <label>问题 / 新闻 / 事件
+            <textarea name="query" rows="6" placeholder="例如：央行降准 50 个基点，同时地方债置换加速。请从经济、政治、法律三个角度判断传导路径与风险。" required></textarea>
+          </label>
+          <fieldset class="lenses">
+            <legend>分析视角</legend>
+            <label><input type="checkbox" name="lens" value="economics" checked> 经济</label>
+            <label><input type="checkbox" name="lens" value="politics" checked> 政治</label>
+            <label><input type="checkbox" name="lens" value="law" checked> 法律</label>
+            <label><input type="checkbox" name="lens" value="general"> 通用</label>
+          </fieldset>
+          <div class="form-grid">
+            <label>指定书（books 模式，可多选）
+              <select name="book_ids" id="book-ids" multiple size="7"></select>
+            </label>
+            <label>指定框架（可选，可多选）
+              <select name="framework_ids" id="framework-ids" multiple size="7"></select>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="button" class="ghost" id="plan-btn">生成选择卡</button>
+            <button type="submit" class="primary">生成分析草稿</button>
+          </div>
+          <p class="form-status" id="analyze-status"></p>
+        </form>
+
+        <section class="card" id="selection-panel">
+          <div class="card-head"><h3>选择卡</h3><span class="hint">agent 选了什么，以及为什么</span></div>
+          <div id="selection-body" class="empty">先点“生成选择卡”。</div>
+        </section>
+      </div>
+
+      <div class="consent hidden" id="consent-bar"></div>
+      <section class="card hidden" id="analysis-result"></section>
+    </section>
+
+    <section class="tab-panel" id="tab-models">
+      <div class="section-head">
+        <div><p class="eyebrow">MODEL CONTROL</p><h2>模型切换中心</h2><p class="sub">三个独立模型槽：Hermes 负责阅读与对话，BookCompiler 只负责独立盲评，Hindsight 负责记忆抽取。换模型不会自动迁移旧向量或旧记忆。</p></div>
+        <button class="ghost" id="models-refresh">刷新</button>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h3>一键预设</h3><span class="hint">会先备份配置文件</span></div>
+        <div class="actions">
+          <button class="primary" id="models-mimo-preset">MiMo 云端 + 本地记忆</button>
+          <button class="ghost" id="models-cloud-preset">DeepSeek 云端 + 本地记忆</button>
+          <button class="ghost" id="models-local-preset">全部切到本地 Ollama</button>
+          <span class="form-status" id="model-preset-status"></span>
+        </div>
+        <p class="hint">三种预设：MiMo 云端、DeepSeek 云端、全部本地。云端预设只让 Hermes 与 BookCompiler 盲评走云端；Hindsight 仍走本地 Ollama。工具只写 provider / model / base_url，不读取、不显示 API key。改完 Hermes 与 Hindsight 都需要重启对应服务。</p>
+      </div>
+
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>1. Hermes 对话模型</h3><span class="hint">阅读、分析、调用工具都靠它</span></div>
+          <div id="hermes-model-status" class="list empty">读取中…</div>
+          <div class="form-grid">
+            <label>模型<input id="hermes-model-input" placeholder="例如 deepseek-v4-pro"></label>
+            <label>Provider<input id="hermes-provider-input" placeholder="custom / ollama / deepseek"></label>
+            <label>Base URL<input id="hermes-base-url-input" placeholder="https://api.deepseek.com/v1"></label>
+          </div>
+          <div class="actions">
+            <button class="primary" id="hermes-save-config">写入 Hermes 配置</button>
+            <button class="ghost" id="hermes-copy-session">复制会话内切换命令</button>
+            <button class="ghost" id="hermes-copy-global">复制永久切换命令</button>
+            <button class="ghost" id="hermes-open-picker">显示交互式选模型命令</button>
+          </div>
+          <pre id="hermes-model-command" class="code hidden"></pre>
+          <p class="hint">写入的是 D:\hermes agent\config.yaml。已运行的 Hermes 会话不会热更新，请退出重启，或在会话里用 /model 临时切换。</p>
+        </section>
+
+        <section class="card">
+          <div class="card-head"><h3>2. BookCompiler 盲评模型</h3><span class="hint">只影响独立盲评</span></div>
+          <div id="judge-model-status" class="list empty">读取中…</div>
+          <div class="form-grid">
+            <label>Provider<select id="model-judge-provider"><option value="ollama">ollama</option><option value="openai-compatible">openai-compatible</option></select></label>
+            <label>模型<input id="model-judge-model" list="ollama-model-list" placeholder="qwen2.5:7b-instruct-q4_K_M"></label>
+            <label>Base URL<input id="model-judge-base-url" placeholder="http://127.0.0.1:11434"></label>
+          </div>
+          <datalist id="ollama-model-list"></datalist>
+          <div class="actions">
+            <button class="primary" id="model-judge-save">保存为默认</button>
+            <button class="ghost" id="model-ollama-refresh">刷新 Ollama 列表</button>
+            <span class="form-status" id="model-judge-status"></span>
+          </div>
+          <p class="hint">Ollama 状态：<span id="model-ollama-status">检测中…</span></p>
+          <p class="hint">保存会写入项目 .env，并对当前 GUI 进程立即生效；已打开的盲评卡仍可在每次运行时临时改模型。</p>
+        </section>
+      </div>
+
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>3. Hindsight 记忆模型</h3><span class="hint">抽取记忆，不负责读书</span></div>
+          <div id="hindsight-model-status" class="list empty">读取中…</div>
+          <div class="form-grid">
+            <label>Provider<select id="model-hindsight-provider"><option value="ollama">ollama</option><option value="openai-compatible">openai-compatible</option><option value="custom">custom</option></select></label>
+            <label>模型<input id="model-hindsight-model" list="ollama-model-list" placeholder="qwen2.5:7b-instruct-q4_K_M"></label>
+            <label>Base URL<input id="model-hindsight-base-url" placeholder="http://127.0.0.1:11434/v1"></label>
+          </div>
+          <div class="actions">
+            <button class="primary" id="model-hindsight-save">保存到 Hindsight</button>
+            <span class="form-status" id="model-hindsight-save-status"></span>
+          </div>
+          <p class="hint">写入 D:\hindsight\.env。保存后必须重启 run_server.py 才会生效。</p>
+        </section>
+
+        <section class="card">
+          <div class="card-head"><h3>4. Embedding / Reranker</h3><span class="hint">检索组件，不参与聊天</span></div>
+          <div id="embedding-model-status" class="list empty">读取中…</div>
+          <p class="hint">切换 embedding 会产生不兼容的新向量空间。旧向量不能混用，必须重建；不要为了“换个模型聊天”改这里。Hindsight 的 embedding 在 D:\hindsight\.env 单独配置。</p>
+        </section>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h3>环境变量到底怎么生效</h3></div>
+        <ul class="plain-list">
+          <li>系统环境变量 / 用户环境变量：只对新启动的进程生效，已打开的 GUI、终端、Hermes 不会自动刷新。</li>
+          <li>项目 .env：BookCompiler 启动时读取；比系统变量更适合做默认值。</li>
+          <li>命令行参数 / GUI 输入框：优先级最高，适合单次切换。</li>
+          <li>Hermes 的模型在 <code>D:\hermes agent\config.yaml</code>；Hindsight 的模型在 <code>D:\hindsight\.env</code>；BookCompiler 盲评在项目 <code>.env</code>。</li>
+        </ul>
+      </div>
+    </section>
+    <section class="tab-panel" id="tab-memory">
+      <div class="section-head">
+        <div><p class="eyebrow">MEMORY</p><h2>记忆不是原文，是教训</h2><p class="sub">反馈、偏好、失败模式和结果会进入 memory；原文仍然留在书库并必须被引用。</p></div>
+      </div>
+      <div class="card">
+        <div class="toolbar">
+          <input id="memory-query" placeholder="查询记忆，例如：地方债 法律权限">
+          <button class="primary" id="memory-btn">召回</button>
+        </div>
+        <fieldset class="lenses">
+          <legend>记忆视角</legend>
+          <label><input type="checkbox" name="memory-lens" value="economics" checked> 经济</label>
+          <label><input type="checkbox" name="memory-lens" value="politics" checked> 政治</label>
+          <label><input type="checkbox" name="memory-lens" value="law" checked> 法律</label>
+        </fieldset>
+        <div id="memory-results" class="list empty">还没有召回结果。</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>Obsidian：读书成果 + Hindsight 记忆</h3><span class="hint">受控双向同步，手改不会被静默覆盖</span></div>
+        <div class="form-grid">
+          <label>Vault 路径<input id="obsidian-vault" placeholder="C:\Users\mybea\Documents\Obsidian Vault"></label>
+          <label>BookCompiler Inbox<input id="obsidian-inbox" value="BookCompiler Inbox"></label>
+        </div>
+        <div class="actions">
+          <button class="primary" id="obsidian-sync-all-btn">全部同步</button>
+          <button class="ghost" id="obsidian-sync-btn">只同步读书成果</button>
+          <button class="ghost" id="obsidian-hindsight-sync-btn">只同步 Hindsight</button>
+          <button class="ghost" id="obsidian-hindsight-status-btn">Hindsight 同步状态</button>
+          <button class="ghost" id="obsidian-status-btn">读书笔记状态</button>
+          <button class="ghost" id="obsidian-review-btn">到期复习</button>
+          <span class="form-status" id="obsidian-status"></span>
+        </div>
+        <p class="hint">
+          目录：<code>BookCompiler/</code> 放书卡、框架、命题；<code>Hindsight/</code> 放 world / experience / observation 记忆；两个 Inbox 用来手写新内容。
+          读书成果默认受保护：手改后原文件保留，新版本写成 <code>*.generated.md</code>；Hindsight 的 world / experience 可改，observation 只读；双方都改会产生 <code>*.conflict-时间.md</code>。
+        </p>
+        <div id="obsidian-results" class="list empty">尚未同步。</div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-evolution">
+      <div class="section-head">
+        <div><p class="eyebrow">CONTROLLED SELF-EVOLUTION</p><h2>自进化：提案 → 回放 → 影子 → 晋升</h2><p class="sub">不能直接改提示词。晋升必须经过结构回放，并留下可审计的 promotion_evidence。</p></div>
+        <button class="primary" id="propose-btn">从反馈生成提案</button>
+      </div>
+
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>结构回放</h3><span class="hint">验证引用、选书、视角覆盖</span></div>
+          <p class="hint">粘贴 cases JSON，或输入分析 ID（逗号分隔）来构造回放。回放只证明结构没退化，不证明“质量更好”。</p>
+          <textarea id="replay-input" rows="7" placeholder='[{"case_id":"c1","query":"降准与地方债","lenses":["economics","politics","law"],"mode":"auto"}]'></textarea>
+          <div class="actions">
+            <button class="ghost" id="replay-btn">运行回放</button>
+            <span class="form-status" id="replay-status"></span>
+          </div>
+          <pre id="replay-report" class="code hidden"></pre>
+        </section>
+        <section class="card">
+          <div class="card-head"><h3>审计说明</h3></div>
+          <ul class="plain-list">
+            <li>proposed → accepted → shadow → promoted → rolled_back</li>
+            <li>晋升需要 shadow 状态 + 至少 1 个回放 case + 全部结构通过。</li>
+            <li>回放报告目前是本地 JSON，理论上可伪造；这是已知限制，文档里写明了。</li>
+            <li>回滚不会删除源书，只撤销候选变更。</li>
+          </ul>
+        </section>
+      </div>
+
+      <div id="proposal-list" class="list"></div>
+    </section>
+
+    <section class="tab-panel" id="tab-entities">
+      <div class="section-head">
+        <div><p class="eyebrow">CROSS-BOOK ENTITIES</p><h2>跨书实体对齐</h2><p class="sub">把不同书里同一个概念的不同叫法合并成规范实体，并保留每次提及的 chunk 与页码。实体扩展会参与混合检索。</p></div>
+        <div class="actions">
+          <button class="ghost" id="align-entities">重新对齐</button>
+          <button class="ghost" id="backfill-embeddings">补齐嵌入</button>
+        </div>
+      </div>
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>实体索引</h3><span class="hint" id="entity-stats">—</span></div>
+          <div class="toolbar">
+            <input id="entity-query" placeholder="搜索实体、别名，例如：融资平台 / 降准 / 央行">
+            <label class="hint"><input type="checkbox" id="entity-cross-book" checked> 只看跨书</label>
+            <button class="primary" id="entity-btn">查询</button>
+            <button id="entity-audit">近似重复审计</button>
+          </div>
+          <div id="entity-audit-report" class="list hidden"></div>
+          <div id="entity-list" class="list empty">加载中…</div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h3>混合检索探针</h3><span class="hint">BM25 + embedding + 实体扩展（全库探针，不代表已学习）</span></div>
+          <div class="toolbar">
+            <input id="retrieval-query" placeholder="输入一个新闻式问题，查看命中与分数拆解">
+            <button class="primary" id="retrieval-btn">检索</button>
+          </div>
+          <pre id="retrieval-report" class="code hidden"></pre>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>待确认实体合并</h3>
+          <span class="hint">只做提示，必须显式确认；合并后可撤销</span>
+        </div>
+        <div class="toolbar">
+          <button class="primary" id="entity-sync-audit">扫描合并候选</button>
+          <button class="ghost" id="entity-candidates">刷新候选</button>
+        </div>
+        <p class="hint">名称包含关系不等于同一概念（例如“基础货币”和“基础货币变动”）。确认合并会移动 mention/relation/claim，风险较高。</p>
+        <div id="entity-candidate-list" class="list empty">加载中…</div>
+      </section>
+    </section>
+
+
+    <section class="tab-panel" id="tab-claims">
+      <div class="section-head">
+        <div><p class="eyebrow">CLAIM GRAPH</p><h2>命题图谱</h2><p class="sub">从已学书籍中抽取可追溯到 chunk 和页码的命题；冲突只提示、不自动改判，supersession 必须显式确认。</p></div>
+        <div class="actions">
+          <button class="primary" id="claims-build">从已学书籍抽取命题</button>
+        </div>
+      </div>
+      <div class="grid two">
+        <section class="card">
+          <div class="card-head"><h3>命题</h3><span class="hint" id="claim-stats">—</span></div>
+          <div class="toolbar">
+            <input id="claim-query" placeholder="搜索命题、主语、宾语或原文">
+            <select id="claim-status">
+              <option value="">全部状态</option>
+              <option value="active">active</option>
+              <option value="conflicted">conflicted</option>
+              <option value="superseded">superseded</option>
+              <option value="retracted">retracted</option>
+            </select>
+            <button class="primary" id="claim-search">查询</button>
+          </div>
+          <div id="claim-list" class="list empty">加载中…</div>
+        </section>
+        <section class="card">
+          <div class="card-head"><h3>冲突关系</h3><span class="hint">只显示需要人工复核的 conflicted 命题</span></div>
+          <div id="claim-relations" class="list empty">加载中…</div>
+        </section>
+      </div>
+    </section>
+    <section class="tab-panel" id="tab-inspect">
+      <div class="section-head">
+        <div><p class="eyebrow">PROVENANCE</p><h2>溯源图</h2><p class="sub">book → framework → chunk → concept。任何回答都应该能沿这条边走回去。</p></div>
+      </div>
+      <div class="card">
+        <div class="toolbar">
+          <input id="graph-node" placeholder="输入 book_id / framework_id / chunk_id，留空看全部">
+          <button class="primary" id="graph-btn">查询</button>
+        </div>
+        <div id="graph-results" class="list empty">输入节点查询，或留空查看全部边。</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>GraphRAG sidecar</h3><span class="hint">实体 / claim / 社区 + RRF 融合</span></div>
+        <div class="toolbar">
+          <input id="graphrag-query" placeholder="探针查询：央行降准、地方财政与银行信贷扩张">
+          <button class="primary" id="graphrag-query-btn">融合检索</button>
+          <button class="ghost" id="graphrag-build-btn">重建图</button>
+          <button class="ghost" id="graphrag-status-btn">状态</button>
+        </div>
+        <p class="hint">图数据库是独立 sidecar，不修改主库；图失败时自动回退 hybrid。下方同时显示 hybrid 与 graph 两个通道。</p>
+        <div id="graphrag-results" class="list empty">尚未查询。</div>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <header class="drawer-head">
+        <h2 id="drawer-title">详情</h2>
+        <button class="icon-btn" data-close-drawer aria-label="关闭">×</button>
+      </header>
+      <div id="drawer-body" class="drawer-body"></div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+You are an independent, skeptical reviewer. You did not write this answer and you do not know its author.
+Score how effectively the answer uses the learned books. Do not reward length, confidence, or rhetorical polish.
+You must judge the answer as it stands. If evidence is missing or a lens is merely named but not integrated, say so in the scores.
+
+RUBRIC VERSION: reading-effectiveness-v1
+
+## Question
+如果中国央行降准，银行信贷是否必然扩张？请同时从货币政策传导、地方政府财政激励和金融监管约束三个角度分析。
+
+## Lenses requested: economics, politics, law
+
+## Selected books
+- 以利为利：财政关系与地方政府行为 (politics, economics, public_finance)
+- 当代中国政府与政治 (politics, law)
+- 中央银行与货币供给 (economics, finance)
+- 稳定不稳定的经济：一种金融不稳定视角 (economics, finance)
+
+## Frameworks used
+- 货币供给内生性检验: 把货币供给是外生还是内生当作可检验命题：观察乘数、信贷需求与银行行为，而不是只根据央行投放数量下结论。
+  - Applicable when: 判断数量型货币政策是否有效; 分析宽货币能否转化为宽信用; 评估金融创新对货币统计的冲击
+  - Failure modes: 用总量相关性代替因果识别。; 忽略金融脱媒与影子银行。; 样本期跨越不同政策 regime，参数不可比。
+- 基础货币—货币乘数控制链: 央行只能直接控制基础货币，货币供给由基础货币与内生的货币乘数共同决定；判断政策效果必须同时看投放端与乘数端。
+  - Applicable when: 判断降准、公开市场操作、再贷款等数量型工具的效果; 区分央行投放与银行体系信用扩张; 解释宽货币为何没有转化为宽信用
+  - Failure modes: 影子银行与金融脱媒使总量乘数失真。; 结构性流动性分层使总量投放无法到达特定机构。; 只盯M2而忽略债务、资产价格与信贷结构。
+- 央行资产负债表投放渠道: 用央行资产负债表逐项识别基础货币的来源与回笼，避免把降准或公开市场操作误读为银行可贷资金的等量增加。
+  - Applicable when: 分析降准、再贷款、再贴现、MLF等工具; 判断外汇占款与财政存款变化对流动性的影响; 识别流动性投放与信用投放的差别
+  - Failure modes: 科目合并与统计口径变化导致误读。; 财政存款与国库现金管理干扰流动性判断。; 总量数据看不出机构间的结构性分化。
+- 地方政府公司化与软预算约束: 当地方政府像公司一样经营辖区，预算约束会因中央救助预期和土地抵押而软化，投资扩张与债务累积具有内在动力。
+  - Applicable when: 分析地方投资冲动与平台扩张; 判断债务化解中的中央—地方博弈; 识别银行按政府信用定价的风险
+  - Failure modes: 把公司化简单当作道德批判。; 忽略中央硬约束政策与问责变化。; 地区差异与平台转型改变行为逻辑。
+- 土地—财政—金融三位一体: 把土地出让、土地抵押融资与城市基础设施投资放在一个闭环中，识别“以地生财、以财养城、以城抬地”的自我强化与断裂点。
+  - Applicable when: 分析城市扩张与土地财政; 评估地方融资平台与土地抵押风险; 判断土地市场降温如何传导到财政与银行
+  - Failure modes: 土地与平台数据不透明。; 政府信用与企业信用边界模糊。; 把土地出让收入误当作可自由支配的净收入。; 忽略存量债务滚动与利息负担。
+- 大政府—最后贷款人稳定器与副作用: 大政府和央行最后贷款人能稳定利润、就业与资产价格，但会把金融脆弱性转化为通货膨胀、道德风险与退出难题。
+  - Applicable when: 分析危机救助与财政刺激; 判断央行扩表与债务货币化; 评估救助退出与政策可信度
+  - Failure modes: 供给冲击型通胀使需求管理失效。; 财政主导削弱央行独立性。; 政治约束使退出承诺不可信。
+- 党政体制—条块矩阵: 把中国共产党作为理解中国政府的关键，用党政双轨、条块结合与领导小组识别谁有权、谁能协调、谁承担执行责任。
+  - Applicable when: 分析政策执行与跨部门协调; 判断中央与地方关系; 识别监管机构与媒体、安全等领域的权力结构
+  - Failure modes: 正式文本与实际运作不一致。; 领导小组权力边界随情境变化。; 部门利益与地方变通改变执行结果。
+- 党规—国法双重约束: 在中国政府与政治中，行为合法性同时受国家法律和党内法规约束；分析法律问题必须把党规、党委文件与党政关系纳入。
+  - Applicable when: 分析监管权限与政策合法性; 判断执法、司法与地方治理风险; 做合规与政治风险双重评估
+  - Failure modes: 只看法条而忽略党规与党委文件。; 把政策文件直接当作法律依据。; 法律修订滞后或地方执行差异。
+
+## Answer under review
+### Conclusion
+不必然。降准主要改变基础货币和准备金供给，银行信贷是否扩张还取决于货币乘数、信贷需求、银行资本与风险偏好、监管约束以及地方融资需求。经济上，降准降低资金约束、提高扩张概率，但不是充分条件；政治上，地方公司化和土地金融会在某些时期放大信贷需求；法律上，具体授权和审慎监管规则决定传导边界，但当前书库对银行法条文覆盖不足。因此更准确的说法是：降准可能为信贷扩张创造条件，但只有在需求、资本、监管和风险偏好同时允许时才会转化为信贷扩张。
+
+### Uncertainty / what would change the conclusion
+如果降准后 3–6 个月新增贷款和社会融资规模显著上升且可归因于降准，或者银行超额准备金率低、资本充足、风险偏好上升、地方融资需求强且监管放松，那么“降准不必然扩张”的判断需要上调扩张概率；反之，若信贷需求弱、银行不良上升、监管收紧或地方债务问责强化，则扩张概率下降。
+
+### Counterevidence
+- 2009 年宽松环境下贷款增量曾达到 4.58 万亿元高点，说明降准/宽松在特定条件下确实可能伴随信贷快速扩张。
+- 美国 1930 年代的经验表明，在银行持有大量超额准备金、经济中缺乏信贷扩张条件时，调整法定准备金率很难改变银行信贷规模。
+- 维持银行流动性与控制银行信贷是两回事，准备金工具并不自动等于信贷控制。
+
+### Cross-lens conflicts
+- 经济学镜头强调降准只是放松资金约束，信贷还受需求和银行风险偏好约束；政治学镜头强调地方公司化、土地金融和平台融资可能制造额外信贷需求。两者并不矛盾：政治需求可以放大经济传导，但不能证明降准必然导致扩张。
+- 经济学镜头讨论的是货币传导机制，法律镜头讨论的是权限、程序和监管约束；当前书库只有党政体制/依法治国的一般材料，缺少具体银行监管法条文。
+
+### Claim-level summary
+- [976b3c244642d321] 中央银行 condition 年5月恢复 1王学青:《汇集各家精华填补国内空白一一评(现代货币供给理论与实践》》,载《金融研究》,1994(4) (confidence 0.76)
+- [03576cf3e546ced0] 领导小组 condition 我们不了解五年一度的党代会报告,不了解中央全会的重要决定,何以理解中国政府的政策走向?如果我们不了解党中央设置的各种领导小组,以及党委部门领导的"口",何以理解政府机构的实际运作?只有将两者结合在一起,我们才能得到一幅关于当代中国政治的比较完整的认识图景 (confidence 0.76)
+- [976b3c244642d321] 公开市场操作 condition 年5 月恢复公开市场操作,货币调控方式由直接调控向间接调控转变 (confidence 0.76)
+- [976b3c244642d321] 中央银行 increase 存入行即B银行的央行存款(也就是增加该银行的准备金),之后才减少支票签发行即A银行的央行存款(减少该银行的准备金),因而期间会出现准备金的暂时性增加 (confidence 0.76)
+- [976b3c244642d321] 中央银行 condition 中央银行对它 所发行的银行券与其存款负债保持相同比例的黄金准备,那么在会员银行的准备金中,会员银行所持中央银行银行券与会员银行在中央银行存款之间比例的变动,将不会影响货币量 (confidence 0.76)
+- [a7086a05970476d8] 中央银行 condition 中央银行作为最终贷款人实施干预以确保新业务得以持续,它就会承认金融创新是合理的 (confidence 0.76)
+- [03576cf3e546ced0] 中国共产党 condition 代中国政府与政治 中国共产党作为一个动员型的"群众党"1的必然要求 (confidence 0.76)
+- [976b3c244642d321] 商业银行 increase 若该客户(私人机构)将央行支票(或现金)存入某商业银行的活期存款账户,这家商业银行的活期存款和准备金将等量增加1。 (confidence 0.76)
+
+## Exact-quote evidence supplied by the answer
+1. book=976b3c244642d321 chapter=Page 143 page=143
+   quote: 货币供给的内生性主要表现在货币乘数的内生性上
+2. book=976b3c244642d321 chapter=Page 255 page=255
+   quote: 而所谓货币供给的内生性则是说,货币供给决定于经济过程本身
+3. book=976b3c244642d321 chapter=Page 261 page=261
+   quote: 第二,"新观点"理论坚持货币供给的内生性
+4. book=976b3c244642d321 chapter=Page 381 page=381
+   quote: 央行在考虑货币供给时,上期的 GDP、外汇储备是重要的参考变量
+5. book=976b3c244642d321 chapter=Page 34 page=34
+   quote: 货币供给量都决定于基础货币与一个乘数的 乘积
+6. book=976b3c244642d321 chapter=Page 33 page=33
+   quote: 中央银行能够直接控制的只是基础货币
+7. book=976b3c244642d321 chapter=Page 73 page=73
+   quote: 在分析基础货币来源时,我们结合中央银行资产负债表
+8. book=976b3c244642d321 chapter=Page 116 page=116
+   quote: 对其他存款性公司债权为人民银行向商业银行发放的再贷款、再贴现等融资形成的债权
+9. book=976b3c244642d321 chapter=Page 4 page=4
+   quote: 1998年人民银行取消对商业银行信贷规模的直接控制
+10. book=24617d60273da367 chapter=Page 28 page=28
+   quote: 虽然地方政府的行为变得"公司化"
+11. book=24617d60273da367 chapter=Page 6 page=6
+   quote: 在财政包干制下,地方政府普遍形成了明确的利益
+12. book=24617d60273da367 chapter=Page 235 page=235
+   quote: 围绕土地建立起来的土地金融是一个比土地财政更加庞大的资金体系
+13. book=24617d60273da367 chapter=Page 240 page=240
+   quote: 这种三位一体的模式实际上就是新世纪以来城市化的主要内容
+14. book=24617d60273da367 chapter=Page 240 page=240
+   quote: 这个过程不但为地方政府带来了滚滚财源
+15. book=24617d60273da367 chapter=Page 197 page=197
+   quote: "土地为中心"的财政,乡镇的办事财政实际上就是一个"土地财政"
+16. book=a7086a05970476d8 chapter=Page 225 page=225
+   quote: 政府赤字和最后贷款人干预虽然能够防止产生金融脆弱性的后果,但是它们同时却导致了通货膨胀
+17. book=a7086a05970476d8 chapter=Page 18 page=18
+   quote: 明斯基认为二战后经济表现出的稳定性不是因为市场正常的自我运行,而要归功于"大政府"和"大银行"
+18. book=a7086a05970476d8 chapter=Page 49 page=49
+   quote: 大政府不仅稳定了就业和收入,而且稳定了现金流(利润),继而稳定了资产价格
+19. book=a7086a05970476d8 chapter=Page 15 page=15
+   quote: 总利润等于投资加上政府赤字
+20. book=a7086a05970476d8 chapter=Page 6 page=6
+   quote: 中央银行的职能不能局限于控制货币供给,更重要的是抑制金融不稳定性
+21. book=03576cf3e546ced0 chapter=Page 4 page=4
+   quote: 将中国共产党作为理解中国政府与政治的钥匙
+22. book=03576cf3e546ced0 chapter=Page 4 page=4
+   quote: 将"党政体制"作为理解中国政府与政治的关键词
+23. book=03576cf3e546ced0 chapter=Page 19 page=19
+   quote: 学界一般将领导小组视为议事协调机构,拥有跨部门的协调权力,但实际上这些领导小组享有更大的权力
+24. book=03576cf3e546ced0 chapter=Page 19 page=19
+   quote: 党的十八届三中全会之后,中央成立了全面深化改革领导小组
+... 22 additional citations omitted from this prompt.
+
+## Deterministic citation audit (not a quality score)
+- citations checked: 46; validation errors: 0; warnings: 0
+
+## Nine dimensions to score (0-10)
+- `source_fidelity` (weight 18): 引用是否逐字来自原文，章节和页码是否可核验，是否存在编造或错配？
+- `retrieval_coverage` (weight 14): 是否召回了回答所需的关键章节、证据和框架，而不是只抓到表面相似的段落？
+- `framework_fit` (weight 12): 所用框架是否真的适用于当前问题，而不是只在套用书名或术语？
+- `cross_book_synthesis` (weight 12): 是否让多本书真正互相补充或对照，而不是把几本书并列摘抄？
+- `cross_lens_integration` (weight 12): 经济、政治、法律等镜头是否形成相互制约的整体判断，而不是三篇互不相干的短文？
+- `conflict_handling` (weight 10): 是否显式处理书与书、镜头与镜头之间的矛盾，而不是把冲突平均掉？
+- `calibration` (weight 8): 结论是否给出适用条件、不确定性和反证条件，而不是过度自信？
+- `actionability` (weight 8): 是否给出可观察指标、下一步检查或可执行建议？
+- `failure_mode_awareness` (weight 6): 是否说明框架何时会失效、有哪些反例和适用边界？
+
+## Output contract
+Return ONE JSON object only. Every dimension is required. Scores must be numbers from 0 to 10.
+Use this shape:
+{"scores": {
+  "source_fidelity": 0, "retrieval_coverage": 0, "framework_fit": 0,
+  "cross_book_synthesis": 0, "cross_lens_integration": 0, "conflict_handling": 0,
+  "calibration": 0, "actionability": 0, "failure_mode_awareness": 0
+}, "error_labels": ["..."], "note": "2-4 sentence overall judgment",
+ "strongest_part": "...", "weakest_part": "..."}
+Error labels should be short snake_case tags such as retrieval_miss, citation_error, lens_omission, conflict_suppression, overconfidence, framework_misapplication.

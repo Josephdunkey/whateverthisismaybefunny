@@ -1,0 +1,39 @@
+# Sanitized excerpt from D:\hermes agent\config.yaml
+# Copy the relevant sections into your own config.yaml.
+
+plugins:
+  clone_timeout_seconds: 300
+  enabled:
+    - knowledge-hub
+
+model:
+  default: "mimo-v2.6-flash"
+  provider: "xiaomi"
+  base_url: "https://token-plan-cn.xiaomimimo.com/v1"
+  # The API key is read from XIAOMI_API_KEY in .env. Never commit it.
+
+mcp_servers:
+  bookcompiler:
+    command: 'C:\Users\mybea\projects\bookcompiler\.venv\Scripts\python.exe'
+    args:
+      - '-m'
+      - 'bookcompiler.cli'
+      - '--db'
+      - 'C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db'
+      - 'mcp'
+    env:
+      PYTHONIOENCODING: 'utf-8'
+      PYTHONPATH: 'C:\Users\mybea\projects\bookcompiler\src'
+      HINDSIGHT_ENABLED: '1'
+      HINDSIGHT_BASE_URL: 'http://127.0.0.1:8888'
+      HINDSIGHT_BANK_ID: 'bookcompiler'
+    enabled: true
+    lazy: false
+  hindsight:
+    url: 'http://127.0.0.1:8888/mcp/hermes/'
+    enabled: true
+    lazy: false
+  hindsight_books:
+    url: 'http://127.0.0.1:8888/mcp/bookcompiler/'
+    enabled: true
+    lazy: false

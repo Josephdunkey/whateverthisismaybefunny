@@ -1,0 +1,87 @@
+{
+    "generated_at":  "2026-10-18T12:58:45.0448822+08:00",
+    "note":  "Known multi-agent / orchestration / multi-agent-RAG projects; queried directly by repo name on 2026-10-18.",
+    "repos":  [
+                  {
+                      "full_name":  "microsoft/autogen",
+                      "stars":  61454,
+                      "forks":  9294,
+                      "license":  "CC-BY-4.0",
+                      "desc":  "A programming framework for agentic AI",
+                      "pushed":  "2026-10-16T16:14:37Z",
+                      "url":  "https://github.com/microsoft/autogen"
+                  },
+                  {
+                      "full_name":  "langchain-ai/langgraph",
+                      "stars":  43426,
+                      "forks":  7401,
+                      "license":  "MIT",
+                      "desc":  "Build resilient agents.",
+                      "pushed":  "2026-10-18T01:27:12Z",
+                      "url":  "https://github.com/langchain-ai/langgraph"
+                  },
+                  {
+                      "full_name":  "crewAIInc/crewAI",
+                      "stars":  59812,
+                      "forks":  8760,
+                      "license":  "MIT",
+                      "desc":  "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+                      "pushed":  "2026-10-17T01:23:09Z",
+                      "url":  "https://github.com/crewAIInc/crewAI"
+                  },
+                  {
+                      "full_name":  "openai/swarm",
+                      "stars":  22062,
+                      "forks":  2346,
+                      "license":  "MIT",
+                      "desc":  "Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team.",
+                      "pushed":  "2026-04-15T17:10:28Z",
+                      "url":  "https://github.com/openai/swarm"
+                  },
+                  {
+                      "full_name":  "google/adk-python",
+                      "stars":  21897,
+                      "forks":  4275,
+                      "license":  "Apache-2.0",
+                      "desc":  "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+                      "pushed":  "2026-10-17T16:59:13Z",
+                      "url":  "https://github.com/google/adk-python"
+                  },
+                  {
+                      "full_name":  "FoundationAgents/MetaGPT",
+                      "stars":  70901,
+                      "forks":  9022,
+                      "license":  "MIT",
+                      "desc":  "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+                      "pushed":  "2026-01-21T10:12:33Z",
+                      "url":  "https://github.com/FoundationAgents/MetaGPT"
+                  },
+                  {
+                      "full_name":  "OpenBMB/ChatDev",
+                      "stars":  34544,
+                      "forks":  4325,
+                      "license":  "Apache-2.0",
+                      "desc":  "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
+                      "pushed":  "2026-10-16T15:55:30Z",
+                      "url":  "https://github.com/OpenBMB/ChatDev"
+                  },
+                  {
+                      "full_name":  "Significant-Gravitas/AutoGPT",
+                      "stars":  187630,
+                      "forks":  45911,
+                      "license":  "NOASSERTION",
+                      "desc":  "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+                      "pushed":  "2026-10-18T04:28:40Z",
+                      "url":  "https://github.com/Significant-Gravitas/AutoGPT"
+                  },
+                  {
+                      "full_name":  "ocean-luna/HMRAG",
+                      "stars":  115,
+                      "forks":  14,
+                      "license":  null,
+                      "desc":  "[ACM MM2025] Official code of \" HM-RAG: Hierarchical Multi-Agent Multimodal Retrieval Augmented Generation\"",
+                      "pushed":  "2025-07-23T09:28:19Z",
+                      "url":  "https://github.com/ocean-luna/HMRAG"
+                  }
+              ]
+}

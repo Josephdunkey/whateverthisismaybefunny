@@ -1,0 +1,15 @@
+[
+  {
+    "case_id": "reserve-requirements",
+    "query": "Central bank cuts reserve requirements",
+    "lenses": ["economics", "politics", "law"],
+    "mode": "auto"
+  },
+  {
+    "case_id": "bank-lending-rule",
+    "query": "A regulator tightens bank lending standards",
+    "lenses": ["economics", "politics", "law"],
+    "mode": "direction",
+    "direction": "legal authority and credit regulation"
+  }
+]

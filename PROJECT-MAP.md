@@ -39,6 +39,12 @@ BookCompiler（SQLite / GraphRAG）
 - 开始菜单快捷方式：`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Knowledge Hub.lnk`
 - GitHub 仓库：https://github.com/Josephdunkey/whateverthisismaybefunny
 
+## 仓库内快照
+
+- `projects/bookcompiler/` — BookCompiler 源码、文档、技能包、测试
+- `projects/hermes/` — Hermes 配置样例、启动脚本、两个读书技能
+- `projects/hindsight/` — Hindsight 部署与对接脚本、`.env.example`
+- `hermes-plugin/` — 统一 GUI 的 Hermes Dashboard 插件
 ## 前端源码
 
 - 分块源码：`D:\knowledge-hub\src\dashboard-chunks\01.js` … `10.js`

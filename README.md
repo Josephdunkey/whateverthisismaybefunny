@@ -10,6 +10,13 @@
 - GitHub: https://github.com/Josephdunkey/whateverthisismaybefunny
 - 部署插件: `powershell -File D:\knowledge-hub\tools\deploy-plugin.ps1`
 
+## 这几天的工作快照
+
+- `projects/bookcompiler/` — BookCompiler 源码、文档、技能包、测试
+- `projects/hermes/` — Hermes 配置样例、启动脚本、book-library / book-learning-loop 技能
+- `projects/hindsight/` — Hindsight 部署与对接脚本、`.env.example`
+- `hermes-plugin/` — 统一 GUI 的 Hermes Dashboard 插件
+- 安全边界：仓库不包含 `.env`、`auth.json`、`state.db`、数据库、模型文件和运行日志。
 ## 一键启动
 
 双击：

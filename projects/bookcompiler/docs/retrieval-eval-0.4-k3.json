@@ -1,0 +1,1161 @@
+{
+  "case_count": 12,
+  "learned_book_ids": [
+    "03576cf3e546ced0",
+    "24617d60273da367",
+    "976b3c244642d321",
+    "a7086a05970476d8"
+  ],
+  "modes": {
+    "lexical": {
+      "mode": "lexical",
+      "k": 3,
+      "case_count": 12,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "book_hit_at_k": 1.0,
+      "mean_latency_ms": 219.4,
+      "cases": [
+        {
+          "case_id": "rrr-credit",
+          "query": "降准是否必然导致银行信贷扩张",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 223.4,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8556b8cc7426e74d",
+              "page": 277,
+              "score": 0.846154
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "53a470505857f19a",
+              "page": 187,
+              "score": 0.57853
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "cd309ebfbd6d3296",
+              "page": 441,
+              "score": 0.565411
+            }
+          ]
+        },
+        {
+          "case_id": "cb-balance-sheet",
+          "query": "中央银行资产负债表如何影响基础货币",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 235.1,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "2520a0ee774636b2",
+              "page": 82,
+              "score": 0.846154
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "de66ace4cb5f89ea",
+              "page": 85,
+              "score": 0.793924
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "30edbac2ae893475",
+              "page": 86,
+              "score": 0.789161
+            }
+          ]
+        },
+        {
+          "case_id": "land-finance",
+          "query": "土地出让收入与地方财政的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 222.7,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "dd6d10fef32bf48e",
+              "page": 240,
+              "score": 0.846154
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "8210c8fce339db5a",
+              "page": 214,
+              "score": 0.701436
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "32c6f010f36691a1",
+              "page": 232,
+              "score": 0.650018
+            }
+          ]
+        },
+        {
+          "case_id": "tax-sharing",
+          "query": "分税制改革如何改变地方政府行为",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 225.2,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "aa163aed4920008c",
+              "page": 56,
+              "score": 0.846154
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "09c68148bbe663fa",
+              "page": 58,
+              "score": 0.834674
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "952f78f73935e3a9",
+              "page": 232,
+              "score": 0.756625
+            }
+          ]
+        },
+        {
+          "case_id": "shadow-banking",
+          "query": "影子银行与银行监管",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 2,
+          "latency_ms": 204.5,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "33794446fd860c63",
+              "page": 28,
+              "score": 0.846154
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "f6dbeae91c78b406",
+              "page": 439,
+              "score": 0.658355
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "1da3c3152d3da243",
+              "page": 249,
+              "score": 0.618109
+            }
+          ]
+        },
+        {
+          "case_id": "money-endogenous",
+          "query": "货币供给是内生还是外生",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 228.2,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "dde1445c546773d5",
+              "page": 261,
+              "score": 0.846154
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8582e6e9bc86adca",
+              "page": 181,
+              "score": 0.478149
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c426fc4bc86692db",
+              "page": 255,
+              "score": 0.285258
+            }
+          ]
+        },
+        {
+          "case_id": "fiscal-decentralization",
+          "query": "财政分权与经济增长",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 203.4,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "31f781c126205213",
+              "page": 64,
+              "score": 0.846154
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "f1da35645890cf73",
+              "page": 42,
+              "score": 0.835078
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "527f363fcf3c4537",
+              "page": 42,
+              "score": 0.769739
+            }
+          ]
+        },
+        {
+          "case_id": "lgfv-debt",
+          "query": "地方政府融资平台债务风险",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 218.3,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "18609e6de7fe98e2",
+              "page": 234,
+              "score": 0.846154
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "9169f9e63e330961",
+              "page": 235,
+              "score": 0.689681
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "f362062cfbc8bcc8",
+              "page": 240,
+              "score": 0.615348
+            }
+          ]
+        },
+        {
+          "case_id": "rule-of-law",
+          "query": "依法治国与党的领导的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 211.7,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "6acbe56b36286307",
+              "page": 39,
+              "score": 0.846154
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.808481
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "32406a80e58752cb",
+              "page": 31,
+              "score": 0.779591
+            }
+          ]
+        },
+        {
+          "case_id": "minsky",
+          "query": "明斯基的金融不稳定假说",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 215.0,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "2fdaaeeab25dd735",
+              "page": 4,
+              "score": 0.846154
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "b246eb8e29675350",
+              "page": 364,
+              "score": 0.77931
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "887e965d15a767f4",
+              "page": 11,
+              "score": 0.669591
+            }
+          ]
+        },
+        {
+          "case_id": "liquidity",
+          "query": "银行体系流动性短缺与存款准备金",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 220.5,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "bf1e469ed3e6c1f0",
+              "page": 295,
+              "score": 0.846154
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c2e90c6b3ec867dd",
+              "page": 294,
+              "score": 0.808705
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "cd309ebfbd6d3296",
+              "page": 441,
+              "score": 0.781351
+            }
+          ]
+        },
+        {
+          "case_id": "npc",
+          "query": "人民代表大会制度与当代中国政治",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 224.2,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "84a854057a3fe524",
+              "page": 80,
+              "score": 0.789217
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.766603
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "1492ebabb0bfa4a8",
+              "page": 287,
+              "score": 0.755571
+            }
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "mode": "hybrid",
+      "k": 3,
+      "case_count": 12,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "book_hit_at_k": 1.0,
+      "mean_latency_ms": 1494.1,
+      "cases": [
+        {
+          "case_id": "rrr-credit",
+          "query": "降准是否必然导致银行信贷扩张",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 11521.3,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8556b8cc7426e74d",
+              "page": 277,
+              "score": 0.982838
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "cd309ebfbd6d3296",
+              "page": 441,
+              "score": 0.754051
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "53a470505857f19a",
+              "page": 187,
+              "score": 0.726786
+            }
+          ]
+        },
+        {
+          "case_id": "cb-balance-sheet",
+          "query": "中央银行资产负债表如何影响基础货币",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 608.0,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "2520a0ee774636b2",
+              "page": 82,
+              "score": 1.0
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "30edbac2ae893475",
+              "page": 86,
+              "score": 0.963177
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "de66ace4cb5f89ea",
+              "page": 85,
+              "score": 0.96153
+            }
+          ]
+        },
+        {
+          "case_id": "land-finance",
+          "query": "土地出让收入与地方财政的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 545.5,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "dd6d10fef32bf48e",
+              "page": 240,
+              "score": 0.996442
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "8210c8fce339db5a",
+              "page": 214,
+              "score": 0.881324
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "32c6f010f36691a1",
+              "page": 232,
+              "score": 0.854062
+            }
+          ]
+        },
+        {
+          "case_id": "tax-sharing",
+          "query": "分税制改革如何改变地方政府行为",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 579.1,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "09c68148bbe663fa",
+              "page": 58,
+              "score": 0.983454
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "aa163aed4920008c",
+              "page": 56,
+              "score": 0.915076
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "ae20d4d6dc2952a7",
+              "page": 54,
+              "score": 0.906691
+            }
+          ]
+        },
+        {
+          "case_id": "shadow-banking",
+          "query": "影子银行与银行监管",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 3,
+          "latency_ms": 554.8,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "33794446fd860c63",
+              "page": 28,
+              "score": 0.856117
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "1da3c3152d3da243",
+              "page": 249,
+              "score": 0.751058
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "f6dbeae91c78b406",
+              "page": 439,
+              "score": 0.738034
+            }
+          ]
+        },
+        {
+          "case_id": "money-endogenous",
+          "query": "货币供给是内生还是外生",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 557.0,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "dde1445c546773d5",
+              "page": 261,
+              "score": 0.9
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8582e6e9bc86adca",
+              "page": 181,
+              "score": 0.542584
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c426fc4bc86692db",
+              "page": 255,
+              "score": 0.494907
+            }
+          ]
+        },
+        {
+          "case_id": "fiscal-decentralization",
+          "query": "财政分权与经济增长",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 569.9,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "f1da35645890cf73",
+              "page": 42,
+              "score": 1.0
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "31f781c126205213",
+              "page": 64,
+              "score": 0.970291
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "527f363fcf3c4537",
+              "page": 42,
+              "score": 0.859894
+            }
+          ]
+        },
+        {
+          "case_id": "lgfv-debt",
+          "query": "地方政府融资平台债务风险",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 569.0,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "18609e6de7fe98e2",
+              "page": 234,
+              "score": 0.935118
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "9169f9e63e330961",
+              "page": 235,
+              "score": 0.875699
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "f362062cfbc8bcc8",
+              "page": 240,
+              "score": 0.755762
+            }
+          ]
+        },
+        {
+          "case_id": "rule-of-law",
+          "query": "依法治国与党的领导的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 565.9,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "6acbe56b36286307",
+              "page": 39,
+              "score": 1.0
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.957181
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "34732bb1c8b30a92",
+              "page": 34,
+              "score": 0.920456
+            }
+          ]
+        },
+        {
+          "case_id": "minsky",
+          "query": "明斯基的金融不稳定假说",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 555.7,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "2fdaaeeab25dd735",
+              "page": 4,
+              "score": 0.86439
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "b246eb8e29675350",
+              "page": 364,
+              "score": 0.856551
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "887e965d15a767f4",
+              "page": 11,
+              "score": 0.76901
+            }
+          ]
+        },
+        {
+          "case_id": "liquidity",
+          "query": "银行体系流动性短缺与存款准备金",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 591.6,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "bf1e469ed3e6c1f0",
+              "page": 295,
+              "score": 0.97128
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "cd309ebfbd6d3296",
+              "page": 441,
+              "score": 0.955208
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c2e90c6b3ec867dd",
+              "page": 294,
+              "score": 0.950477
+            }
+          ]
+        },
+        {
+          "case_id": "npc",
+          "query": "人民代表大会制度与当代中国政治",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 711.6,
+          "reranked": false,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "84a854057a3fe524",
+              "page": 80,
+              "score": 0.943781
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2b124eceaa10a07c",
+              "page": 76,
+              "score": 0.925733
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.92478
+            }
+          ]
+        }
+      ]
+    },
+    "hybrid+rerank": {
+      "mode": "hybrid+rerank",
+      "k": 3,
+      "case_count": 12,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "book_hit_at_k": 0.9167,
+      "mean_latency_ms": 3504.2,
+      "cases": [
+        {
+          "case_id": "rrr-credit",
+          "query": "降准是否必然导致银行信贷扩张",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3532.6,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8556b8cc7426e74d",
+              "page": 277,
+              "score": 0.578859
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "d0cd87ec2b57d29d",
+              "page": 274,
+              "score": 0.456898
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "0d3f44358b205502",
+              "page": 296,
+              "score": 0.436818
+            }
+          ]
+        },
+        {
+          "case_id": "cb-balance-sheet",
+          "query": "中央银行资产负债表如何影响基础货币",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3539.0,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "2520a0ee774636b2",
+              "page": 82,
+              "score": 0.999826
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "30edbac2ae893475",
+              "page": 86,
+              "score": 0.986374
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "de66ace4cb5f89ea",
+              "page": 85,
+              "score": 0.985722
+            }
+          ]
+        },
+        {
+          "case_id": "land-finance",
+          "query": "土地出让收入与地方财政的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3497.8,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "dd6d10fef32bf48e",
+              "page": 240,
+              "score": 0.999756
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "8210c8fce339db5a",
+              "page": 214,
+              "score": 0.95836
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "a7182aad01559a52",
+              "page": 231,
+              "score": 0.94441
+            }
+          ]
+        },
+        {
+          "case_id": "tax-sharing",
+          "query": "分税制改革如何改变地方政府行为",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3543.0,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "09c68148bbe663fa",
+              "page": 58,
+              "score": 0.991096
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "dd03bd354e94ebe1",
+              "page": 85,
+              "score": 0.967826
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "631c1d6826a111d8",
+              "page": 211,
+              "score": 0.932516
+            }
+          ]
+        },
+        {
+          "case_id": "shadow-banking",
+          "query": "影子银行与银行监管",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": false,
+          "book_rank": null,
+          "latency_ms": 3388.4,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "33794446fd860c63",
+              "page": 28,
+              "score": 0.551013
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "d71ce2d0138c53ec",
+              "page": 317,
+              "score": 0.521404
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "1da3c3152d3da243",
+              "page": 249,
+              "score": 0.475517
+            }
+          ]
+        },
+        {
+          "case_id": "money-endogenous",
+          "query": "货币供给是内生还是外生",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3597.3,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "dde1445c546773d5",
+              "page": 261,
+              "score": 0.999955
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "8582e6e9bc86adca",
+              "page": 181,
+              "score": 0.859308
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c426fc4bc86692db",
+              "page": 255,
+              "score": 0.841078
+            }
+          ]
+        },
+        {
+          "case_id": "fiscal-decentralization",
+          "query": "财政分权与经济增长",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3365.3,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "f1da35645890cf73",
+              "page": 42,
+              "score": 0.999021
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "31f781c126205213",
+              "page": 64,
+              "score": 0.989141
+            },
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "7103b103fbb01c52",
+              "page": 43,
+              "score": 0.931714
+            }
+          ]
+        },
+        {
+          "case_id": "lgfv-debt",
+          "query": "地方政府融资平台债务风险",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3652.1,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "24617d60273da367",
+              "chunk_id": "18609e6de7fe98e2",
+              "page": 234,
+              "score": 0.830852
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "f4ceaa9bf161b360",
+              "page": 227,
+              "score": 0.512591
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "620024f0ede6c67d",
+              "page": 237,
+              "score": 0.463551
+            }
+          ]
+        },
+        {
+          "case_id": "rule-of-law",
+          "query": "依法治国与党的领导的关系",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3457.3,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "34732bb1c8b30a92",
+              "page": 34,
+              "score": 0.931073
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "6acbe56b36286307",
+              "page": 39,
+              "score": 0.916126
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.876063
+            }
+          ]
+        },
+        {
+          "case_id": "minsky",
+          "query": "明斯基的金融不稳定假说",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3381.1,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "2fdaaeeab25dd735",
+              "page": 4,
+              "score": 0.999583
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "b246eb8e29675350",
+              "page": 364,
+              "score": 0.996083
+            },
+            {
+              "book_id": "a7086a05970476d8",
+              "chunk_id": "887e965d15a767f4",
+              "page": 11,
+              "score": 0.958238
+            }
+          ]
+        },
+        {
+          "case_id": "liquidity",
+          "query": "银行体系流动性短缺与存款准备金",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3607.3,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "e2388b0e066c9d46",
+              "page": 307,
+              "score": 0.960009
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "bf1e469ed3e6c1f0",
+              "page": 295,
+              "score": 0.955396
+            },
+            {
+              "book_id": "976b3c244642d321",
+              "chunk_id": "c2e90c6b3ec867dd",
+              "page": 294,
+              "score": 0.948666
+            }
+          ]
+        },
+        {
+          "case_id": "npc",
+          "query": "人民代表大会制度与当代中国政治",
+          "hit": true,
+          "rank": 1,
+          "mrr": 1.0,
+          "book_hit": true,
+          "book_rank": 1,
+          "latency_ms": 3488.6,
+          "reranked": true,
+          "top": [
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "84a854057a3fe524",
+              "page": 80,
+              "score": 0.99597
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "2fe132d96361c09c",
+              "page": 96,
+              "score": 0.984031
+            },
+            {
+              "book_id": "03576cf3e546ced0",
+              "chunk_id": "62bd5e06a88f62b9",
+              "page": 84,
+              "score": 0.964301
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "note": "hit@k uses expected_terms supplied per case; it measures whether a passage containing a required term is retrieved, not whether an answer is correct."
+}

@@ -1,0 +1,271 @@
+<entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2603.02888v1</id>
+    <title>LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval</title>
+    <updated>2026-03-03T11:36:34Z</updated>
+    <link href="https://arxiv.org/abs/2603.02888v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2603.02888v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>The increasing diversity and scale of video data demand retrieval systems capable of multimodal understanding, adaptive reasoning, and domain-specific knowledge integration. This paper presents LLandMark, a modular multi-agent framework for landmark-aware multimodal video retrieval to handle real-world complex queries. The framework features specialized agents that collaborate across four stages: query parsing and planning, landmark reasoning, multimodal retrieval, and reranked answer synthesis. A key component, the Landmark Knowledge Agent, detects cultural or spatial landmarks and reformulates them into descriptive visual prompts, enhancing CLIP-based semantic matching for Vietnamese scenes. To expand capabilities, we introduce an LLM-assisted image-to-image pipeline, where a large language model (Gemini 2.5 Flash) autonomously detects landmarks, generates image search queries, retrieves representative images, and performs CLIP-based visual similarity matching, removing the need for manual image input. In addition, an OCR refinement module leveraging Gemini and LlamaIndex improves Vietnamese text recognition. Experimental results show that LLandMark achieves adaptive, culturally grounded, and explainable retrieval performance.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom" />
+    <published>2026-03-03T11:36:34Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted by AAAI 2026 Workshop on New Frontiers in Information Retrieval</arxiv:comment>
+    <arxiv:primary_category term="cs.CV" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">AAAI 2026 Workshop on New Frontiers in Information Retrieval</arxiv:journal_ref>
+    <author>
+      <name>Minh-Chi Phung</name>
+    </author>
+    <author>
+      <name>Thien-Bao Le</name>
+    </author>
+    <author>
+      <name>Cam-Tu Tran-Thi</name>
+    </author>
+    <author>
+      <name>Thu-Dieu Nguyen-Thi</name>
+    </author>
+    <author>
+      <name>Vu-Hung Dao</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2412.05838v1</id>
+    <title>A Collaborative Multi-Agent Approach to Retrieval-Augmented Generation Across Diverse Data</title>
+    <updated>2024-12-08T07:18:19Z</updated>
+    <link href="https://arxiv.org/abs/2412.05838v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2412.05838v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by incorporating external, domain-specific data into the generative process. While LLMs are highly capable, they often rely on static, pre-trained datasets, limiting their ability to integrate dynamic or private data. Traditional RAG systems typically use a single-agent architecture to handle query generation, data retrieval, and response synthesis. However, this approach becomes inefficient when dealing with diverse data sources, such as relational databases, document stores, and graph databases, often leading to performance bottlenecks and reduced accuracy. This paper proposes a multi-agent RAG system to address these limitations. Specialized agents, each optimized for a specific data source, handle query generation for relational, NoSQL, and document-based systems. These agents collaborate within a modular framework, with query execution delegated to an environment designed for compatibility across various database types. This distributed approach enhances query efficiency, reduces token overhead, and improves response accuracy by ensuring that each agent focuses on its specialized task. The proposed system is scalable and adaptable, making it ideal for generative AI workflows that require integration with diverse, dynamic, or private data sources. By leveraging specialized agents and a modular execution environment, the system provides an efficient and robust solution for handling complex, heterogeneous data environments in generative AI applications.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <published>2024-12-08T07:18:19Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">16 pages, 3 figures. This preprint introduces a multi-agent framework for Retrieval-Augmented Generation (RAG), enhancing Large Language Models (LLMs) for efficient integration of diverse data sources. Relevant for researchers in AI, ML, generative AI, and database systems</arxiv:comment>
+    <arxiv:primary_category term="cs.AI" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Aniruddha Salve</name>
+    </author>
+    <author>
+      <name>Saba Attar</name>
+    </author>
+    <author>
+      <name>Mahesh Deshmukh</name>
+    </author>
+    <author>
+      <name>Sayali Shivpuje</name>
+    </author>
+    <author>
+      <name>Arnab Mitra Utsab</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2603.08501v3</id>
+    <title>Fanar-Sadiq: A Multi-Agent Architecture for Grounded Islamic QA</title>
+    <updated>2026-06-09T20:50:55Z</updated>
+    <link href="https://arxiv.org/abs/2603.08501v3" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2603.08501v3" rel="related" type="application/pdf" title="pdf" />
+    <summary>Large language models (LLMs) can answer religious knowledge queries fluently, yet they often hallucinate and misattribute sources, which is especially consequential in Islamic settings where users expect grounding in canonical texts (Qur'an and Hadith) and jurisprudential (fiqh) nuance. Retrieval-augmented generation (RAG) improves grounding, however, a single retrieve-then-generate pipeline is insufficient for diverse Islamic queries, including verbatim scripture, citation-grounded guidance, and rule-constrained computations such as zakat and inheritance. To address these challenges, we present Fanar-Sadiq, a bilingual Arabic-English Islamic QA system built on a multi-agent, tool-augmented architecture. It is a core component of the Fanar AI platform. Fanar-Sadiq routes Islamic queries to specialized modules within an agentic tool architecture. It supports intent-aware routing, retrieval-grounded fiqh answers with normalized citations and verification traces, exact verse lookup with quotation validation, and deterministic Sunni zakat and inheritance calculators with madhhab-sensitive branching. We evaluate the end-to-end system on public Islamic QA benchmarks and show strong effectiveness and efficiency. It is publicly accessible through an API and Web application and has received over 1.9M accesses in less than a year (https://api.fanar.qa/docs).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom" />
+    <published>2026-03-09T15:35:12Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Islamic QA; Religious NLP; Retrieval-Augmented Generation; Multi-Agent LLMs; Tool-Augmented Reasoning; Faithful Generation; Fiqh Reasoning</arxiv:comment>
+    <arxiv:primary_category term="cs.CL" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Ummar Abbas</name>
+    </author>
+    <author>
+      <name>Mourad Ouzzani</name>
+    </author>
+    <author>
+      <name>Mohamed Y. Eltabakh</name>
+    </author>
+    <author>
+      <name>Omar Sinan</name>
+    </author>
+    <author>
+      <name>Gagan Bhatia</name>
+    </author>
+    <author>
+      <name>Hamdy Mubarak</name>
+    </author>
+    <author>
+      <name>Majd Hawasly</name>
+    </author>
+    <author>
+      <name>Mohammed Qusay Hashim</name>
+    </author>
+    <author>
+      <name>Kareem Darwish</name>
+    </author>
+    <author>
+      <name>Firoj Alam</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2508.08322v1</id>
+    <title>Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code</title>
+    <updated>2025-08-09T14:45:53Z</updated>
+    <link href="https://arxiv.org/abs/2508.08322v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2508.08322v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>Large Language Models (LLMs) have shown promise in automating code generation and software engineering tasks, yet they often struggle with complex, multi-file projects due to context limitations and knowledge gaps. We propose a novel context engineering workflow that combines multiple AI components: an Intent Translator (GPT-5) for clarifying user requirements, an Elicit-powered semantic literature retrieval for injecting domain knowledge, NotebookLM-based document synthesis for contextual understanding, and a Claude Code multi-agent system for code generation and validation. Our integrated approach leverages intent clarification, retrieval-augmented generation, and specialized sub-agents orchestrated via Claude's agent framework. We demonstrate that this method significantly improves the accuracy and reliability of code assistants in real-world repositories, yielding higher single-shot success rates and better adherence to project context than baseline single-agent approaches. Qualitative results on a large Next.js codebase show the multi-agent system effectively plans, edits, and tests complex features with minimal human intervention. We compare our system with recent frameworks like CodePlan, MASAI, and HyperAgent, highlighting how targeted context injection and agent role decomposition lead to state-of-the-art performance. Finally, we discuss the implications for deploying LLM-based coding assistants in production, along with lessons learned on context management and future research directions.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-08-09T14:45:53Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">15 pages, 5 figures, research paper on multi-agent LLM systems for code generation</arxiv:comment>
+    <arxiv:primary_category term="cs.SE" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Muhammad Haseeb</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2506.16988v2</id>
+    <title>RAGentA: Multi-Agent Retrieval-Augmented Generation for Attributed Question Answering</title>
+    <updated>2025-09-01T11:15:06Z</updated>
+    <link href="https://arxiv.org/abs/2506.16988v2" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2506.16988v2" rel="related" type="application/pdf" title="pdf" />
+    <summary>We present RAGentA, a multi-agent retrieval-augmented generation (RAG) framework for attributed question answering (QA) with large language models (LLMs). With the goal of trustworthy answer generation, RAGentA focuses on optimizing answer correctness, defined by coverage and relevance to the question and faithfulness, which measures the extent to which answers are grounded in retrieved documents. RAGentA uses a multi-agent architecture that iteratively filters retrieved documents, generates attributed answers with in-line citations, and verifies completeness through dynamic refinement. Central to the framework is a hybrid retrieval strategy that combines sparse and dense methods, improving Recall@20 by 12.5% compared to the best single retrieval model, resulting in more correct and well-supported answers. Evaluated on a synthetic QA dataset derived from the FineWeb index, RAGentA outperforms standard RAG baselines, achieving gains of 1.09% in correctness and 10.72% in faithfulness. These results demonstrate the effectiveness of our multi-agent RAG architecture and hybrid retrieval strategy in advancing trustworthy QA with LLMs.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-06-20T13:37:03Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted at SIGIR 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Ines Besrour</name>
+    </author>
+    <author>
+      <name>Jingbo He</name>
+    </author>
+    <author>
+      <name>Tobias Schreieder</name>
+    </author>
+    <author>
+      <name>Michael Färber</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2603.05980v1</id>
+    <title>An Interactive Multi-Agent System for Evaluation of New Product Concepts</title>
+    <updated>2026-03-06T07:22:52Z</updated>
+    <link href="https://arxiv.org/abs/2603.05980v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2603.05980v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>Product concept evaluation is a critical stage that determines strategic resource allocation and project success in enterprises. However, traditional expert-led approaches face limitations such as subjective bias and high time and cost requirements. To support this process, this study proposes an automated approach utilizing a large language model (LLM)-based multi-agent system (MAS). Through a systematic analysis of previous research on product development and team collaboration, this study established two primary evaluation dimensions, namely technical feasibility and market feasibility. The proposed system consists of a team of eight virtual agents representing specialized domains such as R&amp;D and marketing. These agents use retrieval-augmented generation (RAG) and real-time search tools to gather objective evidence and validate concepts through structured deliberations based on the established criteria. The agents were further fine-tuned using professional product review data to enhance their judgment accuracy. A case study involving professional display monitor concepts demonstrated that the system's evaluation rankings were consistent with those of senior industry experts. These results confirm the usability of the proposed multi-agent-based evaluation approach for supporting product development decisions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <published>2026-03-06T07:22:52Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">46 pages, 3 figures + This paper proposes an LLM-based multi-agent system (MAS) for automated evaluation of new product concepts, incorporating retrieval-augmented generation (RAG) and cross-functional virtual agents to assess technical and market feasibility</arxiv:comment>
+    <arxiv:primary_category term="cs.AI" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Bin Xuan</name>
+    </author>
+    <author>
+      <name>Ruo Ai</name>
+    </author>
+    <author>
+      <name>Hakyeon Lee</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2502.14796v1</id>
+    <title>A Multi-Agent Perspective on Modern Information Retrieval</title>
+    <updated>2025-02-20T18:17:26Z</updated>
+    <link href="https://arxiv.org/abs/2502.14796v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2502.14796v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>The rise of large language models (LLMs) has introduced a new era in information retrieval (IR), where queries and documents that were once assumed to be generated exclusively by humans can now also be created by automated agents. These agents can formulate queries, generate documents, and perform ranking. This shift challenges some long-standing IR paradigms and calls for a reassessment of both theoretical frameworks and practical methodologies. We advocate for a multi-agent perspective to better capture the complex interactions between query agents, document agents, and ranker agents. Through empirical exploration of various multi-agent retrieval settings, we reveal the significant impact of these interactions on system performance. Our findings underscore the need to revisit classical IR paradigms and develop new frameworks for more effective modeling and evaluation of modern retrieval systems.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-02-20T18:17:26Z</published>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Haya Nachimovsky</name>
+    </author>
+    <author>
+      <name>Moshe Tennenholtz</name>
+    </author>
+    <author>
+      <name>Oren Kurland</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2510.15682v1</id>
+    <title>SQuAI: Scientific Question-Answering with Multi-Agent Retrieval-Augmented Generation</title>
+    <updated>2025-10-17T14:20:55Z</updated>
+    <link href="https://arxiv.org/abs/2510.15682v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2510.15682v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>We present SQuAI (https://squai.scads.ai/), a scalable and trustworthy multi-agent retrieval-augmented generation (RAG) framework for scientific question answering (QA) with large language models (LLMs). SQuAI addresses key limitations of existing RAG systems in the scholarly domain, where complex, open-domain questions demand accurate answers, explicit claims with citations, and retrieval across millions of scientific documents. Built on over 2.3 million full-text papers from arXiv.org, SQuAI employs four collaborative agents to decompose complex questions into sub-questions, retrieve targeted evidence via hybrid sparse-dense retrieval, and adaptively filter documents to improve contextual relevance. To ensure faithfulness and traceability, SQuAI integrates in-line citations for each generated claim and provides supporting sentences from the source documents. Our system improves faithfulness, answer relevance, and contextual relevance by up to +0.088 (12%) over a strong RAG baseline. We further release a benchmark of 1,000 scientific question-answer-evidence triplets to support reproducibility. With transparent reasoning, verifiable citations, and domain-wide scalability, SQuAI demonstrates how multi-agent RAG enables more trustworthy scientific QA with LLMs.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-10-17T14:20:55Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted at CIKM 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Ines Besrour</name>
+    </author>
+    <author>
+      <name>Jingbo He</name>
+    </author>
+    <author>
+      <name>Tobias Schreieder</name>
+    </author>
+    <author>
+      <name>Michael Färber</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1145/3746252.3761471</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3746252.3761471" title="doi" />
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2512.15790v1</id>
+    <title>Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)</title>
+    <updated>2025-12-15T23:04:48Z</updated>
+    <link href="https://arxiv.org/abs/2512.15790v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2512.15790v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>The increasing operational reliance on complex Multi-Agent Systems (MAS) across safety-critical domains necessitates rigorous adversarial robustness assessment. Modern MAS are inherently heterogeneous, integrating conventional Multi-Agent Reinforcement Learning (MARL) with emerging Large Language Model (LLM) agent architectures utilizing Retrieval-Augmented Generation (RAG). A critical shared vulnerability is reliance on centralized memory components: the shared Experience Replay (ER) buffer in MARL and the external Knowledge Base (K) in RAG agents. This paper proposes XAMT (Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures), a novel framework that formalizes attack generation as a bilevel optimization problem. The Upper Level minimizes perturbation magnitude (delta) to enforce covertness while maximizing system behavior divergence toward an adversary-defined target (Lower Level). We provide rigorous mathematical instantiations for CTDE MARL algorithms and RAG-based LLM agents, demonstrating that bilevel optimization uniquely crafts stealthy, minimal-perturbation poisons evading detection heuristics. Comprehensive experimental protocols utilize SMAC and SafeRAG benchmarks to quantify effectiveness at sub-percent poison rates (less than or equal to 1 percent in MARL, less than or equal to 0.1 percent in RAG). XAMT defines a new unified class of training-time threats essential for developing intrinsically secure MAS, with implications for trust, formal verification, and defensive strategies prioritizing intrinsic safety over perimeter-based detection.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-12-15T23:04:48Z</published>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">10 pages, 5 figures, 4 tables. Conference-style paper (IEEEtran). Proposes unified bilevel optimization framework for covert memory poisoning attacks in heterogeneous multi-agent systems (MARL + RAG)</arxiv:comment>
+    <arxiv:primary_category term="cs.CR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Akhil Sharma</name>
+    </author>
+    <author>
+      <name>Shaikh Yaser Arafat</name>
+    </author>
+    <author>
+      <name>Jai Kumar Sharma</name>
+    </author>
+    <author>
+      <name>Ken Huang</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2602.19040v1</id>
+    <title>Adaptive Multi-Agent Reasoning for Text-to-Video Retrieval</title>
+    <updated>2025-12-02T09:52:51Z</updated>
+    <link href="https://arxiv.org/abs/2602.19040v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2602.19040v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>The rise of short-form video platforms and the emergence of multimodal large language models (MLLMs) have amplified the need for scalable, effective, zero-shot text-to-video retrieval systems. While recent advances in large-scale pretraining have improved zero-shot cross-modal alignment, existing methods still struggle with query-dependent temporal reasoning, limiting their effectiveness on complex queries involving temporal, logical, or causal relationships. To address these limitations, we propose an adaptive multi-agent retrieval framework that dynamically orchestrates specialized agents over multiple reasoning iterations based on the demands of each query. The framework includes: (1) a retrieval agent for scalable retrieval over large video corpora, (2) a reasoning agent for zero-shot contextual temporal reasoning, and (3) a query reformulation agent for refining ambiguous queries and recovering performance for those that degrade over iterations. These agents are dynamically coordinated by an orchestration agent, which leverages intermediate feedback and reasoning outcomes to guide execution. We also introduce a novel communication mechanism that incorporates retrieval-performance memory and historical reasoning traces to improve coordination and decision-making. Experiments on three TRECVid benchmarks spanning eight years show that our framework achieves a twofold improvement over CLIP4Clip and significantly outperforms state-of-the-art methods by a large margin.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom" />
+    <published>2025-12-02T09:52:51Z</published>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Jiaxin Wu</name>
+    </author>
+    <author>
+      <name>Xiao-Yong Wei</name>
+    </author>
+    <author>
+      <name>Qing Li</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2605.24764v1</id>
+    <title>Spectral Retrieval: Multi-Scale Sinc Convolution over Token Embeddings for Localized Retrieval in LLM Multi-Agent Systems</title>
+    <updated>2026-05-23T22:50:58Z</updated>
+    <link href="https://arxiv.org/abs/2605.24764v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2605.24764v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>[Abridged] - Spectral Retrieval is a plug-in re-ranking stage that interpolates between per-token MaxSim and mean-pool retrieval through a multi-scale sinc convolution over token embeddings. In standard dense retrieval each document is one mean-pooled vector; when relevance localises into a short subspan, the signal averages into noise. Spectral Retrieval reuses per-token embeddings from a late-interaction index and convolves them with a normalised sinc kernel at multiple scales. At L=1 the kernel acts as the identity, recovering per-token MaxSim; as L grows it approaches a uniform filter, recovering mean pooling. The maximum cosine over positions and scales yields a score provably no less informative than either endpoint. On a controlled synthetic benchmark with 1,000 documents and planted single-position spikes, mean-pool retrieval sits at chance (Recall@10 ~ 0.02) regardless of spike strength, while Spectral Retrieval reaches Recall@10 = 1.0 once the planted cosine exceeds the corpus-level token noise floor. On LIMIT-small with a frozen all-mpnet-base-v2 encoder, Spectral Retrieval lifts Recall@10 from 0.33 to 0.90, MRR from 0.22 to 0.79, and strict Success@10 from 0.12 to 0.84, without retraining. The method fits naturally into multi-agent LLM systems, where each agent benefits from a tighter, role-specific retrieval window over a shared corpus.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom" />
+    <published>2026-05-23T22:50:58Z</published>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Andrea Morandi</name>
+    </author>
+  </entry> <entry xmlns="http://www.w3.org/2005/Atom">
+    <id>http://arxiv.org/abs/2604.20848v1</id>
+    <title>MATRAG: Multi-Agent Transparent Retrieval-Augmented Generation for Explainable Recommendations</title>
+    <updated>2026-02-11T06:02:31Z</updated>
+    <link href="https://arxiv.org/abs/2604.20848v1" rel="alternate" type="text/html" />
+    <link href="https://arxiv.org/pdf/2604.20848v1" rel="related" type="application/pdf" title="pdf" />
+    <summary>Large Language Model (LLM)-based recommendation systems have demonstrated remarkable capabilities in understanding user preferences and generating personalized suggestions. However, existing approaches face critical challenges in transparency, knowledge grounding, and the ability to provide coherent explanations that foster user trust. We introduce MATRAG (Multi-Agent Transparent Retrieval-Augmented Generation), a novel framework that combined multi-agent collaboration with knowledge graph-augmented retrieval to deliver explainable recommendations. MATRAG employs four specialized agents: a User Modeling Agent that constructs dynamic preference profiles, an Item Analysis Agent that extracts semantic features from knowledge graphs, a Reasoning Agent that synthesizes collaborative and content-based signals, and an Explanation Agent that generates natural language justifications grounded in retrieved knowledge. Our framework incorporates a transparency scoring mechanism that quantifies explanation faithfulness and relevance. Extensive experiments on three benchmark datasets (Amazon Reviews, MovieLens-1M, and Yelp) demonstrate that MATRAG achieves state-of-the-art performance, improving recommendation accuracy by 12.7\% (Hit Rate) and 15.3\% (NDCG) over leading baselines, while human evaluation confirms that 87.4\% of generated explanations are rated as helpful and trustworthy by domain experts. Our work establishes new benchmarks for transparent, agentic recommendation systems and provides actionable insights for deploying LLM-based recommenders in production environments.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom" />
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom" />
+    <published>2026-02-11T06:02:31Z</published>
+    <arxiv:primary_category term="cs.IR" xmlns:arxiv="http://arxiv.org/schemas/atom" />
+    <author>
+      <name>Sushant Mehta</name>
+    </author>
+  </entry>

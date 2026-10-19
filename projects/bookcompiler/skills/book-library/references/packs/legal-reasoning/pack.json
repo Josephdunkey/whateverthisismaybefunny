@@ -1,0 +1,1992 @@
+{
+  "schema_version": 1,
+  "domain": "legal-reasoning",
+  "title": "法律推理分析",
+  "description": "把规则、原则、先例与政策后果放进同一套推理结构；输出分析而非法律意见。",
+  "version": "1.0.2",
+  "status": "active",
+  "lenses": [
+    "law",
+    "politics"
+  ],
+  "direction": "法律规则 原则 先例 比例原则 程序正义 合法性 党规国法 权利冲突",
+  "created_at": "2026-10-19T11:48:43.610975+00:00",
+  "updated_at": "2026-10-19T12:01:11.332484+00:00",
+  "books": [
+    {
+      "book_id": "54f46e77e448fb1e",
+      "title": "Introduction to Logic",
+      "author": "Irving M. Copi; Carl Cohen; Kenneth McMahon",
+      "status": "compiled",
+      "disciplines": [
+        "logic",
+        "law"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "Introduction to Logic teaches how to reconstruct, diagram, and formally test arguments so that their validity, hidden premises, fallacies, and inductive strength can be judged rather than merely felt."
+    },
+    {
+      "book_id": "03576cf3e546ced0",
+      "title": "当代中国政府与政治",
+      "author": "景跃进、陈明明、肖滨",
+      "status": "compiled",
+      "disciplines": [
+        "politics",
+        "law"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "理解中国政府与政治的关键是党政体制：党政双轨、条块矩阵、领导小组与试点机制共同决定政策如何被制定、协调和执行。"
+    },
+    {
+      "book_id": "5db6a95fd8babbc1",
+      "title": "通往奴役之路",
+      "author": "弗里德里希·哈耶克",
+      "status": "compiled",
+      "disciplines": [
+        "politics",
+        "economics",
+        "law"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "自由主义原则在现代社会中的应用需要不断适应变化，否则将面临被集中计划和极权主义取代的风险。"
+    }
+  ],
+  "book_cards": {
+    "54f46e77e448fb1e": {
+      "assumptions": [
+        "Argumentative passages can be reworded into numbered propositions without loss of the reasoning at issue.",
+        "Validity is a matter of logical form, so an argument's merit can be separated from the truth of its content.",
+        "Suppressed premises can be reconstructed and fairly attributed to the person who advanced the argument.",
+        "Ordinary English must be understood by a reader rather than translated by mechanical rules.",
+        "Probabilities for uncertain future outcomes can at least be estimated, enabling comparison of risky decisions."
+      ],
+      "limitations": [
+        "Validity alone does not establish that an argument's premises or conclusion are true.",
+        "Because their conclusions are never certain, the terms validity and invalidity do not apply to inductive arguments.",
+        "Symbolization depends on the interpreter's grasp of meaning; no formal or mechanical rules govern translation from English.",
+        "Diagramming risks inserting more information into the diagram than the premises warrant.",
+        "Stipulative definitions can be useful or useless but cannot resolve genuine disagreements.",
+        "The evidence sample is a selection of pages, so coverage of the full book is incomplete."
+      ],
+      "not_for": [
+        "Designing empirical studies or choosing statistical tests",
+        "Settling questions of metalogic or mathematical foundations beyond the textbook scope",
+        "Proving mathematical theorems at research level",
+        "Replacing domain expertise in medicine, engineering, or economics",
+        "Formal verification of software or hardware systems"
+      ]
+    },
+    "03576cf3e546ced0": {
+      "assumptions": [
+        "正式制度文本与实际运作之间存在差异，需要同时观察。",
+        "人事任免、考核与党组织关系共同塑造执行激励。",
+        "国家法律与党内法规共同构成政治与行政行为的约束。"
+      ],
+      "limitations": [
+        "正式文本与实际运作的差距难以仅凭公开材料完全识别。",
+        "领导小组和协调机构具有临时性与情境性，权力边界不稳定。",
+        "地方差异与政策变化会使静态结构分析失效。"
+      ],
+      "not_for": [
+        "替代具体法律意见",
+        "预测个别人事安排",
+        "把党政体制简化为单一命令链条"
+      ]
+    },
+    "5db6a95fd8babbc1": {
+      "assumptions": [
+        "自由主义原则需要不断适应变化",
+        "集中计划威胁个人自由",
+        "极权主义利用民主机制",
+        "社会主义运动导致社会不满",
+        "个人主义促进思想自由"
+      ],
+      "limitations": [
+        "自由主义原则的适应性有限",
+        "集中计划的效率问题",
+        "极权主义的道德问题",
+        "社会主义运动的复杂性",
+        "个人主义的社会局限性"
+      ],
+      "not_for": [
+        "支持集中计划",
+        "忽视极权主义的危害",
+        "低估社会主义运动的复杂性",
+        "忽视个人主义的局限性",
+        "忽视国际组织的局限性"
+      ]
+    }
+  },
+  "frameworks": [
+    {
+      "framework_id": "ac7795c1da0dba3e",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Deductive Validity Test",
+      "one_liner": "Determines by form alone whether an argument's premises could be true while its conclusion is false, using Venn diagrams or truth tables.",
+      "lenses": [
+        "general",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A conclusion is claimed to follow with necessity",
+        "A syllogism, conditional argument, or chain of rule-governed steps must be checked",
+        "A proposed counterexample would show invalidity"
+      ],
+      "failure_modes": [
+        "Concluding that a valid argument has a true conclusion when its premises are false",
+        "Applying the validity-accuracy vocabulary to an inductive argument, where it does not apply",
+        "Misplacing diagram marks and thereby inserting information the premises do not warrant",
+        "Treating a truth-functionally material conditional as a causal or evidential one"
+      ],
+      "keywords": [
+        "deductive validity test"
+      ]
+    },
+    {
+      "framework_id": "7997ed0407e139df",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Definition Stress Test",
+      "one_liner": "Evaluates a proposed definition against the rules of genus and difference and asks whether it can settle or only restate the dispute.",
+      "lenses": [
+        "law",
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "Two parties argue past each other because a key term is unclear",
+        "A stipulative definition is offered to end a debate",
+        "A legal or philosophical definition must be checked for scope"
+      ],
+      "failure_modes": [
+        "Rejecting a stipulative definition for being untrue when it is only a proposal",
+        "Accepting a definition that is unclear but rhetorically convenient",
+        "Assuming an agreed definition settles a substantive disagreement it only redescribes"
+      ],
+      "keywords": [
+        "definition stress test"
+      ]
+    },
+    {
+      "framework_id": "c7aaf614388ef944",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Enthymeme Reconstruction",
+      "one_liner": "Recovers the unstated premises of a persuasive argument and tests whether the conclusion actually follows once they are supplied.",
+      "lenses": [
+        "law",
+        "politics",
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "The argument's conclusion depends on a plausible but unstated second premise",
+        "A policy or legal claim is urged rhetorically rather than demonstrated",
+        "Two sides disagree without stating what exactly they disagree about"
+      ],
+      "failure_modes": [
+        "Supplying a premise stronger than the proponent would accept, thereby building in a straw man",
+        "Supplying a premise so weak the conclusion still does not follow, then declaring the argument sound",
+        "Treating the reconstructed premise as if the proponent had asserted it",
+        "Collapsing the difference between a plausible premise and a true one"
+      ],
+      "keywords": [
+        "enthymeme reconstruction"
+      ]
+    },
+    {
+      "framework_id": "74e62ff6b741d784",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Expectation-Value Decision Frame",
+      "one_liner": "Compares chancy alternatives by multiplying each outcome's return by its probability and summing the products.",
+      "lenses": [
+        "economics",
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "Investments, wagers, or policy options have enumerable outcomes",
+        "Probabilities can at least be estimated even though the future is unknown",
+        "Two or more risky options must be ranked on a common scale"
+      ],
+      "failure_modes": [
+        "Treating estimated probabilities as known facts",
+        "Ignoring outcomes that are hard to quantify",
+        "Comparing options whose returns are measured on incompatible scales",
+        "Letting a higher expectation value override a catastrophic low-probability outcome without discussion"
+      ],
+      "keywords": [
+        "expectation-value decision frame"
+      ]
+    },
+    {
+      "framework_id": "edb35d3195c89b1a",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Fallacy Audit with Contextual Exception",
+      "one_liner": "Screens an argument for relevance, ambiguity, and assumption defects while testing whether a special context licenses an otherwise fallacious move.",
+      "lenses": [
+        "law",
+        "politics",
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A claim is advanced through a loaded question, a clipped quotation, or an attack on the speaker",
+        "A courtroom, legislative, or journalistic setting supplies agreed-upon rules of evidence",
+        "A rhetorical question needs its buried premise exposed"
+      ],
+      "failure_modes": [
+        "Charging ad hominem whenever a speaker's credibility is questioned, even where testimony is at issue",
+        "Calling a complex question fallacious while ignoring that some of its parts are uncontroversial",
+        "Treating a clipped quotation as a mere stylistic quibble rather than a reversal of sense",
+        "Applying courtroom standards of evidence to informal polemic, or vice versa"
+      ],
+      "keywords": [
+        "fallacy audit with contextual exception"
+      ]
+    },
+    {
+      "framework_id": "5e5f8a52f4b6d9e4",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Inductive Causal Appraisal",
+      "one_liner": "Weighs a causal or predictive claim by the inductive method used to support it and states the probability level it actually earns.",
+      "lenses": [
+        "general",
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A policy or medical claim rests on observed regularities",
+        "Concomitant variation, method of difference, or analogy is doing the causal work",
+        "A conclusion is offered with more certainty than the evidence carries"
+      ],
+      "failure_modes": [
+        "Reporting a correlation as an established causal connection",
+        "Using the vocabulary of validity and invalidity for an inductive conclusion",
+        "Over-generalizing from a voluntary or unrepresentative sample",
+        "Ignoring that the same data admit a weaker as well as a stronger reading"
+      ],
+      "keywords": [
+        "inductive causal appraisal"
+      ]
+    },
+    {
+      "framework_id": "56e65a1fbdb017e0",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Refutation by Logical Analogy",
+      "one_liner": "Attacks a non-deductive argument by constructing a different argument of the same form whose conclusion is known or widely believed to be false.",
+      "lenses": [
+        "politics",
+        "economics",
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "The target argument is scientific, political, or economic rather than deductively claimed",
+        "Its form is recognizable but its conclusion seems intuitively right",
+        "A counterexample must be shown without disputing every premise"
+      ],
+      "failure_modes": [
+        "Choosing a refuting analogy whose form differs subtly from the target",
+        "Assuming the target is deductive, where a same-form counterexample shows only false premises rather than invalidity",
+        "Failing to distinguish a form defect from an unlucky choice of content",
+        "Using the technique to dismiss an argument whose conclusion is independently well supported"
+      ],
+      "keywords": [
+        "refutation by logical analogy"
+      ]
+    },
+    {
+      "framework_id": "60c687c57f3dbdc8",
+      "book_id": "54f46e77e448fb1e",
+      "book_title": "Introduction to Logic",
+      "name": "Two-Dimensional Argument Diagram",
+      "one_liner": "Numbers every proposition in a complex passage and draws its premise-to-conclusion relations graphically to expose structure and gaps.",
+      "lenses": [
+        "general",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "Several arguments are interwoven in one passage",
+        "Conclusions of subarguments serve as premises for further arguments",
+        "An extended chain of reasoning must be checked step by step"
+      ],
+      "failure_modes": [
+        "Adding information the passage does not assert",
+        "Assuming an arrow because two propositions are topically related",
+        "Over-reading a passage whose connectives are ambiguous",
+        "Producing a diagram too intricate to communicate to a reader"
+      ],
+      "keywords": [
+        "two-dimensional argument diagram"
+      ]
+    },
+    {
+      "framework_id": "c0014724951c11c8",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "name": "个人主义促进思想自由框架",
+      "one_liner": "给思想的成长或者这一方面的普遍进步定出\"计划\"或进行\"组织\",这种说法本身就是词语上的矛盾。",
+      "lenses": [
+        "general"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "个人主义促进思想自由"
+      ],
+      "failure_modes": [
+        "忽视个人主义的作用",
+        "忽视思想自由的重要性"
+      ],
+      "keywords": [
+        "个人主义促进思想自由框架"
+      ]
+    },
+    {
+      "framework_id": "8545cb9c0d763cd7",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "党政体制—条块矩阵",
+      "one_liner": "把中国共产党作为理解中国政府的关键，用党政双轨、条块结合与领导小组识别谁有权、谁能协调、谁承担执行责任。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析政策执行与跨部门协调",
+        "判断中央与地方关系",
+        "识别监管机构与媒体、安全等领域的权力结构"
+      ],
+      "failure_modes": [
+        "正式文本与实际运作不一致。",
+        "领导小组权力边界随情境变化。",
+        "部门利益与地方变通改变执行结果。"
+      ],
+      "keywords": [
+        "党政体制",
+        "条块矩阵"
+      ]
+    },
+    {
+      "framework_id": "042f454c7e7525ad",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "党规—国法双重约束",
+      "one_liner": "在中国政府与政治中，行为合法性同时受国家法律和党内法规约束；分析法律问题必须把党规、党委文件与党政关系纳入。",
+      "lenses": [
+        "law",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析监管权限与政策合法性",
+        "判断执法、司法与地方治理风险",
+        "做合规与政治风险双重评估"
+      ],
+      "failure_modes": [
+        "只看法条而忽略党规与党委文件。",
+        "把政策文件直接当作法律依据。",
+        "法律修订滞后或地方执行差异。"
+      ],
+      "keywords": [
+        "党规",
+        "国法双重约束"
+      ]
+    },
+    {
+      "framework_id": "760e3077ad7ba6b1",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "name": "国际组织影响框架",
+      "one_liner": "一个联邦组织所代表的比较密切的联合,也许其覆盖面起初甚至不能超越像西欧的某一局部地区那样狭小的一个区域,虽则它可以逐步得到扩展。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "国际组织影响国家主权"
+      ],
+      "failure_modes": [
+        "忽视国际组织的影响",
+        "忽视国家主权的重要性"
+      ],
+      "keywords": [
+        "国际组织影响框架"
+      ]
+    },
+    {
+      "framework_id": "44884cc399d87629",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "name": "极权主义利用民主框架",
+      "one_liner": "分析极权主义如何利用民主机制来巩固其地位。",
+      "lenses": [
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "极权主义利用民主机制"
+      ],
+      "failure_modes": [
+        "忽视极权主义的利用",
+        "忽视民主机制的脆弱性"
+      ],
+      "keywords": [
+        "极权主义利用民主框架"
+      ]
+    },
+    {
+      "framework_id": "291b05bdd03b4d28",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "name": "自由主义适应性框架",
+      "one_liner": "评估自由主义原则在不同社会环境中的适应性。",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "自由主义原则需要适应变化"
+      ],
+      "failure_modes": [
+        "忽视自由主义原则的适应性",
+        "忽视社会环境的变化"
+      ],
+      "keywords": [
+        "自由主义适应性框架"
+      ]
+    },
+    {
+      "framework_id": "8f93a01cffa90148",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "试点—推广的适应性政策过程",
+      "one_liner": "地方分散试验是党政体制的风险吸收机制：先试点、再评估、后推广，用地方差异换取中央政策的可纠错性。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析改革方案与监管创新",
+        "判断地方试点与政策扩散",
+        "评估中央—地方学习与纠错"
+      ],
+      "failure_modes": [
+        "试点被美化或选择性汇报。",
+        "推广忽视地方异质性。",
+        "试点成为寻租或政绩工程。"
+      ],
+      "keywords": [
+        "试点",
+        "推广的适应性政策过程"
+      ]
+    },
+    {
+      "framework_id": "4b7203dc98635fd7",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "name": "集中计划控制框架",
+      "one_liner": "当局所掌握的对所有消费的控制权的根源,就是它对于生产的控制。",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "集中计划威胁个人自由"
+      ],
+      "failure_modes": [
+        "忽视集中计划的威胁",
+        "忽视个人自由的重要性"
+      ],
+      "keywords": [
+        "集中计划控制框架"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "25a0cf5e5734ee3e",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "党政体制",
+      "predicate": "requires",
+      "object": "寻找一个关键词,它的功能是以最简练的方式凸显中国政治的基本特征,帮助人们认识和理解中国现实政治",
+      "polarity": 1,
+      "quote": "\"1 三、\"党政体制\"是理解中国政治的关键词 作为一本致力于从经验层面描述中国政治的教材,我们需要寻找一个关键词,它的功能是以最简练的方式凸显中国政治的基本特征,帮助人们认识和理解中国现实政治。",
+      "page": 16,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "29e8a93760074f34",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "代中国政治的钥匙 一旦我们将研究的立足点放在经验世界,那么关于中国政治的第一个事实,也是最为显著的事实就是,中国共产党是中华人民共和国的领导核心,是当代中国政治体制的中轴",
+      "polarity": 1,
+      "quote": "二、中国共产党是理解当代中国政治的钥匙 一旦我们将研究的立足点放在经验世界,那么关于中国政治的第一个事实,也是最为显著的事实就是,中国共产党是中华人民共和国的领导核心,是当代中国政治体制的中轴。",
+      "page": 15,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "45d5a3b2016f9c8b",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "央地关系",
+      "predicate": "condition",
+      "object": "代中国政府与政治的关键方面一中国共产党领导的政治体制及中国共产党本身人手,进而在横向维度上分别阐述作为最高权力机关和立法机关的人民代表大会、作为统一战线重要内容的多党合作和政治协商制度、作为最高国家行政机关的中央人民政府、作为\"刀把子\"的政法系统、作为\"笔杆子\"的宣传系统,以及作为\"枪杆子\"的军事系统,在纵向维度上分析中央与地方关系、地方政府、民族区域自治制度及基层治理四个方面的问题,最后,还探讨了当代中国国家与社会及国家与公民关系的变迁和发展",
+      "polarity": 1,
+      "quote": "本书从理解当代中国政府与政治的关键方面一中国共产党领导的政治体制及中国共产党本身人手,进而在横向维度上分别阐述作为最高权力机关和立法机关的人民代表大会、作为统一战线重要内容的多党合作和政治协商制度、作为最高国家行政机关的中央人民政府、作为\"刀把子\"的政法系统、作为\"笔杆子\"的宣传系统,以及作为\"枪杆子\"的军事系统,在纵向维度上分析中央与地方关系、地方政府、民族区域自治制度及基层治理四个方面的问题,最后,还探讨了当代中国国家与社会及国家与公民关系的变迁和发展。",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "4d23bf8f0ef10e7f",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系,只有这样才能更好地认识和理解中国政府与政治;",
+      "polarity": 1,
+      "quote": "全书具有两个方面的鲜明特色:第一,将中国共产党作为理解中国政府与政治的钥匙,将\"党政体制\"作为理解中国政府与政治的关键词,并且认为,应当处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系,只有这样才能更好地认识和理解中国政府与政治;",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "866f0f31e6becd0f",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "年的\"党的一元化领导\",经由\"党政分开\",到现在的\"党统领全局\" 饲汇表达虽有变化,但中国共产党的自我定位始终未变",
+      "polarity": 1,
+      "quote": "从邓小平时期的\"坚持四项基本原则、江泽民同志时期的\"三个代表\"、胡锦涛同志时期的\"加强党的执政能力建设\",到习近平总书记的\"全面从严治党\",从当年的\"党的一元化领导\",经由\"党政分开\",到现在的\"党统领全局\" 饲汇表达虽有变化,但中国共产党的自我定位始终未变。",
+      "page": 15,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "c9348882c24cf860",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "代中国从哪里来、向哪里去的\"钥匙\"",
+      "polarity": 1,
+      "quote": "研究好中国共产党,实际上就抓住了研究中国的核心,就我到了解答当代中国从哪里来、向哪里去的\"钥匙\"。",
+      "page": 16,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "fb0a432fb2014772",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "今中国的发展成就是在中国共产党领导下取得的,中国特色社会主义最本质的特征就是中国共产党的领导",
+      "polarity": 1,
+      "quote": "当今中国的发展成就是在中国共产党领导下取得的,中国特色社会主义最本质的特征就是中国共产党的领导。",
+      "page": 16,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "0aaf99d978534e55",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "共产主义俄国和民族社会主义德国内部制度许多令人憎恶特点的相似性已广泛为人承认的时候,大多数人还不愿意看到这个真理",
+      "polarity": 1,
+      "quote": "甚至当共产主义俄国和民族社会主义德国内部制度许多令人憎恶特点的相似性已广泛为人承认的时候,大多数人还不愿意看到这个真理。",
+      "page": 6,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "31def8fe1643a5fc",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "implies",
+      "object": ",他们虽然曾在那导致民族社会主义的思想运动中活跃一时,但在发展过程的某一阶段却中止了活动,并且因此和纳粹发生了冲突,被迫离开了本国",
+      "polarity": 1,
+      "quote": "1将民族社会主义仅仅看作是在社会主义进展下其特权和私利受到威胁的人们所推行的一种反动,这个肤浅而又使人误解的看法,很自然地受到所有这样一些人的支持,他们虽然曾在那导致民族社会主义的思想运动中活跃一时,但在发展过程的某一阶段却中止了活动,并且因此和纳粹发生了冲突,被迫离开了本国。",
+      "page": 9,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "44a4865fb654d31c",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "requires",
+      "object": "社会主义,某些集团需要社会主义是出于某一集团的利益,而另外一些集团则是出于另一个集团的利益,这些对我们的问题并没有影响",
+      "polarity": 1,
+      "quote": "某些集团可能比另外一些集团较少地需要社会主义,某些集团需要社会主义是出于某一集团的利益,而另外一些集团则是出于另一个集团的利益,这些对我们的问题并没有影响。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "4e4577ff384eeb41",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "我们要挑出一些其见解能影响各种发展的人,那么在这个国家中,他们在相当程度上都是社会主义者",
+      "polarity": 1,
+      "quote": "重要之点在于,如果我们要挑出一些其见解能影响各种发展的人,那么在这个国家中,他们在相当程度上都是社会主义者。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "56d031a7da5bd46c",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "causes",
+      "object": "还很少有人愿意承认,法西斯主义和纳粹主义的兴起并不是对于前一时期社会主义趋势的一种反动,而是那些趋势的必然结果。",
+      "polarity": 1,
+      "quote": "还很少有人愿意承认,法西斯主义和纳粹主义的兴起并不是对于前一时期社会主义趋势的一种反动,而是那些趋势的必然结果。",
+      "page": 6,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "5806c653db8fb061",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "认真地努力理解那些已创造了民族社会主义的力量:这将使我们能理解我们的敌人和我们之间重大悠关的争论",
+      "polarity": 1,
+      "quote": "还有一个更加迫切的理由,使我们在此时应当认真地努力理解那些已创造了民族社会主义的力量:这将使我们能理解我们的敌人和我们之间重大悠关的争论。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "6b72d334a1c96fa7",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "占据更为重要的位置--当然,前提是我得让自己接受他们的观点",
+      "polarity": 1,
+      "quote": "其实,我的那些信奉社会主义的同事常常告诉我,作为一位经济学家,在我所反对的那种社会里,我应当占据更为重要的位置--当然,前提是我得让自己接受他们的观点。",
+      "page": 3,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "7317a2e9aef81f50",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "受骗吗?希特勒体制中有多少特点,不曾从那些最出人意料的方面推荐给我们模仿,而不了解它们是那个体制中一个不可分割的部分并且与我们希望维持的自由社会不相容呢?在战前和战争爆发以来,由于我们不了解我们所面对的敌人而酿成错误的数量是惊人的",
+      "polarity": 1,
+      "quote": "左翼各政党不是和右翼各政党一样,由于相信民族社会主义党是为资本家服务并反对一切形式的社会主义而上当受骗吗?希特勒体制中有多少特点,不曾从那些最出人意料的方面推荐给我们模仿,而不了解它们是那个体制中一个不可分割的部分并且与我们希望维持的自由社会不相容呢?在战前和战争爆发以来,由于我们不了解我们所面对的敌人而酿成错误的数量是惊人的。",
+      "page": 8,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "866fcca2cea6f09a",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "社会主义",
+      "predicate": "condition",
+      "object": "强调\"我们现在都是社会主义者\"已不再时髦的话,这仅仅是因为事实再明显不过了",
+      "polarity": 1,
+      "quote": "如果强调\"我们现在都是社会主义者\"已不再时髦的话,这仅仅是因为事实再明显不过了。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "3e7835dc93b9af7d",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "然也要研究中国共产党",
+      "polarity": 1,
+      "quote": "研究中国特色社会主义,当然也要研究中国共产党。",
+      "page": 16,
+      "confidence": 0.7
+    },
+    {
+      "claim_id": "a6d1e3581a089f57",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "然要研究中国共产党;",
+      "polarity": 1,
+      "quote": "研究中国,当然要研究中国共产党;",
+      "page": 16,
+      "confidence": 0.7
+    },
+    {
+      "claim_id": "cf308dad6e8efbba",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "代中国政治的钥匙;",
+      "polarity": 1,
+      "quote": "它们可以表述为以下几项:第一,历史脉络对于理解中国政治具有非常重要的意义,第二中国共产党是理解当代中国政治的钥匙;",
+      "page": 13,
+      "confidence": 0.7
+    },
+    {
+      "claim_id": "038796324f23d5e7",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "对于",
+      "predicate": "condition",
+      "object": "代中国政治来说,历史的重要性更是显而易见",
+      "polarity": 1,
+      "quote": "对于当代中国政治来说,历史的重要性更是显而易见。",
+      "page": 14,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "26ee46b3a944aa1c",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "刘云山同志指出:\"中国的崛起是",
+      "predicate": "condition",
+      "object": "今世界的大事件,中国的快速发展和展现出的生机活力吸引了全世界的自光,也吸引了越来越多的学者投入对中国的研究中",
+      "polarity": 1,
+      "quote": "刘云山同志指出:\"中国的崛起是当今世界的大事件,中国的快速发展和展现出的生机活力吸引了全世界的自光,也吸引了越来越多的学者投入对中国的研究中。",
+      "page": 16,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "2b189006fcee2d51",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "一个好的术语应",
+      "predicate": "condition",
+      "object": "既能充分反映中国政治的经验事实,又具有最大程度的简洁性",
+      "polarity": 1,
+      "quote": "一个好的术语应当既能充分反映中国政治的经验事实,又具有最大程度的简洁性。",
+      "page": 16,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "30eeaa9716311014",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "主要研究领域为",
+      "predicate": "condition",
+      "object": "代政治理论、中国政府与政治、地方政治发展与地方治理",
+      "polarity": 1,
+      "quote": "主要研究领域为当代政治理论、中国政府与政治、地方政治发展与地方治理。",
+      "page": 4,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "51ce05147dd04275",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "这种特定的发展方式,",
+      "predicate": "implies",
+      "object": "传统的因素常常在新形式的包裹下得以存续,显示出颇为强劲的路径依赖效应",
+      "polarity": 1,
+      "quote": "这种特定的发展方式,意味着传统的因素常常在新形式的包裹下得以存续,显示出颇为强劲的路径依赖效应。",
+      "page": 14,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "8817990b428017d9",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "第四,认识中国政治应",
+      "predicate": "condition",
+      "object": "处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系;",
+      "polarity": 1,
+      "quote": "第四,认识中国政治应当处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系;",
+      "page": 13,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "d7e4506eafe99b88",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "多党制和轮流执政",
+      "predicate": "implies",
+      "object": "执政党是一个变量,而不是常量",
+      "polarity": 1,
+      "quote": "多党制和轮流执政意味着执政党是一个变量,而不是常量。",
+      "page": 17,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "fd896734e4bb3c1c",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "改革以接受及利用",
+      "predicate": "condition",
+      "object": "下的基 本秩序为前提,在此基础上进行改良",
+      "polarity": 1,
+      "quote": "改革以接受及利用当下的基 本秩序为前提,在此基础上进行改良。",
+      "page": 15,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "048456b1a7f97382",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "假如我不顾这些,而把这部书的写作",
+      "predicate": "condition",
+      "object": "成我不可逃避的责任,这主要是由于现时代有关未来经济政策问题讨论中的不寻常的和严重的情况所致,这些情况几乎尚未为公众充分地意识到",
+      "polarity": 1,
+      "quote": "假如我不顾这些,而把这部书的写作当成我不可逃避的责任,这主要是由于现时代有关未来经济政策问题讨论中的不寻常的和严重的情况所致,这些情况几乎尚未为公众充分地意识到。",
+      "page": 3,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "17f60d6e81e590e4",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "我们",
+      "predicate": "requires",
+      "object": "及时认识到这种危险,才能指望去避免它",
+      "polarity": 1,
+      "quote": "我们只有及时认识到这种危险,才能指望去避免它。",
+      "page": 5,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "1ab30c2057a19a78",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "但是,",
+      "predicate": "condition",
+      "object": "本书的解释是正确的话,它也就会说明,一个像大多数流亡",
+      "polarity": 1,
+      "quote": "但是,如果本书的解释是正确的话,它也就会说明,一个像大多数流亡",
+      "page": 8,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "5111982c6afda64b",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "它忽略了这个事实,",
+      "predicate": "condition",
+      "object": "80年前约翰·斯图尔特·穆勒写作他的第一部伟大论著《(论自由》时,他从两个德国人--歌德和威廉·冯· 洪堡--吸取的灵感比任何别人都多1;",
+      "polarity": 1,
+      "quote": "它忽略了这个事实,当80年前约翰·斯图尔特·穆勒写作他的第一部伟大论著《(论自由》时,他从两个德国人--歌德和威廉·冯· 洪堡--吸取的灵感比任何别人都多1;",
+      "page": 8,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "6738739267052aae",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "仅仅由于德国人特有的邪恶才",
+      "predicate": "causes",
+      "object": "纳粹体制,这个说法可能会成为一种口实,把不是产生那种邪恶的制度强加于我们头上,因而,它是加倍危险的",
+      "polarity": 1,
+      "quote": "仅仅由于德国人特有的邪恶才导致了纳粹体制,这个说法可能会成为一种口实,把不是产生那种邪恶的制度强加于我们头上,因而,它是加倍危险的。",
+      "page": 8,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "76cc0c2ffc5b80c0",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "它们",
+      "predicate": "implies",
+      "object": ",事态的发展如果不是必然地、至少也是可能地会经历类似的过程",
+      "polarity": 1,
+      "quote": "它们意味着,事态的发展如果不是必然地、至少也是可能地会经历类似的过程。",
+      "page": 5,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "79b4cf0c4c5af7f7",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "我希望在这部书中还适",
+      "predicate": "condition",
+      "object": "履行了另一个同样重要的职责:毫不含糊地阐明全部论证所依据的那些终极价值是什么",
+      "polarity": 1,
+      "quote": "我希望在这部书中还适当履行了另一个同样重要的职责:毫不含糊地阐明全部论证所依据的那些终极价值是什么。",
+      "page": 3,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "9e33e31774cfa088",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "以下文字是一种经验的产物,这种经验相",
+      "predicate": "condition",
+      "object": "近似于重新经历了一个相同时期--至少也是对一种颇为相似的思想演变过程的再观察",
+      "polarity": 1,
+      "quote": "以下文字是一种经验的产物,这种经验相当近似于重新经历了一个相同时期--至少也是对一种颇为相似的思想演变过程的再观察。",
+      "page": 5,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "b10c215555649117",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "--阿克顿勋爵",
+      "predicate": "condition",
+      "object": "代种种事件不同于历史之处,在于我们不知道它们会产生什么后果",
+      "polarity": 1,
+      "quote": "--阿克顿勋爵 当代种种事件不同于历史之处,在于我们不知道它们会产生什么后果。",
+      "page": 5,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "b5c2eaa068debac4",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "序言",
+      "predicate": "condition",
+      "object": "一位社会事务的专业研究者写了一部政治性的书时,他的首要职责就是清楚地在此加以说明,这是一部政治性的书",
+      "polarity": 1,
+      "quote": "序言 当一位社会事务的专业研究者写了一部政治性的书时,他的首要职责就是清楚地在此加以说明,这是一部政治性的书。",
+      "page": 3,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "dafcba90c0928718",
+      "book_id": "5db6a95fd8babbc1",
+      "book_title": "通往奴役之路",
+      "subject": "对不同国家中各种发展的一切类比",
+      "predicate": "condition",
+      "object": "然是不足为凭的,但我的论证主要不是以这些类比为基础的",
+      "polarity": 1,
+      "quote": "对不同国家中各种发展的一切类比当然是不足为凭的,但我的论证主要不是以这些类比为基础的。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "70716bb23a4a9487",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "导论 这是一本关于",
+      "predicate": "condition",
+      "object": "代中国政治的教科书",
+      "polarity": 1,
+      "quote": "导论 这是一本关于当代中国政治的教科书。",
+      "page": 13,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "8d4366e99c4a53ff",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "研究者强调的是光明还是黑暗,",
+      "predicate": "depends",
+      "object": "看问题的角度和立场",
+      "polarity": 1,
+      "quote": "研究者强调的是光明还是黑暗,取决于看问题的角度和立场。",
+      "page": 14,
+      "confidence": 0.58
+    }
+  ],
+  "entities": [
+    {
+      "entity_id": "58bc810ba2a6ab2b",
+      "canonical_name": "失业",
+      "entity_type": "indicator",
+      "aliases": [
+        "失业",
+        "unemployment"
+      ],
+      "summary": "出现在 15 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 3,
+      "mentions": 19
+    },
+    {
+      "entity_id": "50b5ab92306a5cd3",
+      "canonical_name": "社会主义",
+      "entity_type": "concept",
+      "aliases": [
+        "社会主义"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 146
+    },
+    {
+      "entity_id": "ee593f66a5ff8745",
+      "canonical_name": "选择",
+      "entity_type": "concept",
+      "aliases": [
+        "选择"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 108
+    },
+    {
+      "entity_id": "486e79ff9dfa8a6a",
+      "canonical_name": "自由主义",
+      "entity_type": "concept",
+      "aliases": [
+        "自由主义"
+      ],
+      "summary": "出现在 8 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 69
+    },
+    {
+      "entity_id": "7c9b3856e18dd3ac",
+      "canonical_name": "极权主义",
+      "entity_type": "concept",
+      "aliases": [
+        "极权主义"
+      ],
+      "summary": "出现在 4 本书中：当代中国政府与政治、中国近代史、通往奴役之路、货币、银行信贷与经济周期",
+      "book_count": 2,
+      "mentions": 66
+    },
+    {
+      "entity_id": "edf5ec4012a4dc8b",
+      "canonical_name": "文明",
+      "entity_type": "concept",
+      "aliases": [
+        "文明"
+      ],
+      "summary": "出现在 6 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 55
+    },
+    {
+      "entity_id": "a3b2ea200dc2d387",
+      "canonical_name": "法治",
+      "entity_type": "concept",
+      "aliases": [
+        "法治",
+        "rule of law"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 50
+    },
+    {
+      "entity_id": "2c98ad9b921906b0",
+      "canonical_name": "建议",
+      "entity_type": "concept",
+      "aliases": [
+        "建议"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 48
+    },
+    {
+      "entity_id": "bc258ecac2b25b13",
+      "canonical_name": "个人主义",
+      "entity_type": "concept",
+      "aliases": [
+        "个人主义"
+      ],
+      "summary": "出现在 5 本书中：当代中国政府与政治、中国近代史、通往奴役之路、文明的冲突等",
+      "book_count": 2,
+      "mentions": 30
+    },
+    {
+      "entity_id": "204a1fd2e0832728",
+      "canonical_name": "个人自由",
+      "entity_type": "concept",
+      "aliases": [
+        "个人自由"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、中国近代史、通往奴役之路、文明的冲突等",
+      "book_count": 2,
+      "mentions": 29
+    },
+    {
+      "entity_id": "77dab92eccabb12d",
+      "canonical_name": "全球",
+      "entity_type": "concept",
+      "aliases": [
+        "全球"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 20
+    },
+    {
+      "entity_id": "451538248926fbd0",
+      "canonical_name": "产权",
+      "entity_type": "concept",
+      "aliases": [
+        "产权",
+        "property rights"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 18
+    },
+    {
+      "entity_id": "042dbd2a8849c52a",
+      "canonical_name": "合法性",
+      "entity_type": "concept",
+      "aliases": [
+        "合法性",
+        "legitimacy"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、Introduction to Logic等",
+      "book_count": 2,
+      "mentions": 18
+    },
+    {
+      "entity_id": "1f550285861a27ab",
+      "canonical_name": "社会力量",
+      "entity_type": "indicator",
+      "aliases": [
+        "社会力量"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、通往奴役之路",
+      "book_count": 2,
+      "mentions": 11
+    },
+    {
+      "entity_id": "d8be7c4ba751c5a3",
+      "canonical_name": "依法治国",
+      "entity_type": "concept",
+      "aliases": [
+        "依法治国"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、中国近代史、通往奴役之路",
+      "book_count": 2,
+      "mentions": 10
+    },
+    {
+      "entity_id": "c4ed43bd872e9c8f",
+      "canonical_name": "意愿",
+      "entity_type": "concept",
+      "aliases": [
+        "意愿"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 9
+    },
+    {
+      "entity_id": "9532f33dc6354282",
+      "canonical_name": "国有企业",
+      "entity_type": "institution",
+      "aliases": [
+        "国有企业",
+        "国企",
+        "state-owned enterprise",
+        "state owned enterprise",
+        "soe"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 8
+    },
+    {
+      "entity_id": "9a06e4f01dc1baef",
+      "canonical_name": "通货膨胀",
+      "entity_type": "indicator",
+      "aliases": [
+        "通货膨胀",
+        "通胀",
+        "inflation"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、中国近代史、伟大的博弈：华尔街金融帝国的崛起、Introduction to Logic等",
+      "book_count": 2,
+      "mentions": 7
+    },
+    {
+      "entity_id": "d35a4e65673325ef",
+      "canonical_name": "房地产",
+      "entity_type": "sector",
+      "aliases": [
+        "房地产",
+        "房地产市场",
+        "楼市",
+        "real estate"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 2,
+      "mentions": 4
+    },
+    {
+      "entity_id": "bef31b32f47250b8",
+      "canonical_name": "民营企业",
+      "entity_type": "institution",
+      "aliases": [
+        "民营企业",
+        "民企",
+        "private enterprise"
+      ],
+      "summary": "出现在 5 本书中：当代中国政府与政治、Introduction to Logic、中国的经济制度、货币数量、利率调控与政策转型等",
+      "book_count": 2,
+      "mentions": 3
+    },
+    {
+      "entity_id": "4c13087be985b581",
+      "canonical_name": "国际组织",
+      "entity_type": "concept",
+      "aliases": [
+        "国际组织"
+      ],
+      "summary": "出现在 7 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 2
+    },
+    {
+      "entity_id": "9c3c6035525f8c67",
+      "canonical_name": "中国共产党",
+      "entity_type": "institution",
+      "aliases": [
+        "中国共产党",
+        "中共",
+        "communist party of china",
+        "cpc"
+      ],
+      "summary": "出现在 8 本书中：当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 1,
+      "mentions": 161
+    },
+    {
+      "entity_id": "b0a25d9148c6c61f",
+      "canonical_name": "党政体制",
+      "entity_type": "concept",
+      "aliases": [
+        "党政体制"
+      ],
+      "summary": "出现在 1 本书中：当代中国政府与政治",
+      "book_count": 1,
+      "mentions": 80
+    },
+    {
+      "entity_id": "e8095a99663d3450",
+      "canonical_name": "全国人民代表大会",
+      "entity_type": "institution",
+      "aliases": [
+        "全国人民代表大会",
+        "全国人大",
+        "人民代表大会",
+        "national people's congress",
+        "npc"
+      ],
+      "summary": "出现在 8 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 1,
+      "mentions": 80
+    },
+    {
+      "entity_id": "3d2ce0fabb16621b",
+      "canonical_name": "国务院",
+      "entity_type": "institution",
+      "aliases": [
+        "国务院",
+        "state council"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 1,
+      "mentions": 70
+    },
+    {
+      "entity_id": "d10dfb3e78a4e88a",
+      "canonical_name": "领导小组",
+      "entity_type": "concept",
+      "aliases": [
+        "领导小组"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 1,
+      "mentions": 24
+    },
+    {
+      "entity_id": "fff6f2d1b38ccc2e",
+      "canonical_name": "央地关系",
+      "entity_type": "concept",
+      "aliases": [
+        "央地关系",
+        "中央与地方关系",
+        "central-local relations",
+        "central local relations"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 1,
+      "mentions": 22
+    },
+    {
+      "entity_id": "cd1eef9e6e7d362a",
+      "canonical_name": "资本充足率",
+      "entity_type": "indicator",
+      "aliases": [
+        "资本充足率",
+        "capital adequacy ratio",
+        "car"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、Introduction to Logic、文明的冲突等",
+      "book_count": 1,
+      "mentions": 21
+    },
+    {
+      "entity_id": "ddf7f7a7b23057e6",
+      "canonical_name": "权限)",
+      "entity_type": "concept",
+      "aliases": [
+        "权限)"
+      ],
+      "summary": "出现在 4 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起、货币、银行信贷与经济周期",
+      "book_count": 1,
+      "mentions": 18
+    },
+    {
+      "entity_id": "e9cdac8578b351fb",
+      "canonical_name": "分税制",
+      "entity_type": "policy",
+      "aliases": [
+        "分税制",
+        "tax sharing system"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、宏观经济学二十五讲：中国视角",
+      "book_count": 1,
+      "mentions": 11
+    },
+    {
+      "entity_id": "e0bb0d1251ea5327",
+      "canonical_name": "集中计划",
+      "entity_type": "concept",
+      "aliases": [
+        "集中计划"
+      ],
+      "summary": "出现在 2 本书中：通往奴役之路、货币数量、利率调控与政策转型",
+      "book_count": 1,
+      "mentions": 10
+    },
+    {
+      "entity_id": "8b993192e08d1949",
+      "canonical_name": "行政法规",
+      "entity_type": "policy",
+      "aliases": [
+        "行政法规",
+        "administrative regulation",
+        "administrative regulations"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、货币、银行信贷与经济周期、稳定不稳定的经济：一种金融不稳定视角",
+      "book_count": 1,
+      "mentions": 8
+    },
+    {
+      "entity_id": "aac8181a3f5c573c",
+      "canonical_name": "流动性",
+      "entity_type": "concept",
+      "aliases": [
+        "流动性",
+        "liquidity"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 1,
+      "mentions": 7
+    },
+    {
+      "entity_id": "16103bcf921be822",
+      "canonical_name": "土地财政",
+      "entity_type": "mechanism",
+      "aliases": [
+        "土地财政",
+        "land finance"
+      ],
+      "summary": "出现在 4 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、以利为利：财政关系与地方政府行为、宏观经济学二十五讲：中国视角",
+      "book_count": 1,
+      "mentions": 6
+    },
+    {
+      "entity_id": "d0fb64f967789378",
+      "canonical_name": "经济增长",
+      "entity_type": "indicator",
+      "aliases": [
+        "经济增长",
+        "economic growth"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 1,
+      "mentions": 6
+    },
+    {
+      "entity_id": "1309185bfaf3722b",
+      "canonical_name": "条块结合",
+      "entity_type": "concept",
+      "aliases": [
+        "条块结合"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 1,
+      "mentions": 5
+    },
+    {
+      "entity_id": "44afe1afa21b4daf",
+      "canonical_name": "财权与事权",
+      "entity_type": "concept",
+      "aliases": [
+        "财权与事权"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、宏观经济学二十五讲：中国视角",
+      "book_count": 1,
+      "mentions": 5
+    },
+    {
+      "entity_id": "97aea563d54cac25",
+      "canonical_name": "转移支付",
+      "entity_type": "mechanism",
+      "aliases": [
+        "转移支付",
+        "transfer payment"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、货币数量、利率调控与政策转型、货币、银行信贷与经济周期等",
+      "book_count": 1,
+      "mentions": 5
+    },
+    {
+      "entity_id": "7185e321444453fd",
+      "canonical_name": "司法解释",
+      "entity_type": "policy",
+      "aliases": [
+        "司法解释",
+        "judicial interpretation"
+      ],
+      "summary": "出现在 1 本书中：当代中国政府与政治",
+      "book_count": 1,
+      "mentions": 4
+    },
+    {
+      "entity_id": "ee4315e49a44edd2",
+      "canonical_name": "技术进步",
+      "entity_type": "concept",
+      "aliases": [
+        "技术进步"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 1,
+      "mentions": 4
+    }
+  ],
+  "debates": [],
+  "source_map": [
+    {
+      "topic": "Introduction to Logic",
+      "lenses": [
+        "logic",
+        "law"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "ac7795c1da0dba3e",
+        "7997ed0407e139df",
+        "c7aaf614388ef944",
+        "74e62ff6b741d784",
+        "edb35d3195c89b1a",
+        "5e5f8a52f4b6d9e4",
+        "56e65a1fbdb017e0",
+        "60c687c57f3dbdc8"
+      ],
+      "keywords": [
+        "introduction",
+        "logic",
+        "premise",
+        "conclusion",
+        "relative",
+        "terms",
+        "paraphrasing",
+        "diagramming",
+        "arguments",
+        "unstated",
+        "premises",
+        "enthymemes"
+      ]
+    },
+    {
+      "topic": "通往奴役之路",
+      "lenses": [
+        "politics",
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "c0014724951c11c8",
+        "760e3077ad7ba6b1",
+        "44884cc399d87629",
+        "291b05bdd03b4d28",
+        "4b7203dc98635fd7"
+      ],
+      "keywords": [
+        "通往奴役之路",
+        "自由主义",
+        "集中计划",
+        "极权主义",
+        "社会主义",
+        "个人主义",
+        "国际组织",
+        "思想自由",
+        "民主机制",
+        "技术进步",
+        "社会力量",
+        "研究自由主义理论"
+      ]
+    },
+    {
+      "topic": "当代中国政府与政治",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8545cb9c0d763cd7",
+        "042f454c7e7525ad",
+        "8f93a01cffa90148"
+      ],
+      "keywords": [
+        "当代中国政府与政治",
+        "党政体制",
+        "党政双轨",
+        "条块结合",
+        "领导小组",
+        "政策试点",
+        "党内法规",
+        "依法治国",
+        "矩阵结构",
+        "分析政策执行与跨部门协调",
+        "判断地方试点与推广条件",
+        "识别法律与党规的双重约束"
+      ]
+    },
+    {
+      "topic": "Deductive Validity Test",
+      "lenses": [
+        "general",
+        "law"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "ac7795c1da0dba3e"
+      ],
+      "keywords": [
+        "deductive validity test"
+      ]
+    },
+    {
+      "topic": "Definition Stress Test",
+      "lenses": [
+        "law",
+        "general"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "7997ed0407e139df"
+      ],
+      "keywords": [
+        "definition stress test"
+      ]
+    },
+    {
+      "topic": "Enthymeme Reconstruction",
+      "lenses": [
+        "law",
+        "politics",
+        "general"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "c7aaf614388ef944"
+      ],
+      "keywords": [
+        "enthymeme reconstruction"
+      ]
+    },
+    {
+      "topic": "Expectation-Value Decision Frame",
+      "lenses": [
+        "economics",
+        "general"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "74e62ff6b741d784"
+      ],
+      "keywords": [
+        "expectation-value decision frame"
+      ]
+    },
+    {
+      "topic": "Fallacy Audit with Contextual Exception",
+      "lenses": [
+        "law",
+        "politics",
+        "general"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "edb35d3195c89b1a"
+      ],
+      "keywords": [
+        "fallacy audit with contextual exception"
+      ]
+    },
+    {
+      "topic": "Inductive Causal Appraisal",
+      "lenses": [
+        "general",
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "5e5f8a52f4b6d9e4"
+      ],
+      "keywords": [
+        "inductive causal appraisal"
+      ]
+    },
+    {
+      "topic": "Refutation by Logical Analogy",
+      "lenses": [
+        "politics",
+        "economics",
+        "general"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "56e65a1fbdb017e0"
+      ],
+      "keywords": [
+        "refutation by logical analogy"
+      ]
+    },
+    {
+      "topic": "Two-Dimensional Argument Diagram",
+      "lenses": [
+        "general",
+        "law"
+      ],
+      "book_ids": [
+        "54f46e77e448fb1e"
+      ],
+      "framework_ids": [
+        "60c687c57f3dbdc8"
+      ],
+      "keywords": [
+        "two-dimensional argument diagram"
+      ]
+    },
+    {
+      "topic": "个人主义促进思想自由框架",
+      "lenses": [
+        "general"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "c0014724951c11c8"
+      ],
+      "keywords": [
+        "个人主义促进思想自由框架"
+      ]
+    },
+    {
+      "topic": "党政体制—条块矩阵",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8545cb9c0d763cd7"
+      ],
+      "keywords": [
+        "党政体制",
+        "条块矩阵"
+      ]
+    },
+    {
+      "topic": "党规—国法双重约束",
+      "lenses": [
+        "law",
+        "politics"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "042f454c7e7525ad"
+      ],
+      "keywords": [
+        "党规",
+        "国法双重约束"
+      ]
+    },
+    {
+      "topic": "国际组织影响框架",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "760e3077ad7ba6b1"
+      ],
+      "keywords": [
+        "国际组织影响框架"
+      ]
+    },
+    {
+      "topic": "极权主义利用民主框架",
+      "lenses": [
+        "politics"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "44884cc399d87629"
+      ],
+      "keywords": [
+        "极权主义利用民主框架"
+      ]
+    },
+    {
+      "topic": "自由主义适应性框架",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "291b05bdd03b4d28"
+      ],
+      "keywords": [
+        "自由主义适应性框架"
+      ]
+    },
+    {
+      "topic": "试点—推广的适应性政策过程",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8f93a01cffa90148"
+      ],
+      "keywords": [
+        "试点",
+        "推广的适应性政策过程"
+      ]
+    },
+    {
+      "topic": "集中计划控制框架",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "5db6a95fd8babbc1"
+      ],
+      "framework_ids": [
+        "4b7203dc98635fd7"
+      ],
+      "keywords": [
+        "集中计划控制框架"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "no cross-book conflicts detected; this may be extraction coverage, not agreement"
+  ],
+  "routing": {
+    "triggers": [
+      "法律",
+      "法规",
+      "规章",
+      "上位法",
+      "适用规则",
+      "司法",
+      "合法性",
+      "权利",
+      "程序",
+      "比例原则",
+      "先例",
+      "宪法",
+      "党规",
+      "国法",
+      "监管",
+      "处罚",
+      "合规",
+      "deductive validity test",
+      "definition stress test",
+      "enthymeme reconstruction",
+      "expectation-value decision frame",
+      "fallacy audit with contextual exception",
+      "inductive causal appraisal",
+      "refutation by logical analogy",
+      "two-dimensional argument diagram",
+      "个人主义促进思想自由框架",
+      "党政体制",
+      "条块矩阵",
+      "国法双重约束",
+      "国际组织影响框架",
+      "极权主义利用民主框架",
+      "自由主义适应性框架",
+      "试点",
+      "推广的适应性政策过程",
+      "集中计划控制框架"
+    ],
+    "policy": "Auto-select only when one pack is clearly ahead. If two packs are close or the question is high-stakes, show the candidates and ask. Never load more than two packs."
+  },
+  "eval": {
+    "rubric": [
+      "source_fidelity",
+      "retrieval_coverage",
+      "framework_fit",
+      "cross_book_synthesis",
+      "cross_lens_integration",
+      "conflict_handling",
+      "calibration",
+      "actionability",
+      "failure_mode_awareness",
+      "causal_depth",
+      "counterargument",
+      "boundary_conditions",
+      "falsifiability"
+    ],
+    "golden_set": "eval/golden.jsonl",
+    "last_score": {
+      "book_coverage": 1.0,
+      "framework_coverage": 1.0,
+      "lens_coverage": 1.0,
+      "topic_coverage": 1.0,
+      "conflict_coverage": 1.0
+    }
+  },
+  "history": [
+    {
+      "version": "1.0.0",
+      "at": "2026-10-19T11:48:43.610975+00:00",
+      "event": "build",
+      "books": 3,
+      "frameworks": 16,
+      "claims": 40,
+      "diff": {
+        "added_books": [
+          "03576cf3e546ced0",
+          "54f46e77e448fb1e",
+          "5db6a95fd8babbc1"
+        ],
+        "removed_books": [],
+        "added_frameworks": [
+          "042f454c7e7525ad",
+          "291b05bdd03b4d28",
+          "44884cc399d87629",
+          "4b7203dc98635fd7",
+          "56e65a1fbdb017e0",
+          "5e5f8a52f4b6d9e4",
+          "60c687c57f3dbdc8",
+          "74e62ff6b741d784",
+          "760e3077ad7ba6b1",
+          "7997ed0407e139df",
+          "8545cb9c0d763cd7",
+          "8f93a01cffa90148",
+          "ac7795c1da0dba3e",
+          "c0014724951c11c8",
+          "c7aaf614388ef944",
+          "edb35d3195c89b1a"
+        ],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.1",
+      "at": "2026-10-19T11:57:47.802770+00:00",
+      "event": "update",
+      "books": 3,
+      "frameworks": 16,
+      "claims": 40,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.2",
+      "at": "2026-10-19T11:59:03.328177+00:00",
+      "event": "update",
+      "books": 3,
+      "frameworks": 16,
+      "claims": 40,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    }
+  ],
+  "stats": {
+    "books": 3,
+    "frameworks": 16,
+    "claims": 40,
+    "entities": 40,
+    "debates": 0
+  }
+}

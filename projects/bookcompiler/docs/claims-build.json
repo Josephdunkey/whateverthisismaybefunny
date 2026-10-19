@@ -1,0 +1,22 @@
+﻿{
+  "books": {
+    "03576cf3e546ced0": 160,
+    "976b3c244642d321": 160,
+    "a7086a05970476d8": 160,
+    "24617d60273da367": 160
+  },
+  "claims": 640,
+  "conflicts": {
+    "conflicts": 0,
+    "capped": false
+  },
+  "stats": {
+    "claims": 640,
+    "books_with_claims": 4,
+    "by_status": {
+      "active": 640
+    },
+    "contradicts_relations": 0,
+    "pending_entity_merges": 0
+  }
+}

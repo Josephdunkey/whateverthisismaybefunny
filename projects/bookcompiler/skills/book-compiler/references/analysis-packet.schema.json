@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnalysisPacket",
+  "type": "object",
+  "required": ["analysis_id", "question", "mode", "lenses", "selection", "frameworks", "evidence", "hypotheses", "counterevidence", "cross_lens_conflicts", "conclusion", "uncertainty", "next_checks", "citations", "jurisdiction", "not_legal_advice", "status", "created_at"],
+  "properties": {
+    "analysis_id": {"type": "string"},
+    "question": {"type": "string"},
+    "mode": {"type": "string", "enum": ["auto", "direction", "books"]},
+    "lenses": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+    "selection": {"type": "object"},
+    "frameworks": {"type": "array", "items": {"type": "object"}},
+    "evidence": {"type": "array", "items": {"type": "object"}},
+    "hypotheses": {"type": "array", "items": {"type": "object"}},
+    "counterevidence": {"type": "array", "items": {"type": "object"}},
+    "cross_lens_conflicts": {"type": "array", "items": {"type": "object"}},
+    "conclusion": {"type": "string"},
+    "uncertainty": {"type": "string"},
+    "next_checks": {"type": "array", "items": {"type": "string"}},
+    "citations": {"type": "array", "items": {"type": "object"}},
+    "jurisdiction": {"type": "string"},
+    "not_legal_advice": {"type": "boolean"},
+    "status": {"type": "string", "enum": ["draft", "complete"]},
+    "created_at": {"type": "string"},
+    "memory_context": {
+      "type": "array",
+      "items": {"type": "object"},
+      "description": "Hindsight-style recalled feedback and memory lessons. Not source evidence."
+    }
+  }
+}

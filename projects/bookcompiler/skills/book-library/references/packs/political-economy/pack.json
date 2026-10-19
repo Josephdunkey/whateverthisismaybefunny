@@ -1,0 +1,3079 @@
+{
+  "schema_version": 1,
+  "domain": "political-economy",
+  "title": "政治经济分析",
+  "description": "分析财政、货币、信贷、地方政府行为、央地关系、债务周期与政策传导，同时使用经济与政治镜头并保留两者冲突。",
+  "version": "1.0.5",
+  "status": "active",
+  "lenses": [
+    "economics",
+    "politics"
+  ],
+  "direction": "财政关系 地方政府行为 土地财政 央地关系 货币供给 基础货币 货币乘数 银行信贷 信用扩张 债务周期 去杠杆 金融危机 政策传导 国家能力",
+  "created_at": "2026-10-19T11:39:48.380869+00:00",
+  "updated_at": "2026-10-19T12:01:10.694650+00:00",
+  "books": [
+    {
+      "book_id": "976b3c244642d321",
+      "title": "中央银行与货币供给",
+      "author": "盛松成、翟春",
+      "status": "compiled",
+      "disciplines": [
+        "economics",
+        "finance"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "中国货币供给不是央行单方面外生决定的数量，而是基础货币、货币乘数与银行体系信用创造共同作用的结果。"
+    },
+    {
+      "book_id": "24617d60273da367",
+      "title": "以利为利：财政关系与地方政府行为",
+      "author": "周飞舟",
+      "status": "compiled",
+      "disciplines": [
+        "politics",
+        "economics",
+        "public_finance"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "财政关系塑造地方政府行为：财权上收、事权下移与土地融资共同构成一种以经营辖区和土地为中心的增长与债务机制。"
+    },
+    {
+      "book_id": "e58b76c4b14a672b",
+      "title": "Principles for Navigating Big Debt Crises",
+      "author": "Ray Dalio",
+      "status": "compiled",
+      "disciplines": [
+        "economics",
+        "finance"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "Big debt crises follow an archetypal cycle whose outcome—ugly depression or beautiful deleveraging—depends on whether policymakers balance monetary, fiscal, and debt-restructuring levers in time."
+    },
+    {
+      "book_id": "03576cf3e546ced0",
+      "title": "当代中国政府与政治",
+      "author": "景跃进、陈明明、肖滨",
+      "status": "compiled",
+      "disciplines": [
+        "politics",
+        "law"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "理解中国政府与政治的关键是党政体制：党政双轨、条块矩阵、领导小组与试点机制共同决定政策如何被制定、协调和执行。"
+    },
+    {
+      "book_id": "10e9cb0acc2391e5",
+      "title": "中国近代史",
+      "author": "徐中约",
+      "status": "compiled",
+      "disciplines": [
+        "history",
+        "politics"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "徐中约以现代化为主线,把1644年至20世纪末的中国史解释为:一个以儒家礼仪与王朝治理维系的世界秩序,在内部财政军事衰败与西方冲击的双重压力下,不断通过战争、变法、革命与制度改革艰难重建国家主权与现代治理体系的奋斗过程。"
+    },
+    {
+      "book_id": "6b078adbc1b1fd81",
+      "title": "中国的经济制度",
+      "author": "张五常",
+      "status": "compiled",
+      "disciplines": [
+        "economics",
+        "law"
+      ],
+      "card_status": "verified",
+      "one_line_thesis": "中国经济奇迹的核心在于将承包合约从农业和工业扩展到地理区域层面,通过县际竞争和统一的增值税分配机制,驱动了三十年的高速增长。"
+    }
+  ],
+  "book_cards": {
+    "976b3c244642d321": {
+      "assumptions": [
+        "央行可以直接控制基础货币，但不能直接控制银行的信贷意愿。",
+        "货币乘数受现金漏损、准备金率、信贷需求与监管约束共同影响。",
+        "统计口径与金融结构在分析期内相对稳定。"
+      ],
+      "limitations": [
+        "总量框架对影子银行、金融脱媒和结构性流动性分层的解释力有限。",
+        "不同时期的货币政策 regime 与统计口径变化会削弱跨期可比性。",
+        "书中的中国经验需要结合具体制度背景，不能直接外推到所有经济体。"
+      ],
+      "not_for": [
+        "预测短期资产价格",
+        "替代银行微观风险尽调",
+        "直接给出投资建议"
+      ]
+    },
+    "24617d60273da367": {
+      "assumptions": [
+        "地方政府的行为受收入分成、考核激励与支出责任共同约束。",
+        "土地既是预算收入来源，也是可抵押资产和城市建设融资工具。",
+        "中央—地方关系中的救助预期会影响地方预算约束的硬度。"
+      ],
+      "limitations": [
+        "土地与平台数据透明度低，预算外负债容易被低估。",
+        "地区间财政能力、土地市场和产业基础差异很大。",
+        "政策周期会改变中央救助与地方扩张的边界。"
+      ],
+      "not_for": [
+        "预测具体城市房价",
+        "替代地方财政审计",
+        "把中国经验直接套用到联邦制国家"
+      ]
+    },
+    "e58b76c4b14a672b": {
+      "assumptions": [
+        "Debt cycles are recursing archetypes, so historical cases are comparable across countries and eras.",
+        "In normal recessions, cutting interest rates can produce a wealth effect, stimulate activity, and ease debt service.",
+        "In depressions, interest rates cannot be cut materially because they have already approached zero or are floored by credit and currency risk.",
+        "A currency's value rests on the credibility of the institutions issuing it and on the stock of promises to deliver that currency.",
+        "Past volatility and past correlations are unreliable forecasts of future risks.",
+        "In severe downturns, protectionist and anti-immigrant sentiment rises as politicians blame external actors."
+      ],
+      "limitations": [
+        "The framework is drawn from historical cases and a 48-case compendium, not from controlled experiments.",
+        "Many case-study pages are chart decks with incomplete series (e.g., 'No Data Available'), so gauge readings are explicitly 'rough measures'.",
+        "The book's own narrative pages are interspersed with raw news clippings and long footnotes, limiting causal identification.",
+        "The sample includes author-observed market commentary, which reflects a practitioner's in-sample view rather than an independently tested model.",
+        "Currency and capital-flow evidence for several emerging-market cases is missing, constraining generalization to external-account-driven crises.",
+        "Political conclusions (regime change, war, dominant-country rule-setting) are asserted as typical patterns without quantified thresholds."
+      ],
+      "not_for": [
+        "High-frequency trading or short-horizon market timing",
+        "Microeconomic or single-firm credit analysis",
+        "Precise point forecasts of turning dates or magnitudes",
+        "Corporate restructuring advice for non-sovereign borrowers",
+        "Statistical estimation where only rough gauges and partial data exist"
+      ]
+    },
+    "03576cf3e546ced0": {
+      "assumptions": [
+        "正式制度文本与实际运作之间存在差异，需要同时观察。",
+        "人事任免、考核与党组织关系共同塑造执行激励。",
+        "国家法律与党内法规共同构成政治与行政行为的约束。"
+      ],
+      "limitations": [
+        "正式文本与实际运作的差距难以仅凭公开材料完全识别。",
+        "领导小组和协调机构具有临时性与情境性，权力边界不稳定。",
+        "地方差异与政策变化会使静态结构分析失效。"
+      ],
+      "not_for": [
+        "替代具体法律意见",
+        "预测个别人事安排",
+        "把党政体制简化为单一命令链条"
+      ]
+    },
+    "10e9cb0acc2391e5": {
+      "assumptions": [
+        "本书把政治、军事与外交史置于主轴,经济与社会变迁主要作为其背景与后果来叙述。",
+        "作者继承英美学界(尤其费正清一系)的冲击—回应与现代化解释框架,默认现代性本身是衡量成败的标尺。",
+        "历史的主要动力被归结为当朝政府的政策与不易把握的社会潜流这两条线索的交互。",
+        "叙事预设中国追求的目标是统一、废除不平等条约、工业化与大国地位这一连续线索。",
+        "本中译本经删改,引用时须回溯香港版或英文原版(见出版争议的记录)。"
+      ],
+      "limitations": [
+        "所据证据为节选样本,仅覆盖部分页面,无法反映全书论证的完整结构与细节平衡。",
+        "文本为扫描OCR,存在大量字符讹误(如『臸』『舓』『实臼』『臺序』),直接引用时须注意校勘。",
+        "部分页码(如第205、235、613、701页)仅为参考书目或图版标题,信息密度极低,不能作为论证依据。",
+        "作者立场偏英美外交档案与既有研究综述,对中国大陆史料与马克思主义史学评价多为转述而非检验。",
+        "叙述止于1990年代末,此后二十余年的两岸关系、中美关系与中国经济体制演进均不在射程内。"
+      ],
+      "not_for": [
+        "需要1990年代末之后当代中国数据与事件的分析",
+        "要求严格统计口径的经济史量化研究",
+        "以中国大陆官方史学结论为准的教科书式答题",
+        "单一条目事件的深度档案考证(本书是通史性综合)",
+        "需要图像学或原始文书影印件的文献学工作"
+      ]
+    },
+    "6b078adbc1b1fd81": {
+      "assumptions": [
+        "经济解释首要的是辨识可以观察到的局限变动,而非依赖博弈论的抽象假设。",
+        "竞争可以通过多种形式的合约安排来约束,而不一定通过市场价格转移权利。",
+        "中国的县拥有决定和分配土地使用的核心权力,这是经济发展的关键所在。",
+        "增值税率全国一致的制度设计是维持县际竞争稳定性的基础条件。",
+        "政府或执政党的主导角色对中国近于奇迹的经济发展不可或缺。"
+      ],
+      "limitations": [
+        "作者承认这近于奇迹的发展只持续了二十九年,制度的黄金期可能已近尾声。",
+        "统计数字不可靠,户籍人口与流动人口的混淆导致大量数据加不起来。",
+        "作者以个人实地考察和与官员对话为主要信息来源,缺乏系统性的实证数据。",
+        "制度转变不一定是朝减低交易费用或增加租值的方向走,存在灾难性安排的可能。",
+        "县际竞争可能随着土地资源趋紧而减弱,需要新的竞争方向如技术创新。",
+        "作者明确承认对未来的判断存在不确定性,新劳动法的效应尚待观察。"
+      ],
+      "not_for": [
+        "寻求对中国政治体制的全面分析",
+        "需要严格计量经济学实证的研究",
+        "关注微观企业治理结构的具体问题",
+        "讨论中国社会公平与收入分配的完整图景",
+        "预测中国经济未来的精确走势"
+      ]
+    }
+  },
+  "frameworks": [
+    {
+      "framework_id": "7cad2a50b261a127",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Beautiful Deleveraging Balance",
+      "one_liner": "Combines monetary, fiscal, and debt-restructuring actions so debt-to-income falls without an offsetting collapse in incomes.",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A country clearly needs to deleverage but debt ratios are rising",
+        "Nominal growth is far below nominal interest rates",
+        "Bank balance sheets and bad debts are obstructing credit transmission"
+      ],
+      "failure_modes": [
+        "Over-relying on austerity, which lowers income and can raise debt-to-GDP",
+        "Under-sizing stimulus so that debt ratios keep compounding upward",
+        "Pursuing reforms without the accompanying liquidity and solvency measures"
+      ],
+      "keywords": [
+        "beautiful deleveraging balance"
+      ]
+    },
+    {
+      "framework_id": "44b7e13ed4af3727",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Credibility-Backed Currency Reform Test",
+      "one_liner": "Evaluates whether a new or reformed currency can stabilize by testing issuing-institution credibility and the stock of currency promises.",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A currency has collapsed and a replacement or hard-currency reform is proposed",
+        "Monetization of debt is competing with deflation as the binding risk",
+        "Confidence in the issuing institution is the binding constraint"
+      ],
+      "failure_modes": [
+        "Expecting a new currency alone to create lasting stabilization",
+        "Issuing the currency with a large stock of denominated promises and re-creating the original dilemma",
+        "Overlooking the institutional credibility gap that formal backing cannot substitute for"
+      ],
+      "keywords": [
+        "credibility-backed currency reform test"
+      ]
+    },
+    {
+      "framework_id": "a3dce21f38863122",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Crisis Political-Economy Risk Map",
+      "one_liner": "Anticipates populism, protectionism, and regime change that typically follow severe downturns and uneven recoveries.",
+      "lenses": [
+        "politics",
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A deep downturn has produced visible unemployment and hardship",
+        "A recovery is perceived as uneven, with elites seen as prospering",
+        "Policy makers are viewed as ineffectual"
+      ],
+      "failure_modes": [
+        "Treating the interwar pattern as inevitable rather than typical",
+        "Ignoring institutional checks that can absorb the pressure",
+        "Conflating a protective tariff response with a durable trade realignment"
+      ],
+      "keywords": [
+        "crisis political-economy risk map"
+      ]
+    },
+    {
+      "framework_id": "c4d4ac84596f7221",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Debt Cycle Phase Classifier",
+      "one_liner": "Locates an economy on the archetypal big debt cycle by reading bubble gauges, easing gauges, and debt-service capacity together.",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "A boom has visibly accelerated and observers disagree about whether it is sustainable",
+        "A bust is underway and the sequencing of policy responses is being decided",
+        "Comparing a live case against historical cases in a compendium"
+      ],
+      "failure_modes": [
+        "Treating gauge readings as precise rather than rough measures",
+        "Anchoring on a single analogue whose data coverage differs",
+        "Classifying too early when several series have no data available"
+      ],
+      "keywords": [
+        "debt cycle phase classifier"
+      ]
+    },
+    {
+      "framework_id": "4d0cbd14214a1a7f",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "External-Currency Fragility Screen",
+      "one_liner": "Screens an emerging boom for the foreign-currency and external-financing vulnerabilities that turn downturns into crises.",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "An emerging economy is growing fast on capital inflows",
+        "Local financial markets are shallow and domestic savings are limited",
+        "Asset prices and spending are rising alongside currency appreciation"
+      ],
+      "failure_modes": [
+        "Reading strong growth and rising asset prices as strength rather than as a borrowing-fueled bubble",
+        "Ignoring the local-currency value of foreign-currency obligations",
+        "Assuming foreign financing will remain available once sentiment turns"
+      ],
+      "keywords": [
+        "external-currency fragility screen"
+      ]
+    },
+    {
+      "framework_id": "0e2de24910a02b2c",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Restructuring Leverage Assessment",
+      "one_liner": "Judges who holds real power in a debt restructuring by weighing the ability to inflict, reward, and endure pain.",
+      "lenses": [
+        "politics",
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "Multiple parties must agree on who bears losses",
+        "The relative strength of creditors and debtors is contested",
+        "Unsettled precedents leave the enforcement of terms unclear"
+      ],
+      "failure_modes": [
+        "Equating creditor size with actual coercive power",
+        "Pushing too hard when power is untested and triggering a worse outcome",
+        "Negotiating as if the settlement will hold across the next full cycle"
+      ],
+      "keywords": [
+        "restructuring leverage assessment"
+      ]
+    },
+    {
+      "framework_id": "f8bf83d5cbbe1eb7",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "name": "Zero-Bound Policy Triage",
+      "one_liner": "Determines when conventional rate cuts have been exhausted and the policy problem shifts from easing to other levers.",
+      "lenses": [
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "Policy rates are near zero or constrained by currency and credit risk",
+        "Rate cuts are no longer producing wealth effects, activity, or debt-service relief",
+        "A debate exists over whether the situation is a recession or a depression"
+      ],
+      "failure_modes": [
+        "Assuming the zero bound is the only floor and ignoring currency-risk-driven higher floors",
+        "Continuing to advocate rate cuts after the transmission channels have stopped working",
+        "Inferring a durable recovery from a policy action that has not yet changed credit availability"
+      ],
+      "keywords": [
+        "zero-bound policy triage"
+      ]
+    },
+    {
+      "framework_id": "596a3b01d3add791",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "三角外交杠杆测算",
+      "one_liner": "在三方博弈中评估结盟与解盟的收益:用一方牵制另一方,并计算经济杠杆(市场、贸易、人权挂钩)在其中的可兑换性。",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析冷战及后冷战时期的大国三角关系",
+        "评估经济制裁或优惠待遇作为外交筹码的效果",
+        "判断联盟是理念性的还是事实需要性的"
+      ],
+      "failure_modes": [
+        "把人权或价值议题当作可无限使用的杠杆,忽略对方的承受极限",
+        "低估对手看穿虚张声势后的反制空间"
+      ],
+      "keywords": [
+        "三角外交杠杆测算"
+      ]
+    },
+    {
+      "framework_id": "8545cb9c0d763cd7",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "党政体制—条块矩阵",
+      "one_liner": "把中国共产党作为理解中国政府的关键，用党政双轨、条块结合与领导小组识别谁有权、谁能协调、谁承担执行责任。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析政策执行与跨部门协调",
+        "判断中央与地方关系",
+        "识别监管机构与媒体、安全等领域的权力结构"
+      ],
+      "failure_modes": [
+        "正式文本与实际运作不一致。",
+        "领导小组权力边界随情境变化。",
+        "部门利益与地方变通改变执行结果。"
+      ],
+      "keywords": [
+        "党政体制",
+        "条块矩阵"
+      ]
+    },
+    {
+      "framework_id": "042f454c7e7525ad",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "党规—国法双重约束",
+      "one_liner": "在中国政府与政治中，行为合法性同时受国家法律和党内法规约束；分析法律问题必须把党规、党委文件与党政关系纳入。",
+      "lenses": [
+        "law",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析监管权限与政策合法性",
+        "判断执法、司法与地方治理风险",
+        "做合规与政治风险双重评估"
+      ],
+      "failure_modes": [
+        "只看法条而忽略党规与党委文件。",
+        "把政策文件直接当作法律依据。",
+        "法律修订滞后或地方执行差异。"
+      ],
+      "keywords": [
+        "党规",
+        "国法双重约束"
+      ]
+    },
+    {
+      "framework_id": "fc3937693c929745",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "军队私有化链条",
+      "one_liner": "追踪国家军事力量如何按地缘、亲缘与师承关系被私属化,并进一步演化为军阀与党军的连续过程。",
+      "lenses": [
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "解释中央权威瓦解后地方武装的形成",
+        "分析革命政党为何必须建立自己的党军",
+        "评估军事改革中人事与财政控制权的归属"
+      ],
+      "failure_modes": [
+        "只看装备与规模而忽视人事关系结构",
+        "把一时的战时体制误判为永久私属化"
+      ],
+      "keywords": [
+        "军队私有化链条"
+      ]
+    },
+    {
+      "framework_id": "73f70d14d5173bb4",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "县际竞争激励诊断",
+      "one_liner": "分析地方政府间竞争的权力分配、收入分成与激励机制,诊断区域竞争的活力与方向。",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析多层级政府体系中地方竞争的动力与结构",
+        "评估收入分成公式对地方官员行为的影响",
+        "研究区域招商引资竞争的激励机制"
+      ],
+      "failure_modes": [
+        "忽略纵向竞争与横向竞争的本质差异",
+        "假设竞争总是朝提高效率的方向发展",
+        "低估政治干预对竞争机制的扭曲",
+        "在分成公式未统一时高估竞争的稳定性"
+      ],
+      "keywords": [
+        "县际竞争激励诊断"
+      ]
+    },
+    {
+      "framework_id": "03c2f95926d7bfb5",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "合约约束竞争分析",
+      "one_liner": "通过识别社会中各类约束竞争的合约安排,判断制度结构的本质、效率与变迁方向。",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析转型经济体中产权、法规与习俗的制度功能",
+        "需要判断制度变迁的实质是合约类型替代还是效率改善",
+        "比较不同社会约束竞争的方式与合约结构"
+      ],
+      "failure_modes": [
+        "假设制度变迁必然朝效率改进方向发展",
+        "将强制性规则与自愿性合约混为一谈",
+        "忽略合约安排可能产生灾难性后果"
+      ],
+      "keywords": [
+        "合约约束竞争分析"
+      ]
+    },
+    {
+      "framework_id": "42a78564796ae021",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "name": "土地—财政—金融三位一体",
+      "one_liner": "把土地出让、土地抵押融资与城市基础设施投资放在一个闭环中，识别“以地生财、以财养城、以城抬地”的自我强化与断裂点。",
+      "lenses": [
+        "public_finance",
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析城市扩张与土地财政",
+        "评估地方融资平台与土地抵押风险",
+        "判断土地市场降温如何传导到财政与银行"
+      ],
+      "failure_modes": [
+        "土地与平台数据不透明。",
+        "政府信用与企业信用边界模糊。",
+        "把土地出让收入误当作可自由支配的净收入。",
+        "忽略存量债务滚动与利息负担。"
+      ],
+      "keywords": [
+        "土地",
+        "财政",
+        "金融三位一体"
+      ]
+    },
+    {
+      "framework_id": "7e94467f1667a69e",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "name": "地方政府公司化与软预算约束",
+      "one_liner": "当地方政府像公司一样经营辖区，预算约束会因中央救助预期和土地抵押而软化，投资扩张与债务累积具有内在动力。",
+      "lenses": [
+        "politics",
+        "public_finance",
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析地方投资冲动与平台扩张",
+        "判断债务化解中的中央—地方博弈",
+        "识别银行按政府信用定价的风险"
+      ],
+      "failure_modes": [
+        "把公司化简单当作道德批判。",
+        "忽略中央硬约束政策与问责变化。",
+        "地区差异与平台转型改变行为逻辑。"
+      ],
+      "keywords": []
+    },
+    {
+      "framework_id": "69e10177cb3bddff",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "name": "基础货币—货币乘数控制链",
+      "one_liner": "央行只能直接控制基础货币，货币供给由基础货币与内生的货币乘数共同决定；判断政策效果必须同时看投放端与乘数端。",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "判断降准、公开市场操作、再贷款等数量型工具的效果",
+        "区分央行投放与银行体系信用扩张",
+        "解释宽货币为何没有转化为宽信用"
+      ],
+      "failure_modes": [
+        "影子银行与金融脱媒使总量乘数失真。",
+        "结构性流动性分层使总量投放无法到达特定机构。",
+        "只盯M2而忽略债务、资产价格与信贷结构。"
+      ],
+      "keywords": [
+        "基础货币",
+        "货币乘数控制链"
+      ]
+    },
+    {
+      "framework_id": "27348d6cfc531702",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "name": "央行资产负债表投放渠道",
+      "one_liner": "用央行资产负债表逐项识别基础货币的来源与回笼，避免把降准或公开市场操作误读为银行可贷资金的等量增加。",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析降准、再贷款、再贴现、MLF等工具",
+        "判断外汇占款与财政存款变化对流动性的影响",
+        "识别流动性投放与信用投放的差别"
+      ],
+      "failure_modes": [
+        "科目合并与统计口径变化导致误读。",
+        "财政存款与国库现金管理干扰流动性判断。",
+        "总量数据看不出机构间的结构性分化。"
+      ],
+      "keywords": [
+        "央行资产负债表投放渠道"
+      ]
+    },
+    {
+      "framework_id": "06fe23ee253659ca",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "官督商办治理诊断",
+      "one_liner": "用于判断官僚主导的现代化企业为何难以成长,把产权、激励、歧视性制度与市场机会分项评估。",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "评估后发国家由政府发起的工业化项目",
+        "比较官督商办、官商合办与商办三种治理形态",
+        "分析商业阶层法律地位对资本形成的影响"
+      ],
+      "failure_modes": [
+        "把失败全部归因于资本不足,忽视身份与治理因素",
+        "忽略政治环境恶化带来的外部冲击"
+      ],
+      "keywords": [
+        "官督商办治理诊断"
+      ]
+    },
+    {
+      "framework_id": "b97f20498007a239",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "政策归因波动分析",
+      "one_liner": "将政策转变而非内生商业周期作为经济波动的主要归因,避免对经济过热的误判。",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析政府宏观调控对经济波动的实际影响",
+        "评估\"过热\"判断是否为政策的自我实现预言",
+        "比较不同经济体的经济波动来源"
+      ],
+      "failure_modes": [
+        "假设所有波动都有内生原因",
+        "忽略政策反应的滞后性",
+        "将相关性误认为因果关系"
+      ],
+      "keywords": [
+        "政策归因波动分析"
+      ]
+    },
+    {
+      "framework_id": "8d10b942717bee2f",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "王朝衰败诊断树",
+      "one_liner": "把一个传统王朝的衰落拆解为财政糜费、军政废弛、吏治腐败与社会潜流四项可观察指标,并区分表面辉煌与实际国力的落差。",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析前现代或威权体制国家在外部压力到来前夜的内部脆弱性",
+        "需要判断危机是治理问题还是结构性问题",
+        "比较不同王朝末期的相似机制"
+      ],
+      "failure_modes": [
+        "只看到支出而看不到收入能力的同等崩塌,会夸大单一因素",
+        "把道德叙事(奢侈、堕落)当作因果解释,忽略制度约束",
+        "在样本只有单一王朝时把偶然事件误判为规律"
+      ],
+      "keywords": [
+        "王朝衰败诊断树"
+      ]
+    },
+    {
+      "framework_id": "f76f4f24086772b1",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "礼仪即秩序分析",
+      "one_liner": "把磕头、册封、称谓等看似琐碎的礼仪争议,还原为对等级化世界秩序与主权承认的争夺,并预判其可能升级为战争。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "解释外交僵局中被双方称为『不可让步』的象征性争点",
+        "分析国际体系转型期的承认与地位冲突",
+        "评估宗教或文化习俗被上升为政治问题的场景"
+      ],
+      "failure_modes": [
+        "把礼仪争端简化为愚昧无知,忽略其国内合法性功能",
+        "低估第三方调停(如教皇敕令、拿破仑评论)的约束力"
+      ],
+      "keywords": [
+        "礼仪即秩序分析"
+      ]
+    },
+    {
+      "framework_id": "f22ad5c40398b879",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "租值替代交易费用分析",
+      "one_liner": "分析产权界定变化如何使租值上升替代交易费用下降,揭示制度变迁的经济本质。",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析产权从模糊到清晰界定的经济效果",
+        "评估制度变革中效率提升的机制",
+        "比较不同产权安排下的资源配置效率"
+      ],
+      "failure_modes": [
+        "假设制度费用总能下降至零",
+        "忽略产权变化可能带来的新类型交易费用",
+        "将所有产权清晰化都视为效率改善"
+      ],
+      "keywords": [
+        "租值替代交易费用分析"
+      ]
+    },
+    {
+      "framework_id": "be0d5e608f5959dd",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "税租判别法",
+      "one_liner": "通过两个判别标准区分政府收入是税还是租,揭示强制性收费与使用权让渡的本质差异。",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析政府对经济活动的收费性质",
+        "评估税收制度对经济行为的激励效果",
+        "区分资源使用费与一般税收"
+      ],
+      "failure_modes": [
+        "仅凭政府单方面声明判断收费性质",
+        "忽略收费的实际经济效果与名义性质的差异",
+        "在复杂税制中误判单一税种的性质"
+      ],
+      "keywords": [
+        "税租判别法"
+      ]
+    },
+    {
+      "framework_id": "f686ef02864a6087",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "继承与派系斗争机制",
+      "one_liner": "分析权力继承期与路线冲突中的操作手法:合法性的技术性操控、派系基础的替代性资源,以及事后的法律清算。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "解释威权体制下的接班危机与元老政治",
+        "分析路线斗争中技术性规则如何被用来锁定权力",
+        "评估政治清算以司法形式完成的条件"
+      ],
+      "failure_modes": [
+        "只看正式职位而忽视票源与武装等实质资源",
+        "把程序性审判当作纯粹法律事件,忽略其政治功能"
+      ],
+      "keywords": [
+        "继承与派系斗争机制"
+      ]
+    },
+    {
+      "framework_id": "8f93a01cffa90148",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "name": "试点—推广的适应性政策过程",
+      "one_liner": "地方分散试验是党政体制的风险吸收机制：先试点、再评估、后推广，用地方差异换取中央政策的可纠错性。",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析改革方案与监管创新",
+        "判断地方试点与政策扩散",
+        "评估中央—地方学习与纠错"
+      ],
+      "failure_modes": [
+        "试点被美化或选择性汇报。",
+        "推广忽视地方异质性。",
+        "试点成为寻租或政绩工程。"
+      ],
+      "keywords": [
+        "试点",
+        "推广的适应性政策过程"
+      ]
+    },
+    {
+      "framework_id": "30e834d57d3b331a",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "name": "财权—事权错配压力测试",
+      "one_liner": "先看财权上收与事权下移形成的缺口，再判断地方政府是用转移支付、土地收入还是债务弥补，以及由此产生的行为激励。",
+      "lenses": [
+        "politics",
+        "public_finance",
+        "economics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析地方债务与基层财政困难",
+        "判断土地财政与转移支付的作用",
+        "评估公共服务供给与地方投资冲动"
+      ],
+      "failure_modes": [
+        "只看预算内收入会低估土地与平台融资。",
+        "地区异质性使统一结论失效。",
+        "政策周期改变中央救助与地方扩张边界。"
+      ],
+      "keywords": [
+        "财权",
+        "事权错配压力测试"
+      ]
+    },
+    {
+      "framework_id": "4d3b0887c25dd2a1",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "name": "货币供给内生性检验",
+      "one_liner": "把货币供给是外生还是内生当作可检验命题：观察乘数、信贷需求与银行行为，而不是只根据央行投放数量下结论。",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "判断数量型货币政策是否有效",
+        "分析宽货币能否转化为宽信用",
+        "评估金融创新对货币统计的冲击"
+      ],
+      "failure_modes": [
+        "用总量相关性代替因果识别。",
+        "忽略金融脱媒与影子银行。",
+        "样本期跨越不同政策 regime，参数不可比。"
+      ],
+      "keywords": [
+        "货币供给内生性检验"
+      ]
+    },
+    {
+      "framework_id": "7911aafbda43d35a",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "name": "逐层责任合约传导",
+      "one_liner": "分析如何通过层层承包的责任合约安排,将顶层的经济决策权力逐级传导至基层单位。",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "分析多层级组织中权力与责任的传导机制",
+        "研究承包制、分包制在不同层级间的扩展",
+        "评估产权从所有权中分离出使用权利的效果"
+      ],
+      "failure_modes": [
+        "逐层传导中信息严重失真,顶层无法有效监控",
+        "各层级责任界定不清导致推诿",
+        "合约条款变动过于频繁,无法形成稳定预期"
+      ],
+      "keywords": [
+        "逐层责任合约传导"
+      ]
+    },
+    {
+      "framework_id": "9d27d13745b29582",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "name": "革命联盟构建法",
+      "one_liner": "把分散的反体制力量按资源类型拆解(会党、学生、新军、侨社),再设计整合组织以避免内耗与相互替代。",
+      "lenses": [
+        "politics"
+      ],
+      "confidence": "medium",
+      "status": "verified",
+      "applicable_when": [
+        "评估革命或社会运动从分散走向统一的条件",
+        "分析跨阶层联盟的组建与破裂",
+        "判断运动能否取得武装与财政支持"
+      ],
+      "failure_modes": [
+        "口号统一但资源不整合,导致组织空心化",
+        "过度依赖单一资源方,一旦其倒戈即崩盘"
+      ],
+      "keywords": [
+        "革命联盟构建法"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "45d5a3b2016f9c8b",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "央地关系",
+      "predicate": "condition",
+      "object": "代中国政府与政治的关键方面一中国共产党领导的政治体制及中国共产党本身人手,进而在横向维度上分别阐述作为最高权力机关和立法机关的人民代表大会、作为统一战线重要内容的多党合作和政治协商制度、作为最高国家行政机关的中央人民政府、作为\"刀把子\"的政法系统、作为\"笔杆子\"的宣传系统,以及作为\"枪杆子\"的军事系统,在纵向维度上分析中央与地方关系、地方政府、民族区域自治制度及基层治理四个方面的问题,最后,还探讨了当代中国国家与社会及国家与公民关系的变迁和发展",
+      "polarity": 1,
+      "quote": "本书从理解当代中国政府与政治的关键方面一中国共产党领导的政治体制及中国共产党本身人手,进而在横向维度上分别阐述作为最高权力机关和立法机关的人民代表大会、作为统一战线重要内容的多党合作和政治协商制度、作为最高国家行政机关的中央人民政府、作为\"刀把子\"的政法系统、作为\"笔杆子\"的宣传系统,以及作为\"枪杆子\"的军事系统,在纵向维度上分析中央与地方关系、地方政府、民族区域自治制度及基层治理四个方面的问题,最后,还探讨了当代中国国家与社会及国家与公民关系的变迁和发展。",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "4d23bf8f0ef10e7f",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系,只有这样才能更好地认识和理解中国政府与政治;",
+      "polarity": 1,
+      "quote": "全书具有两个方面的鲜明特色:第一,将中国共产党作为理解中国政府与政治的钥匙,将\"党政体制\"作为理解中国政府与政治的关键词,并且认为,应当处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系,只有这样才能更好地认识和理解中国政府与政治;",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "0aa0a5bf131eb62e",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "文明",
+      "predicate": "causes",
+      "object": "中西文化正面冲突的开端,西方文明,历经文艺复兴、宗教改革、及工业革命,气焰万丈,其文哲、原著者中文版序 科技、经济、军备、地理知识、及造船技术,皆有空前的发展",
+      "polarity": 1,
+      "quote": "在此过程中,一个古老儒家帝国经无比艰难,蜕回溯明清之际,西风东渐,引起中西文化正面冲突的开端,西方文明,历经文艺复兴、宗教改革、及工业革命,气焰万丈,其文哲、原著者中文版序 科技、经济、军备、地理知识、及造船技术,皆有空前的发展。",
+      "page": 19,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "6f8d37857671b7fc",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "文明",
+      "predicate": "requires",
+      "object": "文明起落,文明兴废,民族强弱,只有源由。",
+      "polarity": 1,
+      "quote": "文明起落,文明兴废,民族强弱,只有源由。",
+      "page": 15,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "aa7825022b38b75d",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "经济增长",
+      "predicate": "increase",
+      "object": "经济增长,并展开了地方区域间的竞争5,这够用政策和行政力量有效地推动经济增长,并展开了地方区域间的竞争,这 种竞争在推动经济的同时,也使得地方政府进一步\"公司化\"",
+      "polarity": 1,
+      "quote": "这种 作用机制也是很明显的:地方政府利用市场转型中的各种\"双轨\"制度,能作用机制也是很明显的:地方政府利用市场转型中的各种\"双轨\"制度,能 够用政策和行政力量有效地推动经济增长,并展开了地方区域间的竞争5,这够用政策和行政力量有效地推动经济增长,并展开了地方区域间的竞争,这 种竞争在推动经济的同时,也使得地方政府进一步\"公司化\"。",
+      "page": 6,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "cba51803594d7921",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "财政联邦制",
+      "predicate": "requires",
+      "object": "指出的是,这种财政分权下的地方竞争格局有着鲜明的中国特色,需要指出的是,这种财政分权下的地方竞争格局有着鲜明的中国特色, 非常不同于如美国财政联邦制(Fiscal Federalism )下的政府行为",
+      "polarity": 1,
+      "quote": "需要指出的是,这种财政分权下的地方竞争格局有着鲜明的中国特色,需要指出的是,这种财政分权下的地方竞争格局有着鲜明的中国特色, 非常不同于如美国财政联邦制(Fiscal Federalism )下的政府行为。",
+      "page": 6,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "093076edc4dacb67",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "中央银行",
+      "predicate": "depends",
+      "object": "客户要求,这里设存入的是活期存款),同时把支票存入在中央银行的账户",
+      "polarity": 1,
+      "quote": "第二家银行为存入支票的客户(产品和劳务的出售者)在其账户中计入一笔存款(活期还是定期取决于客户要求,这里设存入的是活期存款),同时把支票存入在中央银行的账户。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "44f4a3c54041d4ef",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "中央银行",
+      "predicate": "condition",
+      "object": "代西方主要的货币供给理论和中央银行货币政策等一系列基本问题进行了全面、深入、细致和准确的阐述",
+      "polarity": 1,
+      "quote": "该书对当代西方主要的货币供给理论和中央银行货币政策等一系列基本问题进行了全面、深入、细致和准确的阐述。",
+      "page": 5,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "53dd45db12b21507",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "货币政策",
+      "predicate": "implies",
+      "object": "以货币供应量为货币政策中间目标",
+      "polarity": 1,
+      "quote": "至今,部分国家央行仍支持以货币供应量为货币政策中间目标。",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "5486721bd5855a90",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "商业银行",
+      "predicate": "increase",
+      "object": "若该客户(私人机构)将央行支票(或现金)存入某商业银行的活期存款账户,这家商业银行的活期存款和准备金将等量增加1。",
+      "polarity": 1,
+      "quote": "若该客户(私人机构)将央行支票(或现金)存入某商业银行的活期存款账户,这家商业银行的活期存款和准备金将等量增加1。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "6f417af55b1b2cba",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "货币乘数",
+      "predicate": "requires",
+      "object": "活期存款才能开列支票,才能创造存款货币,而定期存款则不能,所以,当采用狭义的货币定义时,定期存款在存款总额中所占的比重越大,货币乘数就越小,反之则反是",
+      "polarity": 1,
+      "quote": "第二,如前所述,只有活期存款才能开列支票,才能创造存款货币,而定期存款则不能,所以,当采用狭义的货币定义时,定期存款在存款总额中所占的比重越大,货币乘数就越小,反之则反是。",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "c15be05a829083d6",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "货币乘数",
+      "predicate": "condition",
+      "object": "存款总额和公众手持通货不变时,狭义的货币量M,也就越少,反之则反是;",
+      "polarity": 1,
+      "quote": "例如,作者在讨论乔顿的\"货币乘数模型\"时提出,定期存款在存款总额中比率的变化之所以会影响货币存量\"有两大原因:第一,在存款总额中,定期存款的比率越大,活期存款的比率就越小,当存款总额和公众手持通货不变时,狭义的货币量M,也就越少,反之则反是;",
+      "page": 7,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "dc7101307e55d94e",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "中央银行",
+      "predicate": "condition",
+      "object": "代西方主要的货币供给理论及美国和我国的货币政策操作为基本内容,对货币供给的基本理论和重要实践予以阐述和剖析",
+      "polarity": 1,
+      "quote": "bentialBanh the loney Fppty 中央银行与货币供给盛松成翟春/著本书以货币供给过程、中央银行货币政策与货币供给的联系为主线,以当代西方主要的货币供给理论及美国和我国的货币政策操作为基本内容,对货币供给的基本理论和重要实践予以阐述和剖析。",
+      "page": 1,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "e4d136f68afb8844",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "公开市场操作",
+      "predicate": "condition",
+      "object": "年5 月恢复公开市场操作,货币调控方式由直接调控向间接调控转变",
+      "polarity": 1,
+      "quote": "1998年人民银行取消对商业银行信贷规模的直接控制,以货币供应量为中间目标,并于当年5 月恢复公开市场操作,货币调控方式由直接调控向间接调控转变。",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "e518bbae017d41df",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "经济增长",
+      "predicate": "increase",
+      "object": "经济增长、维护物价稳定发挥了重要作用",
+      "polarity": 1,
+      "quote": "货币政策对于促进经济增长、维护物价稳定发挥了重要作用。",
+      "page": 4,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "1266a72c9725749c",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "流动性",
+      "predicate": "causes",
+      "object": "liquidity tightening.",
+      "polarity": -1,
+      "quote": "For example, for a country that has become reliant on borrowing from external creditors, the pulling back of lending due to exogenous causes will lead to liquidity tightening.",
+      "page": 21,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "62e76f1edfbc4746",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "流动性",
+      "predicate": "causes",
+      "object": "a scramble for cash that results in a shortage (i.e., a liquidity crisis).",
+      "polarity": -1,
+      "quote": "These fears feed on themselves and lead to a scramble for cash that results in a shortage (i.e., a liquidity crisis).",
+      "page": 25,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "73c875776e957369",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "中央银行",
+      "predicate": "increase",
+      "object": "interest rates to keep the debt-financed expansion going until they can't do it any more (because the interest rate hits 0 percent).",
+      "polarity": -1,
+      "quote": "That is because the central bank (in this case, the Federal Reserve) lowers interest rates to keep the debt-financed expansion going until they can't do it any more (because the interest rate hits 0 percent).",
+      "page": 13,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "822a6e00e094e769",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "流动性",
+      "predicate": "causes",
+      "object": "liquidity problems, which means that people cut back on their spending.",
+      "polarity": -1,
+      "quote": "This, in turn, leads to liquidity problems, which means that people cut back on their spending.",
+      "page": 14,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "a22c66fe9600ee83",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "中央银行",
+      "predicate": "increase",
+      "object": "asset prices and, in turn, people's wealth, because of the present value effect that lowering interest rates has on asset prices.",
+      "polarity": 1,
+      "quote": "A key reason the long-term debt cycle can be sustained for so long is that central banks progressively lower interest rates, which raises asset prices and, in turn, people's wealth, because of the present value effect that lowering interest rates has on asset prices.",
+      "page": 17,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "ead9f0cab6a9a471",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "流动性",
+      "predicate": "causes",
+      "object": "a tightening in liquidity in that currency, or a financial crisis results in a pullback of capital, etc.).",
+      "polarity": -1,
+      "quote": "This can happen for reasons unrelated to conditions in the domestic economy (e.g., cyclical conditions in a reserve currency country leads to a tightening in liquidity in that currency, or a financial crisis results in a pullback of capital, etc.).",
+      "page": 21,
+      "confidence": 0.76
+    },
+    {
+      "claim_id": "cf308dad6e8efbba",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "中国共产党",
+      "predicate": "condition",
+      "object": "代中国政治的钥匙;",
+      "polarity": 1,
+      "quote": "它们可以表述为以下几项:第一,历史脉络对于理解中国政治具有非常重要的意义,第二中国共产党是理解当代中国政治的钥匙;",
+      "page": 13,
+      "confidence": 0.7
+    },
+    {
+      "claim_id": "038796324f23d5e7",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "对于",
+      "predicate": "condition",
+      "object": "代中国政治来说,历史的重要性更是显而易见",
+      "polarity": 1,
+      "quote": "对于当代中国政治来说,历史的重要性更是显而易见。",
+      "page": 14,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "30eeaa9716311014",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "主要研究领域为",
+      "predicate": "condition",
+      "object": "代政治理论、中国政府与政治、地方政治发展与地方治理",
+      "polarity": 1,
+      "quote": "主要研究领域为当代政治理论、中国政府与政治、地方政治发展与地方治理。",
+      "page": 4,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "51ce05147dd04275",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "这种特定的发展方式,",
+      "predicate": "implies",
+      "object": "传统的因素常常在新形式的包裹下得以存续,显示出颇为强劲的路径依赖效应",
+      "polarity": 1,
+      "quote": "这种特定的发展方式,意味着传统的因素常常在新形式的包裹下得以存续,显示出颇为强劲的路径依赖效应。",
+      "page": 14,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "8817990b428017d9",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "第四,认识中国政治应",
+      "predicate": "condition",
+      "object": "处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系;",
+      "polarity": 1,
+      "quote": "第四,认识中国政治应当处理好宪法与党章、法律与党规、国家机构与党的组织、正式制度与政治惯例之间的互补关系;",
+      "page": 13,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "fd896734e4bb3c1c",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "改革以接受及利用",
+      "predicate": "condition",
+      "object": "下的基 本秩序为前提,在此基础上进行改良",
+      "polarity": 1,
+      "quote": "改革以接受及利用当下的基 本秩序为前提,在此基础上进行改良。",
+      "page": 15,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "3b99a93493f7711c",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "其次,外来因素与中国内部因素的相互作用,",
+      "predicate": "causes",
+      "object": "了中国在政治体臸、经济臸度、舓会结构和思想倾向诸方面的重大变化",
+      "polarity": 1,
+      "quote": "其次,外来因素与中国内部因素的相互作用,引起了中国在政治体臸、经济臸度、舓会结构和思想倾向诸方面的重大变化。",
+      "page": 26,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "6a6d94d3f774837b",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "我们在此考察了中国历史上的一个动荡时代,",
+      "predicate": "condition",
+      "object": "中,内外因素相互交织,将一个儒家普世帝国改造成一个现代民族国家",
+      "polarity": 1,
+      "quote": "我们在此考察了中国历史上的一个动荡时代,当中,内外因素相互交织,将一个儒家普世帝国改造成一个现代民族国家。",
+      "page": 22,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "7aae9f9deee5a2b4",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "但是,",
+      "predicate": "condition",
+      "object": "我们对前期的机构臸度不甚了解的话,那么我们将无法全面评判十九世纪和二十世纪所发生的各种变化",
+      "polarity": 1,
+      "quote": "但是,如果我们对前期的机构臸度不甚了解的话,那么我们将无法全面评判十九世纪和二十世纪所发生的各种变化。",
+      "page": 28,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "c473c01734a071e5",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "由把它",
+      "predicate": "condition",
+      "object": "作一个单独的历史时期加以考察",
+      "polarity": 1,
+      "quote": "由把它当作一个单独的历史时期加以考察。",
+      "page": 27,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "e084ca81493deac7",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "西方历史学家认为,这场战争",
+      "predicate": "implies",
+      "object": "外国在华活动的加剧,这些活动打破了中国的孤立局面,并在中国开创一个革命性变化的时代",
+      "polarity": 1,
+      "quote": "西方历史学家认为,这场战争意味着外国在华活动的加剧,这些活动打破了中国的孤立局面,并在中国开创一个革命性变化的时代。",
+      "page": 27,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "16122b43acfed7f9",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "市场转型",
+      "predicate": "requires",
+      "object": "政府放权,但是政府要保持其强大的发展存在着明显的矛盾",
+      "polarity": 1,
+      "quote": "市场转型要求政府放权,但是政府要保持其强大的发展存在着明显的矛盾。",
+      "page": 7,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "72fa813b7549c5aa",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "其二则是",
+      "predicate": "requires",
+      "object": "基层政府对地方的经济、社会权,这正是我刚刚论述的重点;",
+      "polarity": 1,
+      "quote": "其二则是需要基层政府对地方的经济、社会权,这正是我刚刚论述的重点;",
+      "page": 7,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "a28279736bfd93fa",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "在我们国本书讨论的主题是中国",
+      "predicate": "condition",
+      "object": "代的政府行为特征及其运作的规律",
+      "polarity": 1,
+      "quote": "在我们国本书讨论的主题是中国当代的政府行为特征及其运作的规律。",
+      "page": 5,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "a5a094a295f7375b",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "种竞争在",
+      "predicate": "increase",
+      "object": "经济的同时,也使得地方政府进一一步\"公司化\"",
+      "polarity": 1,
+      "quote": "种竞争在推动经济的同时,也使得地方政府进一一步\"公司化\"。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "b0142a38fa860cf6",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "其二则是",
+      "predicate": "requires",
+      "object": "基层政府对地方的经济、社会 资源拥有强大的控制和动员能力,拥有高效率地完成上级目标的能力",
+      "polarity": 1,
+      "quote": "其二则是需要基层政府对地方的经济、社会 资源拥有强大的控制和动员能力,拥有高效率地完成上级目标的能力。",
+      "page": 7,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "11149fbf7a154a15",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "除了近几年人民币的处理失",
+      "predicate": "condition",
+      "object": "与去年新劳动法的引进,中国着着占了先机,其示范起了作用,把地球上的无数穷人带动了",
+      "polarity": 1,
+      "quote": "除了近几年人民币的处理失当与去年新劳动法的引进,中国着着占了先机,其示范起了作用,把地球上的无数穷人带动了。",
+      "page": 10,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "1afadd038e178acb",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "一九九一在瑞典见过他,",
+      "predicate": "condition",
+      "object": "时我的女儿刚进大学,今天已有两个懂得欺负我的孩子了",
+      "polarity": 1,
+      "quote": "一九九一在瑞典见过他,当时我的女儿刚进大学,今天已有两个懂得欺负我的孩子了。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "396878b5fb5375a1",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "不少旧文",
+      "predicate": "requires",
+      "object": "整理,三卷本的《经济解释》还要修改,但正规的学术文章--结构慎重、注脚详尽的那种--我是不会再染指的了",
+      "polarity": 1,
+      "quote": "不少旧文需要整理,三卷本的《经济解释》还要修改,但正规的学术文章--结构慎重、注脚详尽的那种--我是不会再染指的了。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "41a8fd2224bebd83",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "我回信说:\"",
+      "predicate": "condition",
+      "object": "你要搞,我可以提供一篇题为《中国的经济制度》的文章",
+      "polarity": 1,
+      "quote": "我回信说:\"如果你要搞,我可以提供一篇题为《中国的经济制度》的文章。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "51aa11b12de9472d",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "科斯细读该文后对一位朋友说,",
+      "predicate": "condition",
+      "object": "年催促张五常回到香港研究中国是他平生做得最对的一件事",
+      "polarity": 1,
+      "quote": "科斯细读该文后对一位朋友说,当年催促张五常回到香港研究中国是他平生做得最对的一件事。",
+      "page": 9,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "8e9a63fc63f723e5",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "我想,他九十六岁了,还能搞什么呢?",
+      "predicate": "condition",
+      "object": "时大家都没有想到他选的日子刚好是中国经改的三十周年",
+      "polarity": 1,
+      "quote": "我想,他九十六岁了,还能搞什么呢?当时大家都没有想到他选的日子刚好是中国经改的三十周年。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "b960142819935b9d",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "有这样的",
+      "predicate": "requires",
+      "object": ",因为中国的经济制度是一连串的承包合约的组合--整个国家的经济制度是一个庞大的合约组织",
+      "polarity": 1,
+      "quote": "有这样的需要,因为中国的经济制度是一连串的承包合约的组合--整个国家的经济制度是一个庞大的合约组织。",
+      "page": 7,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "e802fa776fde7f10",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "其一是市场与国际贸易的兴起惹来管制,亚",
+      "predicate": "condition",
+      "object": ".斯密一七七六发表《国富论》",
+      "polarity": 1,
+      "quote": "其一是市场与国际贸易的兴起惹来管制,亚当 .斯密一七七六发表《国富论》。",
+      "page": 9,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "30637a18d7245136",
+      "book_id": "976b3c244642d321",
+      "book_title": "中央银行与货币供给",
+      "subject": "不仅如此,笔者对过去认为理所",
+      "predicate": "condition",
+      "object": "然的一些概念和理论有了新的认识",
+      "polarity": 1,
+      "quote": "不仅如此,笔者对过去认为理所当然的一些概念和理论有了新的认识。",
+      "page": 6,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "17a5937dab58d046",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "se to these new realities",
+      "predicate": "depends",
+      "object": "the capabilities of the policy makers in the decision roles and the freedom of the system to allow them to do what is best.",
+      "polarity": 1,
+      "quote": "se to these new realities depends on the capabilities of the policy makers in the decision roles and the freedom of the system to allow them to do what is best.",
+      "page": 25,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "1edc061afdebad6a",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "What happens in response to these new realities",
+      "predicate": "depends",
+      "object": "the capabilities of the policy makers in the decision roles and the freedom of the system to allow them to do what is best.",
+      "polarity": 1,
+      "quote": "What happens in response to these new realities depends on the capabilities of the policy makers in the decision roles and the freedom of the system to allow them to do what is best.",
+      "page": 25,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "4301ccaf34a83d80",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "Each kind of problem",
+      "predicate": "requires",
+      "object": "a different approach.",
+      "polarity": 1,
+      "quote": "Each kind of problem requires a different approach.",
+      "page": 24,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "d1db672f4e5b6fbe",
+      "book_id": "e58b76c4b14a672b",
+      "book_title": "Principles for Navigating Big Debt Crises",
+      "subject": "To do that",
+      "predicate": "requires",
+      "object": "a lot of smarts, a willingness to fight, and political savvy-i.e., skills and heroism-and sometimes even with all those things, the constraints under which they work still prevent them from being successful.",
+      "polarity": 1,
+      "quote": "To do that requires a lot of smarts, a willingness to fight, and political savvy-i.e., skills and heroism-and sometimes even with all those things, the constraints under which they work still prevent them from being successful.",
+      "page": 27,
+      "confidence": 0.64
+    },
+    {
+      "claim_id": "70716bb23a4a9487",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "导论 这是一本关于",
+      "predicate": "condition",
+      "object": "代中国政治的教科书",
+      "polarity": 1,
+      "quote": "导论 这是一本关于当代中国政治的教科书。",
+      "page": 13,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "8d4366e99c4a53ff",
+      "book_id": "03576cf3e546ced0",
+      "book_title": "当代中国政府与政治",
+      "subject": "研究者强调的是光明还是黑暗,",
+      "predicate": "depends",
+      "object": "看问题的角度和立场",
+      "polarity": 1,
+      "quote": "研究者强调的是光明还是黑暗,取决于看问题的角度和立场。",
+      "page": 14,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "24373056148aebca",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "其时西方的强烈活动",
+      "predicate": "causes",
+      "object": "了中国舓会的急剧变化",
+      "polarity": 1,
+      "quote": "其时西方的强烈活动引起了中国舓会的急剧变化。",
+      "page": 27,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "283c788213509b90",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "对这个过程作内在的考察,将有助于理解",
+      "predicate": "condition",
+      "object": "今中国的行为举措",
+      "polarity": 1,
+      "quote": "对这个过程作内在的考察,将有助于理解当今中国的行为举措。",
+      "page": 22,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "2d4f61525dbc3e93",
+      "book_id": "10e9cb0acc2391e5",
+      "book_title": "中国近代史",
+      "subject": "在太平洋两岸都",
+      "predicate": "requires",
+      "object": "有睿智贤明的治国之道",
+      "polarity": 1,
+      "quote": "在太平洋两岸都需要有睿智贤明的治国之道。",
+      "page": 21,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "8a1b92e1a2cfd9a4",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "在财政支出方面,地方政方政府的收人在很大程度上",
+      "predicate": "depends",
+      "object": "财政分配体制",
+      "polarity": 1,
+      "quote": "在财政支出方面,地方政方政府的收人在很大程度上取决于财政分配体制。",
+      "page": 6,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "c8609eaa543823d8",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "其一就是中央在人事和财政方面的集制能够运行无碍,",
+      "predicate": "requires",
+      "object": "两个前提条件",
+      "polarity": 1,
+      "quote": "其一就是中央在人事和财政方面的集制能够运行无碍,需要两个前提条件。",
+      "page": 7,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "cb3683b98db671d4",
+      "book_id": "24617d60273da367",
+      "book_title": "以利为利：财政关系与地方政府行为",
+      "subject": "这个体 制能够运行无碍,",
+      "predicate": "requires",
+      "object": "两个前提条件",
+      "polarity": 1,
+      "quote": "这个体 制能够运行无碍,需要两个前提条件。",
+      "page": 7,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "4901aa0b1949edaf",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "八五年起深圳与北京的朋友给予很多方便,",
+      "predicate": "requires",
+      "object": "的资料有求必应",
+      "polarity": 1,
+      "quote": "八五年起深圳与北京的朋友给予很多方便,需要的资料有求必应。",
+      "page": 7,
+      "confidence": 0.58
+    },
+    {
+      "claim_id": "ac8dcff79fbb2206",
+      "book_id": "6b078adbc1b1fd81",
+      "book_title": "中国的经济制度",
+      "subject": "恨不得自己还年轻,有魄力仿效亚",
+      "predicate": "condition",
+      "object": ".斯密写一本巨著",
+      "polarity": 1,
+      "quote": "恨不得自己还年轻,有魄力仿效亚当 .斯密写一本巨著。",
+      "page": 9,
+      "confidence": 0.58
+    }
+  ],
+  "entities": [
+    {
+      "entity_id": "d0fb64f967789378",
+      "canonical_name": "经济增长",
+      "entity_type": "indicator",
+      "aliases": [
+        "经济增长",
+        "economic growth"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 6,
+      "mentions": 114
+    },
+    {
+      "entity_id": "d35a4e65673325ef",
+      "canonical_name": "房地产",
+      "entity_type": "sector",
+      "aliases": [
+        "房地产",
+        "房地产市场",
+        "楼市",
+        "real estate"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 6,
+      "mentions": 71
+    },
+    {
+      "entity_id": "56efbffc67af9fbd",
+      "canonical_name": "中央银行",
+      "entity_type": "institution",
+      "aliases": [
+        "中央银行",
+        "央行",
+        "人民银行",
+        "中国人民银行",
+        "central bank",
+        "pboc"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 5,
+      "mentions": 442
+    },
+    {
+      "entity_id": "5c381c2788f6454e",
+      "canonical_name": "货币政策",
+      "entity_type": "policy",
+      "aliases": [
+        "货币政策",
+        "monetary policy"
+      ],
+      "summary": "出现在 13 本书中：信用创造、货币供求与经济结构、中国近代史、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 5,
+      "mentions": 280
+    },
+    {
+      "entity_id": "ee593f66a5ff8745",
+      "canonical_name": "选择",
+      "entity_type": "concept",
+      "aliases": [
+        "选择"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 5,
+      "mentions": 188
+    },
+    {
+      "entity_id": "2c98ad9b921906b0",
+      "canonical_name": "建议",
+      "entity_type": "concept",
+      "aliases": [
+        "建议"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 5,
+      "mentions": 185
+    },
+    {
+      "entity_id": "58bc810ba2a6ab2b",
+      "canonical_name": "失业",
+      "entity_type": "indicator",
+      "aliases": [
+        "失业",
+        "unemployment"
+      ],
+      "summary": "出现在 15 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 5,
+      "mentions": 140
+    },
+    {
+      "entity_id": "9532f33dc6354282",
+      "canonical_name": "国有企业",
+      "entity_type": "institution",
+      "aliases": [
+        "国有企业",
+        "国企",
+        "state-owned enterprise",
+        "state owned enterprise",
+        "soe"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 5,
+      "mentions": 57
+    },
+    {
+      "entity_id": "77dab92eccabb12d",
+      "canonical_name": "全球",
+      "entity_type": "concept",
+      "aliases": [
+        "全球"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 5,
+      "mentions": 45
+    },
+    {
+      "entity_id": "9a06e4f01dc1baef",
+      "canonical_name": "通货膨胀",
+      "entity_type": "indicator",
+      "aliases": [
+        "通货膨胀",
+        "通胀",
+        "inflation"
+      ],
+      "summary": "出现在 14 本书中：信用创造、货币供求与经济结构、中国近代史、伟大的博弈：华尔街金融帝国的崛起、Introduction to Logic等",
+      "book_count": 4,
+      "mentions": 455
+    },
+    {
+      "entity_id": "9c3c6035525f8c67",
+      "canonical_name": "中国共产党",
+      "entity_type": "institution",
+      "aliases": [
+        "中国共产党",
+        "中共",
+        "communist party of china",
+        "cpc"
+      ],
+      "summary": "出现在 8 本书中：当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 4,
+      "mentions": 365
+    },
+    {
+      "entity_id": "aac8181a3f5c573c",
+      "canonical_name": "流动性",
+      "entity_type": "concept",
+      "aliases": [
+        "流动性",
+        "liquidity"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起等",
+      "book_count": 4,
+      "mentions": 267
+    },
+    {
+      "entity_id": "3d2ce0fabb16621b",
+      "canonical_name": "国务院",
+      "entity_type": "institution",
+      "aliases": [
+        "国务院",
+        "state council"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 4,
+      "mentions": 128
+    },
+    {
+      "entity_id": "e8095a99663d3450",
+      "canonical_name": "全国人民代表大会",
+      "entity_type": "institution",
+      "aliases": [
+        "全国人民代表大会",
+        "全国人大",
+        "人民代表大会",
+        "national people's congress",
+        "npc"
+      ],
+      "summary": "出现在 8 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 4,
+      "mentions": 114
+    },
+    {
+      "entity_id": "50b5ab92306a5cd3",
+      "canonical_name": "社会主义",
+      "entity_type": "concept",
+      "aliases": [
+        "社会主义"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 4,
+      "mentions": 89
+    },
+    {
+      "entity_id": "9d27f4f0d2978973",
+      "canonical_name": "汇率",
+      "entity_type": "indicator",
+      "aliases": [
+        "汇率",
+        "exchange rate"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、中国近代史、伟大的博弈：华尔街金融帝国的崛起、中国的经济制度等",
+      "book_count": 4,
+      "mentions": 55
+    },
+    {
+      "entity_id": "451538248926fbd0",
+      "canonical_name": "产权",
+      "entity_type": "concept",
+      "aliases": [
+        "产权",
+        "property rights"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 4,
+      "mentions": 53
+    },
+    {
+      "entity_id": "c4ed43bd872e9c8f",
+      "canonical_name": "意愿",
+      "entity_type": "concept",
+      "aliases": [
+        "意愿"
+      ],
+      "summary": "出现在 12 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为等",
+      "book_count": 4,
+      "mentions": 35
+    },
+    {
+      "entity_id": "d05bdbe45133e593",
+      "canonical_name": "财政政策",
+      "entity_type": "policy",
+      "aliases": [
+        "财政政策",
+        "fiscal policy"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、以利为利：财政关系与地方政府行为、货币数量、利率调控与政策转型、中央银行与货币供给等",
+      "book_count": 3,
+      "mentions": 66
+    },
+    {
+      "entity_id": "174b97cef94a1c1e",
+      "canonical_name": "通货紧缩",
+      "entity_type": "indicator",
+      "aliases": [
+        "通货紧缩",
+        "deflation"
+      ],
+      "summary": "出现在 10 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、中国的经济制度、货币数量、利率调控与政策转型等",
+      "book_count": 3,
+      "mentions": 29
+    },
+    {
+      "entity_id": "3d5422d6799541d9",
+      "canonical_name": "三位一体",
+      "entity_type": "concept",
+      "aliases": [
+        "三位一体"
+      ],
+      "summary": "出现在 5 本书中：当代中国政府与政治、中国近代史、以利为利：财政关系与地方政府行为、文明的冲突等",
+      "book_count": 3,
+      "mentions": 19
+    },
+    {
+      "entity_id": "8bfc4769229c8cce",
+      "canonical_name": "出手",
+      "entity_type": "concept",
+      "aliases": [
+        "出手"
+      ],
+      "summary": "出现在 7 本书中：中国近代史、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起、中央银行与货币供给等",
+      "book_count": 3,
+      "mentions": 8
+    },
+    {
+      "entity_id": "a0ddec3e58356a16",
+      "canonical_name": "国家主权",
+      "entity_type": "concept",
+      "aliases": [
+        "国家主权"
+      ],
+      "summary": "出现在 5 本书中：当代中国政府与政治、中国近代史、文明的冲突、中央银行与货币供给等",
+      "book_count": 3,
+      "mentions": 8
+    },
+    {
+      "entity_id": "496b5002c31bc330",
+      "canonical_name": "商业银行",
+      "entity_type": "institution",
+      "aliases": [
+        "商业银行",
+        "commercial banks"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、货币数量、利率调控与政策转型、中央银行与货币供给等",
+      "book_count": 2,
+      "mentions": 160
+    },
+    {
+      "entity_id": "97aea563d54cac25",
+      "canonical_name": "转移支付",
+      "entity_type": "mechanism",
+      "aliases": [
+        "转移支付",
+        "transfer payment"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、货币数量、利率调控与政策转型、货币、银行信贷与经济周期等",
+      "book_count": 2,
+      "mentions": 98
+    },
+    {
+      "entity_id": "e9cdac8578b351fb",
+      "canonical_name": "分税制",
+      "entity_type": "policy",
+      "aliases": [
+        "分税制",
+        "tax sharing system"
+      ],
+      "summary": "出现在 3 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、宏观经济学二十五讲：中国视角",
+      "book_count": 2,
+      "mentions": 87
+    },
+    {
+      "entity_id": "ab6126db38a019a7",
+      "canonical_name": "银行体系",
+      "entity_type": "institution",
+      "aliases": [
+        "银行体系",
+        "银行部门",
+        "banking system"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、货币数量、利率调控与政策转型、中央银行与货币供给等",
+      "book_count": 2,
+      "mentions": 83
+    },
+    {
+      "entity_id": "68a19c68b7bf0d01",
+      "canonical_name": "公开市场操作",
+      "entity_type": "policy",
+      "aliases": [
+        "公开市场操作",
+        "open market operations",
+        "omo"
+      ],
+      "summary": "出现在 8 本书中：信用创造、货币供求与经济结构、货币数量、利率调控与政策转型、中央银行与货币供给、货币、银行信贷与经济周期等",
+      "book_count": 2,
+      "mentions": 74
+    },
+    {
+      "entity_id": "edf5ec4012a4dc8b",
+      "canonical_name": "文明",
+      "entity_type": "concept",
+      "aliases": [
+        "文明"
+      ],
+      "summary": "出现在 6 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 72
+    },
+    {
+      "entity_id": "20e8ca4bc22ee72b",
+      "canonical_name": "资产负债表",
+      "entity_type": "concept",
+      "aliases": [
+        "资产负债表",
+        "balance sheet"
+      ],
+      "summary": "出现在 9 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、货币数量、利率调控与政策转型、中央银行与货币供给等",
+      "book_count": 2,
+      "mentions": 55
+    },
+    {
+      "entity_id": "a3b2ea200dc2d387",
+      "canonical_name": "法治",
+      "entity_type": "concept",
+      "aliases": [
+        "法治",
+        "rule of law"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、通往奴役之路等",
+      "book_count": 2,
+      "mentions": 45
+    },
+    {
+      "entity_id": "ddf7f7a7b23057e6",
+      "canonical_name": "权限)",
+      "entity_type": "concept",
+      "aliases": [
+        "权限)"
+      ],
+      "summary": "出现在 4 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、伟大的博弈：华尔街金融帝国的崛起、货币、银行信贷与经济周期",
+      "book_count": 2,
+      "mentions": 43
+    },
+    {
+      "entity_id": "3a15e46447b16c25",
+      "canonical_name": "财政包干制",
+      "entity_type": "concept",
+      "aliases": [
+        "财政包干制"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 2,
+      "mentions": 33
+    },
+    {
+      "entity_id": "1cb559cf92d62842",
+      "canonical_name": "土地出让",
+      "entity_type": "policy",
+      "aliases": [
+        "土地出让",
+        "land sale",
+        "land transfer"
+      ],
+      "summary": "出现在 4 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、货币数量、利率调控与政策转型、宏观经济学二十五讲：中国视角",
+      "book_count": 2,
+      "mentions": 32
+    },
+    {
+      "entity_id": "a71b7116efca856f",
+      "canonical_name": "土地出让收入",
+      "entity_type": "indicator",
+      "aliases": [
+        "土地出让收入",
+        "土地出让金",
+        "卖地收入",
+        "land sale revenue"
+      ],
+      "summary": "出现在 4 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为、货币数量、利率调控与政策转型、宏观经济学二十五讲：中国视角",
+      "book_count": 2,
+      "mentions": 32
+    },
+    {
+      "entity_id": "042dbd2a8849c52a",
+      "canonical_name": "合法性",
+      "entity_type": "concept",
+      "aliases": [
+        "合法性",
+        "legitimacy"
+      ],
+      "summary": "出现在 7 本书中：当代中国政府与政治、中国近代史、伟大的博弈：华尔街金融帝国的崛起、Introduction to Logic等",
+      "book_count": 2,
+      "mentions": 31
+    },
+    {
+      "entity_id": "d10dfb3e78a4e88a",
+      "canonical_name": "领导小组",
+      "entity_type": "concept",
+      "aliases": [
+        "领导小组"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 2,
+      "mentions": 28
+    },
+    {
+      "entity_id": "fff6f2d1b38ccc2e",
+      "canonical_name": "央地关系",
+      "entity_type": "concept",
+      "aliases": [
+        "央地关系",
+        "中央与地方关系",
+        "central-local relations",
+        "central local relations"
+      ],
+      "summary": "出现在 2 本书中：当代中国政府与政治、以利为利：财政关系与地方政府行为",
+      "book_count": 2,
+      "mentions": 24
+    },
+    {
+      "entity_id": "16103bcf921be822",
+      "canonical_name": "土地财政",
+      "entity_type": "mechanism",
+      "aliases": [
+        "土地财政",
+        "land finance"
+      ],
+      "summary": "出现在 4 本书中：信用创造、货币供求与经济结构、当代中国政府与政治、以利为利：财政关系与地方政府行为、宏观经济学二十五讲：中国视角",
+      "book_count": 2,
+      "mentions": 20
+    },
+    {
+      "entity_id": "11600500b2a35d26",
+      "canonical_name": "存款保险",
+      "entity_type": "policy",
+      "aliases": [
+        "存款保险",
+        "deposit insurance"
+      ],
+      "summary": "出现在 8 本书中：信用创造、货币供求与经济结构、伟大的博弈：华尔街金融帝国的崛起、货币数量、利率调控与政策转型、中央银行与货币供给等",
+      "book_count": 2,
+      "mentions": 19
+    }
+  ],
+  "debates": [],
+  "source_map": [
+    {
+      "topic": "Principles for Navigating Big Debt Crises",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "7cad2a50b261a127",
+        "44b7e13ed4af3727",
+        "a3dce21f38863122",
+        "c4d4ac84596f7221",
+        "4d0cbd14214a1a7f",
+        "0e2de24910a02b2c",
+        "f8bf83d5cbbe1eb7"
+      ],
+      "keywords": [
+        "principles",
+        "navigating",
+        "debt",
+        "crises",
+        "archetypal",
+        "cycle",
+        "beautiful",
+        "deleveraging",
+        "pushing",
+        "string",
+        "zero",
+        "lower"
+      ]
+    },
+    {
+      "topic": "中国近代史",
+      "lenses": [
+        "history",
+        "politics"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "596a3b01d3add791",
+        "fc3937693c929745",
+        "06fe23ee253659ca",
+        "8d10b942717bee2f",
+        "f76f4f24086772b1",
+        "f686ef02864a6087",
+        "9d27d13745b29582"
+      ],
+      "keywords": [
+        "中国近代史",
+        "夷混合体制",
+        "synarchy",
+        "王朝衰落的表象与实臼",
+        "私家军队与军阀化",
+        "变事与变法之别",
+        "制度改革的层次",
+        "革命联盟",
+        "会党",
+        "留学生",
+        "新军",
+        "一国两制与和平演变"
+      ]
+    },
+    {
+      "topic": "中国的经济制度",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "73f70d14d5173bb4",
+        "03c2f95926d7bfb5",
+        "b97f20498007a239",
+        "f22ad5c40398b879",
+        "be0d5e608f5959dd",
+        "7911aafbda43d35a"
+      ],
+      "keywords": [
+        "中国的经济制度",
+        "县际竞争",
+        "层层承包合约",
+        "土地使用权利界定",
+        "增值税即租金",
+        "交易费用",
+        "合约安排约束竞争",
+        "租值替代交易费用",
+        "逐层责任合约传导",
+        "政策波动归因",
+        "收入分成方程式",
+        "研究承包制"
+      ]
+    },
+    {
+      "topic": "中央银行与货币供给",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "book_ids": [
+        "976b3c244642d321"
+      ],
+      "framework_ids": [
+        "69e10177cb3bddff",
+        "27348d6cfc531702",
+        "4d3b0887c25dd2a1"
+      ],
+      "keywords": [
+        "中央银行与货币供给",
+        "基础货币",
+        "货币乘数",
+        "货币供给内生性",
+        "央行资产负债表",
+        "再贷款与再贴现",
+        "存款准备金",
+        "外汇占款",
+        "信贷规模控制",
+        "判断降准",
+        "区分宽货币与宽信用",
+        "检验货币供给内生性"
+      ]
+    },
+    {
+      "topic": "以利为利：财政关系与地方政府行为",
+      "lenses": [
+        "politics",
+        "economics",
+        "public_finance"
+      ],
+      "book_ids": [
+        "24617d60273da367"
+      ],
+      "framework_ids": [
+        "42a78564796ae021",
+        "7e94467f1667a69e",
+        "30e834d57d3b331a"
+      ],
+      "keywords": [
+        "以利为利",
+        "财政关系与地方政府行为",
+        "财权与事权",
+        "财政包干制",
+        "地方政府公司化",
+        "土地财政",
+        "土地金融",
+        "融资平台",
+        "转移支付",
+        "三位一体",
+        "分析地方债与土地财政",
+        "判断地方政府投资冲动"
+      ]
+    },
+    {
+      "topic": "当代中国政府与政治",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8545cb9c0d763cd7",
+        "042f454c7e7525ad",
+        "8f93a01cffa90148"
+      ],
+      "keywords": [
+        "当代中国政府与政治",
+        "党政体制",
+        "党政双轨",
+        "条块结合",
+        "领导小组",
+        "政策试点",
+        "党内法规",
+        "依法治国",
+        "矩阵结构",
+        "分析政策执行与跨部门协调",
+        "判断地方试点与推广条件",
+        "识别法律与党规的双重约束"
+      ]
+    },
+    {
+      "topic": "Beautiful Deleveraging Balance",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "7cad2a50b261a127"
+      ],
+      "keywords": [
+        "beautiful deleveraging balance"
+      ]
+    },
+    {
+      "topic": "Credibility-Backed Currency Reform Test",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "44b7e13ed4af3727"
+      ],
+      "keywords": [
+        "credibility-backed currency reform test"
+      ]
+    },
+    {
+      "topic": "Crisis Political-Economy Risk Map",
+      "lenses": [
+        "politics",
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "a3dce21f38863122"
+      ],
+      "keywords": [
+        "crisis political-economy risk map"
+      ]
+    },
+    {
+      "topic": "Debt Cycle Phase Classifier",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "c4d4ac84596f7221"
+      ],
+      "keywords": [
+        "debt cycle phase classifier"
+      ]
+    },
+    {
+      "topic": "External-Currency Fragility Screen",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "4d0cbd14214a1a7f"
+      ],
+      "keywords": [
+        "external-currency fragility screen"
+      ]
+    },
+    {
+      "topic": "Restructuring Leverage Assessment",
+      "lenses": [
+        "politics",
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "0e2de24910a02b2c"
+      ],
+      "keywords": [
+        "restructuring leverage assessment"
+      ]
+    },
+    {
+      "topic": "Zero-Bound Policy Triage",
+      "lenses": [
+        "economics"
+      ],
+      "book_ids": [
+        "e58b76c4b14a672b"
+      ],
+      "framework_ids": [
+        "f8bf83d5cbbe1eb7"
+      ],
+      "keywords": [
+        "zero-bound policy triage"
+      ]
+    },
+    {
+      "topic": "三角外交杠杆测算",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "596a3b01d3add791"
+      ],
+      "keywords": [
+        "三角外交杠杆测算"
+      ]
+    },
+    {
+      "topic": "党政体制—条块矩阵",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8545cb9c0d763cd7"
+      ],
+      "keywords": [
+        "党政体制",
+        "条块矩阵"
+      ]
+    },
+    {
+      "topic": "党规—国法双重约束",
+      "lenses": [
+        "law",
+        "politics"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "042f454c7e7525ad"
+      ],
+      "keywords": [
+        "党规",
+        "国法双重约束"
+      ]
+    },
+    {
+      "topic": "军队私有化链条",
+      "lenses": [
+        "politics"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "fc3937693c929745"
+      ],
+      "keywords": [
+        "军队私有化链条"
+      ]
+    },
+    {
+      "topic": "县际竞争激励诊断",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "73f70d14d5173bb4"
+      ],
+      "keywords": [
+        "县际竞争激励诊断"
+      ]
+    },
+    {
+      "topic": "合约约束竞争分析",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "03c2f95926d7bfb5"
+      ],
+      "keywords": [
+        "合约约束竞争分析"
+      ]
+    },
+    {
+      "topic": "土地—财政—金融三位一体",
+      "lenses": [
+        "public_finance",
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "24617d60273da367"
+      ],
+      "framework_ids": [
+        "42a78564796ae021"
+      ],
+      "keywords": [
+        "土地",
+        "财政",
+        "金融三位一体"
+      ]
+    },
+    {
+      "topic": "地方政府公司化与软预算约束",
+      "lenses": [
+        "politics",
+        "public_finance",
+        "economics"
+      ],
+      "book_ids": [
+        "24617d60273da367"
+      ],
+      "framework_ids": [
+        "7e94467f1667a69e"
+      ],
+      "keywords": []
+    },
+    {
+      "topic": "基础货币—货币乘数控制链",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "book_ids": [
+        "976b3c244642d321"
+      ],
+      "framework_ids": [
+        "69e10177cb3bddff"
+      ],
+      "keywords": [
+        "基础货币",
+        "货币乘数控制链"
+      ]
+    },
+    {
+      "topic": "央行资产负债表投放渠道",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "book_ids": [
+        "976b3c244642d321"
+      ],
+      "framework_ids": [
+        "27348d6cfc531702"
+      ],
+      "keywords": [
+        "央行资产负债表投放渠道"
+      ]
+    },
+    {
+      "topic": "官督商办治理诊断",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "06fe23ee253659ca"
+      ],
+      "keywords": [
+        "官督商办治理诊断"
+      ]
+    },
+    {
+      "topic": "政策归因波动分析",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "b97f20498007a239"
+      ],
+      "keywords": [
+        "政策归因波动分析"
+      ]
+    },
+    {
+      "topic": "王朝衰败诊断树",
+      "lenses": [
+        "economics",
+        "politics"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "8d10b942717bee2f"
+      ],
+      "keywords": [
+        "王朝衰败诊断树"
+      ]
+    },
+    {
+      "topic": "礼仪即秩序分析",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "f76f4f24086772b1"
+      ],
+      "keywords": [
+        "礼仪即秩序分析"
+      ]
+    },
+    {
+      "topic": "租值替代交易费用分析",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "f22ad5c40398b879"
+      ],
+      "keywords": [
+        "租值替代交易费用分析"
+      ]
+    },
+    {
+      "topic": "税租判别法",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "be0d5e608f5959dd"
+      ],
+      "keywords": [
+        "税租判别法"
+      ]
+    },
+    {
+      "topic": "继承与派系斗争机制",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "f686ef02864a6087"
+      ],
+      "keywords": [
+        "继承与派系斗争机制"
+      ]
+    },
+    {
+      "topic": "试点—推广的适应性政策过程",
+      "lenses": [
+        "politics",
+        "law"
+      ],
+      "book_ids": [
+        "03576cf3e546ced0"
+      ],
+      "framework_ids": [
+        "8f93a01cffa90148"
+      ],
+      "keywords": [
+        "试点",
+        "推广的适应性政策过程"
+      ]
+    },
+    {
+      "topic": "财权—事权错配压力测试",
+      "lenses": [
+        "politics",
+        "public_finance",
+        "economics"
+      ],
+      "book_ids": [
+        "24617d60273da367"
+      ],
+      "framework_ids": [
+        "30e834d57d3b331a"
+      ],
+      "keywords": [
+        "财权",
+        "事权错配压力测试"
+      ]
+    },
+    {
+      "topic": "货币供给内生性检验",
+      "lenses": [
+        "economics",
+        "finance"
+      ],
+      "book_ids": [
+        "976b3c244642d321"
+      ],
+      "framework_ids": [
+        "4d3b0887c25dd2a1"
+      ],
+      "keywords": [
+        "货币供给内生性检验"
+      ]
+    },
+    {
+      "topic": "逐层责任合约传导",
+      "lenses": [
+        "economics",
+        "law"
+      ],
+      "book_ids": [
+        "6b078adbc1b1fd81"
+      ],
+      "framework_ids": [
+        "7911aafbda43d35a"
+      ],
+      "keywords": [
+        "逐层责任合约传导"
+      ]
+    },
+    {
+      "topic": "革命联盟构建法",
+      "lenses": [
+        "politics"
+      ],
+      "book_ids": [
+        "10e9cb0acc2391e5"
+      ],
+      "framework_ids": [
+        "9d27d13745b29582"
+      ],
+      "keywords": [
+        "革命联盟构建法"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "no cross-book conflicts detected; this may be extraction coverage, not agreement"
+  ],
+  "routing": {
+    "triggers": [
+      "财政",
+      "地方债",
+      "地方政府",
+      "土地财政",
+      "央地关系",
+      "转移支付",
+      "货币供给",
+      "基础货币",
+      "货币乘数",
+      "银行信贷",
+      "信贷",
+      "信用扩张",
+      "债务周期",
+      "去杠杆",
+      "金融危机",
+      "货币政策",
+      "财政政策",
+      "产业政策",
+      "国家能力",
+      "政策传导",
+      "金融稳定",
+      "房地产",
+      "城投",
+      "化债",
+      "流动性",
+      "准备金",
+      "专项债",
+      "特别国债",
+      "城投平台",
+      "融资平台",
+      "银行间市场",
+      "汇率",
+      "资本流动",
+      "利率",
+      "加息",
+      "降息",
+      "影子银行",
+      "贸易",
+      "监管",
+      "降准",
+      "地方财政",
+      "消费",
+      "产权",
+      "统一大市场",
+      "人口",
+      "国企",
+      "非税收入",
+      "结构性货币政策",
+      "beautiful deleveraging balance",
+      "credibility-backed currency reform test",
+      "crisis political-economy risk map",
+      "debt cycle phase classifier",
+      "external-currency fragility screen",
+      "restructuring leverage assessment",
+      "zero-bound policy triage",
+      "三角外交杠杆测算",
+      "党政体制",
+      "条块矩阵",
+      "党规",
+      "国法双重约束",
+      "军队私有化链条",
+      "县际竞争激励诊断",
+      "合约约束竞争分析",
+      "土地",
+      "金融三位一体",
+      "货币乘数控制链",
+      "央行资产负债表投放渠道",
+      "官督商办治理诊断",
+      "政策归因波动分析",
+      "王朝衰败诊断树",
+      "礼仪即秩序分析",
+      "租值替代交易费用分析",
+      "税租判别法",
+      "继承与派系斗争机制",
+      "试点",
+      "推广的适应性政策过程",
+      "财权",
+      "事权错配压力测试",
+      "货币供给内生性检验",
+      "逐层责任合约传导"
+    ],
+    "policy": "Auto-select only when one pack is clearly ahead. If two packs are close or the question is high-stakes, show the candidates and ask. Never load more than two packs."
+  },
+  "eval": {
+    "rubric": [
+      "source_fidelity",
+      "retrieval_coverage",
+      "framework_fit",
+      "cross_book_synthesis",
+      "cross_lens_integration",
+      "conflict_handling",
+      "calibration",
+      "actionability",
+      "failure_mode_awareness",
+      "causal_depth",
+      "counterargument",
+      "boundary_conditions",
+      "falsifiability"
+    ],
+    "golden_set": "eval/golden.jsonl",
+    "last_score": {
+      "book_coverage": 1.0,
+      "framework_coverage": 1.0,
+      "lens_coverage": 1.0,
+      "topic_coverage": 1.0,
+      "conflict_coverage": 1.0
+    }
+  },
+  "history": [
+    {
+      "version": "1.0.0",
+      "at": "2026-10-19T11:39:48.380869+00:00",
+      "event": "build",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 50,
+      "diff": {
+        "added_books": [
+          "03576cf3e546ced0",
+          "10e9cb0acc2391e5",
+          "24617d60273da367",
+          "6b078adbc1b1fd81",
+          "976b3c244642d321",
+          "e58b76c4b14a672b"
+        ],
+        "removed_books": [],
+        "added_frameworks": [
+          "03c2f95926d7bfb5",
+          "042f454c7e7525ad",
+          "06fe23ee253659ca",
+          "0e2de24910a02b2c",
+          "27348d6cfc531702",
+          "30e834d57d3b331a",
+          "42a78564796ae021",
+          "44b7e13ed4af3727",
+          "4d0cbd14214a1a7f",
+          "4d3b0887c25dd2a1",
+          "596a3b01d3add791",
+          "69e10177cb3bddff",
+          "73f70d14d5173bb4",
+          "7911aafbda43d35a",
+          "7cad2a50b261a127",
+          "7e94467f1667a69e",
+          "8545cb9c0d763cd7",
+          "8d10b942717bee2f",
+          "8f93a01cffa90148",
+          "9d27d13745b29582",
+          "a3dce21f38863122",
+          "b97f20498007a239",
+          "be0d5e608f5959dd",
+          "c4d4ac84596f7221",
+          "f22ad5c40398b879",
+          "f686ef02864a6087",
+          "f76f4f24086772b1",
+          "f8bf83d5cbbe1eb7",
+          "fc3937693c929745"
+        ],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.1",
+      "at": "2026-10-19T11:40:10.507479+00:00",
+      "event": "update",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 50,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.2",
+      "at": "2026-10-19T11:41:04.818624+00:00",
+      "event": "update",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 50,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.3",
+      "at": "2026-10-19T11:42:31.848318+00:00",
+      "event": "update",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 60,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.4",
+      "at": "2026-10-19T11:57:47.193169+00:00",
+      "event": "update",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 60,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    },
+    {
+      "version": "1.0.5",
+      "at": "2026-10-19T11:59:02.698596+00:00",
+      "event": "update",
+      "books": 6,
+      "frameworks": 29,
+      "claims": 60,
+      "diff": {
+        "added_books": [],
+        "removed_books": [],
+        "added_frameworks": [],
+        "removed_frameworks": []
+      }
+    }
+  ],
+  "stats": {
+    "books": 6,
+    "frameworks": 29,
+    "claims": 60,
+    "entities": 40,
+    "debates": 0
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "topic:rag": [
+    {
+      "full_name": "open-webui/open-webui",
+      "stars": 156006,
+      "desc": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "updated": "2026-10-16T14:59:01Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "stars": 148006,
+      "desc": "The agent engineering platform.",
+      "updated": "2026-10-17T08:50:05Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "stars": 142149,
+      "desc": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "updated": "2026-10-17T16:56:09Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "stars": 127865,
+      "desc": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "updated": "2026-10-16T17:57:21Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "stars": 101446,
+      "desc": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Herme",
+      "updated": "2026-10-18T00:01:34Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "stars": 92387,
+      "desc": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+      "updated": "2026-10-17T13:11:26Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "stars": 91292,
+      "desc": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "updated": "2026-09-16T03:31:50Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "unclecode/crawl4ai",
+      "stars": 85732,
+      "desc": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key.",
+      "updated": "2026-10-15T10:16:13Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "datawhalechina/hello-agents",
+      "stars": 83514,
+      "desc": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程",
+      "updated": "2026-10-13T22:28:54Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "dair-ai/Prompt-Engineering-Guide",
+      "stars": 79271,
+      "desc": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
+      "updated": "2026-03-11T20:09:13Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "stars": 75605,
+      "desc": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+      "updated": "2026-10-17T18:29:50Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "mem0ai/mem0",
+      "stars": 67366,
+      "desc": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
+      "updated": "2026-10-17T21:06:52Z",
+      "license": "Apache-2.0"
+    }
+  ],
+  "topic:graphrag": [
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "stars": 127865,
+      "desc": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "updated": "2026-10-16T17:57:21Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "HKUDS/LightRAG",
+      "stars": 40195,
+      "desc": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "updated": "2026-10-15T18:04:12Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "microsoft/graphrag",
+      "stars": 36367,
+      "desc": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
+      "updated": "2026-10-12T22:32:27Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "tirth8205/code-review-graph",
+      "stars": 32226,
+      "desc": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+      "updated": "2026-10-16T11:20:26Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "vesoft-inc/nebula",
+      "stars": 12437,
+      "desc": "  A distributed, fast open-source graph database featuring horizontal scalability and high availability",
+      "updated": "2026-09-08T06:42:15Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "adongwanai/AgentGuide",
+      "stars": 10981,
+      "desc": "https://adongwanai.github.io/AgentGuide | AI Agent开发指南 | LangGraph实战 | 高级RAG | 转行大模型 | 大模型面试 | 算法工程师 | 面试题库 | 强化学习｜数据合成",
+      "updated": "2026-09-15T06:38:22Z",
+      "license": null
+    },
+    {
+      "full_name": "FalkorDB/FalkorDB",
+      "stars": 10414,
+      "desc": "A super fast Graph Database uses GraphBLAS under the hood for its sparse adjacency matrix graph representation. Our goal is to provide the best Knowledge Graph for LLM (GraphRAG).",
+      "updated": "2026-10-18T03:39:17Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "deeplethe/utopia",
+      "stars": 8414,
+      "desc": "World's first open-source enterprise world model.",
+      "updated": "2026-10-18T03:41:33Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "neo4j-labs/llm-graph-builder",
+      "stars": 5284,
+      "desc": "Neo4j graph construction from unstructured data using LLMs",
+      "updated": "2026-10-17T05:55:41Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "memgraph/memgraph",
+      "stars": 4621,
+      "desc": "High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph analytics. Cypher-compatible, built in C++.",
+      "updated": "2026-10-16T23:17:31Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "gusye1234/nano-graphrag",
+      "stars": 4003,
+      "desc": "A simple, easy-to-hack GraphRAG implementation",
+      "updated": "2026-01-27T07:50:55Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "pipeshub-ai/pipeshub-ai",
+      "stars": 3837,
+      "desc": "The open-source context layer for AI agents. PipesHub turns your company's knowledge (Slack, Drive, Jira, GitHub, Microsoft 365 and 40+ connectors) into a permission-aware workspace that agents can search, grep, navigate and cite. MCP, SDKs",
+      "updated": "2026-10-18T04:34:11Z",
+      "license": "Apache-2.0"
+    }
+  ],
+  "topic:retrieval-augmented-generation": [
+    {
+      "full_name": "infiniflow/ragflow",
+      "stars": 92387,
+      "desc": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+      "updated": "2026-10-17T13:11:26Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "pathwaycom/serviette",
+      "stars": 58792,
+      "desc": "A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.",
+      "updated": "2026-10-16T10:31:14Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "HKUDS/LightRAG",
+      "stars": 40195,
+      "desc": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "updated": "2026-10-15T18:04:12Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "VectifyAI/PageIndex",
+      "stars": 39243,
+      "desc": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+      "updated": "2026-10-17T21:27:29Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "chatchat-space/Langchain-Chatchat",
+      "stars": 38694,
+      "desc": "Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain ",
+      "updated": "2025-11-10T09:27:42Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "stanford-oval/storm",
+      "stars": 31655,
+      "desc": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.",
+      "updated": "2025-09-30T18:07:21Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "NirDiamant/RAG_Techniques",
+      "stars": 29903,
+      "desc": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial.",
+      "updated": "2026-10-17T15:16:56Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "deepset-ai/haystack",
+      "stars": 26761,
+      "desc": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalabl",
+      "updated": "2026-10-17T02:14:47Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "HKUDS/RAG-Anything",
+      "stars": 23739,
+      "desc": "\"RAG-Anything: All-in-One RAG Framework\"",
+      "updated": "2026-10-12T01:54:00Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "memvid/memvid",
+      "stars": 16602,
+      "desc": "Memory layer for AI Agents. Replace complex RAG pipelines with a serverless, single-file memory layer. Give your agents instant retrieval and long-term memory.",
+      "updated": "2026-07-14T14:39:07Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "llmware-ai/llmware",
+      "stars": 14814,
+      "desc": "Unified framework for building enterprise RAG pipelines with small, specialized models",
+      "updated": "2026-10-01T16:09:57Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "full_name": "StarTrail-org/LEANN",
+      "stars": 13033,
+      "desc": "[MLsys2026 Best Paper]: https://arxiv.org/abs/2506.08276. RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device.",
+      "updated": "2026-10-17T02:35:31Z",
+      "license": "MIT"
+    }
+  ],
+  "graphrag in:name,description": [
+    {
+      "full_name": "microsoft/graphrag",
+      "stars": 36367,
+      "desc": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
+      "updated": "2026-10-12T22:32:27Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "FalkorDB/FalkorDB",
+      "stars": 10414,
+      "desc": "A super fast Graph Database uses GraphBLAS under the hood for its sparse adjacency matrix graph representation. Our goal is to provide the best Knowledge Graph for LLM (GraphRAG).",
+      "updated": "2026-10-18T03:39:17Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "memgraph/memgraph",
+      "stars": 4621,
+      "desc": "High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph analytics. Cypher-compatible, built in C++.",
+      "updated": "2026-10-16T23:17:31Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "full_name": "FareedKhan-dev/all-agentic-architectures",
+      "stars": 4610,
+      "desc": "35 production-grade agentic AI architectures (Reflexion, LATS, GraphRAG, MemGPT, Voyager, BrowserAgent, ...) — a Python library and runnable textbook with multi-provider LLM support and a 17-task benchmark leaderboard.",
+      "updated": "2026-06-22T06:16:53Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "gusye1234/nano-graphrag",
+      "stars": 4003,
+      "desc": "A simple, easy-to-hack GraphRAG implementation",
+      "updated": "2026-01-27T07:50:55Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "circlemind-ai/fast-graphrag",
+      "stars": 3966,
+      "desc": "RAG that intelligently adapts to your use case, data, and queries",
+      "updated": "2025-11-01T20:45:25Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "neomjs/neo",
+      "stars": 3295,
+      "desc": "Neo.mjs is a self-evolving software organism: a professional end-to-end AI engineering team whose cross-model swarm inhabits live apps via Neural Link, Active Hybrid GraphRAG, DreamService, and self-healing loops.",
+      "updated": "2026-10-18T03:15:32Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "DEEP-PolyU/Awesome-GraphRAG",
+      "stars": 2674,
+      "desc": "Awesome-GraphRAG: A curated list of resources (surveys, papers, benchmarks, and opensource projects) on graph-based retrieval-augmented generation. ",
+      "updated": "2026-06-02T12:52:38Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "Azure-Samples/graphrag-accelerator",
+      "stars": 2406,
+      "desc": "One-click deploy of a Knowledge Graph powered RAG (GraphRAG) in Azure",
+      "updated": "2025-05-27T13:56:40Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "heshengtao/comfyui_LLM_party",
+      "stars": 2383,
+      "desc": "LLM Agent Framework in ComfyUI includes MCP sever, Omost,GPT-sovits, ChatTTS,GOT-OCR2.0, and FLUX prompt nodes,access to Feishu,discord,and adapts to all llms with similar openai / aisuite interfaces, such as o1,ollama, gemini, grok, qwen, ",
+      "updated": "2026-07-29T18:05:53Z",
+      "license": "AGPL-3.0"
+    },
+    {
+      "full_name": "1517005260/graph-rag-agent",
+      "stars": 2346,
+      "desc": "拼好RAG：手搓并融合了GraphRAG、LightRAG、Neo4j-llm-graph-builder进行知识图谱构建以及搜索；整合DeepSearch技术实现私域RAG的推理；自制针对GraphRAG的评估框架| Integrate GraphRAG, LightRAG, and Neo4j-llm-graph-builder for knowledge graph construction and search. Combine DeepSearch for priv",
+      "updated": "2025-11-05T08:15:51Z",
+      "license": "MIT"
+    },
+    {
+      "full_name": "severian42/GraphRAG-Local-UI",
+      "stars": 2320,
+      "desc": "GraphRAG using Local LLMs - Features robust API and multiple apps for Indexing/Prompt Tuning/Query/Chat/Visualizing/Etc. This is meant to be the ultimate GraphRAG/KG local LLM app. ",
+      "updated": "2024-11-09T02:04:26Z",
+      "license": "MIT"
+    }
+  ],
+  "RAPTOR retrieval in:name,description": [
+    {
+      "error": "HTTP Error 403: rate limit exceeded"
+    }
+  ],
+  "agentic rag in:name,description": [
+    {
+      "error": "HTTP Error 403: rate limit exceeded"
+    }
+  ]
+}

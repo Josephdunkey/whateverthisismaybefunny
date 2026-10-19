@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CompilationPatch",
+  "type": "object",
+  "required": ["book_card", "frameworks"],
+  "properties": {
+    "book_card": {"$ref": "book-card.schema.json"},
+    "frameworks": {"type": "array", "minItems": 1, "items": {"$ref": "framework-card.schema.json"}}
+  }
+}

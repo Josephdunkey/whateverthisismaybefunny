@@ -1,0 +1,280 @@
+{
+  "retrieval_practice": [
+    {
+      "title": "Enhancing Student Learning with LLM-Generated Retrieval Practice Questions: An Empirical Study in Data Science Courses",
+      "published": "2025-07-08T03:23:19Z",
+      "id": "http://arxiv.org/abs/2507.05629v2",
+      "summary": "Retrieval practice is a well-established pedagogical technique known to significantly enhance student learning and knowledge retention. However, generating high-quality retrieval practice questions is often time-consuming and labor intensive for instructors, especially in rapidly evolving technical subjects. Large Language Models (LLMs) offer the potential to automate this process by generating questions in response to prompts, yet the effectiveness of LLM-generated retrieval practice on student"
+    },
+    {
+      "title": "Do Gains from Generative AI-Enabled Adaptive Pretesting Persist? Evidence from a Retention Study",
+      "published": "2026-06-21T04:34:29Z",
+      "id": "http://arxiv.org/abs/2606.22328v1",
+      "summary": "Pretesting - attempting problems before instruction - supports learning by activating prior knowledge and sharpening attention to subsequent instruction. Recent work suggests that adaptive AI-assisted pretesting can yield further advantages, particularly for tasks requiring higher-order reasoning, yet it remains unclear whether these gains persist over time. This study examines the durability of learning gains following GenAI-enabled adaptive pretesting over a seven-week retention period. Underg"
+    }
+  ],
+  "spacing": [
+    {
+      "title": "Unbounded Human Learning: Optimal Scheduling for Spaced Repetition",
+      "published": "2016-02-23T04:33:05Z",
+      "id": "http://arxiv.org/abs/1602.07032v2",
+      "summary": "In the study of human learning, there is broad evidence that our ability to retain information improves with repeated exposure and decays with delay since last exposure. This plays a crucial role in the design of educational software, leading to a trade-off between teaching new material and reviewing what has already been taught. A common way to balance this trade-off is spaced repetition, which uses periodic review of content to improve long-term retention. Though spaced repetition is widely us"
+    },
+    {
+      "title": "Interpretable Memory Models for Spaced Repetition",
+      "published": "2026-09-14T19:48:20Z",
+      "id": "http://arxiv.org/abs/2610.10548v1",
+      "summary": "Spaced repetition software schedules reviews with a memory model fit to review logs. Accuracy on a test set is not sufficient evidence of quality since available data are produced by existing schedulers, and new solutions must extrapolate beyond them. A model also needs a simple mechanistic interpretation. We present SBD, a model that is more interpretable and 80% smaller than the current state of the art at nearly the same accuracy."
+    }
+  ],
+  "interleaving": [
+    {
+      "title": "A Personalised Learning Tool for Physics Undergraduate Students Built On a Large Language Model for Symbolic Regression",
+      "published": "2024-06-17T13:43:30Z",
+      "id": "http://arxiv.org/abs/2407.00065v1",
+      "summary": "Interleaved practice enhances the memory and problem-solving ability of students in undergraduate courses. We introduce a personalized learning tool built on a Large Language Model (LLM) that can provide immediate and personalized attention to students as they complete homework containing problems interleaved from undergraduate physics courses. Our tool leverages the dimensional analysis method, enhancing students' qualitative thinking and problem-solving skills for complex phenomena. Our approa"
+    },
+    {
+      "title": "Integrating Curricula with Replays: Its Effects on Continual Learning",
+      "published": "2023-07-08T14:14:55Z",
+      "id": "http://arxiv.org/abs/2307.05747v2",
+      "summary": "Humans engage in learning and reviewing processes with curricula when acquiring new skills or knowledge. This human learning behavior has inspired the integration of curricula with replay methods in continual learning agents. The goal is to emulate the human learning process, thereby improving knowledge retention and facilitating learning transfer. Existing replay methods in continual learning agents involve the random selection and ordering of data from previous tasks, which has shown to be eff"
+    }
+  ],
+  "deliberate_practice": [
+    {
+      "title": "Improving the Scaling Laws of Synthetic Data with Deliberate Practice",
+      "published": "2025-02-21T16:56:15Z",
+      "id": "http://arxiv.org/abs/2502.15588v1",
+      "summary": "Inspired by the principle of deliberate practice in human learning, we propose Deliberate Practice for Synthetic Data Generation (DP), a novel framework that improves sample efficiency through dynamic synthetic data generation. Prior work has shown that scaling synthetic data is inherently challenging, as naively adding new data leads to diminishing returns. To address this, pruning has been identified as a key mechanism for improving scaling, enabling models to focus on the most informative syn"
+    },
+    {
+      "title": "Teaching Problem Solving in Undergraduate Physics Courses: An Endorsement for Deliberate Practice",
+      "published": "2025-08-11T16:09:34Z",
+      "id": "http://arxiv.org/abs/2508.08133v1",
+      "summary": "Developing expert-like problem-solving skills is a central goal of undergraduate physics education. In this study, we investigate the impact of teaching explicit problem-solving frameworks, combined with deliberate practice, on students' problem-solving approaches. Using multidimensional scaling to analyze students' decision-making patterns, we compare the similarity of students taught with these methods to physics experts and to students taught with traditional repeated practice. Our results sh"
+    }
+  ],
+  "self_explanation": [
+    {
+      "title": "Learning from Ambiguous Demonstrations with Self-Explanation Guided Reinforcement Learning",
+      "published": "2021-10-11T13:59:48Z",
+      "id": "http://arxiv.org/abs/2110.05286v4",
+      "summary": "Our work aims at efficiently leveraging ambiguous demonstrations for the training of a reinforcement learning (RL) agent. An ambiguous demonstration can usually be interpreted in multiple ways, which severely hinders the RL-Agent from learning stably and efficiently. Since an optimal demonstration may also suffer from being ambiguous, previous works that combine RL and learning from demonstration (RLfD works) may not work well. Inspired by how humans handle such situations, we propose to use sel"
+    },
+    {
+      "title": "Learning by Self-Explanation, with Application to Neural Architecture Search",
+      "published": "2020-12-23T07:39:54Z",
+      "id": "http://arxiv.org/abs/2012.12899v2",
+      "summary": "Learning by self-explanation is an effective learning technique in human learning, where students explain a learned topic to themselves for deepening their understanding of this topic. It is interesting to investigate whether this explanation-driven learning methodology broadly used by humans is helpful for improving machine learning as well. Based on this inspiration, we propose a novel machine learning method called learning by self-explanation (LeaSE). In our approach, an explainer model impr"
+    }
+  ],
+  "icap": [
+    {
+      "title": "Measuring Cognitive Engagement in Collaborative Discourse with an Extended ICAP Framework: Comparing Human Annotation, In-Context Learning, and Reflective LLM Agents",
+      "published": "2026-06-07T20:58:51Z",
+      "id": "http://arxiv.org/abs/2607.28651v1",
+      "summary": "Collaboration supports learning and problem-solving, but its effectiveness depends on cognitive engagement during discourse. This study applies an extended 7-point ICAP framework based on the Interactive, Constructive, Active, and Passive modes to characterize variation in cognitive engagement during collaborative dialogue. Engagement was coded by trained human annotators and compared with large language model (LLM)-based labeling approaches, including in-context learning (ICL), zero-shot prompt"
+    },
+    {
+      "title": "Adaptive Scaffolding for Cognitive Engagement in an Intelligent Tutoring System",
+      "published": "2026-02-07T01:51:46Z",
+      "id": "http://arxiv.org/abs/2602.07308v1",
+      "summary": "The ICAP framework defines four cognitive engagement levels: Passive, Active, Constructive, and Interactive, where increased cognitive engagement can yield improved learning. However, personalizing learning activities that elicit the optimal level of cognitive engagement remains a key challenge in intelligent tutoring systems (ITS). In this work, we develop and evaluate a system that adaptively scaffolds cognitive engagement by dynamically selecting worked examples in two different ICAP modes: ("
+    }
+  ],
+  "generation_effect": [
+    {
+      "title": "On realization of generalized effect algebras",
+      "published": "2012-08-07T15:48:21Z",
+      "id": "http://arxiv.org/abs/1208.1450v1",
+      "summary": "A well known fact is that there is a finite orthomodular lattice with an order determining set of states which is not representable in the standard quantum logic, the lattice $L({\\mathcal H})$ of all closed subspaces of a separable complex Hilbert space. We show that a generalized effect algebra is representable in the operator generalized effect algebra ${\\mathcal G}_D({\\mathcal H})$ of effects of a complex Hilbert space ${\\mathcal H}$ iff it has an order determining set of generalized states. "
+    },
+    {
+      "title": "Dimension theory for generalized effect algebras",
+      "published": "2012-06-14T09:36:29Z",
+      "id": "http://arxiv.org/abs/1206.3052v1",
+      "summary": "In this paper we define and study dimension generalized effect algebras (DGEAs), i.e., Dedekind orthocomplete and centrally orthocomplete generalized effect algebras equipped with a dimension equivalence relation. Our theory is a bona fide generalization of the theory of dimension effect algebras (DEAs), i.e., it is formulated so that, if a DGEA happens to be an effect algebra (i.e., it has a unit element), then it is a DEA. We prove that a DGEA decomposes into type I, II, and III DGEAS in a man"
+    }
+  ],
+  "cognitive_load": [
+    {
+      "title": "Constructivism versus Cognitive Load Theory: In Search for an Effective Mathematics Teaching",
+      "published": "2021-08-10T17:14:10Z",
+      "id": "http://arxiv.org/abs/2108.04796v1",
+      "summary": "Two major learning theories have dominated recent literature on optimizing knowledge acquisition: constructivism and cognitive load theory. Constructivism, on the one hand, gives preeminent value to the development of students' self-regulated process of constructing mathematical concepts. Its basic tenet is that students acquire their own mathematical understanding by constructing them from the inside rather than by internalizing them from the outside. Cognitive load theory, on the other hand, s"
+    },
+    {
+      "title": "Use of Eye-Tracking Technology to Investigate Cognitive Load Theory",
+      "published": "2018-03-07T02:03:34Z",
+      "id": "http://arxiv.org/abs/1803.02499v1",
+      "summary": "Cognitive load theory (CLT) provides us guiding principles in the design of learning materials. CLT differentiates three different kinds of cognitive load -- intrinsic, extraneous and germane load. Intrinsic load is related to the learning goal, extraneous load costs cognitive resources but does not contribute to learning. Germane load can foster learning. Objective methods, such as eye movement measures and EEG have been used measure the total cognitive load. Very few research studies, if any, "
+    }
+  ],
+  "transfer": [
+    {
+      "title": "Learning When to Transfer: Reinforcement Learning for Carbon-Footprint Modeling in New Manufacturing Domains",
+      "published": "2026-10-13T17:06:31Z",
+      "id": "http://arxiv.org/abs/2610.18730v1",
+      "summary": "Manufacturers often need to characterize a new material, process, or product before enough operating data are available to train reliable predictive models for this new, target domain. Existing manufacturing operations contain potentially useful knowledge to accelerate this characterization, but indiscriminate reuse of data from existing source domains can cause negative transfer in learning of the new, target domain when the manufacturing domains differ sufficiently. This work proposes a reinfo"
+    },
+    {
+      "title": "Transition Transfer $Q$-Learning for Composite Markov Decision Processes",
+      "published": "2025-02-01T19:22:00Z",
+      "id": "http://arxiv.org/abs/2502.00534v1",
+      "summary": "To bridge the gap between empirical success and theoretical understanding in transfer reinforcement learning (RL), we study a principled approach with provable performance guarantees. We introduce a novel composite MDP framework where high-dimensional transition dynamics are modeled as the sum of a low-rank component representing shared structure and a sparse component capturing task-specific variations. This relaxes the common assumption of purely low-rank transition models, allowing for more r"
+    }
+  ],
+  "self_regulated": [
+    {
+      "title": "Process mining for self-regulated learning assessment in e-learning",
+      "published": "2024-02-11T11:51:32Z",
+      "id": "http://arxiv.org/abs/2403.12068v1",
+      "summary": "Content assessment has broadly improved in e-learning scenarios in recent decades. However, the eLearning process can give rise to a spatial and temporal gap that poses interesting challenges for assessment of not only content, but also students' acquisition of core skills such as self-regulated learning. Our objective was to discover students' self-regulated learning processes during an eLearning course by using Process Mining Techniques. We applied a new algorithm in the educational domain cal"
+    },
+    {
+      "title": "Harnessing Large Language Models to Enhance Self-Regulated Learning via Formative Feedback",
+      "published": "2023-11-23T13:03:21Z",
+      "id": "http://arxiv.org/abs/2311.13984v2",
+      "summary": "Effectively supporting students in mastering all facets of self-regulated learning is a central aim of teachers and educational researchers. Prior research could demonstrate that formative feedback is an effective way to support students during self-regulated learning (SRL). However, for formative feedback to be effective, it needs to be tailored to the learners, requiring information about their learning progress. In this work, we introduce LEAP, a novel platform that utilizes advanced large la"
+    }
+  ],
+  "graphrag": [
+    {
+      "title": "GraphRAG under Fire",
+      "published": "2025-01-23T19:33:16Z",
+      "id": "http://arxiv.org/abs/2501.14050v4",
+      "summary": "GraphRAG advances retrieval-augmented generation (RAG) by structuring external knowledge as multi-scale knowledge graphs, enabling language models to integrate both broad context and granular details in their generation. While GraphRAG has demonstrated success across domains, its security implications remain largely unexplored. To bridge this gap, this work examines GraphRAG's vulnerability to poisoning attacks, uncovering an intriguing security paradox: existing RAG poisoning attacks are less e"
+    },
+    {
+      "title": "ACE-GraphRAG: Agentic Context Engineering for Hierarchical GraphRAG",
+      "published": "2026-08-02T14:22:31Z",
+      "id": "http://arxiv.org/abs/2608.01269v2",
+      "summary": "Hierarchical Graph Retrieval-Augmented Generation (GraphRAG) organizes corpus knowledge at multiple levels of granularity, yet fixed context construction may fail to translate these multi-resolution representations into a context suited to the current query. We identify this mismatch as the representation--inference gap. We propose Agentic Context Engineering for Hierarchical GraphRAG (ACE-GraphRAG), an inference-time context policy layer that supplements and adapts the initial context for gener"
+    }
+  ],
+  "lightrag": [
+    {
+      "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "published": "2024-10-08T08:00:12Z",
+      "id": "http://arxiv.org/abs/2410.05779v3",
+      "summary": "Retrieval-Augmented Generation (RAG) systems enhance large language models (LLMs) by integrating external knowledge sources, enabling more accurate and contextually relevant responses tailored to user needs. However, existing RAG systems have significant limitations, including reliance on flat data representations and inadequate contextual awareness, which can lead to fragmented answers that fail to capture complex inter-dependencies. To address these challenges, we propose LightRAG, which incor"
+    }
+  ],
+  "hipporag": [
+    {
+      "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+      "published": "2024-05-23T17:47:55Z",
+      "id": "http://arxiv.org/abs/2405.14831v3",
+      "summary": "In order to thrive in hostile and ever-changing natural environments, mammalian brains evolved to store large amounts of knowledge about the world and continually integrate new information while avoiding catastrophic forgetting. Despite the impressive accomplishments, large language models (LLMs), even with retrieval-augmented generation (RAG), still struggle to efficiently and effectively integrate a large amount of new experiences after pre-training. In this work, we introduce HippoRAG, a nove"
+    }
+  ],
+  "raptor": [
+    {
+      "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "published": "2024-01-31T18:30:21Z",
+      "id": "http://arxiv.org/abs/2401.18059v1",
+      "summary": "Retrieval-augmented language models can better adapt to changes in world state and incorporate long-tail knowledge. However, most existing methods retrieve only short contiguous chunks from a retrieval corpus, limiting holistic understanding of the overall document context. We introduce the novel approach of recursively embedding, clustering, and summarizing chunks of text, constructing a tree with differing levels of summarization from the bottom up. At inference time, our RAPTOR model retrieve"
+    },
+    {
+      "title": "RAPTOR-AI for Disaster OODA Loop: Hierarchical Multimodal RAG with Experience-Driven Agentic Decision-Making",
+      "published": "2026-01-18T10:58:41Z",
+      "id": "http://arxiv.org/abs/2602.00030v2",
+      "summary": "Humanitarian Assistance and Disaster Relief (HADR) operations demand rapid synthesis of multimodal information for time-critical decision-making under extreme uncertainty. Traditional information systems struggle with the fragmented, multimodal nature of disaster data and lack adaptive reasoning capabilities essential for dynamic emergency contexts. This work introduces RAPTOR-AI, an agentic multimodal Retrieval-Augmented Generation (RAG) framework that advances beyond conventional static knowle"
+    }
+  ],
+  "self_rag": [
+    {
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "published": "2023-10-17T18:18:32Z",
+      "id": "http://arxiv.org/abs/2310.11511v1",
+      "summary": "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues. However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, di"
+    }
+  ],
+  "corrective_rag": [
+    {
+      "title": "Corrective Retrieval Augmented Generation",
+      "published": "2024-01-29T04:36:39Z",
+      "id": "http://arxiv.org/abs/2401.15884v3",
+      "summary": "Large language models (LLMs) inevitably exhibit hallucinations since the accuracy of generated texts cannot be secured solely by the parametric knowledge they encapsulate. Although retrieval-augmented generation (RAG) is a practicable complement to LLMs, it relies heavily on the relevance of retrieved documents, raising concerns about how the model behaves if retrieval goes wrong. To this end, we propose the Corrective Retrieval Augmented Generation (CRAG) to improve the robustness of generation"
+    },
+    {
+      "title": "Open-Source Reproduction and Explainability Analysis of Corrective Retrieval Augmented Generation",
+      "published": "2026-03-17T06:38:00Z",
+      "id": "http://arxiv.org/abs/2603.16169v1",
+      "summary": "Corrective Retrieval Augmented Generation (CRAG) improves the robustness of RAG systems by evaluating retrieved document quality and triggering corrective actions. However, the original implementation relies on proprietary components including the Google Search API and closed model weights, limiting reproducibility. In this work, we present a fully open-source reproduction of CRAG, replacing proprietary web search with the Wikipedia API and the original LLaMA-2 generator with Phi-3-mini-4k-instr"
+    }
+  ],
+  "adaptive_rag": [
+    {
+      "title": "Retriever Portfolios: A Principled Approach to Adaptive RAG",
+      "published": "2026-05-29T11:43:05Z",
+      "id": "http://arxiv.org/abs/2605.31176v1",
+      "summary": "Retrieval-augmented generation (RAG) systems typically rely on a single retriever and a single set of hyperparameters, despite facing highly heterogeneous queries that range from simple factoid questions to complex multi-hop reasoning. We propose a method that automatically selects a small, diverse subset of retrievers (a portfolio) from a large pool of candidates, to cover different regions of the target query distribution. We formalize this setting via an expected best-of-$k$ objective over th"
+    },
+    {
+      "title": "BELIEFRAG: Making Adaptive RAG State-Aware under Evolving Evidence",
+      "published": "2026-09-30T07:08:27Z",
+      "id": "http://arxiv.org/abs/2609.39139v1",
+      "summary": "Adaptive RAG uses signals such as confidence, relevance, support, and retrieval quality to decide when to search or correct evidence. In multi-step retrieval, however, these local signals must be combined into a persistent view of what the current evidence supports, what remains missing, and which action should follow. Existing methods often use such signals as separate triggers, making it difficult to preserve a coherent evidence state across a trajectory; we call this problem evidence-state fr"
+    }
+  ],
+  "hyde": [
+    {
+      "title": "Enhancing Financial RAG with Agentic AI and Multi-HyDE: A Novel Approach to Knowledge Retrieval and Hallucination Reduction",
+      "published": "2025-09-19T19:24:30Z",
+      "id": "http://arxiv.org/abs/2509.16369v1",
+      "summary": "Accurate and reliable knowledge retrieval is vital for financial question-answering, where continually updated data sources and complex, high-stakes contexts demand precision. Traditional retrieval systems rely on a single database and retriever, but financial applications require more sophisticated approaches to handle intricate regulatory filings, market analyses, and extensive multi-year reports. We introduce a framework for financial Retrieval Augmented Generation (RAG) that leverages agenti"
+    },
+    {
+      "title": "Never Come Up Empty: Adaptive HyDE Retrieval for Improving LLM Developer Support",
+      "published": "2025-07-22T16:46:00Z",
+      "id": "http://arxiv.org/abs/2507.16754v1",
+      "summary": "Large Language Models (LLMs) have shown promise in assisting developers with code-related questions; however, LLMs carry the risk of generating unreliable answers. To address this, Retrieval-Augmented Generation (RAG) has been proposed to reduce the unreliability (i.e., hallucinations) of LLMs. However, designing effective pipelines remains challenging due to numerous design choices. In this paper, we construct a retrieval corpus of over 3 million Java and Python related Stack Overflow posts wit"
+    }
+  ],
+  "colbert": [
+    {
+      "title": "ColBERT-Zero: To Pre-train Or Not To Pre-train ColBERT models",
+      "published": "2026-02-18T17:03:32Z",
+      "id": "http://arxiv.org/abs/2602.16609v1",
+      "summary": "Current state-of-the-art multi-vector models are obtained through a small Knowledge Distillation (KD) training step on top of strong single-vector models, leveraging the large-scale pre-training of these models. In this paper, we study the pre-training of multi-vector models and show that large-scale multi-vector pre-training yields much stronger multi-vector models. Notably, a fully ColBERT-pre-trained model, ColBERT-Zero, trained only on public data, outperforms GTE-ModernColBERT as well as it"
+    },
+    {
+      "title": "A model and package for German ColBERT",
+      "published": "2025-04-25T14:17:53Z",
+      "id": "http://arxiv.org/abs/2504.20083v1",
+      "summary": "In this work, we introduce a German version for ColBERT, a late interaction multi-dense vector retrieval method, with a focus on RAG applications. We also present the main features of our package for ColBERT models, supporting both retrieval and fine-tuning workflows."
+    }
+  ],
+  "rag_survey": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ],
+  "agentic_rag": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ],
+  "graphrag_survey": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ],
+  "microsoft_graphrag": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ],
+  "agentic_rag_survey": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ],
+  "rag_evaluation": [
+    {
+      "error": "HTTP Error 429: Unknown Error"
+    }
+  ]
+}

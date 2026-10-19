@@ -1,0 +1,53 @@
+{
+  "cloud": {
+    "hermes": {
+      "model": "deepseek-v4-pro",
+      "provider": "custom",
+      "base_url": "https://api.deepseek.com/v1"
+    },
+    "bookcompiler": {
+      "provider": "openai-compatible",
+      "model": "deepseek-v4-pro",
+      "base_url": "https://api.deepseek.com/v1"
+    },
+    "hindsight": {
+      "provider": "ollama",
+      "model": "qwen2.5:7b-instruct-q4_K_M",
+      "base_url": "http://127.0.0.1:11434/v1"
+    }
+  },
+  "mimo": {
+    "hermes": {
+      "model": "mimo-v2.6-flash",
+      "provider": "xiaomi",
+      "base_url": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    "bookcompiler": {
+      "provider": "openai-compatible",
+      "model": "mimo-v2.6-flash",
+      "base_url": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    "hindsight": {
+      "provider": "ollama",
+      "model": "qwen2.5:7b-instruct-q4_K_M",
+      "base_url": "http://127.0.0.1:11434/v1"
+    }
+  },
+  "local": {
+    "hermes": {
+      "model": "qwen2.5:7b-instruct-q4_K_M",
+      "provider": "ollama",
+      "base_url": "http://127.0.0.1:11434/v1"
+    },
+    "bookcompiler": {
+      "provider": "ollama",
+      "model": "qwen2.5:7b-instruct-q4_K_M",
+      "base_url": "http://127.0.0.1:11434"
+    },
+    "hindsight": {
+      "provider": "ollama",
+      "model": "qwen2.5:7b-instruct-q4_K_M",
+      "base_url": "http://127.0.0.1:11434/v1"
+    }
+  }
+}

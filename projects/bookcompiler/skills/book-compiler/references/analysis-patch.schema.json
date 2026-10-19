@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnalysisPatch",
+  "type": "object",
+  "properties": {
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lens", "claim", "framework_id", "supporting_evidence", "confidence"],
+        "properties": {
+          "lens": {"type": "string"},
+          "claim": {"type": "string"},
+          "framework_id": {"type": "string"},
+          "supporting_evidence": {"type": "array", "items": {"type": "object"}},
+          "confidence": {"type": "string", "enum": ["low", "medium", "high"]}
+        }
+      }
+    },
+    "counterevidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["description", "citation"],
+        "properties": {
+          "description": {"type": "string"},
+          "citation": {"type": "object"}
+        }
+      }
+    },
+    "cross_lens_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lenses", "description", "resolution"],
+        "properties": {
+          "lenses": {"type": "array", "items": {"type": "string"}},
+          "description": {"type": "string"},
+          "resolution": {"type": "string"}
+        }
+      }
+    },
+    "conclusion": {"type": "string"},
+    "uncertainty": {"type": "string"},
+    "next_checks": {"type": "array", "items": {"type": "string"}},
+    "citations": {"type": "array", "items": {"type": "object"}},
+    "jurisdiction": {"type": "string"},
+    "not_legal_advice": {"type": "boolean"},
+    "status": {"type": "string", "enum": ["draft", "complete"]}
+  }
+}

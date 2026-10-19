@@ -1,0 +1,243 @@
+﻿{
+  "audit_version": "1",
+  "threshold": 0.62,
+  "candidate_count": 5,
+  "candidates": [
+    {
+      "left": {
+        "entity_id": "20e8ca4bc22ee72b",
+        "canonical_name": "�ʲ���ծ��",
+        "aliases": [
+          "�ʲ���ծ��",
+          "balance sheet"
+        ],
+        "book_count": 9
+      },
+      "right": {
+        "entity_id": "23682881e15a10b9",
+        "canonical_name": "�����ʲ���ծ��",
+        "aliases": [
+          "�����ʲ���ծ��"
+        ],
+        "book_count": 2
+      },
+      "similarity": 0.833,
+      "relation": "containment",
+      "shared_books": [
+        "���ô��졢���ҹ����뾭�ýṹ",
+        "��۾���ѧ��ʮ�彲���й��ӽ�"
+      ],
+      "shared_book_count": 2,
+      "action": "review_only",
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging."
+    },
+    {
+      "left": {
+        "entity_id": "1cb559cf92d62842",
+        "canonical_name": "���س���",
+        "aliases": [
+          "���س���",
+          "land sale",
+          "land transfer"
+        ],
+        "book_count": 4
+      },
+      "right": {
+        "entity_id": "a71b7116efca856f",
+        "canonical_name": "���س�������",
+        "aliases": [
+          "���س�������",
+          "���س��ý�",
+          "�������",
+          "land sale revenue"
+        ],
+        "book_count": 4
+      },
+      "similarity": 0.8,
+      "relation": "containment",
+      "shared_books": [
+        "����Ϊ����������ϵ��ط�������Ϊ",
+        "��۾���ѧ��ʮ�彲���й��ӽ�",
+        "�����й�����������",
+        "�������������ʵ���������ת��"
+      ],
+      "shared_book_count": 4,
+      "action": "review_only",
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging."
+    },
+    {
+      "left": {
+        "entity_id": "8e17ccba6e800ade",
+        "canonical_name": "��������",
+        "aliases": [
+          "��������"
+        ],
+        "book_count": 6
+      },
+      "right": {
+        "entity_id": "f3b718c5bbcf370f",
+        "canonical_name": "�������ұ䶯",
+        "aliases": [
+          "�������ұ䶯"
+        ],
+        "book_count": 1
+      },
+      "similarity": 0.8,
+      "relation": "containment",
+      "shared_books": [
+        "������������ҹ���"
+      ],
+      "shared_book_count": 1,
+      "action": "review_only",
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging."
+    },
+    {
+      "left": {
+        "entity_id": "dda4a97fda999942",
+        "canonical_name": "Ӱ������",
+        "aliases": [
+          "Ӱ������",
+          "shadow banking"
+        ],
+        "book_count": 5
+      },
+      "right": {
+        "entity_id": "e662513eac9bdc9e",
+        "canonical_name": "Ӱ�����м��",
+        "aliases": [
+          "Ӱ�����м��",
+          "shadow banking regulation"
+        ],
+        "book_count": 1
+      },
+      "similarity": 0.8,
+      "relation": "containment",
+      "shared_books": [
+        "�������������ʵ���������ת��"
+      ],
+      "shared_book_count": 1,
+      "action": "review_only",
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging."
+    },
+    {
+      "left": {
+        "entity_id": "a3b2ea200dc2d387",
+        "canonical_name": "����",
+        "aliases": [
+          "����",
+          "rule of law"
+        ],
+        "book_count": 4
+      },
+      "right": {
+        "entity_id": "d8be7c4ba751c5a3",
+        "canonical_name": "�����ι�",
+        "aliases": [
+          "�����ι�"
+        ],
+        "book_count": 1
+      },
+      "similarity": 0.667,
+      "relation": "containment",
+      "shared_books": [
+        "�����й�����������"
+      ],
+      "shared_book_count": 1,
+      "action": "review_only",
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging."
+    }
+  ],
+  "note": "Audit output is advisory. No entity was merged automatically.",
+  "persisted": 5,
+  "queue": [
+    {
+      "candidate_id": "3e4219fd4edcd558",
+      "left_id": "20e8ca4bc22ee72b",
+      "right_id": "23682881e15a10b9",
+      "left_name": "�ʲ���ծ��",
+      "right_name": "�����ʲ���ծ��",
+      "similarity": 0.833,
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging.",
+      "shared_books": [
+        "���ô��졢���ҹ����뾭�ýṹ",
+        "��۾���ѧ��ʮ�彲���й��ӽ�"
+      ],
+      "status": "pending",
+      "decision_note": "",
+      "snapshot": {},
+      "created_at": "2026-10-17T23:30:01.327528+00:00",
+      "decided_at": ""
+    },
+    {
+      "candidate_id": "c1e99cd6240d0988",
+      "left_id": "1cb559cf92d62842",
+      "right_id": "a71b7116efca856f",
+      "left_name": "���س���",
+      "right_name": "���س�������",
+      "similarity": 0.8,
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging.",
+      "shared_books": [
+        "����Ϊ����������ϵ��ط�������Ϊ",
+        "��۾���ѧ��ʮ�彲���й��ӽ�",
+        "�����й�����������",
+        "�������������ʵ���������ת��"
+      ],
+      "status": "pending",
+      "decision_note": "",
+      "snapshot": {},
+      "created_at": "2026-10-17T23:30:01.327528+00:00",
+      "decided_at": ""
+    },
+    {
+      "candidate_id": "a083fe8b2ed1b5e9",
+      "left_id": "8e17ccba6e800ade",
+      "right_id": "f3b718c5bbcf370f",
+      "left_name": "��������",
+      "right_name": "�������ұ䶯",
+      "similarity": 0.8,
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging.",
+      "shared_books": [
+        "������������ҹ���"
+      ],
+      "status": "pending",
+      "decision_note": "",
+      "snapshot": {},
+      "created_at": "2026-10-17T23:30:01.327528+00:00",
+      "decided_at": ""
+    },
+    {
+      "candidate_id": "3fe4126efbf67567",
+      "left_id": "dda4a97fda999942",
+      "right_id": "e662513eac9bdc9e",
+      "left_name": "Ӱ������",
+      "right_name": "Ӱ�����м��",
+      "similarity": 0.8,
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging.",
+      "shared_books": [
+        "�������������ʵ���������ת��"
+      ],
+      "status": "pending",
+      "decision_note": "",
+      "snapshot": {},
+      "created_at": "2026-10-17T23:30:01.327528+00:00",
+      "decided_at": ""
+    },
+    {
+      "candidate_id": "88d1482a7cd78458",
+      "left_id": "a3b2ea200dc2d387",
+      "right_id": "d8be7c4ba751c5a3",
+      "left_name": "����",
+      "right_name": "�����ι�",
+      "similarity": 0.667,
+      "reason": "One name contains the other; check whether they are the same concept or a broader/narrower pair before merging.",
+      "shared_books": [
+        "�����й�����������"
+      ],
+      "status": "pending",
+      "decision_note": "",
+      "snapshot": {},
+      "created_at": "2026-10-17T23:30:01.327528+00:00",
+      "decided_at": ""
+    }
+  ]
+}
