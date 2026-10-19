@@ -1,0 +1,14 @@
+{
+  "name": "knowledge-hub",
+  "label": "Knowledge Hub",
+  "description": "统一控制台：BookCompiler 书库、Hindsight 记忆、Obsidian、模型与服务状态。",
+  "icon": "Sparkles",
+  "version": "1.0.0",
+  "tab": {
+    "path": "/knowledge-hub",
+    "position": "after:skills"
+  },
+  "entry": "dist/index.js",
+  "css": "dist/style.css",
+  "api": "plugin_api.py"
+}

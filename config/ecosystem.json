@@ -1,0 +1,52 @@
+{
+  "name": "Knowledge Hub",
+  "version": "1.0.0",
+  "host": "Hermes Agent",
+  "services": {
+    "hermes": {
+      "home": "D:\\hermes agent",
+      "url": "http://127.0.0.1:9119",
+      "dashboard": "http://127.0.0.1:9119/knowledge-hub"
+    },
+    "bookcompiler": {
+      "home": "C:\\Users\\mybea\\projects\\bookcompiler",
+      "url": "http://127.0.0.1:8765",
+      "db": "C:\\Users\\mybea\\projects\\bookcompiler\\.bookcompiler\\library.db",
+      "graph_db": "C:\\Users\\mybea\\projects\\bookcompiler\\.bookcompiler\\library.graph.db"
+    },
+    "hindsight": {
+      "home": "D:\\hindsight",
+      "url": "http://127.0.0.1:8888",
+      "postgres_port": 5432
+    },
+    "ollama": {
+      "url": "http://127.0.0.1:11434"
+    },
+    "obsidian": {
+      "vault": "C:\\Users\\mybea\\Documents\\Obsidian Vault"
+    }
+  },
+  "dashboard_plugin": "D:\\hermes agent\\plugins\\knowledge-hub",
+  "components": {
+    "hermes": {
+      "role": "host",
+      "responsibility": "chat, skills, MCP, routing"
+    },
+    "bookcompiler": {
+      "role": "knowledge",
+      "responsibility": "books, chunks, frameworks, entities, GraphRAG"
+    },
+    "hindsight": {
+      "role": "memory",
+      "responsibility": "preferences, corrections, cross-session lessons"
+    },
+    "obsidian": {
+      "role": "human-layer",
+      "responsibility": "editable Markdown notes and review"
+    },
+    "knowledge-hub": {
+      "role": "control-plane",
+      "responsibility": "unified GUI and service orchestration"
+    }
+  }
+}

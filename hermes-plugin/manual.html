@@ -1,0 +1,2079 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Knowledge Hub 完整教程 · BookCompiler + Hermes Agent + Hindsight + Obsidian</title>
+<style>
+:root{
+  --bg:#0d1117; --bg2:#111821; --panel:#151d28; --panel2:#1a2432;
+  --text:#e8eef7; --muted:#9fb0c7; --line:#2a3a4f;
+  --gold:#e8b86d; --cyan:#67d4d1; --green:#69d49a; --red:#ff7b72; --amber:#f2c14e;
+  --mono:"Cascadia Code","Consolas","SFMono-Regular",monospace;
+  --sans:"Segoe UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 15% 0%,#172233 0,#0d1117 42%,#090c11 100%);color:var(--text);font-family:var(--sans);line-height:1.75;font-size:16px}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{padding:64px 24px 42px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(232,184,109,.09),rgba(103,212,209,.05) 55%,transparent)}
+.hero-inner{max-width:1180px;margin:0 auto}
+.kicker{color:var(--gold);letter-spacing:.18em;font-size:12px;text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(30px,4.5vw,54px);line-height:1.15;margin:12px 0 18px;letter-spacing:-.02em}
+h1 em{color:var(--gold);font-style:normal}
+.lede{font-size:18px;max-width:850px;color:#c8d5e6}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:5px 11px;border-radius:999px;font-size:13px;color:var(--muted)}
+.pill.ok{border-color:rgba(105,212,154,.45);color:var(--green)}
+.pill.warn{border-color:rgba(242,193,78,.45);color:var(--amber)}
+.pill.bad{border-color:rgba(255,123,114,.45);color:var(--red)}
+.layout{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:34px;padding:34px 24px 80px}
+.toc{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;border:1px solid var(--line);background:rgba(17,24,33,.86);border-radius:16px;padding:18px}
+.toc h3{margin:0 0 10px;font-size:13px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+.toc a{display:block;color:var(--muted);font-size:13.5px;padding:5px 8px;border-radius:7px;border-left:2px solid transparent}
+.toc a:hover{background:var(--panel2);color:var(--text);border-left-color:var(--cyan);text-decoration:none}
+main{min-width:0}
+section{margin:0 0 54px;scroll-margin-top:18px}
+h2{font-size:clamp(24px,3vw,34px);line-height:1.25;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h3{font-size:21px;margin:30px 0 10px;color:#f2f6fb}
+h4{font-size:17px;margin:22px 0 8px;color:var(--gold)}
+p{margin:10px 0}
+ul,ol{padding-left:24px}
+li{margin:6px 0}
+code{font-family:var(--mono);font-size:.9em;background:#0b1119;border:1px solid #263445;padding:2px 6px;border-radius:5px;color:#c9e7ff;word-break:break-word}
+pre{margin:14px 0;padding:16px 18px;background:#080d14;border:1px solid #243247;border-radius:12px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#d7e6f7;white-space:pre}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:18px 0}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(26,36,50,.78),rgba(17,24,33,.78));border-radius:16px;padding:18px 20px}
+.card h3,.card h4{margin-top:0}
+.note{border-left:4px solid var(--cyan);background:rgba(103,212,209,.07);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+.warnbox{border-left:4px solid var(--amber);background:rgba(242,193,78,.08);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+.dangerbox{border-left:4px solid var(--red);background:rgba(255,123,114,.08);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+.okbox{border-left:4px solid var(--green);background:rgba(105,212,154,.08);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#182333;color:var(--gold);white-space:nowrap}
+tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.tag.ok{color:#0e2418;background:var(--green)}
+.tag.limit{color:#2b2107;background:var(--amber)}
+.tag.no{color:#2b0d0b;background:var(--red)}
+.tag.info{color:#062326;background:var(--cyan)}
+.big-num{font-size:30px;font-weight:800;color:var(--gold);line-height:1.1}
+.small{font-size:13.5px;color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.arch{background:#080d14;border:1px solid #243247;border-radius:14px;padding:20px;overflow:auto}
+.arch pre{background:none;border:0;padding:0;margin:0}
+.step{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;margin:18px 0}
+.step-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#201607;font-weight:800}
+.checklist li{list-style:none;margin-left:-20px;padding-left:4px}
+.checklist li::before{content:"☐";color:var(--gold);margin-right:9px}
+.kbd{font-family:var(--mono);border:1px solid #3b4d66;border-bottom-width:2px;background:#172231;padding:1px 6px;border-radius:5px;font-size:13px}
+.anchor-top{position:fixed;right:18px;bottom:18px;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:8px 12px;border-radius:999px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:26px 24px 60px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:900px){.layout{grid-template-columns:1fr;padding-top:20px}.toc{position:static;max-height:none}.two-col{grid-template-columns:1fr}}
+@media print{body{background:#fff;color:#111}.toc,.anchor-top{display:none}.layout{display:block;max-width:none;padding:0}.hero{background:none;border:0;padding:20px 0}h2{page-break-after:avoid}pre,.card,.arch{border:1px solid #bbb;background:#f7f7f7;color:#111}code{color:#111;background:#eee}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Complete Beginner's Guide · Knowledge Hub · 2026-10-19</div>
+    <h1>把书变成 agent 的<em>可调用能力</em><br>Knowledge Hub · BookCompiler + Hermes + Hindsight + Obsidian</h1>
+    <p class="lede">这是一份“从零开始、照着做就行”的完整教程。它讲清楚四套系统分别是什么、怎么启动、怎么用、怎么互相连接、记忆存在哪里、用的什么数据库，以及哪些功能已经实测通过、哪些还有限制。</p>
+    <div class="meta">
+      <span class="pill ok">BookCompiler 0.5.1</span>
+      <span class="pill ok">Hermes Agent v0.22.2</span>
+      <span class="pill ok">Hindsight API 1.0.0</span>
+      <span class="pill ok">PostgreSQL 18.1 + pgvector 0.8.5</span>
+      <span class="pill ok">九维读书评分</span>
+      <span class="pill ok">Obsidian 受控双向</span>
+      <span class="pill ok">MiMo 已接通</span>
+      <span class="pill ok">达尔文技能已装</span>
+      <span class="pill warn">多智能体：研究/手工编排</span>
+      <span class="pill ok">16/16 本书深度编译</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="toc">
+  <h3>目录</h3>
+  <a href="#s0">0. 一分钟看懂</a>
+  <a href="#s0b">0.5 统一入口 Knowledge Hub</a>
+  <a href="#s1">1. 先把术语说成人话</a>
+  <a href="#s2">2. 总体架构</a>
+  <a href="#s3">3. 文件和目录地图</a>
+  <a href="#s4">4. 启动顺序（最重要）</a>
+  <a href="#s5">5. BookCompiler 网页 GUI</a>
+  <a href="#s6">6. BookCompiler 命令行</a>
+  <a href="#s7">7. Hermes Agent 怎么用</a>
+  <a href="#s8">8. 四个系统怎么对接</a>
+  <a href="#s9">9. Hindsight 怎么接 Ollama</a>
+  <a href="#s10">10. 记忆到底存在哪里</a>
+  <a href="#s11">11. 数据库里有什么</a>
+  <a href="#s12">12. Hindsight API 手把手</a>
+  <a href="#s13">13. 一次真实问答的完整流程</a>
+  <a href="#s14">14. 怎么让 agent 学会一本新书</a>
+  <a href="#s15">15. 自进化是什么、不是什么</a>
+  <a href="#s16">16. 常见错误与修复</a>
+  <a href="#s17">17. 备份、恢复、重置</a>
+  <a href="#s18">18. 安全注意事项</a>
+  <a href="#s19">19. 验收清单</a>
+  <a href="#s20">20. 当前限制与下一步</a>
+  <a href="#s21">21. 命令速查表</a>
+  <a href="#s22">22. 达尔文、评分、Obsidian、多智能体</a>
+  <a href="#s23">23. 云端读书 + 本地记忆 + 一键切模型</a>
+</aside>
+
+<main>
+
+<section id="s0">
+<h2>0. 一分钟看懂</h2>
+<p>你原来的想法是：<strong>“我喂给 agent 很多书，它就能像读过书的人一样，看到一条新闻后用书里的内容回答我。”</strong> 这个项目就是把这个想法做成一套可运行的系统。</p><div class="okbox">
+<strong>如果你现在就想跑起来，先照抄这 4 步（其余章节都是解释）：</strong>
+<ol>
+<li>确认 Ollama 在跑：浏览器打开 <code>http://127.0.0.1:11434/api/tags</code>，能看到模型列表。</li>
+<li>确认 Hindsight 在跑：浏览器打开 <code>http://127.0.0.1:8888/health</code>，能看到 <code>"status":"healthy"</code>。没起来就按第 4 节启动。</li>
+<li>启动书库 GUI：打开 PowerShell，执行下面两行，然后浏览器打开 <code>http://127.0.0.1:8765/</code>。
+<pre><code>cd C:\Users\mybea\projects\bookcompiler
+.\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db gui --open</code></pre></li>
+<li>启动 Hermes：<strong>另开一个</strong> PowerShell 窗口，执行下面两行，然后直接输入问题。
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' chat</code></pre></li>
+</ol>
+<p class="small">注意：命令要输在 PowerShell 窗口里，不是浏览器地址栏。第 3 步的窗口不要关，关了 GUI 就停了。第一句话可以问：<strong>“用我读过的书分析：降准是否必然导致银行信贷扩张？请给出书名、页码和逐字引用。”</strong></p>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3>BookCompiler</h3>
+    <p class="small">“图书馆 + 索引卡 + 引用检查员”</p>
+    <p>负责把本地书导入、切片段、建索引、抽取书卡/框架卡、做混合检索、跨书实体对齐、命题图谱、引用校验和受控自进化。它本身<strong>不是聊天机器人</strong>，而是给 agent 提供“有出处的书库能力”。</p>
+  </div>
+  <div class="card">
+    <h3>Hermes Agent</h3>
+    <p class="small">“会说话、会调用工具的研究助理”</p>
+    <p>负责和你对话、理解问题、决定调用哪些工具、组织最终回答。它通过 MCP 调用 BookCompiler 和 Hindsight。它自己还有会话、技能和自进化机制。</p>
+  </div>
+  <div class="card">
+    <h3>Hindsight</h3>
+    <p class="small">“跨对话的长期记忆笔记本”</p>
+    <p>负责保存用户偏好、纠正、失败教训和结果，不保存整本书。它有自己的数据库、Embedding、召回和（实验性的）reflect。BookCompiler 和 Hermes 都可以接它。</p>
+  </div>
+  <div class="card">
+    
+<h3>懒人版：双击一键启动</h3>
+<p>如果不想每次开 PowerShell，直接双击：</p>
+<table>
+<tr><th>文件</th><th>做什么</th></tr>
+<tr><td><code>C:\Users\mybea\projects\bookcompiler\start-bookcompiler.bat</code></td><td>启动 BookCompiler GUI，并自动打开浏览器。端口 8765 被占用时会自动往后找。</td></tr>
+<tr><td><code>C:\Users\mybea\projects\bookcompiler\start-hermes.bat</code></td><td>在 <code>D:\hermes agent</code> 下启动 Hermes 聊天。</td></tr>
+<tr><td><code>D:\hermes agent\start-hermes.bat</code></td><td>同上，放在 Hermes 目录里的副本。</td></tr>
+<tr><td><code>C:\Users\mybea\projects\bookcompiler\start-all.bat</code></td><td><strong>真正的懒人入口：</strong>依次拉起 Ollama、Hindsight 的 pg0 数据库、Hindsight API、BookCompiler GUI，最后打开 Hermes。</td></tr>
+</table>
+<p>只想开其中一个就双击对应的 bat；想一次全开就双击 <code>start-all.bat</code>。它不会改模型配置，只负责启动。</p>
+
+<h3>切换模型：三个模型槽 + 检索组件</h3>
+<p>推荐分工：<strong>读书、分析、对话走云端大模型；Hindsight 记忆抽取走本地 Ollama</strong>。这三个槽位互相独立，不要用一个环境变量硬控全部。</p>
+<table>
+<tr><th>槽位</th><th>管什么</th><th>配置位置</th><th>生效时间</th></tr>
+<tr><td><strong>Hermes 对话模型</strong></td><td>真正聊天、调用工具、写分析补丁</td><td><code>D:\hermes agent\config.yaml</code></td><td>退出重启 Hermes；会话内可用 <code>/model</code> 临时切</td></tr>
+<tr><td><strong>BookCompiler 盲评模型</strong></td><td>只影响独立九维盲评</td><td>项目 <code>.env</code> 的 <code>BOOKCOMPILER_JUDGE_*</code></td><td>保存后当前 GUI 进程立即生效</td></tr>
+<tr><td><strong>BookCompiler 读书模型</strong></td><td>只影响 <code>book_learn</code> / <code>compile-llm</code> 的阅读</td><td>项目 <code>.env</code> 的 <code>BOOKCOMPILER_READER_*</code>；没设时回退到盲评模型</td><td>下一次读书调用生效</td></tr>
+<tr><td><strong>Hindsight 记忆模型</strong></td><td>retain / recall / reflect 的记忆抽取</td><td><code>D:\hindsight\.env</code> 的 <code>HINDSIGHT_API_LLM_*</code></td><td>重启 <code>run_server.py</code> 后生效</td></tr>
+<tr><td><strong>Embedding / Reranker</strong></td><td>检索向量与可选重排</td><td>项目 <code>.env</code> / Hindsight <code>.env</code></td><td>重启后；换 embedding 必须重建向量</td></tr>
+</table>
+<p><strong>一键切换：</strong>双击项目根目录的 <code>switch-models.bat</code>。菜单里最常用的是 <code>2</code>（盲评/对话走 DeepSeek，读书仍走 MiMo，记忆本地）、<code>3</code>（全部本地）、<code>8</code>（MiMo 云端 + 本地记忆）。也可以直接运行：</p>
+<pre><code>$py = ".\.venv\Scripts\python.exe"
+&amp; $py -m bookcompiler.switch_models show
+&amp; $py -m bookcompiler.switch_models preset mimo
+&amp; $py -m bookcompiler.switch_models preset cloud
+&amp; $py -m bookcompiler.switch_models preset local</code></pre>
+<p>当前 MiMo 已实测接通：Hermes 用 <code>provider: xiaomi</code>、模型 <code>mimo-v2.6-flash</code>、Base URL <code>https://token-plan-cn.xiaomimimo.com/v1</code>；BookCompiler 盲评和读书都用 <code>openai-compatible</code> 和同一模型；读书模型是独立槽位，即使把盲评切到 DeepSeek，读书也不会跟着走 DeepSeek。API key 不打印、不写进文档；BookCompiler 从 <code>MIMO_API_KEY</code> 或 <code>XIAOMI_API_KEY</code> 读取，Hermes 从自己的 <code>.env</code> 读取 <code>XIAOMI_API_KEY</code>。Hindsight 仍是本地 Ollama。</p>
+<p><strong>系统环境变量能切模型吗？</strong> 能作为默认值，但只对之后新启动的进程生效。已经打开的 GUI、终端、Hermes 不会自动读取新值。日常最推荐：GUI「模型」页改盲评默认；Hermes 里用 <code>/model</code> 改对话模型；三个模型槽一起换就用 <code>switch-models.bat</code>。</p>
+<p>打开 GUI 的「模型」页可以看到：Hermes 当前模型和 provider、BookCompiler 盲评默认模型、BookCompiler 实际读书模型与 DeepSeek 费用闸状态、Hindsight 记忆模型、Ollama 在线模型列表、Embedding 模型和重建警告。写入 Hermes 配置或 Hindsight <code>.env</code> 前会自动备份。</p>
+<h3>Ollama</h3>
+    <p class="small">“本地模型服务器”</p>
+    <p>Hindsight 用 Ollama 里的 <code>qwen2.5:7b-instruct-q4_K_M</code> 做记忆抽取和 reflect；BookCompiler 用本地 BGE 模型做神经 Embedding。Ollama 不是必须联网。</p>
+  </div>
+</div>
+
+<h3>它现在已经能做到什么</h3>
+<table>
+<tr><th>能力</th><th>状态</th><th>说明</th></tr>
+<tr><td>把本地书导入书库</td><td><span class="tag ok">已实现</span></td><td>支持 TXT / Markdown / PDF / EPUB；不自动联网下载。</td></tr>
+<tr><td>从书里检索原文并带页码/章节</td><td><span class="tag ok">已实测</span></td><td>混合检索：BM25 + 神经 Embedding + 跨书实体扩展；结果可回到 chunk。</td></tr>
+<tr><td>给新闻/事件做多镜头分析</td><td><span class="tag ok">已实测</span></td><td>经济、政治、法律三个 lens；要求逐字引用；引用会被校验。</td></tr>
+<tr><td>让 Hermes 自动调用书库</td><td><span class="tag ok">已实测</span></td><td>通过 stdio MCP，19 个工具；Hermes 里有 <code>book-library</code> 路由器技能和 <code>book-learning-loop</code> 学习闭环技能。</td></tr>
+<tr><td>跨书实体对齐</td><td><span class="tag ok">已实现</span></td><td>92 个实体、69 个跨书实体、9,905 次提及、300 条关系；5 个待确认合并候选。</td></tr>
+<tr><td>命题图谱与 supersession</td><td><span class="tag limit">有限</span></td><td>已抽 640 条命题；自动冲突检测为 0；supersession 需要显式确认。</td></tr>
+<tr><td>Hindsight 长期记忆</td><td><span class="tag ok">retain/recall 已实测</span></td><td>两个 bank：<code>hermes</code> 和 <code>bookcompiler</code>；中文偏好能被召回。</td></tr>
+<tr><td>九维读书评分</td><td><span class="tag ok">已实现</span></td><td><code>reading-eval / report / propose</code> + MCP <code>book_reading_eval</code>；自动代理分只用于分诊。</td></tr>
+<tr><td>Obsidian 导出</td><td><span class="tag ok">已实测</span></td><td>受保护导出 + Inbox 回写：手改原文件会保留，新版本写 <code>*.generated.md</code>；Inbox 批注进 SQLite；Hindsight 记忆可双向编辑。</td></tr>
+<tr><td>达尔文技能</td><td><span class="tag ok">已安装</span></td><td>用户层 <code>C:\Users\mybea\.codex\skills\darwin-skill\</code>；优化 SKILL.md，不直接改书库。</td></tr>
+<tr><td>Hindsight reflect</td><td><span class="tag no">未验证</span></td><td>当前 qwen2.5:7b 上曾 300 秒超时；不要把它当成稳定功能。</td></tr>
+<tr><td>Hermes 原生 Hindsight provider</td><td><span class="tag no">未安装</span></td><td>GitHub 443 超时导致插件安装失败；当前走 MCP，功能可用。</td></tr>
+<tr><td>16 本书全部“学会”</td><td><span class="tag ok">成立（有边界）</span></td><td>16 本全部 compiled，逐字引用校验 0 error。但它是全书代表样本阅读，不是逐页精读。</td></tr>
+</table>
+
+<div class="warnbox">
+<strong>先记住一句话：</strong>“导入一本书”不等于“学会一本书”。<br>
+<code>ingested</code> = 书已经在库里、切好片段了；<code>compiled</code> = 已经生成并校验过书卡和框架卡，才算 agent 真正“学过”。当前是 <strong>16 本全部 compiled</strong>，总计 97 个 FrameworkCard。
+</div>
+
+<h3>最重要的三个数字</h3>
+<div class="grid">
+  <div class="card"><div class="big-num">16</div><div>已入库的书</div><div class="small">全部深度编译</div></div>
+  <div class="card"><div class="big-num">8,741</div><div>原文片段（chunks）</div><div class="small">Embedding 覆盖率 100%</div></div>
+  <div class="card"><div class="big-num">640</div><div>命题（claims）</div><div class="small">自动冲突 0 组</div></div>
+  <div class="card"><div class="big-num">2</div><div>Hindsight 记忆库</div><div class="small">hermes / bookcompiler</div></div>
+</div>
+</section>
+
+<section id="s0b">
+<h2>0.5 统一入口：Knowledge Hub</h2>
+<p>现在不需要分别记住四个网址。统一入口把 <strong>Hermes Agent、BookCompiler、Hindsight、Obsidian</strong> 收在同一个页面里；它们仍然是四套独立系统，只是由一个控制台统一查看和操作。</p>
+<div class="okbox">
+<strong>最重要的两个地址：</strong>
+<ul>
+<li>统一控制台：<code>http://127.0.0.1:9119/knowledge-hub</code></li>
+<li>一键启动：双击桌面 <code>Knowledge Hub</code> 快捷方式，或 <code>D:\knowledge-hub\start-knowledge-hub.bat</code></li>
+</ul>
+<p class="small">一键启动会依次检查 Ollama、PostgreSQL、Hindsight、BookCompiler、Hermes Dashboard；已经在跑的服务不会重复启动。</p>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3>总览</h3>
+    <p>看 5 个服务是否在线、书库规模、知识流水线、当前模型分工和本机数据位置。每 30 秒自动刷新。</p>
+  </div>
+  <div class="card">
+    <h3>书库</h3>
+    <p>搜索已读的书，查看知识框架、学科视角和最近分析。这里回答“agent 到底读过什么、能调用什么”。</p>
+  </div>
+  <div class="card">
+    <h3>记忆</h3>
+    <p>切换 Hindsight bank，测试 Recall / Reflect，写入一条长期记忆。书库产物默认进 <code>bookcompiler</code>，Hermes 经验默认进 <code>hermes</code>。</p>
+  </div>
+  <div class="card">
+    <h3>Obsidian</h3>
+    <p>查看 Vault 状态、BookCompiler 与 Hindsight 笔记数量，触发双向同步，直接打开 Vault 或 Obsidian。</p>
+  </div>
+  <div class="card">
+    <h3>模型</h3>
+    <p>四套模型分槽管理：Reader / Judge / Hermes / Hindsight。可以一键套用“小米 MiMo”“全本地 Ollama”“云端 DeepSeek”预设，也可以只切某一个目标。</p>
+  </div>
+  <div class="card">
+    <h3>服务</h3>
+    <p>查看端口、启动服务、打开 Hermes 原生页面、打开本机目录、读取日志。启动失败时先来这里。</p>
+  </div>
+  <div class="card">
+    <h3>阅读工作台</h3>
+    <p>嵌入完整的 BookCompiler GUI，导入、编译、检索、分析都在原界面完成；如果 iframe 被浏览器拦截，点“在新窗口打开”即可。</p>
+  </div>
+  <div class="card">
+    <h3>指南</h3>
+    <p>四系统关系、每天怎么用、三种书库调用模式、模型分工、数据位置和常见问题。</p>
+  </div>
+</div>
+
+<h3>四套系统的分工</h3>
+<table>
+<tr><th>系统</th><th>角色</th><th>负责什么</th></tr>
+<tr><td><strong>Hermes Agent</strong></td><td>宿主 / 对话 / 技能 / 自动路由</td><td>决定这次问题要不要调书库、要不要召回记忆，并组织最终回答。</td></tr>
+<tr><td><strong>BookCompiler</strong></td><td>知识生产层</td><td>把书编译成 chunks、框架、claims、实体、跨书关系和 GraphRAG。</td></tr>
+<tr><td><strong>Hindsight</strong></td><td>经验与偏好层</td><td>保存跨会话的结论、纠正和偏好；不是原文检索，负责“越用越懂你”。</td></tr>
+<tr><td><strong>Obsidian</strong></td><td>人类可读可编辑层</td><td>所有产出落成 Markdown，你可以直接改；改完再被系统读回。</td></tr>
+</table>
+
+<h3>三种书库调用模式</h3>
+<table>
+<tr><th>模式</th><th>你怎么说</th><th>Agent 怎么做</th></tr>
+<tr><td>1. 自动匹配</td><td>“用我读过的书分析这个问题”</td><td>不指定书，Hermes 根据问题自己挑书与框架。</td></tr>
+<tr><td>2. 指定领域 / 方向</td><td>“从经济、政治、法律三个角度分析”</td><td>先问你：只用你指定的，还是加上它推荐的书？</td></tr>
+<tr><td>3. 指定具体书</td><td>“只用《中国人民银行法》回答”</td><td>仍会问你是否叠加推荐能力，避免视野被单本书锁死。</td></tr>
+</table>
+
+<h3>数据在哪里</h3>
+<table>
+<tr><th>内容</th><th>位置</th></tr>
+<tr><td>书库数据库</td><td><code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db</code></td></tr>
+<tr><td>GraphRAG 图库</td><td><code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.graph.db</code></td></tr>
+<tr><td>Hindsight 记忆</td><td>PostgreSQL / pg0，<code>127.0.0.1:5432</code></td></tr>
+<tr><td>人类可读笔记</td><td><code>C:\Users\mybea\Documents\Obsidian Vault</code></td></tr>
+<tr><td>知识源书</td><td><code>D:\fanshu</code></td></tr>
+<tr><td>Knowledge Hub 日志</td><td><code>D:\knowledge-hub\logs</code></td></tr>
+</table>
+<p class="small">所有数据都在本机。只有调用云端模型时，发送的是当次需要的文本片段，不会上传整个书库。</p>
+</section>
+
+<section id="s1">
+<h2>1. 先把术语说成人话</h2>
+<p>下面这些词你会在教程和配置里反复看到。先用类比理解，不需要背。</p>
+<table>
+<tr><th>术语</th><th>人话解释</th><th>在这个项目里对应什么</th></tr>
+<tr><td>Agent（智能体）</td><td>会自己决定“下一步做什么”的 AI 程序，不只是被动回答问题。</td><td>Hermes Agent。</td></tr>
+<tr><td>MCP</td><td>Model Context Protocol，可以理解成“AI 工具的 USB-C 接口”。只要工具按这个协议暴露，任何支持 MCP 的 agent 都能调用。</td><td>BookCompiler 的 19 个工具、Hindsight 的 36 个工具。</td></tr>
+<tr><td>stdio MCP</td><td>MCP 的一种连接方式：宿主（Hermes）启动一个本地子进程，通过标准输入/输出和它说话。</td><td>Hermes 调用 BookCompiler 的 Python 进程。</td></tr>
+<tr><td>HTTP MCP</td><td>MCP 的另一种连接方式：通过 HTTP 地址连接一个已经在运行的服务。</td><td>Hermes 连接 Hindsight 的 <code>/mcp/...</code> 地址。</td></tr>
+<tr><td>RAG</td><td>Retrieval-Augmented Generation：先检索资料，再让模型基于资料回答。类比“开卷考试”。</td><td>BookCompiler 的检索层 + 引用校验。</td></tr>
+<tr><td>Embedding（嵌入）</td><td>把一段文字变成一串数字（向量），意思相近的文字在数学空间里更接近。类比“给每句话一个坐标”。</td><td>BGE 模型把 chunk 变成 512 维向量。</td></tr>
+<tr><td>向量数据库</td><td>专门存向量并做相似度搜索的数据库。不是所有项目都必须单独用一个。</td><td>BookCompiler 把向量直接存在 SQLite 里；Hindsight 用 PostgreSQL + pgvector。</td></tr>
+<tr><td>BM25</td><td>一种经典的关键词检索算法，擅长精确词、术语、数字、专名。</td><td>混合检索的一部分。</td></tr>
+<tr><td>混合检索</td><td>同时用关键词（BM25）和语义向量（Embedding），再加实体扩展，最后融合分数。</td><td>BookCompiler 的默认检索方式。</td></tr>
+<tr><td>Reranker（重排器）</td><td>先粗召回一批候选，再用更贵的模型重新排序。</td><td>本机已下载 <code>bge-reranker-base</code>，但当前检索配置显示 <code>rerank: null</code>，没有证明它比 hybrid 更好。</td></tr>
+<tr><td>Chunk（片段）</td><td>把一本书切成适合检索的小段。</td><td>当前 8,741 个 chunk。</td></tr>
+<tr><td>Citation（引用）</td><td>回答里引用书中的原话，并给书名、章节、页码。</td><td><code>quote</code> 必须能在原文里逐字找到，否则校验失败。</td></tr>
+<tr><td>Claim（命题）</td><td>从原文抽出的“主语—谓语—宾语”式主张，例如“降准会增加基础货币”。</td><td><code>claims</code> 表；当前 640 条。</td></tr>
+<tr><td>Supersession</td><td>新证据取代旧主张。旧命题标记为 superseded，但保留历史，可回滚。</td><td>需要显式确认，不会自动改判。</td></tr>
+<tr><td>Entity（实体）</td><td>书里反复出现的概念、机构、政策、变量等。</td><td><code>entities</code> 表；当前 92 个规范实体。</td></tr>
+<tr><td>实体对齐</td><td>把不同书里对同一个东西的不同叫法合并，例如“央行 / 中国人民银行 / PBoC”。</td><td>规则 + 别名组 + 保守包含关系；不自动猜同义词。</td></tr>
+<tr><td>SQLite</td><td>一个文件就是一个数据库，零安装、单机、适合个人项目。</td><td>BookCompiler 的 <code>library.db</code>、Hermes 的 <code>state.db</code>。</td></tr>
+<tr><td>PostgreSQL</td><td>更强大的服务器型数据库，适合并发、复杂查询和扩展。</td><td>Hindsight 的内嵌 PostgreSQL。</td></tr>
+<tr><td>pgvector</td><td>PostgreSQL 的向量扩展，让数据库能存向量并做相似度搜索。</td><td>Hindsight 用它存记忆向量。</td></tr>
+<tr><td>Hindsight Bank</td><td>Hindsight 里的“记忆分区/命名空间”。不同 bank 互不混淆。</td><td><code>hermes</code> 存个人偏好/项目上下文；<code>bookcompiler</code> 存书库教训。</td></tr>
+<tr><td>retain / recall / reflect</td><td>Hindsight 的三个动作：记住、召回、综合反思。</td><td>retain/recall 已实测；reflect 未验证。</td></tr>
+<tr><td>Ollama</td><td>本地运行大模型和小模型的服务器，提供 OpenAI 兼容接口。</td><td><code>http://127.0.0.1:11434</code>。</td></tr>
+<tr><td>Skill（技能）</td><td>给 agent 的一段“何时用、怎么用工具”的说明书。</td><td>Hermes 的 <code>book-library</code> 技能。</td></tr>
+</table>
+</section>
+
+<section id="s2">
+<h2>2. 总体架构</h2>
+<p>不要把四套系统想成一坨。它们是四个独立的进程/服务，通过文件和网络接口连接。</p>
+<div class="arch"><pre>
+用户
+ ├─ 浏览器 → BookCompiler GUI（127.0.0.1:8765）
+ │              ├─ SQLite：library.db
+ │              │    ├─ 书 / chunk / 原文
+ │              │    ├─ 向量（chunk_embeddings）
+ │              │    ├─ 书卡 / 框架卡 / 分析
+ │              │    ├─ 实体 / 提及 / 关系
+ │              │    ├─ 命题 / 证据 / 冲突
+ │              │    └─ 反馈 / 记忆 / 进化状态
+ │              └─ HTTP → Hindsight（127.0.0.1:8888）
+ │
+ ├─ Hermes Agent（D:\hermes agent）
+ │      ├─ SQLite：state.db（会话、消息、系统提示、状态）
+ │      ├─ MCP stdio → BookCompiler（19 个工具）
+ │      ├─ MCP HTTP  → Hindsight /mcp/hermes/（36 个工具）
+ │      └─ MCP HTTP  → Hindsight /mcp/bookcompiler/（36 个工具）
+ │
+ ├─ Hindsight API（127.0.0.1:8888）
+ │      ├─ 内嵌 PostgreSQL（127.0.0.1:5432）
+ │      │    ├─ 数据库：hindsight
+ │      │    ├─ 扩展：pgvector 0.8.5
+ │      │    └─ 数据目录：C:\Users\mybea\.pg0\instances\hindsight\data
+ │      └─ 调用 Ollama（127.0.0.1:11434）
+ │           └─ qwen2.5:7b-instruct-q4_K_M
+ │
+ └─ Ollama（127.0.0.1:11434）
+        └─ 模型文件：D:\models（blobs / manifests）
+</pre></div>
+
+<h3>三条数据流</h3>
+<ol>
+<li><strong>书 → 证据：</strong>书被导入 BookCompiler，切成 chunk，建 BM25 和向量索引。回答书里的内容时，必须从这里取原文。</li>
+<li><strong>经验 → 记忆：</strong>用户反馈、纠正、偏好写入 BookCompiler 的 feedback/memory，并异步写入 Hindsight 的 <code>bookcompiler</code> bank。</li>
+<li><strong>对话 → 调用：</strong>Hermes 根据问题调用 BookCompiler 工具，必要时再调用 Hindsight 召回长期偏好，最后组织回答。</li>
+</ol>
+
+<div class="note">
+<strong>关键设计：</strong>书里的原文和精确引用永远留在 BookCompiler 的 SQLite；Hindsight 只存“跨任务可复用的教训/偏好”，不存整本书。这样不会把“记忆”变成“二手摘要”，也不会让模型拿记忆冒充原文。
+</div>
+</section>
+
+<section id="s3">
+<h2>3. 文件和目录地图</h2>
+<table>
+<tr><th>路径</th><th>是什么</th><th>要不要动</th></tr>
+<tr><td><code>C:\Users\mybea\projects\bookcompiler</code></td><td>BookCompiler 项目根目录</td><td>日常使用的地方</td></tr>
+<tr><td><code>...\bookcompiler\.venv</code></td><td>项目专用 Python 虚拟环境</td><td>不要删；命令都用它里面的 python</td></tr>
+<tr><td><code>...\bookcompiler\.bookcompiler\library.db</code></td><td>书库主数据库（SQLite）</td><td>核心数据；备份它</td></tr>
+<tr><td><code>...\bookcompiler\src\bookcompiler</code></td><td>源代码</td><td>改代码才动</td></tr>
+<tr><td><code>...\bookcompiler\docs\tutorial.html</code></td><td>你正在看的这份教程</td><td>可随时打开</td></tr>
+<tr><td><code>...\bookcompiler\skills\book-compiler</code></td><td>编译书的技能与 JSON Schema</td><td>让 agent 写编译补丁时参考</td></tr>
+<tr><td><code>...\bookcompiler\.env</code></td><td>BookCompiler 的 Embedding / Hindsight 配置</td><td>改配置才动；不要外传</td></tr>
+<tr><td><code>D:\hermes agent</code></td><td>Hermes 的 <code>HERMES_HOME</code></td><td>Hermes 的所有状态都在这里</td></tr>
+<tr><td><code>D:\hermes agent\bin\hermes.exe</code></td><td>Hermes 启动器</td><td>用它启动</td></tr>
+<tr><td><code>D:\hermes agent\config.yaml</code></td><td>Hermes 主配置（模型、MCP、技能等）</td><td>改 MCP 才动；先备份</td></tr>
+<tr><td><code>D:\hermes agent\.env</code></td><td>Hermes 的密钥（MiMo / DeepSeek key）</td><td><strong>不要打开给别人看，不要提交</strong></td></tr>
+<tr><td><code>D:\hermes agent\state.db</code></td><td>Hermes 会话/消息/状态数据库（SQLite）</td><td>核心数据；备份它</td></tr>
+<tr><td><code>D:\hermes agent\skills\book-library\SKILL.md</code></td><td>书库路由器技能</td><td>调整 agent 行为时改</td></tr>
+<tr><td><code>D:\hermes agent\skills\book-learning-loop\SKILL.md</code></td><td>读书—校验—评分—进化闭环技能</td><td>调整学习流程时改</td></tr>
+<tr><td><code>D:\hindsight</code></td><td>Hindsight 安装目录</td><td>服务目录</td></tr>
+<tr><td><code>D:\hindsight\.venv</code></td><td>Hindsight 专用 Python 环境</td><td>不要删</td></tr>
+<tr><td><code>D:\hindsight\.env</code></td><td>Hindsight 的模型/数据库/端口配置</td><td>改模型才动</td></tr>
+<tr><td><code>D:\hindsight\run_server.py</code></td><td>Hindsight 启动器（处理 UTF-8 控制台问题）</td><td>用这个启动，不要直接用 exe</td></tr>
+<tr><td><code>D:\hindsight\server.log</code></td><td>Hindsight 运行日志</td><td>排错时看</td></tr>
+<tr><td><code>C:\Users\mybea\.pg0\instances\hindsight\data</code></td><td>Hindsight 的 PostgreSQL 数据目录</td><td>核心数据；备份</td></tr>
+<tr><td><code>C:\Users\mybea\.pg0\installation\18.1.0\bin</code></td><td>内嵌 PostgreSQL 的可执行文件</td><td>一般不用手动进</td></tr>
+<tr><td><code>D:\models</code></td><td>Ollama 模型 + 本地 BGE 模型</td><td>模型文件；不要乱删</td></tr>
+<tr><td><code>D:\fanshu</code></td><td>你的本地书库（252 个文件）</td><td>导入源；不要重复全量导入</td></tr>
+</table>
+
+<div class="warnbox">
+<strong>不要做的事：</strong>不要把 <code>D:\hermes agent\.env</code>、<code>D:\hermes agent\auth.json</code>、任何 API key 贴到聊天、截图或 Git 仓库里。教程里不会出现你的密钥。
+</div>
+</section>
+<section id="s4">
+<h2>4. 启动顺序（最重要）</h2>
+<p>正确的启动顺序是：<strong>Ollama → Hindsight → BookCompiler GUI → Hermes</strong>。后面依赖前面。不要一上来就开 Hermes，否则它可能连不上书库或记忆。</p>
+
+<div class="step"><div class="step-num">1</div><div>
+<h3>启动 Ollama</h3>
+<p>Ollama 通常已经在后台运行。先检查：</p>
+<pre><code>Invoke-RestMethod http://127.0.0.1:11434/api/tags | Select-Object -ExpandProperty models | Select-Object name</code></pre>
+<p>如果报“无法连接”，打开开始菜单里的 <strong>Ollama</strong>，或者在 PowerShell 里运行：</p>
+<pre><code>ollama serve</code></pre>
+<p>看到模型列表里有 <code>qwen2.5:7b-instruct-q4_K_M</code> 就说明正常。</p>
+</div></div>
+
+<div class="step"><div class="step-num">2</div><div>
+<h3>启动 Hindsight</h3>
+<p>进入 Hindsight 目录，用 <code>run_server.py</code> 启动。不要直接运行 <code>hindsight-api.exe</code>，否则 Windows 的 GBK 控制台可能报 <code>UnicodeEncodeError</code>。</p>
+<pre><code>cd D:\hindsight
+.\.venv\Scripts\python.exe .\run_server.py</code></pre>
+<p>这个命令会占住当前窗口。日常使用时另开一个 PowerShell 窗口即可；本机当前已经有一个 Hindsight 进程在运行，所以通常不需要重复启动。</p>
+<p>检查是否成功：</p>
+<pre><code>Invoke-RestMethod http://127.0.0.1:8888/health</code></pre>
+<p>正常输出类似：</p>
+<pre><code>status        database
+------        --------
+healthy       connected</code></pre>
+<p>如果 8888 没监听，先看日志：</p>
+<pre><code>Get-Content -Tail 80 -Encoding UTF8 D:\hindsight\server.log</code></pre>
+</div></div>
+
+<div class="step"><div class="step-num">3</div><div>
+<h3>启动 BookCompiler GUI</h3>
+<pre><code>cd C:\Users\mybea\projects\bookcompiler
+.\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db gui --host 127.0.0.1 --port 8765 --open</code></pre>
+<p>如果不想自动开浏览器，去掉 <code>--open</code>。然后打开：</p>
+<pre><code>http://127.0.0.1:8765/</code></pre>
+<p>检查 API：</p>
+<pre><code>Invoke-RestMethod http://127.0.0.1:8765/api/status | ConvertTo-Json -Depth 6</code></pre>
+<p>应该能看到 <code>version: 0.5.1</code>、<code>books: 12</code>、<code>compiled_books: 4</code>，以及 <code>hindsight.reachable: true</code>。</p>
+</div></div>
+
+<div class="step"><div class="step-num">4</div><div>
+<h3>启动 Hermes</h3>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' doctor
+&amp; 'D:\hermes agent\bin\hermes.exe' chat</code></pre>
+<p>第一次建议先跑 <code>doctor</code>，确认 Python、模型、MCP 都正常。然后进入聊天界面。</p>
+</div></div>
+
+<h3>怎么判断“全都起来了”</h3>
+<table>
+<tr><th>服务</th><th>检查命令</th><th>正常结果</th></tr>
+<tr><td>Ollama</td><td><code>Invoke-RestMethod http://127.0.0.1:11434/api/tags</code></td><td>返回模型列表</td></tr>
+<tr><td>Hindsight</td><td><code>Invoke-RestMethod http://127.0.0.1:8888/health</code></td><td><code>healthy / connected</code></td></tr>
+<tr><td>BookCompiler GUI</td><td><code>Invoke-RestMethod http://127.0.0.1:8765/api/status</code></td><td><code>ok: true</code>，16 本书</td></tr>
+<tr><td>BookCompiler MCP</td><td><code>hermes mcp test bookcompiler</code></td><td>Connected，18 tools</td></tr>
+<tr><td>Hindsight MCP</td><td><code>hermes mcp test hindsight</code></td><td>Connected，36 tools</td></tr>
+</table>
+
+<div class="dangerbox">
+<strong>端口冲突：</strong>Hindsight 的内嵌 PostgreSQL 使用 <code>127.0.0.1:5432</code>。如果你本机已经有另一个 PostgreSQL 占用 5432，Hindsight 可能起不来。先检查：
+<pre><code>Get-NetTCPConnection -LocalPort 5432 -State Listen | Select-Object LocalAddress,LocalPort,OwningProcess</code></pre>
+不要随便杀你不知道的数据库进程。
+</div>
+</section>
+
+<section id="s5">
+<h2>5. BookCompiler 网页 GUI：每个页面怎么用</h2>
+<p>打开 <code>http://127.0.0.1:8765/</code>。左上角是导航，右上角显示版本和数据库路径。GUI 只绑定 <code>127.0.0.1</code>，没有登录系统，所以只在本机用。</p>
+
+<h3>5.1 总览（Overview）</h3>
+<ul>
+<li>看“入库书 / 已编译 / 判断框架 / 分析 / 反馈 / 进化提案”的数量。</li>
+<li>看“学科覆盖”和“分析视角”的柱状图。</li>
+<li>看“Hindsight 长期记忆”卡片：是否 connected、bank 名、bank 是否存在。</li>
+<li>看“最近分析”。点一条可以打开详情。</li>
+</ul>
+
+<h3>5.2 书库（Library）</h3>
+<p>这是最常用的页面。</p>
+<ol>
+<li>点右上角<strong>“导入本地书”</strong>。</li>
+<li>填写文件路径，例如 <code>D:\fanshu\某本书.txt</code>。</li>
+<li>书名可以留空，默认用文件名；作者、学科标签可选。</li>
+<li>点“开始导入”。</li>
+</ol>
+<p>导入后会显示章节数和片段数。注意：<strong>导入只是 ingested，不是 learned</strong>。要变成 learned/compiled，需要 agent 读章节、写编译补丁、执行 compile 和 validate。</p>
+<p>书库表格里的列：</p>
+<table>
+<tr><th>列</th><th>含义</th></tr>
+<tr><td>书名 / 作者</td><td>书的基本信息；有书卡时会显示一句话主旨。</td></tr>
+<tr><td>状态</td><td><code>ingested</code> 已入库；<code>compiled</code> 已深度编译。</td></tr>
+<tr><td>学科</td><td>economics / politics / law / finance 等标签。</td></tr>
+<tr><td>框架</td><td>这本书编译出的 FrameworkCard 数量。</td></tr>
+<tr><td>片段</td><td>chunk 数量。</td></tr>
+<tr><td>导入时间</td><td>入库时间。</td></tr>
+</table>
+
+<h3>5.3 分析（Analyze）</h3>
+<p>这个页面负责“选题 + 选书 + 生成分析草稿”。它<strong>不是大模型聊天框</strong>，不会自己写出完整答案；完整分析补丁要由 agent（Hermes）写，再由系统校验。</p>
+<ol>
+<li>选择模式：
+  <ul>
+    <li><code>auto</code>：agent 自动匹配书和框架，不需要额外同意。</li>
+    <li><code>direction</code>：你给一个方向，例如“地方债务与银行风险”。</li>
+    <li><code>books</code>：你直接指定书和/或框架。</li>
+  </ul>
+</li>
+<li>填写问题/新闻/事件。</li>
+<li>勾选分析视角：经济、政治、法律、通用。</li>
+<li>点<strong>“生成选择卡”</strong>。系统会显示指定的书、推荐补充的书、指定的框架、推荐补充的框架、推荐理由、覆盖缺口，以及“信息源缺口提示”：如果问题需要《中国人民银行法》等权威原文而书库没有，会直接给出下载说明和入库命令。</li>
+<li>如果是 <code>direction</code> 或 <code>books</code> 模式，必须在选择卡下方三选一：
+  <ul>
+    <li><code>specified</code>：只用你指定的范围；</li>
+    <li><code>specified+recommended</code>：指定 + agent 推荐；</li>
+    <li><code>recommended</code>：只用 agent 推荐。</li>
+  </ul>
+</li>
+<li>点<strong>“生成分析草稿”</strong>。系统会创建 AnalysisPacket 草稿，包含假设、证据、冲突、引用等结构。</li>
+<li>草稿的 conclusion / counterevidence / citations 需要 agent 补齐，再通过 <code>analysis-apply</code> 或 API 写回并校验。</li>
+</ol>
+<div class="warnbox">
+<strong>同意门的意义：</strong>模式 2/3 不允许 agent 偷偷扩大范围。你选“只用指定的”，它就只能用指定的；想加推荐书，必须你明确点“指定 + 推荐”。修改问题、方向、视角、书或框架后，旧同意会自动失效。
+</div>
+
+<h3>5.4 记忆（Memory）</h3>
+<p>输入问题，点“召回”。它会显示本地 feedback / memory 里的教训，以及 Hindsight <code>bookcompiler</code> bank 里的长期偏好/纠正（如果可用）。</p>
+<p>记忆不是事实来源。它只告诉你“用户以前纠正过什么、偏好什么、哪些错误别再犯”，不能替代书里的原文引用。</p>
+
+<h3>5.5 自进化（Evolution）</h3>
+<p>点“从反馈生成提案”。系统会把重复错误、偏好、缺失证据聚合成 proposal。状态流转是：</p>
+<pre><code>proposed → accepted → shadow → promoted → rolled_back
+        ↘ rejected</code></pre>
+<p>晋升不是点一下就行：必须有结构回放报告，且所有 case 通过。它只允许改检索权重、书偏好、框架偏好，<strong>不会自动改书卡、引用、prompt 或代码</strong>。</p>
+
+<h3>5.6 实体（Entities）</h3>
+<ul>
+<li>搜索实体、别名，例如“融资平台”“降准”“央行”。</li>
+<li>勾选“只看跨书”，查看跨书实体。</li>
+<li>点“近似重复审计”，查看“资产负债表 ↔ 央行资产负债表”这类候选。</li>
+<li>在“待确认实体合并”卡片里：
+  <ul>
+    <li>“扫描合并候选”：重新扫描并保存候选；</li>
+    <li>“刷新候选”：只刷新列表；</li>
+    <li>“确认合并”：移动 mention/relation/claim，可撤销；</li>
+    <li>“拒绝”：保留为两个不同实体；</li>
+    <li>“撤销合并”：恢复合并前状态。</li>
+  </ul>
+</li>
+</ul>
+<div class="warnbox">
+名称包含关系不等于同一个概念。例如“基础货币”和“基础货币变动”是相关但不同的概念。当前 5 个候选全部是 pending，系统不会自动合并。确认前想清楚。
+</div>
+
+<h3>5.7 命题（Claims）</h3>
+<ul>
+<li>点“从已学书籍抽取命题”，从 compiled 书里抽 claim。</li>
+<li>按关键词、状态筛选。</li>
+<li>每条命题显示主语、谓语、宾语、书名、页码、极性、置信度、逐字 quote。</li>
+<li>“标记为被取代”需要输入一个已经存在的新 claim_id，并确认；旧命题变为 superseded，可回滚。</li>
+<li>“确认为不同观点”用于 conflicted 命题：保留两条，恢复 active。</li>
+</ul>
+<p>当前 640 条命题，自动冲突 0 组。冲突检测只是提示，不会自动改判。</p>
+
+<h3>5.8 溯源（Inspect）</h3>
+<p>输入 <code>book_id</code>、<code>framework_id</code> 或 <code>chunk_id</code>，查看 provenance 边：书 → 框架 → chunk → 概念。任何回答都应该能沿这条边走回原文。</p>
+
+<h3>5.9 右上角和抽屉</h3>
+<ul>
+<li>右上角显示版本、数据库路径、健康状态。</li>
+<li>点书、分析、实体等条目，会从右侧滑出详情抽屉。</li>
+<li>按 <span class="kbd">Esc</span> 关闭抽屉。</li>
+</ul>
+
+<div class="note">
+<strong>GUI 的边界：</strong>它负责展示、选择、导入、检索、审计、校验和记忆管理，不负责“自动生成一篇完整专家分析”。真正的综合回答由 Hermes 的大模型完成。这样做是为了让引用可验证，而不是让 GUI 假装自己读过书。
+</div>
+</section><section id="s6">
+<h2>6. BookCompiler 命令行：复制粘贴就能用</h2>
+<p>所有命令都在项目根目录运行。推荐先进入目录：</p>
+<pre><code>cd C:\Users\mybea\projects\bookcompiler</code></pre>
+<p>下面统一使用项目虚拟环境里的 Python。不要用系统里随便一个 Python，否则可能缺依赖。</p>
+<pre><code>$PY = '.\.venv\Scripts\python.exe'
+$DB = '.bookcompiler\library.db'</code></pre>
+
+<h3>6.1 看书库</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB books</code></pre>
+<p>输出每本书的 <code>book_id</code>、标题、状态、学科等。只有 <code>compiled</code> 才算真正学过。</p>
+
+<h3>6.2 看覆盖情况</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB coverage</code></pre>
+<p>看学科、lens、已编译书数量。</p>
+
+<h3>6.3 看一本书的详情</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB show &lt;book_id&gt;</code></pre>
+<p>会显示书卡、框架卡和 provenance 边。</p>
+
+<h3>6.4 导入一本书</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB ingest 'D:\fanshu\某本书.txt' `
+  --title '书名' --author '作者' `
+  --discipline economics --discipline politics --discipline law</code></pre>
+<p>支持 <code>.txt</code>、<code>.md</code>、<code>.pdf</code>、<code>.epub</code>。不会联网下载。</p>
+
+<h3>6.5 检索原文</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB retrieval --query '降准与地方债务' --diagnostics</code></pre>
+<p>会显示混合检索的分数拆解：BM25、embedding、entity、quality。这个命令是“探针”，查的是全库；它不代表这些书都已经 learned。</p>
+
+<h3>6.6 实体</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB entities align
+&amp; $PY -m bookcompiler.cli --db $DB entities audit --limit 10
+&amp; $PY -m bookcompiler.cli --db $DB entities list --cross-book
+&amp; $PY -m bookcompiler.cli --db $DB entities show &lt;entity_id&gt;</code></pre>
+
+<h3>6.7 命题</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB claims build --limit-per-book 120
+&amp; $PY -m bookcompiler.cli --db $DB claims list --limit 20
+&amp; $PY -m bookcompiler.cli --db $DB claims show &lt;claim_id&gt;</code></pre>
+
+<h3>6.8 记忆召回</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB memory --query '宏观金融 引用规则'</code></pre>
+<p>注意 <code>memory</code> 用的是 <code>--query</code>，不是位置参数。</p>
+
+<h3>6.9 Hindsight 状态与召回</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB hindsight-status
+&amp; $PY -m bookcompiler.cli --db $DB hindsight-recall '宏观金融 引用规则' --limit 3</code></pre>
+
+<h3>6.10 写一条长期记忆</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB hindsight-retain `
+  '用户偏好：回答宏观金融问题时，必须区分基础货币投放和银行信贷扩张。' `
+  --context 'manual preference' --tags preference macro citation --wait</code></pre>
+<p><code>--wait</code> 会等待抽取完成；不加则异步。第一次同步 retain 可能比较慢（本机实测约 80 秒量级），所以日常建议用默认异步。</p>
+
+<h3>6.11 反馈</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB feedback --analysis &lt;analysis_id&gt; --rating 3 `
+  --note '引用够，但反证不足' --error overconfidence --missing-evidence '需要反例'</code></pre>
+<p>反馈会进入 SQLite，并尝试异步写入 Hindsight <code>bookcompiler</code> bank。</p>
+
+<h3>6.12 自进化</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB evolution-propose --min-support 1
+&amp; $PY -m bookcompiler.cli --db $DB evolution-list
+&amp; $PY -m bookcompiler.cli --db $DB evolution-config</code></pre>
+
+<h3>6.13 结构回放</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB replay .\examples\replay_cases.json</code></pre>
+<p>回放只证明“结构没退化”，不证明“答案更好”。盲评还没完成。</p>
+
+<h3>6.14 启动 MCP（给 Hermes 用）</h3>
+<pre><code>&amp; $PY -m bookcompiler.cli --db $DB mcp</code></pre>
+<p>这是一个 stdio 服务，正常情况不会打印欢迎语，而是等待 JSON-RPC 消息。日常不需要手动启动，Hermes 会按 <code>config.yaml</code> 自动拉起。</p>
+
+<div class="warnbox">
+<strong>Windows 控制台中文乱码：</strong>如果命令输出里的中文变成乱码，不一定是数据库坏了。优先用 GUI 查看；命令行可尝试 Windows Terminal / PowerShell 7，并设置 UTF-8：
+<pre><code>[Console]::OutputEncoding=[Text.UTF8Encoding]::new($false)
+$OutputEncoding=[Text.UTF8Encoding]::new($false)
+chcp 65001</code></pre>
+已验证：同样的数据通过 Python 直接读取、GUI、Hermes MCP 都是正常中文。
+</div>
+</section><section id="s7">
+<h2>7. Hermes Agent 怎么用</h2>
+<p>Hermes 是“前台”，你主要和它说话。它负责理解问题、选择工具、组织回答。BookCompiler 和 Hindsight 是它背后的“能力”。</p>
+
+<h3>7.1 启动前设置</h3>
+<p>Hermes 用 <code>HERMES_HOME</code> 找自己的配置、技能和状态数据库。每次新开 PowerShell 都建议先设置：</p>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'</code></pre>
+<p>检查版本和健康：</p>
+<pre><code>&amp; 'D:\hermes agent\bin\hermes.exe' --version
+&amp; 'D:\hermes agent\bin\hermes.exe' doctor</code></pre>
+<p>本机版本是 <strong>v0.22.2</strong>，commit <code>d923a5eb487a</code>，安装目录 <code>D:\hermes agent\hermes-agent</code>。当前主模型是 MiMo <code>mimo-v2.6-flash</code>（provider <code>xiaomi</code>）；<code>switch-models.bat</code> 菜单 2 可把对话/盲评切回 DeepSeek 云端预设；读书槽位仍保持 MiMo，避免读书误用付费 DeepSeek。</p>
+
+<h3>7.2 进入聊天</h3>
+<pre><code>&amp; 'D:\hermes agent\bin\hermes.exe' chat</code></pre>
+<p>然后在聊天界面里直接问。推荐从这几类问题开始：</p>
+<div class="grid">
+<div class="card"><h4>问它读过什么</h4><p><code>你读过哪些书？哪些是真正编译过的，哪些只是入库？</code></p><p class="small">它应该调用 <code>book_library</code>，并区分 learned / ingested。</p></div>
+<div class="card"><h4>用书分析新闻</h4><p><code>今天央行降准 50 个基点，同时地方债置换加速。结合你读过的书，从经济、政治、法律三个角度判断风险传导，并给出原文引用和页码。</code></p><p class="small">它应该走 <code>book_plan → book_analyze</code>。</p></div>
+<div class="card"><h4>指定方向</h4><p><code>只用地方财政方向的书，分析融资平台债务对银行体系的影响。</code></p><p class="small">它必须先给你选择卡，并问你用“指定 / 指定+推荐 / 推荐”。</p></div>
+<div class="card"><h4>指定书</h4><p><code>只用《中央银行与货币供给》和《以利为利》分析这条新闻。</code></p><p class="small">它要先把书名解析成 book_id，再问你同上三选一。</p></div>
+</div>
+
+<h3>7.3 一次性命令（不进聊天界面）</h3>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' --yolo -z '用我读过的书分析：降准是否必然导致银行信贷扩张？请给出书名、页码和逐字引用。'</code></pre>
+<p><code>-z</code> 是一次性提问。<code>--yolo</code> 表示自动批准工具调用，<strong>只应在你信任的本地环境使用</strong>；它会减少确认，但也意味着 agent 可以直接执行它决定的操作。</p>
+
+<div class="warnbox">
+<strong>PowerShell 的假报错：</strong>有时命令退出码是 1，并出现 <code>NativeCommandError</code>，但标准输出里其实有完整回答。这是 PowerShell 把 Hermes 的 stderr 包装成错误，不一定是真失败。先看回答内容，再看退出码。
+</div>
+
+<h3>7.4 Hermes 的技能机制</h3>
+<p>技能不是“一本书一个技能”。本机有两个相关技能：</p>
+<pre><code>D:\hermes agent\skills\book-library\SKILL.md
+D:\hermes agent\skills\book-learning-loop\SKILL.md</code></pre>
+<p><code>book-library</code> 负责“用读过的书回答领域问题”；<code>book-learning-loop</code> 负责“把一本书真正读进来、校验、评分、再进化”。达尔文技能在 <code>D:\hermes agent\skills\darwin-skill\SKILL.md</code>，用来评估和改进技能文本本身。</p>
+<p>它规定了：</p>
+<ul>
+<li>什么时候自动使用书库（新闻、政策、市场事件、“从你读过的书看”）；</li>
+<li>必须先调用 <code>book_library</code> 才能声称“读过”；</li>
+<li>只有 <code>learned=true</code> 的书才算学过；</li>
+<li>每个事实必须带书名、章节、页码和逐字引用；</li>
+<li>模式 2/3 必须先问用户使用范围；</li>
+<li>不能把经济、政治、法律的冲突平均掉；</li>
+<li>法律 lens 只是分析，不是法律意见。</li>
+</ul>
+<p>这意味着你不需要每次手动说“请调用 book_library”。只要问题像“用读过的书分析这条新闻”，技能描述会触发它。</p>
+
+<h3>7.5 Hermes 自己的记忆和自进化</h3>
+<p>Hermes 自己也有会话、技能和自进化机制，和 BookCompiler 的进化是两层：</p>
+<ul>
+<li><strong>Hermes 层：</strong>怎么调用工具、怎么改进技能文本、怎么管理会话。</li>
+<li><strong>BookCompiler 层：</strong>只允许有界配置补丁（检索权重、书/框架偏好），必须有回放和回滚。</li>
+</ul>
+<p>不要把“BookCompiler 自进化”理解成“模型半夜自己改代码”。它不会改书卡、引用真值、prompt 或代码。</p>
+</section>
+
+<section id="s8">
+<h2>8. 四个系统怎么对接</h2>
+
+<h3>8.1 BookCompiler ↔ Hermes：stdio MCP</h3>
+<p>BookCompiler 暴露一个标准 MCP 服务：</p>
+<pre><code>python -m bookcompiler.cli --db ...\library.db mcp</code></pre>
+<p>Hermes 在 <code>config.yaml</code> 里配置它。当前实际配置是：</p>
+<pre><code>mcp_servers:
+  bookcompiler:
+    command: 'C:\Users\mybea\projects\bookcompiler\.venv\Scripts\python.exe'
+    args:
+      - '-m'
+      - 'bookcompiler.cli'
+      - '--db'
+      - 'C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db'
+      - 'mcp'
+    env:
+      PYTHONIOENCODING: 'utf-8'
+      PYTHONPATH: 'C:\Users\mybea\projects\bookcompiler\src'
+      HINDSIGHT_ENABLED: '1'
+      HINDSIGHT_BASE_URL: 'http://127.0.0.1:8888'
+      HINDSIGHT_BANK_ID: 'bookcompiler'
+    enabled: true
+    lazy: false</code></pre>
+<p>关键点：</p>
+<ul>
+<li><code>command</code> 必须是项目虚拟环境里的 Python，不是随机的系统 Python。</li>
+<li><code>PYTHONPATH</code> 指向项目的 <code>src</code>，否则 Hermes 可能找不到 <code>bookcompiler</code> 包。</li>
+<li><code>PYTHONIOENCODING=utf-8</code> 避免中文工具结果被控制台编码破坏。</li>
+<li><code>lazy: false</code> 表示 Hermes 启动时就连接，不等第一次调用。</li>
+</ul>
+
+<h4>BookCompiler 暴露的 19 个工具</h4>
+<table>
+<tr><th>工具</th><th>作用</th></tr>
+<tr><td><code>book_library</code></td><td>列出所有书，区分 learned / ingested，给出嵌入和实体统计。</td></tr>
+<tr><td><code>book_plan</code></td><td>三种选书模式，返回选择卡、推荐理由、覆盖缺口和 <code>source_recommendations</code>（缺失的权威法律/监管原文）。</td></tr>
+<tr><td><code>book_recall</code></td><td>混合检索，返回逐字引用、章节、页码、分数拆解。</td></tr>
+<tr><td><code>book_analyze</code></td><td>生成多镜头 AnalysisPacket 与 memo 脚手架。</td></tr>
+<tr><td><code>book_ingest</code></td><td>只接收本地文件，不自动下载。</td></tr>
+<tr><td><code>book_export_text</code></td><td>导出章节，供 agent 精读。</td></tr>
+<tr><td><code>book_compile</code></td><td>应用 agent 写的编译补丁并校验引用。</td></tr>
+<tr><td><code>book_validate</code></td><td>校验书卡、框架卡、分析引用。</td></tr>
+<tr><td><code>book_feedback</code></td><td>记录结构化反馈，进入受控进化，并写 Hindsight。</td></tr>
+<tr><td><code>book_memory</code></td><td>召回本地教训 + Hindsight 长期记忆。</td></tr>
+<tr><td><code>book_hindsight</code></td><td>Hindsight 的 status / recall / reflect / retain。</td></tr>
+<tr><td><code>book_entities</code></td><td>跨书实体、别名、提及、共现、候选合并。</td></tr>
+<tr><td><code>book_claims</code></td><td>命题图谱：抽取、列出、supersession、冲突处理。</td></tr>
+<tr><td><code>book_evolution</code></td><td>提案、回放、晋升、回滚。</td></tr>
+<tr><td><code>book_status</code></td><td>覆盖、嵌入、实体、检索诊断。</td></tr>
+</table>
+
+<p>验证：</p>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' mcp test bookcompiler</code></pre>
+<p>本机实测：<strong>Connected，18 tools</strong>。</p>
+<h4>从零配置的操作顺序</h4>
+<ol>
+<li>先确认 BookCompiler 自己能跑：在项目目录执行 <code>.\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db books</code>，能看到书列表。</li>
+<li>备份 <code>D:\hermes agent\config.yaml</code>。</li>
+<li>把上面的 <code>bookcompiler:</code> 整段加入 <code>mcp_servers:</code> 下面。如果文件里已经有 <code>mcp_servers:</code>，<strong>不要重复写这个顶级键</strong>，只把 <code>bookcompiler:</code> 这一项加到它下面；YAML 缩进必须对齐。</li>
+<li>完全退出正在运行的 Hermes，再重新打开。MCP 配置只在 Hermes 启动时加载，改完不重启不生效。</li>
+<li>执行 <code>hermes mcp test bookcompiler</code>，看到 <strong>Connected / 18 tools</strong> 才算成功。</li>
+<li>进入 <code>hermes chat</code>，问“你读过哪些书？哪些是 compiled，哪些只是 ingested？”如果它能正确区分，说明工具真的被调用了。</li>
+</ol>
+<div class="warnbox">如果 <code>mcp test</code> 失败，先手动运行配置里的 <code>command</code> 和 <code>args</code>，看 Python 是否能启动；再检查 <code>PYTHONPATH</code> 和数据库路径有没有写错。不要把系统 Python 写进 <code>command</code>。</div>
+
+<h4>实际问答链路</h4>
+<pre><code>你：用读过的书分析这条新闻……
+  ↓
+Hermes 读取 book-library 技能
+  ↓
+book_library        → 哪些书真的学过
+book_plan           → 选书/选框架，给出选择卡
+（模式 2/3）你确认范围
+book_analyze        → 生成 AnalysisPacket
+book_recall         → 取逐字引用、章节、页码
+book_validate       → 引用逐字回查
+  ↓
+Hermes 组织最终回答
+</code></pre>
+
+<h3>8.2 Hindsight ↔ Hermes：HTTP MCP + 两个 bank</h3>
+<p>Hindsight 提供 MCP 端点，Hermes 通过 HTTP 连接。当前配置了三个 MCP server：</p>
+<pre><code>mcp_servers:
+  bookcompiler:
+    ...（上面的 stdio 配置）
+
+  hindsight:
+    url: 'http://127.0.0.1:8888/mcp/hermes/'
+    enabled: true
+    lazy: false
+
+  hindsight_books:
+    url: 'http://127.0.0.1:8888/mcp/bookcompiler/'
+    enabled: true
+    lazy: false</code></pre>
+<p>两个 Hindsight MCP 的区别：</p>
+<table>
+<tr><th>Hermes 里的名字</th><th>对应的 Hindsight bank</th><th>存什么</th></tr>
+<tr><td><code>hindsight</code></td><td><code>hermes</code></td><td>Hermes 的个人偏好、项目上下文、决策、跨会话记忆。</td></tr>
+<tr><td><code>hindsight_books</code></td><td><code>bookcompiler</code></td><td>书库相关的用户纠正、引用偏好、错误模式、分析教训。</td></tr>
+</table>
+<p>验证：</p>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' mcp test hindsight</code></pre>
+<p>本机实测：<strong>Connected，36 tools</strong>。另一个 <code>hindsight_books</code> 也是同一套 Hindsight 工具，只是指向不同 bank。</p>
+<h4>从零配置的操作顺序</h4>
+<ol>
+<li>先确认 Hindsight 健康：<code>Invoke-RestMethod http://127.0.0.1:8888/health</code>，返回 <code>status: healthy</code>。</li>
+<li>备份 <code>D:\hermes agent\config.yaml</code>。</li>
+<li>在已有的 <code>mcp_servers:</code> 下面加入 <code>hindsight</code> 和 <code>hindsight_books</code> 两项，内容就是上面的 YAML。不要新建第二个 <code>mcp_servers:</code> 顶级键。</li>
+<li>完全退出 Hermes，再重新启动。</li>
+<li>分别执行 <code>hermes mcp test hindsight</code> 和 <code>hermes mcp test hindsight_books</code>，两个都应该是 <strong>Connected / 36 tools</strong>。</li>
+<li>进入聊天，说“用 <code>mcp_hindsight_recall</code> 回忆我的回答偏好”，看它能不能返回中文记忆。</li>
+</ol>
+<div class="note">两个 URL 结尾的斜杠不要漏：<code>/mcp/hermes/</code> 和 <code>/mcp/bookcompiler/</code>。它们不是网页，用浏览器直接打开可能显示协议错误，这是正常的。</div>
+
+<h4>已实测的中文召回</h4>
+<p>我们向 <code>hermes</code> bank 写入过一条偏好：</p>
+<blockquote>用户偏好：回答问题时先给结论，再给证据；不确定时明确说“不确定”，不要编造。</blockquote>
+<p>然后让 Hermes 调用 <code>mcp_hindsight_recall</code>，它正确复述了这条中文内容，并返回了条目 ID、类型和标签。向 <code>bookcompiler</code> bank 写入的宏观金融引用偏好，也能通过 <code>mcp_hindsight_books_recall</code> 正确召回。这说明“Hindsight → Hermes → 中文回答”链路已经打通。</p>
+
+<div class="warnbox">
+<strong>当前不是 Hermes 原生 Hindsight provider。</strong>曾经尝试：
+<pre><code>hermes plugins install hindsight --yes-deps --enable</code></pre>
+但连接 GitHub 443 超时，安装失败。当前实际可用的是上面的 <strong>MCP 直连方案</strong>，不是 <code>memory.provider: hindsight</code>。两者不要混为一谈。
+</div>
+
+<h3>8.3 BookCompiler ↔ Hindsight：HTTP 桥</h3>
+<p>BookCompiler 通过 <code>src/bookcompiler/hindsight.py</code> 调 Hindsight 的 HTTP API。配置在 <code>.env</code>：</p>
+<pre><code>HINDSIGHT_ENABLED=1
+HINDSIGHT_BASE_URL=http://127.0.0.1:8888
+HINDSIGHT_BANK_ID=bookcompiler
+HINDSIGHT_TIMEOUT=20</code></pre>
+<p>连接点：</p>
+<table>
+<tr><th>触发动作</th><th>发生什么</th></tr>
+<tr><td><code>book_feedback</code> / <code>feedback</code></td><td>写本地 SQLite feedback，并异步 retain 到 Hindsight。</td></tr>
+<tr><td><code>book_memory</code></td><td>召回本地 feedback/memory，并合并 Hindsight lessons。</td></tr>
+<tr><td><code>book_hindsight</code></td><td>直接 status / recall / reflect / retain。</td></tr>
+<tr><td>新分析</td><td><code>recall_memory()</code> 把 Hindsight 结果合并进分析上下文；最多一半名额给 Hindsight，本地反馈优先。</td></tr>
+</table>
+<p>设计原则：<strong>Hindsight 挂了不能阻塞书库</strong>。所有调用都返回 <code>ok:false</code>，而不是抛异常。Hindsight 只存经验，不存原文。</p>
+
+<h3>8.4 一张图看懂对接</h3>
+<div class="arch"><pre>
+Hermes Agent
+ ├─ MCP stdio ─────────────→ BookCompiler
+ │                             ├─ SQLite library.db
+ │                             └─ HTTP ─────────────→ Hindsight :8888
+ │                                                        └─ PostgreSQL :5432
+ ├─ MCP HTTP /mcp/hermes/ ─────────────────────────────→ Hindsight :8888
+ │                                                        └─ bank: hermes
+ └─ MCP HTTP /mcp/bookcompiler/ ───────────────────────→ Hindsight :8888
+                                                          └─ bank: bookcompiler
+</pre></div>
+</section><section id="s9">
+<h2>9. Hindsight 怎么接 Ollama</h2>
+<p>Hindsight 需要一个 LLM 来抽取记忆、做 reflect；还需要一个 Embedding 模型来做语义召回。本机两者都走本地，不依赖云端 API key。</p>
+
+<h3>9.1 实际配置</h3>
+<p>文件：<code>D:\hindsight\.env</code>。当前内容（不含任何密钥）：</p>
+<pre><code>HINDSIGHT_API_LLM_PROVIDER=ollama
+HINDSIGHT_API_LLM_MODEL=qwen2.5:7b-instruct-q4_K_M
+HINDSIGHT_API_LLM_BASE_URL=http://127.0.0.1:11434/v1
+HINDSIGHT_API_LLM_MAX_CONCURRENT=1
+HINDSIGHT_API_LLM_OLLAMA_NUM_CTX=16384
+
+HINDSIGHT_API_EMBEDDINGS_PROVIDER=local
+HINDSIGHT_API_EMBEDDINGS_LOCAL_MODEL=D:\models\bge-small-zh-v1.5
+HINDSIGHT_API_EMBEDDINGS_LOCAL_FORCE_CPU=true
+
+HINDSIGHT_API_ENABLE_OBSERVATIONS=false
+
+HINDSIGHT_API_HOST=127.0.0.1
+HINDSIGHT_API_PORT=8888
+HINDSIGHT_API_LOG_LEVEL=INFO
+HINDSIGHT_API_WORKER_ID=hindsight-local</code></pre>
+
+<h3>9.2 每一行是什么意思</h3>
+<table>
+<tr><th>配置</th><th>作用</th></tr>
+<tr><td><code>LLM_PROVIDER=ollama</code></td><td>用 Ollama 作为记忆抽取/reflect 的模型提供方。</td></tr>
+<tr><td><code>LLM_MODEL=qwen2.5:7b-instruct-q4_K_M</code></td><td>使用本机已安装的 7B 指令模型，支持 tool calling。</td></tr>
+<tr><td><code>LLM_BASE_URL=http://127.0.0.1:11434/v1</code></td><td>Ollama 的 OpenAI 兼容接口地址。注意结尾是 <code>/v1</code>。</td></tr>
+<tr><td><code>LLM_MAX_CONCURRENT=1</code></td><td>一次只跑一个 LLM 请求，避免本地显卡/内存被打爆。</td></tr>
+<tr><td><code>OLLAMA_NUM_CTX=16384</code></td><td>上下文窗口 16K，给抽取和 reflect 留空间。</td></tr>
+<tr><td><code>EMBEDDINGS_PROVIDER=local</code></td><td>用本地 Embedding 模型，不调用云端。</td></tr>
+<tr><td><code>EMBEDDINGS_LOCAL_MODEL=D:\models\bge-small-zh-v1.5</code></td><td>中文小模型，512 维，适合本机 CPU。</td></tr>
+<tr><td><code>FORCE_CPU=true</code></td><td>Embedding 强制走 CPU，避免和 LLM 抢显存。</td></tr>
+<tr><td><code>ENABLE_OBSERVATIONS=false</code></td><td>关闭 observation 汇总，减少后台 LLM 工作量和超时风险。</td></tr>
+<tr><td><code>HOST=127.0.0.1</code></td><td>只监听本机，不暴露公网。</td></tr>
+<tr><td><code>PORT=8888</code></td><td>Hindsight API 端口。</td></tr>
+<tr><td><code>WORKER_ID=hindsight-local</code></td><td>后台 worker 的名字，便于看日志。</td></tr>
+</table>
+
+<h3>9.3 验证 Ollama 这一端</h3>
+<pre><code>Invoke-RestMethod http://127.0.0.1:11434/api/tags | Select-Object -ExpandProperty models | Select-Object name,size</code></pre>
+<p>本机已有模型包括：</p>
+<ul>
+<li><code>qwen2.5:7b-instruct-q4_K_M</code>（Hindsight 当前使用）</li>
+<li><code>qwen2.5:14b-instruct-q4_K_M</code></li>
+<li><code>qwen2:7b-instruct</code></li>
+<li><code>deepseek-r1:8b</code></li>
+<li><code>nomic-embed-text:latest</code></li>
+</ul>
+<p>模型文件实际在 <code>D:\models</code>（<code>blobs</code> 和 <code>manifests</code>），因为本机设置了 <code>OLLAMA_MODELS</code>。</p>
+
+<h3>9.4 为什么不用云端模型</h3>
+<ul>
+<li>记忆里可能有个人偏好、项目上下文，放本地更安心。</li>
+<li>不产生按 token 计费。</li>
+<li>缺点：7B 本地模型做复杂 reflect 很慢，甚至超时；这是当前最大限制之一。</li>
+</ul>
+
+<h3>9.5 换模型怎么做</h3>
+<p>编辑 <code>D:\hindsight\.env</code> 里的 <code>HINDSIGHT_API_LLM_MODEL</code>，例如换成 14B：</p>
+<pre><code>HINDSIGHT_API_LLM_MODEL=qwen2.5:14b-instruct-q4_K_M</code></pre>
+<p>然后重启 Hindsight。14B 更聪明，但更慢、更吃显存/内存；没有实测证明它能在你的机器上稳定完成 reflect。换模型前先确认 Ollama 里真的有这个模型。</p>
+
+<div class="warnbox">
+<strong>不要给 Ollama 配公网地址。</strong>Ollama 默认没有 API key，只应监听 <code>127.0.0.1</code>。Hindsight 也只绑定本机。不要把 11434、8888、8765、5432 暴露到公网。
+</div>
+</section>
+
+<section id="s10">
+<h2>10. 记忆到底存在哪里</h2>
+<p>这是最容易混淆的地方。请按“三层记忆”理解：</p>
+
+<div class="arch"><pre>
+第 1 层：书的原文与证据
+  BookCompiler → C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db
+  数据库：SQLite
+  内容：书、章节、chunk、原文、embedding、书卡、框架卡、引用、实体、命题
+
+第 2 层：对话与 agent 状态
+  Hermes → D:\hermes agent\state.db
+  数据库：SQLite
+  内容：会话、消息、系统提示、模型用量、FTS 索引、网关状态
+
+第 3 层：跨对话的长期经验
+  Hindsight → C:\Users\mybea\.pg0\instances\hindsight\data
+  数据库：PostgreSQL 18.1 + pgvector 0.8.5
+  内容：bank、memory_units、documents、chunks、entities、memory_links、observations 等
+</pre></div>
+
+<h3>10.1 一张表看清</h3>
+<table>
+<tr><th>系统</th><th>记忆类型</th><th>实际路径</th><th>数据库</th><th>谁写入</th></tr>
+<tr><td>BookCompiler</td><td>书、原文、chunk、向量、书卡、框架、引用、实体、命题</td><td><code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db</code></td><td>SQLite</td><td>导入、编译、实体对齐、命题抽取</td></tr>
+<tr><td>BookCompiler</td><td>反馈、偏好、教训</td><td>同上，<code>feedback</code> / <code>memory</code> 表</td><td>SQLite</td><td><code>feedback</code> / <code>book_feedback</code></td></tr>
+<tr><td>Hermes</td><td>会话、消息、系统提示、状态</td><td><code>D:\hermes agent\state.db</code></td><td>SQLite</td><td>Hermes 运行时</td></tr>
+<tr><td>Hindsight</td><td>长期记忆、偏好、纠正、观察</td><td><code>C:\Users\mybea\.pg0\instances\hindsight\data</code></td><td>PostgreSQL + pgvector</td><td>retain / feedback 桥 / MCP 工具</td></tr>
+<tr><td>Ollama</td><td>模型权重</td><td><code>D:\models</code></td><td>文件（blobs/manifests）</td><td><code>ollama pull</code></td></tr>
+<tr><td>BookCompiler Embedding</td><td>BGE 模型权重</td><td><code>D:\models\bge-small-zh-v1.5</code></td><td>文件（safetensors/bin）</td><td>手动下载/放置</td></tr>
+</table>
+
+<div class="dangerbox">
+<strong>网上常见的错误路径：</strong>不要写 <code>~/.hindsight/pg0</code>。本机实际数据目录是 <code>C:\Users\mybea\.pg0\instances\hindsight\data</code>，PostgreSQL 端口是 <strong>5432</strong>，不是 5555。教程以本机实际路径为准。
+</div>
+
+<h3>10.2 为什么 BookCompiler 把向量放 SQLite</h3>
+<p>因为书库是单机个人使用，SQLite 足够：一个文件、零运维、备份简单。向量以 BLOB 形式存在 <code>chunk_embeddings</code> 表里，检索时在 Python 里算余弦相似度。它不是“向量数据库”，但对 8,741 个 chunk 的量级完全够用。</p>
+
+<h3>10.3 为什么 Hindsight 用 PostgreSQL</h3>
+<p>Hindsight 要处理 bank、文档、chunk、实体、关系、记忆链接、后台 worker、异步操作等复杂结构，还要用 pgvector 做向量检索，所以用 PostgreSQL 更合适。它启动时会自己拉起一个内嵌 PostgreSQL 实例，不需要你单独安装数据库服务器。</p>
+
+<h3>10.4 Hermes 的 state.db 里有什么</h3>
+<p>本机实测表包括：</p>
+<pre><code>sessions
+messages
+messages_fts
+messages_fts_trigram
+system_prompts
+session_model_usage
+conversation_generations
+gateway_heartbeats
+gateway_routing
+async_delegations
+...</code></pre>
+<p>它不是书库，也不存书里的原文。它存的是“Hermes 和你聊过什么、用了什么系统提示、模型用量是多少”。</p>
+
+<h3>10.5 Hindsight 的 bank 是什么</h3>
+<p>bank 可以理解成“记忆分区”。本机有两个：</p>
+<ul>
+<li><code>hermes</code>：Hermes 个人助手记忆。当前约有 1 条已抽取事实。</li>
+<li><code>bookcompiler</code>：书库相关教训。当前约有 1 条已抽取事实。</li>
+</ul>
+<p>bank 之间不会互相串味。你问书库问题时，应该查 <code>bookcompiler</code>；问个人偏好时，查 <code>hermes</code>。</p>
+</section>
+
+<section id="s11">
+<h2>11. 数据库里到底有什么</h2>
+
+<h3>11.1 BookCompiler：SQLite</h3>
+<p>路径：<code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db</code>。当前实测表与行数：</p>
+<table>
+<tr><th>表</th><th>行数</th><th>作用</th></tr>
+<tr><td><code>books</code></td><td>12</td><td>书的基本信息、状态、学科标签。</td></tr>
+<tr><td><code>chunks</code></td><td>8,741</td><td>切好的原文片段。</td></tr>
+<tr><td><code>chunks_fts</code></td><td>8,741</td><td>SQLite FTS5 全文索引，BM25 用。</td></tr>
+<tr><td><code>chunk_embeddings</code></td><td>14,241</td><td>向量。8,741 个 BGE 512 维 + 5,500 个旧 local-hash 768 维。</td></tr>
+<tr><td><code>book_cards</code></td><td>4</td><td>深度编译的书卡。</td></tr>
+<tr><td><code>frameworks</code></td><td>12</td><td>判断框架卡。</td></tr>
+<tr><td><code>analyses</code></td><td>2</td><td>分析包。</td></tr>
+<tr><td><code>edges</code></td><td>906</td><td>provenance 边（书/框架/chunk/概念）。</td></tr>
+<tr><td><code>entities</code></td><td>92</td><td>规范实体。</td></tr>
+<tr><td><code>entity_mentions</code></td><td>9,905</td><td>实体在原文中的提及。</td></tr>
+<tr><td><code>entity_relations</code></td><td>300</td><td>共现/讨论关系。</td></tr>
+<tr><td><code>entity_merge_candidates</code></td><td>5</td><td>待确认的实体合并候选。</td></tr>
+<tr><td><code>claims</code></td><td>640</td><td>命题。</td></tr>
+<tr><td><code>claim_evidence</code></td><td>640</td><td>命题对应的原文证据。</td></tr>
+<tr><td><code>claim_relations</code></td><td>0</td><td>命题关系；当前没有自动冲突。</td></tr>
+<tr><td><code>feedback</code></td><td>0</td><td>结构化反馈。</td></tr>
+<tr><td><code>memory</code></td><td>0</td><td>本地教训/偏好。</td></tr>
+<tr><td><code>evolution_proposals</code></td><td>0</td><td>自进化提案。</td></tr>
+<tr><td><code>evolution_runs</code></td><td>0</td><td>进化执行记录。</td></tr>
+<tr><td><code>evolution_state</code></td><td>0</td><td>当前进化配置快照。</td></tr>
+</table>
+
+<h3>11.2 Hermes：SQLite</h3>
+<p>路径：<code>D:\hermes agent\state.db</code>。当前实测：</p>
+<table>
+<tr><th>表</th><th>行数</th><th>作用</th></tr>
+<tr><td><code>sessions</code></td><td>10</td><td>会话。</td></tr>
+<tr><td><code>messages</code></td><td>74</td><td>消息。</td></tr>
+<tr><td><code>messages_fts</code></td><td>74</td><td>消息全文索引。</td></tr>
+<tr><td><code>system_prompts</code></td><td>4</td><td>系统提示版本。</td></tr>
+<tr><td><code>session_model_usage</code></td><td>9</td><td>模型用量。</td></tr>
+<tr><td><code>gateway_*</code></td><td>0</td><td>网关状态（当前没用到）。</td></tr>
+</table>
+
+<h3>11.3 Hindsight：PostgreSQL</h3>
+<p>路径：<code>C:\Users\mybea\.pg0\instances\hindsight\data</code>。<br>
+连接：<code>127.0.0.1:5432</code>，数据库名 <code>hindsight</code>，用户 <code>hindsight</code>。<br>
+扩展：<code>vector 0.8.5</code>、<code>pg_trgm 1.6</code>、<code>btree_gin 1.3</code>。</p>
+<p>当前有 25 张表，关键表：</p>
+<table>
+<tr><th>表</th><th>作用</th></tr>
+<tr><td><code>banks</code></td><td>记忆分区。</td></tr>
+<tr><td><code>memory_units</code></td><td>抽取后的记忆单元/事实。</td></tr>
+<tr><td><code>documents</code></td><td>原始文档。</td></tr>
+<tr><td><code>chunks</code></td><td>Hindsight 自己切的片段。</td></tr>
+<tr><td><code>entities</code></td><td>Hindsight 的实体。</td></tr>
+<tr><td><code>unit_entities</code></td><td>记忆单元与实体的关联。</td></tr>
+<tr><td><code>memory_links</code></td><td>记忆之间的关系。</td></tr>
+<tr><td><code>observation_history</code></td><td>observation 历史（当前 observations 关闭）。</td></tr>
+<tr><td><code>knowledge_pages</code></td><td>知识页面。</td></tr>
+<tr><td><code>directives</code></td><td>指令/偏好类记忆。</td></tr>
+<tr><td><code>async_operations</code></td><td>异步 retain 操作。</td></tr>
+<tr><td><code>llm_requests</code></td><td>LLM 请求记录。</td></tr>
+</table>
+<p>完整表清单（25 张）：<code>alembic_version</code>、<code>async_operations</code>、<code>attachments</code>、<code>audit_log</code>、<code>bank_aliases</code>、<code>bank_stats_cache</code>、<code>banks</code>、<code>chunks</code>、<code>directives</code>、<code>documents</code>、<code>entities</code>、<code>entity_cooccurrences</code>、<code>entity_maintenance_queue</code>、<code>file_storage</code>、<code>graph_maintenance_queue</code>、<code>invalidated_memory_units</code>、<code>knowledge_pages</code>、<code>llm_requests</code>、<code>memory_links</code>、<code>memory_units</code>、<code>mental_model_history</code>、<code>mental_models</code>、<code>observation_history</code>、<code>unit_entities</code>、<code>webhooks</code>。</p>
+
+<h3>11.4 不要把数据库当“聊天记录”</h3>
+<p>BookCompiler 的 <code>library.db</code> 是书库，不是聊天记录；Hermes 的 <code>state.db</code> 是聊天/会话，不是书库；Hindsight 是长期经验，不是原文。三者职责分开，排错时才不会乱。</p>
+</section>
+
+<section id="s12">
+<h2>12. Hindsight API 手把手</h2>
+<p>Hindsight 没有部署图形界面。当前可用的是 HTTP API：<code>http://127.0.0.1:8888</code>。本机没有部署 <code>9999</code> 控制台，不要以为打开 9999 就能看到 UI。</p>
+
+<h3>12.1 先定义一个小工具函数</h3>
+<p>PowerShell 里直接传中文 JSON 容易编码出错。用下面这个函数，把 JSON 明确编码成 UTF-8 字节再发：</p>
+<pre><code>function Invoke-HindsightJson {
+  param(
+    [string]$Method,
+    [string]$Path,
+    $Body = $null
+  )
+  $uri = "http://127.0.0.1:8888$Path"
+  if ($null -eq $Body) {
+    return Invoke-RestMethod -Method $Method -Uri $uri
+  }
+  $json = $Body | ConvertTo-Json -Depth 8
+  $bytes = [Text.Encoding]::UTF8.GetBytes($json)
+  Invoke-RestMethod -Method $Method -Uri $uri `
+    -ContentType 'application/json; charset=utf-8' -Body $bytes
+}</code></pre>
+
+<h3>12.2 健康检查与版本</h3>
+<pre><code>Invoke-HindsightJson GET '/health'
+Invoke-HindsightJson GET '/version'</code></pre>
+<p>正常健康检查：</p>
+<pre><code>status   database
+------   --------
+healthy  connected</code></pre>
+<p>版本接口会返回 <code>api_version: 1.0.0</code> 和 feature flags（例如 <code>mcp: true</code>、<code>worker: true</code>、<code>observations: false</code>）。</p>
+
+<h3>12.3 列出 bank</h3>
+<pre><code>Invoke-HindsightJson GET '/v1/default/banks?limit=20'</code></pre>
+<p>本机应看到 <code>hermes</code> 和 <code>bookcompiler</code> 两个 bank。</p>
+
+<h3>12.4 创建 bank</h3>
+<pre><code>Invoke-HindsightJson PUT '/v1/default/banks/testbank' @{
+  reflect_mission = 'Test bank for learning Hindsight'
+  enable_observations = $false
+}</code></pre>
+<p><code>PUT</code> 是幂等的：同名 bank 已存在时会更新配置，不会重复创建。</p>
+
+<h3>12.5 写入一条记忆（retain）</h3>
+<pre><code>Invoke-HindsightJson POST '/v1/default/banks/bookcompiler/memories' @{
+  items = @(
+    @{
+      content = '用户偏好：回答宏观金融问题时，必须区分基础货币投放和银行信贷扩张。'
+      context = 'manual tutorial test'
+      tags = @('preference','macro','citation')
+    }
+  )
+  async = $false
+}</code></pre>
+<p>直接调 API 时，<code>async</code> 默认是 <code>false</code>，会等抽取完成；同步第一次可能很慢。BookCompiler 的桥默认 <code>async=true</code>，所以日常反馈不会卡住。返回里会有 <code>operation_id</code>（异步时）或抽取结果。</p>
+
+<h3>12.6 召回（recall）</h3>
+<pre><code>Invoke-HindsightJson POST '/v1/default/banks/bookcompiler/memories/recall' @{
+  query = '宏观金融 引用规则'
+  budget = 'low'
+  max_tokens = 1600
+}</code></pre>
+<p>返回的每条结果包含：</p>
+<ul>
+<li><code>text</code>：记忆文本；</li>
+<li><code>type</code>：例如 world / experience / observation；</li>
+<li><code>tags</code>、<code>entities</code>、<code>metadata</code>；</li>
+<li><code>scores</code>：<code>final</code>、<code>reranker</code>、<code>semantic</code> 等；</li>
+<li><code>document_id</code>、<code>chunk_id</code>。</li>
+</ul>
+<p>本机实测：写入中文偏好后，recall 能召回正确文本，<code>reranker</code> 分数约 0.99，<code>semantic</code> 分数约 0.60。</p>
+
+<h3>12.7 反思（reflect）——实验性，可能超时</h3>
+<pre><code>Invoke-HindsightJson POST '/v1/default/banks/hermes/reflect' @{
+  query = '根据我的偏好，回答问题时应该注意什么？'
+  budget = 'low'
+  max_tokens = 800
+}</code></pre>
+<div class="warnbox">
+<strong>诚实说明：</strong>本机在 <code>qwen2.5:7b-instruct-q4_K_M</code> 上调用 reflect 时，曾等待 300 秒后超时；日志显示 Ollama 的 reflect tool call 反复超时。至今没有一次成功的 reflect 结果。retain/recall 是已验证的，reflect 不是。不要把它写进自动化流程。
+</div>
+
+<h3>12.8 列出记忆</h3>
+<pre><code>Invoke-HindsightJson GET '/v1/default/banks/bookcompiler/memories/list?limit=20'</code></pre>
+
+<h3>12.9 清空一个 bank 的记忆</h3>
+<div class="dangerbox">
+以下操作会删数据，除非你明确要重置，否则不要执行：
+<pre><code>Invoke-HindsightJson DELETE '/v1/default/banks/bookcompiler/memories'</code></pre>
+删除 bank 本身是另一个操作，风险更高。先备份 PostgreSQL 数据目录。
+</div>
+
+<h3>12.10 MCP 端点</h3>
+<p>Hindsight 的 MCP 端点是：</p>
+<pre><code>http://127.0.0.1:8888/mcp/hermes/
+http://127.0.0.1:8888/mcp/bookcompiler/</code></pre>
+<p>它们不是给浏览器看页面的，而是给 MCP 客户端（Hermes）发 JSON-RPC 的。用浏览器直接打开可能只看到协议错误，这是正常的。</p>
+</section><section id="s13">
+<h2>13. 一次真实问答的完整流程</h2>
+<p>假设你问 Hermes：</p>
+<blockquote>今天央行降准 50 个基点，同时地方债置换加速。结合你读过的书，从经济、政治、法律三个角度判断风险是否从财政转移到银行体系。请给出原文引用和页码。</blockquote>
+
+<h3>13.1 你看到的过程</h3>
+<ol>
+<li>Hermes 识别出这是“用读过的书分析新闻/政策”的场景，加载 <code>book-library</code> 技能。</li>
+<li>调用 <code>book_library</code>，确认哪些书是 compiled，哪些只是 ingested。</li>
+<li>调用 <code>book_plan</code>，选出相关书和框架，给出选择卡：
+  <ul>
+    <li>例如《中央银行与货币供给》《以利为利》《稳定不稳定的经济》《当代中国政府与政治》；</li>
+    <li>标出覆盖缺口，例如“法律类书覆盖较薄”。</li>
+  </ul>
+</li>
+<li>如果是 <code>auto</code> 模式，直接继续；如果是 <code>direction</code> 或 <code>books</code> 模式，先问你三选一。</li>
+<li>调用 <code>book_analyze</code>，生成多镜头 AnalysisPacket 草稿。</li>
+<li>调用 <code>book_recall</code>，取出逐字引用、章节、页码和分数拆解。</li>
+<li>内部 <code>book_validate</code> 逐字回查引用；找不到就报 <code>unsupported_quote</code>。</li>
+<li>Hermes 组织回答，明确区分：
+  <ul>
+    <li>书里原文说了什么；</li>
+    <li>哪些是推断；</li>
+    <li>哪些是建议；</li>
+    <li>经济/政治/法律三个 lens 在哪里冲突；</li>
+    <li>什么条件下结论会改变。</li>
+  </ul>
+</li>
+</ol>
+
+<h3>13.2 回答应该长什么样</h3>
+<pre><code>1. 这件事改变了什么（框架性描述，不需要引用）
+2. 书里怎么说（按 lens 分节；每条主张带书名/章节/页码/逐字引用）
+3. 三个 lens 在哪里冲突（明确写出，不平均掉）
+4. 条件性结论（如果 A，则 B；如果非 A，则 C）
+5. 什么会改变判断（具体指标/文件）
+6. 实际用了哪些 learned 书（区分“引用过”和“只是推荐”）
+</code></pre>
+
+<h3>13.3 已验证的例子</h3>
+<p>此前用 one-shot 探针问过“降准是否必然导致银行信贷扩张？”。Hermes 自动走书库，最终引用了《中央银行与货币供给》第 277 页和第 298 页的逐字原文，并明确回答“降准不是必然导致信贷扩张”。这说明“新闻/问题 → 选书 → 检索 → 引用 → 回答”的链路是通的。</p>
+<p>另一个已验证的链路是 Hindsight 召回：Hermes 通过 <code>mcp_hindsight_recall</code> 正确复述了中文偏好“先给结论，再给证据；不确定时明确说不确定，不要编造”，并返回了条目 ID、类型和标签。</p>
+
+<div class="note">
+<strong>不要期待它每次都完美。</strong>它现在的强项是“有出处、可审计、能区分读过和没读过”；弱项是书覆盖不全、法律书薄、OCR 有噪声、reflect 不稳定。回答质量最终还取决于 Hermes 的模型和工具调用能力。
+</div>
+</section>
+
+<section id="s14">
+<h2>14. 怎么让 agent 学会一本新书</h2>
+<p>再强调一次：<strong>导入 ≠ 学会</strong>。导入只是把书切好、存进 SQLite；<code>compiled</code> 才算生成了书卡和可调用框架；<code>learned</code> 还要求校验零错误。</p>
+
+<div class="step"><div class="step-num">1</div><div>
+<h3>准备文件</h3>
+<p>把书放进一个本地目录，例如 <code>D:\fanshu</code>。支持 TXT、Markdown、PDF、EPUB。系统不会自动联网下载书。</p>
+</div></div>
+
+<div class="step"><div class="step-num">2</div><div>
+<h3>导入（ingest）</h3>
+<pre><code>cd C:\Users\mybea\projects\bookcompiler
+&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db `
+  ingest 'D:\fanshu\某本书.txt' --title '书名' --author '作者' `
+  --discipline economics --discipline politics --discipline law</code></pre>
+<p>导入后会打印 <code>book_id=...</code>，后面都用它。</p>
+</div></div>
+
+<div class="step"><div class="step-num">3</div><div>
+<h3>让 agent 读书（book_learn）</h3>
+<p><strong>推荐方式：</strong>直接让 Hermes 调用 MCP 工具 <code>book_learn</code>：</p>
+<pre><code>请调用 book_learn，book_id = &lt;book_id&gt;，max_chunks = 36。
+它会把书卡、框架和逐字引用一起写进库，然后调用 book_validate 确认没有错误。</code></pre>
+<p><strong>命令行等价方式：</strong></p>
+<pre><code>&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db `
+  compile-llm &lt;book_id&gt; --max-chunks 36 --evidence-chars 1200</code></pre>
+<p>也可以批量读所有还没编译的书：</p>
+<pre><code>&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db `
+  compile-llm --all-ingested --max-chunks 36 --evidence-chars 1200</code></pre>
+<p><code>book_learn</code> 做四件事：从全书均匀抽样章节 → 让阅读模型提出 BookCard 和 3–8 个 FrameworkCard → Python 逐条核对 <code>chunk_id + quote + chapter + page</code> → 只有全部通过才写入主库。</p>
+</div></div>
+
+<div class="step"><div class="step-num">4</div><div>
+<h3>校验</h3>
+<pre><code>&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db `
+  validate --book &lt;book_id&gt;</code></pre>
+<p>输出 <code>[]</code> 才算通过。出现 <code>unsupported_quote</code> 说明引用没能在原文逐字找到；不要绕过校验，改引用或标成推断。</p>
+</div></div>
+
+<div class="step"><div class="step-num">5</div><div>
+<h3>重建实体、命题和 GraphRAG</h3>
+<pre><code>&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db entities align
+&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db claims build --limit-per-book 120
+&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db graphrag build</code></pre>
+<p>新书的概念进入实体图谱，命题进入检索与冲突检测，GraphRAG sidecar 重新计算社区和边。</p>
+</div></div>
+
+<div class="step"><div class="step-num">6</div><div>
+<h3>确认它真的“学会”了</h3>
+<pre><code>&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db books
+&amp; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db coverage</code></pre>
+<p>状态应该是 <code>compiled</code>，书卡状态是 <code>verified</code>，并且至少有一个 framework。只有这时 <code>book_recall</code> / <code>book_analyze</code> 才会把它当已学习证据。</p>
+</div></div>
+
+<div class="warnbox">
+<strong>三个必须知道的边界：</strong>
+<ol>
+<li><strong>代表样本，不是逐页全文。</strong><code>book_learn</code> 默认抽 28–36 个证据块，覆盖全书章节，但不是把每一页都塞给模型。</li>
+<li><strong>verified 是机器逐字溯源，不是人工盲评。</strong>它证明引用在 OCR 文本里逐字存在；不能证明 OCR 每个字都对。</li>
+<li><strong>读书默认不允许走 DeepSeek。</strong>如果 reader 解析到 DeepSeek 端点，会直接报错；除非显式设置 <code>BOOKCOMPILER_READER_ALLOW_DEEPSEEK=1</code>。这是防误刷费用的硬闸。</li>
+</ol>
+</div>
+</section>
+
+<section id="s15">
+<h2>15. 自进化是什么、不是什么</h2>
+
+<h3>15.1 它现在能做什么</h3>
+<ul>
+<li>从结构化反馈中生成 proposal：错误模式、偏好书/框架、缺失证据、低分分析。</li>
+<li>提案有 evidence_feedback_ids、risk、rollback、gate。</li>
+<li>状态机：<code>proposed → accepted → shadow → promoted → rolled_back</code>，也可以 <code>rejected</code>。</li>
+<li>晋升必须有结构回放报告，且所有 case 通过。</li>
+<li>应用前写快照，失败可恢复；支持 rollback。</li>
+<li>只允许三类变更：检索权重、书偏好、框架偏好。</li>
+</ul>
+
+<h3>15.2 它不能做什么</h3>
+<ul>
+<li>不会自动改写 BookCard、FrameworkCard、引用或代码。</li>
+<li>不会自动改逐字引用校验规则。</li>
+<li>不会因为一次低分就把某本书永久拉黑。</li>
+<li>不会在没有回放报告的情况下晋升。</li>
+<li>不会做真正的 shadow/canary 流量和盲评（还没实现）。</li>
+</ul>
+
+<h3>15.3 为什么这么保守</h3>
+<p>书籍分析系统最危险的不是“回答不够聪明”，而是“编造引用”“把某本书的观点压成错误口号”“把框架用在不适用的条件下”“把三个镜头的冲突平均掉”。所以真值契约不能学习：引用校验、法律免责声明、冲突处理规则必须固定。</p>
+
+<h3>15.4 当前状态</h3>
+<p>本机书库目前 <code>feedback=0</code>、<code>evolution_proposals=0</code>，所以自进化链路还没有用真实反馈跑过。代码和测试在，但没有“已经进化出更好配置”的证据。不要声称它已经通过自进化变强。</p>
+
+<h3>15.5 怎么试</h3>
+<ol>
+<li>对一份分析打分并写反馈（GUI 分析详情底部，或 CLI <code>feedback</code>）。</li>
+<li>运行 <code>evolution-propose --min-support 1</code>。</li>
+<li>查看 proposal，决定 accept / reject。</li>
+<li>如果 accept，进入 shadow；准备回放 cases。</li>
+<li>回放全通过后，才能 promote。</li>
+<li>不满意就 rollback。</li>
+</ol>
+<p>记住：结构回放通过只证明“没有结构退化”，不证明“答案质量更好”。真正的盲评还没做。</p>
+</section>
+
+<section id="s16">
+<h2>16. 常见错误与修复</h2>
+
+<h3>16.1 连不上 Hindsight（8888）</h3>
+<p><strong>现象：</strong><code>Invoke-RestMethod http://127.0.0.1:8888/health</code> 报连接失败。</p>
+<p><strong>修复：</strong></p>
+<ol>
+<li>确认 Hindsight 进程在跑：<code>Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*run_server.py*' }</code></li>
+<li>启动：<code>cd D:\hindsight; .\.venv\Scripts\python.exe .\run_server.py</code></li>
+<li>看日志：<code>Get-Content -Tail 80 D:\hindsight\server.log</code></li>
+<li>检查 5432 是否被别的 PostgreSQL 占用。Hindsight 使用 pg0-embedded 嵌入版 PostgreSQL，实例名 hindsight；可用 python -c "import pg0; pg0.start('hindsight')" 启动。若提示密码错误，请核对 D:/hindsight/.env 里的数据库连接串。</li>
+</ol>
+
+<h3>16.1b 读书时 MiMo 返回 high risk 被拒</h3>
+<p><strong>现象：</strong>compile-llm 失败，.bookcompiler/compilations/&lt;book_id&gt;.raw.json 里是 status=rejected、reason 含 high risk。</p>
+<p><strong>原因：</strong>这是模型服务商的内容安全层，不是书库校验失败，也不是代码 bug。</p>
+<p><strong>修复：</strong></p>
+<ol>
+<li>先重试一次，并把证据包调小：compile-llm &lt;book_id&gt; --max-chunks 20 --evidence-chars 900。</li>
+<li>项目已经在 prompt 里加了“授权学术编译任务”的说明，通常会降低误判。</li>
+<li>仍被拒时改用本地 Ollama：compile-llm &lt;book_id&gt; --provider ollama --model qwen2.5:14b-instruct-q4_K_M --base-url http://127.0.0.1:11434。慢，但不花钱。</li>
+<li>不要为了绕过拒绝改用 DeepSeek；读书路由默认会被硬闸拦住。</li>
+</ol>
+
+<h3>16.2 连不上 Ollama（11434）</h3>
+<p><strong>现象：</strong>Hindsight 启动或 retain 报模型连接错误。</p>
+<p><strong>修复：</strong>确认 Ollama 在运行；<code>ollama list</code> 能看到 <code>qwen2.5:7b-instruct-q4_K_M</code>；必要时 <code>ollama serve</code>。不要改 Hindsight 的 base URL 结尾 <code>/v1</code>。</p>
+
+<h3>16.3 Hindsight 报 UnicodeEncodeError / gbk</h3>
+<p><strong>现象：</strong>直接运行 <code>hindsight-api.exe</code> 时出现 <code>UnicodeEncodeError: 'gbk' codec can't encode character ...</code>。</p>
+<p><strong>修复：</strong>用 <code>D:\hindsight\run_server.py</code> 启动；它会设置 UTF-8 输出。也可以设置 <code>$env:PYTHONUTF8=1</code> 和 <code>chcp 65001</code>。</p>
+
+<h3>16.4 Hermes 报 NativeCommandError，但回答正常</h3>
+<p><strong>现象：</strong>PowerShell 退出码 1，红色错误，但标准输出里有完整中文回答。</p>
+<p><strong>原因：</strong>PowerShell 把 Hermes 的 stderr 当成错误记录。不是书库调用失败。</p>
+<p><strong>修复：</strong>先看回答内容；需要脚本化时用 <code>2&gt;&amp;1</code> 合并输出，或忽略退出码，检查输出里是否有预期内容。</p>
+
+<h3>16.5 Hermes 找不到 bookcompiler 工具</h3>
+<p><strong>检查：</strong></p>
+<pre><code>$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' mcp test bookcompiler</code></pre>
+<p>如果失败：</p>
+<ul>
+<li>确认 <code>config.yaml</code> 里的 Python 路径存在；</li>
+<li>确认 <code>PYTHONPATH</code> 指向 <code>C:\Users\mybea\projects\bookcompiler\src</code>；</li>
+<li>确认 <code>library.db</code> 路径存在；</li>
+<li>手动跑 <code>python -m bookcompiler.cli --db ... mcp</code> 看是否报错。</li>
+</ul>
+
+<h3>16.6 输入中文变成问号/乱码</h3>
+<p><strong>原因：</strong>Windows 控制台代码页、PowerShell 原生参数编码、或文件写入编码不一致。</p>
+<p><strong>修复：</strong></p>
+<ul>
+<li>优先用 GUI（浏览器统一 UTF-8）。</li>
+<li>用 PowerShell 7 / Windows Terminal。</li>
+<li>设置 <code>[Console]::OutputEncoding=[Text.UTF8Encoding]::new($false)</code> 和 <code>chcp 65001</code>。</li>
+<li>写文件用 <code>[IO.File]::WriteAllText($path,$text,[Text.UTF8Encoding]::new($false))</code>，不要用默认编码的 <code>Set-Content</code> 写中文。</li>
+</ul>
+
+<h3>16.7 GUI 打不开 / API 500</h3>
+<ol>
+<li>确认进程：<code>Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*bookcompiler*gui*' }</code></li>
+<li>看日志：<code>Get-Content -Tail 80 .bookcompiler\gui.out.log</code></li>
+<li>检查 <code>http://127.0.0.1:8765/api/status</code>。</li>
+<li>重启 GUI。</li>
+</ol>
+
+<h3>16.8 分析返回 409 confirmation_required</h3>
+<p>这不是错误，是同意门。模式 <code>direction</code> / <code>books</code> 必须先选：<code>specified</code>、<code>specified+recommended</code> 或 <code>recommended</code>。选完再提交。</p>
+
+<h3>16.9 编译报 unsupported_quote</h3>
+<p>引用没有在原文里逐字找到。可能原因：</p>
+<ul>
+<li>改了标点/空格；</li>
+<li>OCR 识别错字；</li>
+<li>页码/章节归属错；</li>
+<li>引用了另一本书的句子。</li>
+</ul>
+<p>修复：回到 <code>book_recall</code> 的逐字 quote，或把该句标成推断。不要关闭校验。</p>
+
+<h3>16.10 Hindsight native plugin 安装失败（GitHub 443）</h3>
+<p>这是网络问题，不是配置问题。当前用 MCP 直连已经可用，不需要 native provider。等网络恢复后再考虑：</p>
+<pre><code>hermes plugins install hindsight --yes-deps --enable</code></pre>
+<p>安装前先备份 <code>D:\hermes agent\config.yaml</code>。</p>
+
+<h3>16.11 reflect 超时</h3>
+<p>当前 7B 本地模型上 reflect 不可靠，曾 300 秒超时。不要把它接进自动化。需要时先用 retain/recall；reflect 等模型/配置优化后再试。</p>
+
+<h3>16.12 书显示 ingested，不能当证据</h3>
+<p>正常。它只是入库，没有书卡/框架卡。按第 14 节完成 compile + validate，状态变 <code>compiled</code> 后才算 learned。</p>
+</section><section id="s17">
+<h2>17. 备份、恢复、重置</h2>
+<p>四套系统各有自己的数据，备份要分开做。最重要的一条：<strong>备份前先停写入</strong>，不要在服务运行时直接复制数据库文件。</p>
+
+<h3>17.1 备份 BookCompiler</h3>
+<ol>
+<li>停止 GUI（关闭启动它的窗口，或结束对应 python 进程）。</li>
+<li>复制整个数据库文件：</li>
+</ol>
+<pre><code>$src = 'C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db'
+$dst = "D:\backup\bookcompiler-$(Get-Date -Format yyyyMMdd-HHmm).db"
+New-Item -ItemType Directory -Force (Split-Path $dst) | Out-Null
+Copy-Item -LiteralPath $src -Destination $dst
+Get-Item $dst | Select-Object FullName,Length</code></pre>
+<p>如果目录里有 <code>library.db-wal</code> / <code>library.db-shm</code>，也要一起复制。本机当前没有这两个文件。</p>
+
+<h3>17.2 备份 Hermes</h3>
+<p>停止 Hermes 后，复制：</p>
+<ul>
+<li><code>D:\hermes agent\state.db</code>（会话/状态）</li>
+<li><code>D:\hermes agent\config.yaml</code>（配置）</li>
+<li><code>D:\hermes agent\skills\</code>（技能）</li>
+</ul>
+<pre><code>$dst = "D:\backup\hermes-$(Get-Date -Format yyyyMMdd-HHmm)"
+New-Item -ItemType Directory -Force $dst | Out-Null
+Copy-Item -LiteralPath 'D:\hermes agent\state.db' -Destination $dst
+Copy-Item -LiteralPath 'D:\hermes agent\config.yaml' -Destination $dst
+Copy-Item -LiteralPath 'D:\hermes agent\skills' -Destination $dst -Recurse</code></pre>
+<div class="dangerbox">
+不要把 <code>D:\hermes agent\.env</code> 和 <code>auth.json</code> 复制到公共云盘或 Git 仓库。如果备份它们，必须加密并妥善保管。
+</div>
+
+<h3>17.3 备份 Hindsight（推荐 pg_dump）</h3>
+<p>Hindsight 用 PostgreSQL，最稳的备份方式是 <code>pg_dump</code>。本地连接凭据在同目录的 <code>instance.json</code> 里，教程不把密码写死。</p>
+<pre><code>$inst = Get-Content -Raw 'C:\Users\mybea\.pg0\instances\hindsight\instance.json' | ConvertFrom-Json
+$env:PGPASSWORD = $inst.password
+$pgdump = 'C:\Users\mybea\.pg0\installation\18.1.0\bin\pg_dump.exe'
+$dst = "D:\backup\hindsight-$(Get-Date -Format yyyyMMdd-HHmm).dump"
+New-Item -ItemType Directory -Force (Split-Path $dst) | Out-Null
+&amp; $pgdump -h 127.0.0.1 -p 5432 -U $inst.username -d $inst.database -Fc -f $dst
+Remove-Item Env:PGPASSWORD
+Get-Item $dst | Select-Object FullName,Length</code></pre>
+
+<h3>17.4 文件级备份 Hindsight</h3>
+<p>如果一定要复制数据目录：</p>
+<ol>
+<li>先正常停止 Hindsight 进程。</li>
+<li>确认 5432 不再监听。</li>
+<li>复制整个 <code>C:\Users\mybea\.pg0\instances\hindsight\data</code>。</li>
+</ol>
+<p>不要在 PostgreSQL 还在写的时候复制数据目录，可能得到不一致的备份。</p>
+
+<h3>17.5 恢复 Hindsight</h3>
+<div class="dangerbox">
+<code>pg_restore --clean --if-exists</code> 会覆盖现有数据。先备份当前库，再操作。
+</div>
+<pre><code>$inst = Get-Content -Raw 'C:\Users\mybea\.pg0\instances\hindsight\instance.json' | ConvertFrom-Json
+$env:PGPASSWORD = $inst.password
+$pgrestore = 'C:\Users\mybea\.pg0\installation\18.1.0\bin\pg_restore.exe'
+&amp; $pgrestore -h 127.0.0.1 -p 5432 -U $inst.username -d $inst.database --clean --if-exists 'D:\backup\你的备份.dump'
+Remove-Item Env:PGPASSWORD</code></pre>
+
+<h3>17.6 恢复 BookCompiler / Hermes</h3>
+<p>先停止对应服务，把备份文件复制回原路径，再启动。不要在两个进程都在写的时候覆盖数据库。</p>
+
+<h3>17.7 重置</h3>
+<p><strong>不要直接删库。</strong>推荐做法：</p>
+<ul>
+<li>BookCompiler：停止 GUI，把 <code>library.db</code> 改名成 <code>library.db.bak</code>，再运行 <code>init</code> 创建新库。</li>
+<li>Hermes：停止 Hermes，把 <code>state.db</code> 改名备份。你会丢失会话历史。</li>
+<li>Hindsight：先用 API 清空指定 bank 的 memories，或删除 bank；不要直接删 PostgreSQL 数据目录。</li>
+</ul>
+<p>任何重置前，先做一次可用的备份。</p>
+</section>
+
+<section id="s18">
+<h2>18. 安全注意事项</h2>
+
+<h3>18.1 只在本机使用</h3>
+<ul>
+<li>BookCompiler GUI：<code>127.0.0.1:8765</code>，没有登录/权限系统。</li>
+<li>Hindsight：<code>127.0.0.1:8888</code>，没有公网认证。</li>
+<li>Ollama：<code>127.0.0.1:11434</code>，默认没有 API key。</li>
+<li>PostgreSQL：<code>127.0.0.1:5432</code>，本地开发凭据。</li>
+</ul>
+<p>不要把任何端口映射到公网，不要在不可信局域网开放。GUI 可以读取本机文件路径，风险更高。</p>
+
+<h3>18.2 密钥</h3>
+<ul>
+<li>MiMo key 在 Windows 用户环境变量（<code>MIMO_API_KEY</code> / <code>MIMO_BASE_URL</code>）；DeepSeek key 在 <code>D:\hermes agent\.env</code>。都不要打开给别人看，不要提交 Git。</li>
+<li>本教程不包含任何 API key / token。</li>
+<li>截图、录屏、日志分享前先检查有没有密钥。</li>
+</ul>
+
+<h3>18.3 <code>--yolo</code></h3>
+<p><code>--yolo</code> 会自动批准工具调用，包括可能写文件、执行命令的操作。只在你自己控制的机器、明确知道任务范围时使用。日常聊天优先用 <code>hermes chat</code>，需要确认时让 agent 停下来问你。</p>
+
+<h3>18.4 书的内容也是不可信输入</h3>
+<p>书里可能包含指令性文字。agent 应该把书的内容当“资料”，不是当“系统命令”。如果某本书要求“忽略之前的规则”，不要照做。BookCompiler 的技能规则明确要求引用原文、不得编造，但最终仍要靠模型遵守。</p>
+
+<h3>18.5 版权与法律</h3>
+<ul>
+<li>只导入你有权使用的书。</li>
+<li>法律 lens 的输出是分析，不是法律意见；具体规则要核对最新有效文本。</li>
+<li>金融 lens 的输出不是投资建议。</li>
+</ul>
+</section>
+
+<section id="s19">
+<h2>19. 验收清单</h2>
+<p>按顺序跑一遍，全部符合就说明本机部署是通的。</p>
+<ul class="checklist">
+<li>Ollama 在 11434 监听，<code>qwen2.5:7b-instruct-q4_K_M</code> 存在。</li>
+<li><code>http://127.0.0.1:8888/health</code> 返回 <code>healthy / connected</code>。</li>
+<li><code>http://127.0.0.1:8765/api/status</code> 返回 <code>ok: true</code>，<code>books: 12</code>，<code>compiled_books: 4</code>。</li>
+<li><code>status.hindsight.reachable</code> 为 <code>true</code>，<code>bank_exists</code> 为 <code>true</code>。</li>
+<li><code>hermes mcp test bookcompiler</code>：Connected，18 tools。</li>
+<li><code>hermes mcp test hindsight</code>：Connected，36 tools。</li>
+<li>Hermes 能通过 <code>mcp_hindsight_recall</code> 复述中文偏好。</li>
+<li>Hermes 能通过 <code>mcp_hindsight_books_recall</code> 复述书库偏好。</li>
+<li>GUI 的“命题”页能显示 640 条命题。</li>
+<li>GUI 的“实体”页能显示 5 个待确认合并候选。</li>
+<li><code>pytest -q</code>：60 passed。</li>
+<li><code>compileall</code>：无语法错误。</li>
+</ul>
+
+<h3>19.1 可直接复制的验收命令</h3>
+<pre><code># 1. 服务健康
+Invoke-RestMethod http://127.0.0.1:11434/api/tags | Out-Null
+Invoke-RestMethod http://127.0.0.1:8888/health
+Invoke-RestMethod http://127.0.0.1:8765/api/status | ConvertTo-Json -Depth 5
+
+# 2. BookCompiler 测试
+cd C:\Users\mybea\projects\bookcompiler
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m compileall -q src\bookcompiler
+
+# 3. Hindsight 状态
+.\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db hindsight-status
+
+# 4. Hermes MCP
+$env:HERMES_HOME='D:\hermes agent'
+&amp; 'D:\hermes agent\bin\hermes.exe' mcp test bookcompiler
+&amp; 'D:\hermes agent\bin\hermes.exe' mcp test hindsight</code></pre>
+
+<h3>19.2 验收时的预期数字</h3>
+<table>
+<tr><th>指标</th><th>预期</th></tr>
+<tr><td>版本</td><td>BookCompiler 0.5.1</td></tr>
+<tr><td>书</td><td>12</td></tr>
+<tr><td>compiled</td><td>4</td></tr>
+<tr><td>frameworks</td><td>12</td></tr>
+<tr><td>chunks</td><td>8,741</td></tr>
+<tr><td>embedding coverage</td><td>1.0（BGE 512 维）</td></tr>
+<tr><td>entities</td><td>92（跨书 69）</td></tr>
+<tr><td>mentions</td><td>9,905</td></tr>
+<tr><td>relations</td><td>300</td></tr>
+<tr><td>claims</td><td>640</td></tr>
+<tr><td>自动冲突</td><td>0</td></tr>
+<tr><td>待确认实体合并</td><td>5</td></tr>
+<tr><td>Hindsight banks</td><td>hermes / bookcompiler</td></tr>
+<tr><td>Hindsight MCP tools</td><td>36</td></tr>
+<tr><td>BookCompiler MCP tools</td><td>16</td></tr>
+</table>
+</section>
+
+<section id="s20">
+<h2>20. 当前限制与下一步</h2>
+<p>这一节很重要。不要把“能跑”当成“已经完美”。</p>
+
+<h3>20.1 已经实测通过</h3>
+<ul>
+<li>BookCompiler GUI 打开、API 正常、书库 16 本。</li>
+<li>混合检索（BM25 + BGE 512 维 + 实体扩展 + 中英术语桥）可用，8,741 chunk 全覆盖。</li>
+<li>跨书实体对齐、候选审计、GUI 合并队列可用。</li>
+<li>640 条命题、逐字证据、supersession 流程可用。</li>
+<li>Hindsight retain/recall 可用，中文召回正确。</li>
+<li>Hermes ↔ BookCompiler MCP：18 tools。</li>
+<li>Hermes ↔ Hindsight MCP：36 tools。</li>
+<li>Hermes 能复述 Hindsight 中文偏好。</li>
+<li>60 个测试通过。</li>
+</ul>
+
+<h3>20.2 已实现但有限制</h3>
+<ul>
+<li><strong>16/16 本书全部 compiled。</strong>但“读完”是代表样本 + 逐字溯源验证，不是逐页精读。</li>
+<li><strong>Reranker 未证明更好。</strong><code>bge-reranker-base</code> 已下载，但当前配置 <code>rerank: null</code>；检索评测 hit@3 饱和为 1.0，无法区分方法优劣。</li>
+<li><strong>命题冲突为 0。</strong>不是“书里没有冲突”，而是当前自动检测没有发现；需要更多书和更好的冲突规则。</li>
+<li><strong>实体合并 5 个 pending。</strong>系统没有自动合并，需要人/agent 确认。</li>
+<li><strong>自进化没有真实反馈数据。</strong>feedback=0、proposals=0；链路存在，但没有“进化后更好”的证据。</li>
+<li><strong>OCR 噪声。</strong>引用校验只能证明原文存在，不能证明 OCR 每个字都对。</li>
+<li><strong>Hindsight 每个 bank 当前只有 1 条抽取事实。</strong>刚部署，记忆还很少。</li>
+</ul>
+
+<h3>20.3 未完成 / 不可宣称</h3>
+<ul>
+<li><strong>Hindsight UI 未部署。</strong>只有 API；9999 控制台没有部署。</li>
+<li><strong>Hermes 原生 Hindsight provider 未安装。</strong>GitHub 443 超时；当前是 MCP 方案。</li>
+<li><strong>reflect 未成功验证。</strong>7B 本地模型上曾 300 秒超时。</li>
+<li><strong>没有真正的 shadow/canary 和盲评。</strong>结构回放不等于质量提升。</li>
+<li><strong>没有长期生产压测。</strong>并发、长会话压缩、网关入口都未验证。</li>
+<li><strong>不是“读一本书就自动变成领域专家”。</strong>它是证据层 + 框架层 + 引用校验 + 受控进化。</li>
+</ul>
+
+<h3>20.4 下一步建议（按优先级）</h3>
+<ol>
+<li><strong>补书覆盖：</strong>优先补一手法律/监管原文（如《中国人民银行法》），教材不能替代法条。没有学过的书不进证据池。</li>
+<li><strong>建立评测集：</strong>20 个新闻/政策事件 + 期望证据 + 盲评 rubric；比较裸模型、普通 RAG、本系统。</li>
+<li><strong>决定 reranker 是否启用：</strong>用固定 query 集比较 hit@k、MRR、引用命中率，不要凭感觉。</li>
+<li><strong>处理 5 个实体候选：</strong>确认哪些是同一概念，哪些是上下位关系。</li>
+<li><strong>积累反馈：</strong>每次不满意的回答都打分/写错误标签，让自进化有真实数据。</li>
+<li><strong>再试 reflect：</strong>换更快/更强的模型，或等 Hindsight 对本地小模型优化；在此之前不要依赖它。</li>
+<li><strong>如果网络恢复：</strong>再考虑 Hermes native Hindsight provider，但 MCP 方案已经够用。</li>
+</ol>
+</section>
+
+<section id="s21">
+<h2>21. 命令速查表</h2>
+
+<h3>21.1 启动</h3>
+<table>
+<tr><th>要做的事</th><th>命令</th></tr>
+<tr><td>启动 Ollama</td><td><code>ollama serve</code></td></tr>
+<tr><td>启动 Hindsight</td><td><code>cd D:\hindsight; .\.venv\Scripts\python.exe .\run_server.py</code></td></tr>
+<tr><td>启动 BookCompiler GUI</td><td><code>cd C:\Users\mybea\projects\bookcompiler; .\.venv\Scripts\python.exe -m bookcompiler.cli --db .bookcompiler\library.db gui --host 127.0.0.1 --port 8765 --open</code></td></tr>
+<tr><td>启动 Hermes</td><td><code>$env:HERMES_HOME='D:\hermes agent'; &amp; 'D:\hermes agent\bin\hermes.exe' chat</code></td></tr>
+</table>
+
+<h3>21.2 健康检查</h3>
+<table>
+<tr><th>服务</th><th>命令</th></tr>
+<tr><td>Ollama</td><td><code>Invoke-RestMethod http://127.0.0.1:11434/api/tags</code></td></tr>
+<tr><td>Hindsight</td><td><code>Invoke-RestMethod http://127.0.0.1:8888/health</code></td></tr>
+<tr><td>BookCompiler</td><td><code>Invoke-RestMethod http://127.0.0.1:8765/api/status</code></td></tr>
+<tr><td>BookCompiler MCP</td><td><code>hermes mcp test bookcompiler</code></td></tr>
+<tr><td>Hindsight MCP</td><td><code>hermes mcp test hindsight</code></td></tr>
+</table>
+
+<h3>21.3 书库</h3>
+<table>
+<tr><th>要做的事</th><th>命令</th></tr>
+<tr><td>列书</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db books</code></td></tr>
+<tr><td>覆盖统计</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db coverage</code></td></tr>
+<tr><td>看书详情</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db show &lt;book_id&gt;</code></td></tr>
+<tr><td>导入</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db ingest &lt;path&gt;</code></td></tr>
+<tr><td>检索</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db retrieval --query '...' --diagnostics</code></td></tr>
+<tr><td>实体对齐</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db entities align</code></td></tr>
+<tr><td>命题抽取</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db claims build</code></td></tr>
+<tr><td>记忆召回</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db memory --query '...'</code></td></tr>
+</table>
+
+<h3>21.4 Hindsight</h3>
+<table>
+<tr><th>要做的事</th><th>命令</th></tr>
+<tr><td>状态</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db hindsight-status</code></td></tr>
+<tr><td>召回</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db hindsight-recall '...' --limit 3</code></td></tr>
+<tr><td>写入</td><td><code>python -m bookcompiler.cli --db .bookcompiler\library.db hindsight-retain '...' --tags preference --wait</code></td></tr>
+<tr><td>健康</td><td><code>Invoke-RestMethod http://127.0.0.1:8888/health</code></td></tr>
+<tr><td>bank 列表</td><td><code>Invoke-RestMethod 'http://127.0.0.1:8888/v1/default/banks?limit=20'</code></td></tr>
+</table>
+
+<h3>21.5 Hermes</h3>
+<table>
+<tr><th>要做的事</th><th>命令</th></tr>
+<tr><td>版本</td><td><code>&amp; 'D:\hermes agent\bin\hermes.exe' --version</code></td></tr>
+<tr><td>体检</td><td><code>&amp; 'D:\hermes agent\bin\hermes.exe' doctor</code></td></tr>
+<tr><td>聊天</td><td><code>&amp; 'D:\hermes agent\bin\hermes.exe' chat</code></td></tr>
+<tr><td>一次性提问</td><td><code>&amp; 'D:\hermes agent\bin\hermes.exe' --yolo -z '...'</code></td></tr>
+<tr><td>测 MCP</td><td><code>&amp; 'D:\hermes agent\bin\hermes.exe' mcp test bookcompiler</code></td></tr>
+</table>
+</section>
+
+
+<section id="s22">
+<h2>22. 新增：达尔文技能、读书评分、Obsidian、多智能体</h2>
+<p>这一章是 2026-10-18 追加的。前面的教程讲“怎么把书接进 Hermes”，这一章讲“怎么判断 agent 读得好不好、怎么复盘、怎么把知识拿出来看，以及多智能体/RAG 研究怎么用”。</p>
+
+<div class="note">
+<strong>先记住一句话：</strong>读书评分评的是“这次回答有没有真正用上书”，不是给书打分，也不是给模型打总分。自动评分只能分诊，不能冒充人工或盲评。
+</div>
+
+<h3>22.1 达尔文技能装在哪里，怎么用</h3>
+<p>达尔文技能已经安装到用户层：</p>
+<pre><code>C:\Users\mybea\.codex\skills\darwin-skill\SKILL.md</code></pre>
+<p>来源：<a href="https://github.com/alchaincyf/darwin-skill">github.com/alchaincyf/darwin-skill</a>。</p>
+<p>它优化的是 <strong>SKILL.md 的写法</strong>，不是书卡，也不是读书效果。典型用法是让 Codex 检查某个技能的结构、工作流、失败模式、检查点和实测表现，然后按 9 维 rubric 评分、改进、验证、保留或回滚。</p>
+<pre><code># 在 Codex 里直接说
+请用达尔文技能评估 skills/book-library/SKILL.md，先给基线评分，不要直接改。
+
+# 或者只做静态检查
+请按达尔文技能的 9 维 rubric 审查这个 skill，指出最弱的 3 个维度。</code></pre>
+<div class="warnbox">
+达尔文技能是“优化技能”的工具；本项目的 <code>reading-eval</code> 是“评分读书效果”的工具。两者节奏相似（评分 → 找弱项 → 改进 → 验证 → 人确认），但对象不同，不要混用。
+</div>
+
+<h3>22.2 九维读书评分：像达尔文一样给“读书效果”打分</h3>
+<p>每次最终回答后，给这次回答打一次分。九个维度，单项 0–10 分，加权后总分 100：</p>
+<table>
+<tr><th>维度</th><th>权重</th><th>问什么</th></tr>
+<tr><td><code>source_fidelity</code> 原文忠实度</td><td>18</td><td>引用是否逐字来自原文，章节/页码是否可核验，有没有编造或错配？</td></tr>
+<tr><td><code>retrieval_coverage</code> 检索覆盖</td><td>14</td><td>关键章节、证据和框架是否被召回，而不是只抓到表面相似段落？</td></tr>
+<tr><td><code>framework_fit</code> 框架适配</td><td>12</td><td>框架是否真的适用于当前问题，而不是套书名/术语？</td></tr>
+<tr><td><code>cross_book_synthesis</code> 跨书综合</td><td>12</td><td>多本书是否真正互相补充/对照，而不是并列摘抄？</td></tr>
+<tr><td><code>cross_lens_integration</code> 跨学科整合</td><td>12</td><td>经济、政治、法律等镜头是否形成相互制约的整体判断？</td></tr>
+<tr><td><code>conflict_handling</code> 冲突处理</td><td>10</td><td>书与书、镜头与镜头的矛盾是否被显式处理，而不是平均掉？</td></tr>
+<tr><td><code>calibration</code> 置信校准</td><td>8</td><td>结论是否给出适用条件、不确定性和反证条件？</td></tr>
+<tr><td><code>actionability</code> 可行动性</td><td>8</td><td>是否给出可观察指标、下一步检查或可执行建议？</td></tr>
+<tr><td><code>failure_mode_awareness</code> 失败模式意识</td><td>6</td><td>是否说明框架何时失效、有哪些反例和边界？</td></tr>
+</table>
+
+<h4>第一步：定义 Python 路径</h4>
+<pre><code>cd C:\Users\mybea\projects\bookcompiler
+$py = ".\.venv\Scripts\python.exe"</code></pre>
+
+<h4>第二步：给一次分析打分</h4>
+<pre><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db reading-eval `
+  --analysis &lt;analysis_id&gt; `
+  --evaluator llm_judge `
+  --score source_fidelity=8 `
+  --score retrieval_coverage=7 `
+  --score cross_book_synthesis=4 `
+  --note "只真正用了两本书，第三本只是列书名" `
+  --error retrieval_miss</code></pre>
+<p>也可以用 JSON 文件一次传完整分数：</p>
+<pre><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db reading-eval `
+  --analysis &lt;analysis_id&gt; --evaluator llm_judge --scores-file scores.json</code></pre>
+
+<h4>第三步：看汇总和弱项</h4>
+<pre><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db reading-report --format markdown
+&amp; $py -m bookcompiler --db .bookcompiler\library.db reading-report --format json --out reading-report.json</code></pre>
+<p>报告会给出：平均分、最近一次分数、最近 5 次相对前 5 次的变化、分数段分布、九个维度的均值/最新值/最低值/最高值、低于 6.0 的弱项、<code>next_actions</code> 练习建议、错误标签统计。</p>
+
+<h4>第四步：把弱项变成提案</h4>
+<pre><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db reading-propose --min-support 3</code></pre>
+<p>提案类型是 <code>review_reading_dimension</code>。它只建议检查某个维度，不会自动改书卡、提示词或检索权重。状态机仍然是：</p>
+<pre><code>proposed → accepted → shadow → promoted（需要 replay + shadow/canary + 人工确认）
+                              ↘ rolled_back</code></pre>
+
+<h4>四种 evaluator</h4>
+<table>
+<tr><th>evaluator</th><th>含义</th><th>能不能当真实质量结论</th></tr>
+<tr><td><code>auto_proxy</code></td><td>从 packet 结构自动生成的代理分</td><td><span class="tag no">不能</span> 只用于分诊</td></tr>
+<tr><td><code>human</code></td><td>人实际打分</td><td><span class="tag ok">可以</span> 注意评分者偏差</td></tr>
+<tr><td><code>llm_judge</code></td><td>独立 judge 按 rubric 打分</td><td><span class="tag limit">参考</span> 最好盲评、多次比对</td></tr>
+<tr><td><code>mixed</code></td><td>部分人工/LLM，其余代理分</td><td><span class="tag limit">逐维解释</span> 不能当纯人工分</td></tr>
+</table>
+
+<h4>MCP 工具</h4>
+<p>Hermes/Codex 可以调用 <code>book_reading_eval</code>：</p>
+<pre><code>{"action":"score","analysis_id":"...","evaluator":"llm_judge","scores":{...}}
+{"action":"report"}
+{"action":"propose","min_support":3}</code></pre>
+
+<h4>数据存在哪里</h4>
+<p>默认数据库：<code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db</code>。评分在 <code>reading_evaluations</code> 表：</p>
+<pre><code>evaluation_id / analysis_id / evaluator / rubric_version /
+total / scores(JSON) / data(完整JSON) / created_at</code></pre>
+<div class="warnbox">
+当前真实库还没有真实评分和真实进化提案。代码路径和测试已经有了，需要你实际跑分析后积累。不要把 <code>auto_proxy</code> 分数写成“人工盲评”。
+</div>
+
+<h3>22.3 接入 Obsidian：读书成果 + Hindsight 记忆</h3>
+<p>Obsidian 是本地 Markdown + 双向链接 + 图谱视图。它适合做“阅读、浏览、复盘、写作”的界面，不负责检索和推理。</p>
+<pre><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db obsidian-sync-all
+&amp; $py -m bookcompiler --db .bookcompiler\library.db hindsight-obsidian-sync --direction both</code></pre>
+<p>两个受控目录：</p>
+<pre><code>&lt;vault&gt;\BookCompiler\       书卡、框架、claim、实体、分析
+&lt;vault&gt;\Hindsight\          world / experience / observation 记忆
+&lt;vault&gt;\BookCompiler Inbox\ 手写读书笔记，导入 SQLite
+&lt;vault&gt;\Hindsight Inbox\    手写新记忆，retain 到 Hindsight</code></pre>
+<p>每篇生成笔记有 YAML frontmatter，正文用 <code>[[Books/...]]</code>、<code>[[Frameworks/...]]</code> 等 wikilink。Obsidian 的 Graph View 可以看到书 → 框架 → claim → 实体 → 分析的关系。</p>
+<p>Dataview 示例（需要安装 Dataview 社区插件）：</p>
+<pre><code>TABLE status, learned, frameworks, claims, author
+FROM "BookCompiler/Books"
+SORT learned DESC, title ASC</code></pre>
+<div class="okbox">
+<strong>编辑规则：</strong>BookCompiler 生成笔记默认受保护。你手改后原文件保留，新版本写 <code>*.generated.md</code>，不会静默覆盖。想让手写笔记进入检索/记忆上下文，放到 <code>BookCompiler Inbox/</code>；它只会作为 reader note，不会成为原文引用。Hindsight 的 <code>world</code> / <code>experience</code> 可以直接改正文、Context、state 并 PATCH 回服务；<code>observation</code> 只读。双方都改会产生 <code>*.conflict-时间.md</code>。
+</div>
+<p>同步状态在 <code>.bookcompiler\hindsight-obsidian-state.json</code>；BookCompiler 导出清单在 vault 的 <code>.bookcompiler-export.json</code>。详见 <a href="./OBSIDIAN.md">docs/OBSIDIAN.md</a>。</p>
+<h3>22.4 人类学习方法怎么用到这里</h3>
+<p>不要只把“费曼学习法”当口号。可落地的是五步循环：</p>
+<div class="step"><div class="step-num">1</div><div><strong>先出题，不先查书。</strong> 让 agent 先写“我猜答案是什么、我需要哪些证据、哪里不确定”。这对应 retrieval practice / pretesting。</div></div>
+<div class="step"><div class="step-num">2</div><div><strong>带引用地读和编译。</strong> <code>book_ingest → book_export_text → book_compile → book_validate</code>，每条关键主张有逐字 quote。</div></div>
+<div class="step"><div class="step-num">3</div><div><strong>费曼式复述。</strong> 不看原文，用大白话解释；卡住的地方回查章节。对应 self-explanation。</div></div>
+<div class="step"><div class="step-num">4</div><div><strong>迁移到新事件。</strong> 用当天新闻/政策/市场事件做 <code>book_analyze</code>，问“哪个框架适用、哪里冲突、什么会推翻结论”。对应 transfer。</div></div>
+<div class="step"><div class="step-num">5</div><div><strong>评分、练弱项、间隔复习。</strong> <code>reading-eval → reading-report → reading-propose</code>；弱项变成具体练习，再排进复习队列。</div></div>
+<table>
+<tr><th>学习框架</th><th>在本项目怎么用</th><th>现状</th></tr>
+<tr><td>费曼式自我解释</td><td>先大白话解释，再回原文补证据</td><td><span class="tag ok">提示词可做</span></td></tr>
+<tr><td>Retrieval practice</td><td>闭卷先答，再 <code>book_recall</code> 对照</td><td><span class="tag limit">未固化</span></td></tr>
+<tr><td>Spaced repetition</td><td>书卡/框架/claim 加复习队列</td><td><span class="tag no">未实现</span></td></tr>
+<tr><td>Interleaving</td><td>多书、多镜头交错分析</td><td><span class="tag ok">选择层已有</span></td></tr>
+<tr><td>Deliberate practice</td><td>按低分维度做针对性练习</td><td><span class="tag ok">next_actions</span></td></tr>
+<tr><td>Bloom / SOLO</td><td>区分记忆、理解、应用、分析、评价</td><td><span class="tag limit">部分覆盖</span></td></tr>
+<tr><td>ICAP</td><td>要求生成假设、反例、冲突，而非复述</td><td><span class="tag limit">提示词可做</span></td></tr>
+<tr><td>Zettelkasten</td><td>Obsidian 原子笔记 + 双向链接</td><td><span class="tag ok">已导出</span></td></tr>
+</table>
+<p>完整说明见 <a href="./LEARNING-METHODS.md">docs/LEARNING-METHODS.md</a>。</p>
+
+<h3>22.5 多智能体怎么用</h3>
+<p>能用到，但重点不是“多开几个模型”，而是把不同职责拆开，减少自说自话。最划算的第一版是：</p>
+<pre><code>检索者 -> 反方 -> 盲评 judge</code></pre>
+<table>
+<tr><th>角色</th><th>只负责什么</th><th>对应工具</th></tr>
+<tr><td>Planner / 出题者</td><td>拆子问题、列需要的证据和镜头</td><td><code>book_plan</code></td></tr>
+<tr><td>Retriever</td><td>按子问题召回 chunk/claim/实体</td><td><code>book_recall</code></td></tr>
+<tr><td>Feynman explainer</td><td>不看原文，用大白话解释</td><td>问题 + 书卡/框架卡</td></tr>
+<tr><td>Red team</td><td>找反例、失败条件、被忽略的镜头</td><td><code>book_analyze</code></td></tr>
+<tr><td>Citation auditor</td><td>逐字核对 quote/章节/页码</td><td><code>book_validate</code></td></tr>
+<tr><td>Judge</td><td>按九维 rubric 盲评</td><td><code>book_reading_eval</code></td></tr>
+<tr><td>Evolver</td><td>把重复弱项变成提案</td><td><code>book_evolution</code></td></tr>
+</table>
+<p>风险：群体思维、错误放大、上下文污染、成本爆炸、假共识、提示注入。纪律：judge 不能看作者解释；反方不负责最终答案；引用审计只认原文；综合者不能平均冲突。</p>
+<div class="warnbox"><strong>当前边界：</strong>多智能体目前是研究文档和手工编排协议，不是运行时自动编排。项目里还没有“九个 agent 在后台自动分工”；上面的角色表是下一阶段的实现蓝图。</div>
+<p>成本大致是：单 agent 1x；三角色 2–3x；五角色 3–5x；九角色 5–10x。只有高风险、低置信或对外交付才值得上完整链路。完整协议见 <a href="./MULTI-AGENT.md">docs/MULTI-AGENT.md</a>。</p>
+
+<h3>22.6 高级 RAG：GraphRAG 等能不能用</h3>
+<p><strong>GraphRAG 已经落地，但用的是轻量、确定性的 sidecar 方案，不是 Microsoft 全量 LLM GraphRAG。</strong>它复用已有的实体、claim、framework、chunk 构图，单独存 <code>.bookcompiler/library.graph.db</code>；检索用 hybrid + graph 的 RRF 融合；图不可用时自动回退 hybrid，不会让分析失败。它已经接进 <code>book_analyze</code> 主链路，也有 CLI、MCP 和 GUI 入口。</p>
+<table>
+<tr><th>方案</th><th>适合</th><th>主要风险</th><th>建议</th></tr>
+<tr><td>GraphRAG</td><td>实体/社区/全局问题</td><td>实体噪声、未必优于简单 RAG</td><td><span class="tag ok">已落地（轻量 sidecar）</span></td></tr>
+<tr><td>LightRAG</td><td>轻量图检索、增量更新</td><td>仍依赖实体质量</td><td><span class="tag ok">值得参考</span></td></tr>
+<tr><td>HippoRAG</td><td>记忆型多跳检索</td><td>图构建和评测成本</td><td><span class="tag ok">方向接近</span></td></tr>
+<tr><td>RAPTOR</td><td>长书层级摘要</td><td>摘要幻觉、引用回溯</td><td><span class="tag limit">摘要只做导航</span></td></tr>
+<tr><td>Self-RAG / CRAG</td><td>判断证据够不够、要不要重查</td><td>自评偏差、额外调用</td><td><span class="tag ok">优先做</span></td></tr>
+</table>
+<p>Microsoft GraphRAG 的 README 已明确说项目“largely in maintenance mode”，不建议作为新系统底座。图检索必须和简单 hybrid RAG 做同条件对比。详细项目清单和论文见 <a href="./RAG-LANDSCAPE.md">docs/RAG-LANDSCAPE.md</a>。</p>
+
+<h3>22.7 信息源缺口提示：知道自己没读什么</h3>
+<p>这一轮最重要的修复，不是“多推荐一本书”，而是区分<strong>学科覆盖</strong>和<strong>权威原文覆盖</strong>。书库里有《中央银行与货币供给》，不代表它有《中华人民共和国中国人民银行法》；有财政学教材，也不代表它有《预算法》原文。</p>
+<p>当问题涉及权限、程序、监管边界或债务约束，而书库缺少相应权威文本时，系统会在选择卡、analysis memo、MCP 回值和 GUI 里显示：</p>
+<ul>
+<li>缺哪一部法律、行政法规、监管规章或正式政策文件；</li>
+<li>为什么这个问题需要它，命中了哪些问题词；</li>
+<li>建议入库的学科标签；</li>
+<li>官方版本核对来源；</li>
+<li>一条可复制修改的 <code>bookcompiler ingest</code> 命令；</li>
+<li>入库后应该重新检查什么。</li>
+</ul>
+<pre><code>bookcompiler --db .bookcompiler\library.db source-gaps `
+  --query "如果中国央行降准，银行信贷是否必然扩张？请从货币政策、地方财政和金融监管三个角度分析。" `
+  --lenses economics politics law `
+  --format text</code></pre>
+<p>预期会看到《中华人民共和国中国人民银行法》《中华人民共和国商业银行法》《中华人民共和国银行业监督管理法》。如果书库已经有同名法规（哪怕只是 ingested、尚未编译），系统不会重复让你下载；它会继续缺什么补什么。</p>
+<div class="warnbox"><strong>边界：</strong>它只提示，不自动联网下载，也不把未入库的法规写进 citations。你需要先把官方现行有效文本下载到本地，再走 <code>ingest → export-text → compile → validate</code>。只有这样，下一轮分析才真的能引用它。</div>
+<p>MCP 的 <code>book_plan</code> / <code>book_analyze</code> 会返回 <code>source_recommendations</code>，工具描述要求调用方明确告诉用户，不能假装“已经读过”。详细目录和设计见 <a href="./SOURCE-GAPS.md">docs/SOURCE-GAPS.md</a>。</p>
+
+<h3>22.8 这次说明书更新了什么</h3>
+<ul>
+<li><strong>达尔文技能</strong>：已安装到用户层，并说明它和读书评分的区别。</li>
+<li><strong>九维读书评分</strong>：命令、MCP、报告、弱项练习、数据表和受控进化边界。</li>
+<li><strong>Obsidian</strong>：BookCompiler 受保护导出 + Inbox 回写、Hindsight 记忆双向编辑、wikilink、Dataview、图谱和限制。</li>
+<li><strong>学习方法</strong>：费曼、检索练习、间隔复习、交错练习、Bloom/SOLO、ICAP、刻意练习和 Zettelkasten 的落点。</li>
+<li><strong>多智能体</strong>：三角色最小闭环、成本、风险和“尚未自动编排”的事实。</li>
+<li><strong>高级 RAG</strong>：GraphRAG、LightRAG、HippoRAG、RAPTOR、Self-RAG/CRAG 的取舍。</li>
+<li><strong>信息源缺口提示</strong>：问题需要但书库没有的权威法律/监管原文，会在选择卡、memo、MCP 和 GUI 中提示下载与入库。</li>
+</ul>
+
+<h3>22.9 新增验收清单</h3>
+<ul class="checklist">
+<li><code>.\.venv\Scripts\python.exe -m pytest -q</code>：应为 <strong>68 passed</strong>。</li>
+<li><code>.\.venv\Scripts\python.exe -m compileall -q src tests</code>：无语法错误。</li>
+<li><code>hermes mcp test bookcompiler</code>：Connected，<strong>18 tools</strong>。</li>
+<li><code>reading-report</code>：能输出九维表和 <code>next_actions</code>。</li>
+<li><code>obsidian-export --vault &lt;临时目录&gt;</code>：生成 MOC、Books、Frameworks、Claims、Entities、Analyses 和 manifest。</li>
+<li>随机抽取 Markdown，检查 wikilink 不缺失、YAML frontmatter 正常。</li>
+<li>真实库当前是 16 本书、16 compiled；不要把“代表样本阅读”说成“逐页精读”。</li>
+</ul>
+
+<h3>22.10 新文档索引</h3>
+<ul>
+<li><a href="./READING-SCORE.md">READING-SCORE.md</a>：九维评分、命令行、MCP、提案状态机、数据位置。</li>
+<li><a href="./LEARNING-METHODS.md">LEARNING-METHODS.md</a>：费曼、检索练习、间隔复习、Bloom/SOLO、ICAP、刻意练习、Zettelkasten。</li>
+<li><a href="./OBSIDIAN.md">OBSIDIAN.md</a>：导出、目录、Dataview、图谱、限制、AGPL 注意。</li>
+<li><a href="./MULTI-AGENT.md">MULTI-AGENT.md</a>：角色、编排、共享状态、风险、成本、落地顺序。</li>
+<li><a href="./RAG-LANDSCAPE.md">RAG-LANDSCAPE.md</a>：RAG 分类、GitHub 项目、论文、取舍和优先级。</li>
+<li><a href="./SOURCE-GAPS.md">SOURCE-GAPS.md</a>：权威信息源缺口、内置目录、匹配规则、MCP/GUI 落点和边界。</li>
+<li><a href="./CHANGES-2026-10-18.md">CHANGES-2026-10-18.md</a>：本轮改动记录。</li>
+</ul>
+
+<div class="okbox">
+<strong>建议你怎么开始：</strong>先跑一次真实的 <code>book_analyze</code>，用 <code>reading-eval</code> 打九维分，再看 <code>reading-report</code> 的 <code>next_actions</code>；然后把书库导出到 Obsidian 看图谱。不要一上来就上多智能体或 GraphRAG，先用真实评分证明它们值得。
+</div>
+</section>
+
+<section id="s23">
+<h2>23. 云端读书 + 本地记忆 + 一键切模型（2026-10-18 新增）</h2>
+<p>这一节只讲新增的三件事：模型分工、MiMo 接入、Obsidian 双向编辑。</p>
+
+<h3>23.1 推荐架构</h3>
+<pre><code>Hermes（云端大模型）
+  ├─ 读书、分析、调用 BookCompiler MCP
+  ├─ 调用 Hindsight MCP 读写长期记忆
+  └─ 最终回答
+
+BookCompiler（本地 SQLite）
+  ├─ 书库、原文 chunk、FTS5、BGE embedding、GraphRAG sidecar
+  └─ 独立盲评：可走云端 API（MiMo / DeepSeek）
+
+Hindsight（本地服务 + Ollama）
+  └─ 记忆抽取：qwen2.5:7b-instruct-q4_K_M
+
+Obsidian（本地 Markdown）
+  ├─ BookCompiler/        读书成果，手改保护
+  ├─ Hindsight/           记忆镜像，world/experience 可回写
+  ├─ BookCompiler Inbox/  手写读书笔记
+  └─ Hindsight Inbox/     手写新记忆</code></pre>
+<p>为什么这样分：读书和分析需要强模型，放云端；记忆抽取每天可能跑很多次，放本地 Ollama 省钱、隐私更好；Obsidian 只是可读可改的界面，不是数据库。</p>
+
+<h3>23.2 MiMo 接入结果</h3>
+<ul>
+<li>API 连通性：<code>/v1/models</code> 返回 200，能看到 <code>mimo-v2.6-flash</code>、<code>mimo-v2.6-pro</code> 等模型。</li>
+<li>Chat Completions：返回 200，<code>mimo-v2.6-flash</code> 能正常回复。</li>
+<li>JSON 模式：<code>response_format: {"type":"json_object"}</code> 可用，BookCompiler 盲评能拿到合法 JSON。</li>
+<li>Hermes：<code>provider: xiaomi</code> + <code>mimo-v2.6-flash</code> 已实测返回 <code>OK</code>。</li>
+</ul>
+<p>配置位置：</p>
+<pre><code>D:\hermes agent\config.yaml
+  model:
+    default: "mimo-v2.6-flash"
+    provider: "xiaomi"
+    base_url: "https://token-plan-cn.xiaomimimo.com/v1"
+
+D:\hermes agent\.env
+  XIAOMI_API_KEY=&lt;你的 key&gt;
+  XIAOMI_BASE_URL=https://token-plan-cn.xiaomimimo.com/v1
+
+C:\Users\mybea\projects\bookcompiler\.env
+  BOOKCOMPILER_JUDGE_PROVIDER=openai-compatible
+  BOOKCOMPILER_JUDGE_MODEL=mimo-v2.6-flash
+  BOOKCOMPILER_JUDGE_BASE_URL=https://token-plan-cn.xiaomimimo.com/v1</code></pre>
+<p>BookCompiler 的 key 不写进项目 <code>.env</code>，而是从用户环境变量 <code>MIMO_API_KEY</code>（或 <code>XIAOMI_API_KEY</code>）读取。Hermes 的 key 在它自己的 <code>.env</code> 里。不要把 key 贴到聊天、Markdown 或截图里。</p>
+
+<h3>23.3 一键切换</h3>
+<pre><code>cd C:\Users\mybea\projects\bookcompiler
+.\switch-models.bat</code></pre>
+<p>菜单：</p>
+<pre><code>1. 查看当前模型
+2. DeepSeek 云端对话/盲评 + MiMo 读书 + 本地 Ollama 记忆
+3. 全部切到本地 Ollama（离线）
+4. 只切 Hermes 对话模型
+5. 只切 Hindsight 记忆模型
+6. 只切 BookCompiler 盲评模型
+7. 设置云端 API 预设
+8. MiMo 云端阅读/盲评 + 本地 Ollama 记忆
+9. 只切 BookCompiler 读书模型（DeepSeek 费用闸默认开启）</code></pre>
+<p>非交互：</p>
+<pre><code>$py = ".\.venv\Scripts\python.exe"
+&amp; $py -m bookcompiler.switch_models show
+&amp; $py -m bookcompiler.switch_models preset mimo
+&amp; $py -m bookcompiler.switch_models preset cloud
+&amp; $py -m bookcompiler.switch_models preset local</code></pre>
+<p>每次修改 Hermes 的 <code>config.yaml</code> 或 Hindsight 的 <code>.env</code> 前都会自动生成 <code>.bak-model-switch-时间</code> 备份。切换后：Hermes 要退出重启（或在会话里 <code>/model</code>）；Hindsight 要重启 <code>run_server.py</code>；BookCompiler GUI 重启或在「模型」页重新保存一次。</p>
+
+<h3>23.4 Obsidian 怎么改、怎么回写</h3>
+<table>
+<tr><th>位置</th><th>能改吗</th><th>会发生什么</th></tr>
+<tr><td><code>BookCompiler/Books|Frameworks|Claims|Entities|Analyses</code></td><td>可以改</td><td>原文件保留；下次导出把新版本写成 <code>*.generated.md</code>，不静默覆盖</td></tr>
+<tr><td><code>BookCompiler Inbox/</code></td><td>可以新建/修改</td><td>同步后进入 SQLite 的 <code>obsidian_notes</code>，作为 reader note / 记忆上下文，不进入 citations</td></tr>
+<tr><td><code>Hindsight/Memories/world|experience/</code></td><td>可以改</td><td>PATCH 回 Hindsight 的 text / context / state</td></tr>
+<tr><td><code>Hindsight/Observations/</code></td><td>只读</td><td>派生记忆，不同步回写</td></tr>
+<tr><td><code>Hindsight Inbox/</code></td><td>可以新建</td><td>没有 <code>hindsight_id</code> 的 Markdown 会 retain 成新记忆</td></tr>
+</table>
+<p>恢复/软失效：把 frontmatter 或正文里的 <code>state</code> 改成 <code>invalidated</code> 可软失效，改回 <code>valid</code> 可恢复。双方都改过时生成 <code>*.conflict-YYYYMMDD-HHMMSS.md</code>，不会替你自动选。</p>
+
+<h3>23.5 数据到底在哪里</h3>
+<ul>
+<li>BookCompiler 主库：<code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.db</code>（SQLite；books / chunks / frameworks / claims / entities / analyses / reading_evaluations / obsidian_notes / review_queue）。</li>
+<li>GraphRAG sidecar：<code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\library.graph.db</code>。</li>
+<li>Hindsight 服务：<code>D:\hindsight</code>，API <code>http://127.0.0.1:8888</code>；记忆在 Hindsight 自己的数据库里（PostgreSQL + pgvector，具体路径以 <code>D:\hindsight</code> 配置为准）。</li>
+<li>Obsidian：<code>C:\Users\mybea\Documents\Obsidian Vault\BookCompiler</code> 和 <code>...\Hindsight</code>。</li>
+<li>Hindsight↔Obsidian 同步状态：<code>C:\Users\mybea\projects\bookcompiler\.bookcompiler\hindsight-obsidian-state.json</code>。</li>
+</ul>
+
+<h3>23.6 验收命令</h3>
+<pre><code>$py = ".\.venv\Scripts\python.exe"
+&amp; $py -m bookcompiler.switch_models show
+&amp; $py -m bookcompiler --db .bookcompiler\library.db obsidian-sync-all
+&amp; $py -m bookcompiler --db .bookcompiler\library.db hindsight-obsidian-sync --direction both
+&amp; $py -m bookcompiler --db .bookcompiler\library.db hindsight-obsidian-status
+&amp; $py -m pytest -q</code></pre>
+<div class="warnbox">
+<strong>边界：</strong>BookCompiler 生成笔记不是任意字段回写 SQLite；这是有意的引用安全设计。Hindsight 记忆才是完整受控双向。切换 embedding 不会自动迁移旧向量，必须重建。Hindsight 修改模型后必须重启服务。
+</div>
+</section>
+
+</main>
+</div>
+
+<a class="anchor-top" href="#">↑ 顶部</a>
+<footer>
+  <p>BookCompiler 0.5.1 · Hermes Agent v0.22.2 · Hindsight API 1.0.0 · PostgreSQL 18.1 + pgvector 0.8.5</p>
+  <p>本文件是离线单文件教程，不依赖 CDN、外部字体或图片。生成日期：2026-10-18；追加读书评分、Obsidian、多智能体与 RAG 研究章节。</p>
+  <p>所有“已验证 / 有限制 / 未完成”均以本机实际检查为准。不要把教程里的验收数字当成永久不变的事实；升级后请重新跑验收清单。</p>
+</footer>
+<section id="v3-2026-10-18" style="max-width:980px;margin:48px auto;padding:28px;border:1px solid #2a3344;border-radius:18px;background:#111722;color:#dbe5f1;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.75">
+  <p style="letter-spacing:.16em;color:#7dd3fc;font-size:12px;margin:0 0 8px">V3 UPDATE · 2026-10-18</p>
+  <h2 style="margin:0 0 10px;font-size:30px;color:#f8fafc">四个缺口的真实状态</h2>
+  <p style="color:#9fb0c7;margin-top:0">这一节覆盖原来的“还没做完”的四项。先看边界，再看命令。</p>
+
+  <h3 style="color:#f8fafc;margin-top:26px">1. 九维评分：现在有真实独立样本</h3>
+  <p><code>auto_proxy</code> 仍然只是结构分诊，不能冒充盲评。新增的 <code>judge</code> 会调用独立模型，prompt 里看不到代理分和历史评分。失败、超时、非法 JSON、缺维度都不会写分，也不会回退成代理分。</p>
+  <pre style="background:#0a0f18;padding:16px;border-radius:12px;overflow:auto"><code>$py = ".\.venv\Scripts\python.exe"
+&amp; $py -m bookcompiler --db .bookcompiler\library.db judge `
+  --analysis 49d7c5f76c4d7ed4 --provider ollama `
+  --model qwen2.5:7b-instruct-q4_K_M `
+  --out docs\judge-eval-49d7c5f76c4d7ed4.json</code></pre>
+  <p>真实样本结果：<strong>81.4 / 100</strong>，九维中跨学科整合 6、跨书综合 7、可行动性 7；与代理分相比，跨学科整合低 4 分、跨书综合低 3 分。说明代理分确实会高估“看起来覆盖了”的答案。样本只有 1 个，不是 benchmark，也不是人类专家盲评。</p>
+  <p>查看聚合：<code>reading-report</code> 有独立评分时用独立评分做 headline；没有时才标 <code>basis=auto_proxy</code>。<code>evolution-propose</code> 只接受独立评分。</p>
+
+  <h3 style="color:#f8fafc;margin-top:26px">2. Obsidian：受控双向，不是任意回写</h3>
+  <p>生成目录 <code>&lt;vault&gt;\BookCompiler\</code> 仍然只导出，BookCompiler 不会改它。用户自己的笔记放 <code>&lt;vault&gt;\BookCompiler Inbox\</code>，只有这个 Inbox 会被导入 SQLite。找不到目标的笔记标 <code>orphaned</code>，从 Inbox 删除的标 <code>missing</code>，历史不销毁。</p>
+  <pre style="background:#0a0f18;padding:16px;border-radius:12px;overflow:auto"><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db obsidian-sync `
+  --vault "D:\notes" --direction both
+&amp; $py -m bookcompiler --db .bookcompiler\library.db obsidian-notes --query "储备"
+&amp; $py -m bookcompiler --db .bookcompiler\library.db obsidian-review</code></pre>
+  <p>Reader note 只作为记忆上下文，永远不会进入 citations。复习用 0–5 分更新 mastery 和下次到期时间。</p>
+
+  <h3 style="color:#f8fafc;margin-top:26px">3. 多智能体：自动角色流水线</h3>
+  <p>每次 <code>create_analysis</code> 自动跑：planner → retriever → reader → feynman_explainer → red_team → citation_auditor → lens_reviewer → synthesizer → judge → evolver。trace 存在 <code>AnalysisPacket.orchestration</code>。这不是多个模型自由辩论；只有 judge 是额外独立模型调用。</p>
+  <pre style="background:#0a0f18;padding:16px;border-radius:12px;overflow:auto"><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db orchestrate --analysis &lt;analysis_id&gt;</code></pre>
+
+  <h3 style="color:#f8fafc;margin-top:26px">4. GraphRAG：已接主链路</h3>
+  <p>独立 sidecar：<code>.bookcompiler\library.graph.db</code>。节点包括 book / framework / claim / entity / chunk；社区是书内实体社区加跨书桥接社区；检索是 hybrid + graph 的 RRF 融合。图缺失或损坏时自动回退 hybrid，不会让分析失败。</p>
+  <pre style="background:#0a0f18;padding:16px;border-radius:12px;overflow:auto"><code>&amp; $py -m bookcompiler --db .bookcompiler\library.db graphrag build
+&amp; $py -m bookcompiler --db .bookcompiler\library.db graphrag status
+&amp; $py -m bookcompiler --db .bookcompiler\library.db graphrag query `
+  --query "央行降准、地方财政与银行信贷扩张" --mode hybrid</code></pre>
+  <p>真实库实测：10,689 nodes、29,407 edges、17 communities、16 books、97 frameworks、1,680 claims。它是轻量确定性 GraphRAG，不是 Microsoft 全量 LLM GraphRAG。</p>
+
+  <h3 style="color:#f8fafc;margin-top:26px">5. GUI 新增入口</h3>
+  <ul>
+    <li>分析页：独立盲评卡（provider / model / 只看 Prompt / 运行九维盲评）。</li>
+    <li>溯源页：GraphRAG 状态、重建图、融合检索探针。</li>
+    <li>记忆页：Obsidian sync、状态、到期复习。</li>
+  </ul>
+  <p style="color:#9fb0c7">启动：<code>&amp; $py -m bookcompiler --db .bookcompiler\library.db gui --port 8765 --open</code></p>
+
+  <h3 style="color:#f8fafc;margin-top:26px">6. 记忆到底存在哪里</h3>
+  <ul>
+    <li>主库：<code>.bookcompiler\library.db</code>（books、chunks、frameworks、claims、entities、analyses、reading_evaluations、obsidian_notes、review_queue）。</li>
+    <li>图 sidecar：<code>.bookcompiler\library.graph.db</code>。</li>
+    <li>Hindsight：<code>D:\hindsight</code> 的独立服务与数据库。</li>
+    <li>Obsidian：用户 vault 是展示/笔记层；导入后的 reader notes 仍在主库。</li>
+  </ul>
+  <p style="color:#fbbf24">仍然的边界：16 本都已 compiled 且校验 0 error；但读书是代表样本阅读，不是逐页精读，Ground truth 仍要靠引用回原文。</p>
+</section></body>
+</html>
